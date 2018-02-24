@@ -1,0 +1,8 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <title>`rgb(int%, int%, int%)` color</title>
+
+    <circle cx="100" cy="100" r="80" fill="rgb(0%, 50%, 0%)"/>
+
+    <!-- image frame -->
+    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+</svg>

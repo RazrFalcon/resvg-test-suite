@@ -1,0 +1,6 @@
+:showtitle:
+:page-title: resvg
+
+== Pages
+
+* link:svg-support-table.html[SVG 1.1 Full Support]

@@ -1,0 +1,12 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <title>Zero `rx` attribute resolving</title>
+    <desc>TODO: have no idea what result should be</desc>
+
+    <!-- should be covered -->
+    <!--<rect x="20" y="20" width="160" height="160" rx="20" ry="20" fill="red"/>-->
+
+    <rect x="20" y="20" width="160" height="160" rx="0" ry="20" fill="green"/>
+
+    <!-- image frame -->
+    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+</svg>

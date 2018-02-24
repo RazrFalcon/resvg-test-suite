@@ -1,0 +1,38 @@
+<!-- based on paths-data-20-f.svg from SVG test suite -->
+<svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg">
+    <title>ArcTo parsing</title>
+
+    <!-- no commawsp between arc flags -->
+    <path d="M120,120 h25 a25,25 0 1,0 -25,25 z" fill="red" stroke="lime"/>
+    <path d="M120,120 h25 a25,25 0 10 -25,25z" fill="lime"/>
+
+    <!-- no commawsp between arc flags and no commawsp after arc flags -->
+    <path d="M200,120 h-25 a25,25 0 1,1 25,25 z" fill="red" stroke="lime"/>
+    <path d="M200,120 h-25 a25,25 0 1125,25 z" fill="lime"/>
+
+    <!-- out of range large-arc-flag value -->
+    <path d="M280,120 h25 a25,25 0 1,0 -25,25 z" fill="lime" stroke="lime"/>
+    <path d="M280,120 h25 a25,25 0 6 0 -25,25 z" fill="red"/>
+
+    <!-- negative sweep-flag value -->
+    <path d="M360,120 h-25 a25,25 0 1,1 25,25 z" fill="lime" stroke="lime"/>
+    <path d="M360,120 h-25 a25,25 0 1 -1 25,25 z" fill="red"/>
+
+    <!-- no commawsp between sweep-flag and following coordinate-pair -->
+    <path d="M120,200 h25 a25,25 0 1,1 -25,-25 z" fill="red" stroke="lime"/>
+    <path d="M120,200 h25 a25,25 0 1 1-25,-25 z" fill="lime"/>
+
+    <!-- no commawsp before arc flags -->
+    <path d="M200,200 h-25 a25,25 0 1,0 25,-25 z" fill="lime" stroke="lime"/>
+    <path d="M200,200 h-25 a25,2501 025,-25 z" fill="red"/>
+
+    <!-- out of range sweep-flag value -->
+    <path d="M280,200 h25 a25,25 0 1,1 -25,-25 z" fill="lime" stroke="lime"/>
+    <path d="M280,200 h25 a25 25 0 1 7 -25 -25 z" fill="red"/>
+
+    <!-- negative large-arc-flag value -->
+    <path d="M360,200 h-25 a25,25 0 1,0 25,-25 z" fill="lime" stroke="lime"/>
+    <path d="M360,200 h-25 a25,25 0 -1 0 25,-25 z" fill="red"/>
+
+    <rect x="1" y="1" width="479" height="359" fill="none" stroke="black"/>
+</svg>

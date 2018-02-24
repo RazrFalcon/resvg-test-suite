@@ -1,0 +1,15 @@
+title: resvg test suite
+description: None
+source: site
+exclude:
+  - LICENSE
+  - README.md
+  - Rakefile
+asciidoc: {}
+asciidoctor:
+  base_dir: :docdir
+  safe: unsafe
+  attributes:
+    - idseparator=_
+    - source-highlighter=coderay
+    - icons=font

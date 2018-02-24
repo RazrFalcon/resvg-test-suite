@@ -1,0 +1,12 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <title>Missing `cy` attribute</title>
+    <desc>`cy` should be 0</desc>
+
+    <!-- should be covered -->
+    <circle cx="100" cy="0" r="80" fill="red"/>
+
+    <circle cx="100" r="80" fill="green"/>
+
+    <!-- image frame -->
+    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+</svg>

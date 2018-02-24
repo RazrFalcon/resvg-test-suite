@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/preferences.svgz</file>
+        <file>icons/crashed.svgz</file>
+        <file>icons/failed.svgz</file>
+        <file>icons/out-of-scope.svgz</file>
+        <file>icons/partial.svgz</file>
+        <file>icons/passed.svgz</file>
+        <file>icons/unknown.svgz</file>
+    </qresource>
+</RCC>

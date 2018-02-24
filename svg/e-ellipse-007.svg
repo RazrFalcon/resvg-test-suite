@@ -1,0 +1,12 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <title>Missing `cx` and `cy` attributes</title>
+    <desc>`cx` and `cy` should be 0</desc>
+
+    <!-- should be covered -->
+    <ellipse cx="0" cy="0" rx="80" ry="60" fill="red"/>
+
+    <ellipse rx="80" ry="60" fill="green"/>
+
+    <!-- image frame -->
+    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+</svg>

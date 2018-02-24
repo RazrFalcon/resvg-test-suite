@@ -1,0 +1,12 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <title>No `y2` coordinate</title>
+    <desc>`y2` should be 0</desc>
+
+    <!-- should be covered -->
+    <path d="M 20 40 L 160 0" stroke="red"/>
+
+    <line x1="20" y1="40" x2="160" stroke="green"/>
+
+    <!-- image frame -->
+    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+</svg>
