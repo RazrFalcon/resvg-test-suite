@@ -36,37 +36,22 @@ include::elements-table.adoc[]
 
 include::attributes-table.adoc[]
 
-=== Other
+// === Other
 
-|===
-|Attribute |resvg |Inkscape |librsvg |QtSvg |Tests
-|`preserveAspectRatio` |No |Yes |? |No |
-|`xml:space` |Yes |Partial |Partial |No |
-|`requiredFeatures` |Partial |? |? |? |
-| 5+|Not supported footnoteref:[not-supported]: +
-- on any element which is not a direct `switch` child
-|`requiredExtensions` |Partial |? |? |? |
-| 5+|Not supported footnoteref:[not-supported]: +
-- on any element which is not a direct `switch` child
-|`systemLanguage` |Partial |? |? |? |
-| 5+|Not supported footnoteref:[not-supported]: +
-- on any element which is not a direct `switch` child
-|===
-
-=== Paint value
-
-|===
-|Spec |Example |resvg |Inkscape |librsvg |QtSvg |Tests
-|`none` |`none ^| {unk-box}  | {unk-box}  | {unk-box}  | {unk-box}  | {unk-box}
-|`currentColor` |`currentColor ^| {unk-box}  | {unk-box}  | {unk-box}  | {unk-box}  | {unk-box}
-|`<color>` |`red ^| {unk-box}  | {unk-box}  | {unk-box}  | {unk-box}  | {unk-box}
-|`<color>` |`#ff0000 ^| {unk-box}  | {unk-box}  | {unk-box}  | {unk-box}  | {unk-box}
-|`<color>{nbsp}<icccolor>` |`steelblue icc-color(cmyk,{nbsp}0.8,{nbsp}0.1745,{nbsp}0.098,{nbsp}0.2) ^| {unk-box}  | {unk-box}  | {unk-box}  | {unk-box}  | {unk-box}
-|`<funciri>` |`uri(#pat) ^| {unk-box}  | {unk-box}  | {unk-box}  | {unk-box}  | {unk-box}
-|`<funciri>{nbsp}<color>`|`uri(#pat) #f0f`  ^| {unk-box}  | {unk-box}  | {unk-box}  | {unk-box}  | {unk-box}
-|`<funciri>{nbsp}<color>{nbsp}<icccolor>`|`uri(#pat) #f0f icc-color(myprofile,{nbsp}.1,{nbsp}.3) ^| {unk-box}  | {unk-box}  | {unk-box}  | {unk-box}  | {unk-box}
-|`inherit` |`inherit ^| {unk-box}  | {unk-box}  | {unk-box}  | {unk-box}  | {unk-box}
-|===
+// |===
+// |Attribute |resvg |Inkscape |librsvg |QtSvg |Tests
+// |`preserveAspectRatio` |No |Yes |? |No |
+// |`xml:space` |Yes |Partial |Partial |No |
+// |`requiredFeatures` |Partial |? |? |? |
+// | 5+|Not supported footnoteref:[not-supported]: +
+// - on any element which is not a direct `switch` child
+// |`requiredExtensions` |Partial |? |? |? |
+// | 5+|Not supported footnoteref:[not-supported]: +
+// - on any element which is not a direct `switch` child
+// |`systemLanguage` |Partial |? |? |? |
+// | 5+|Not supported footnoteref:[not-supported]: +
+// - on any element which is not a direct `switch` child
+// |===
 
 // TODO:
 // Custom namespace
@@ -75,7 +60,7 @@ include::attributes-table.adoc[]
 
 == Tests
 
-Test files has a folowing nameing convention: `%type%`-`%element name%`-`%consecutive number%`.svg
+Test files has a following naming convention: `%type%`-`%element name%`-`%consecutive number%`.svg
 
 == Notes
 

@@ -26,6 +26,8 @@ public:
     static Tests load();
     void save();
 
+    static void resync();
+
     QVector<TestItem>::const_iterator begin() const { return m_data.begin(); }
     QVector<TestItem>::const_iterator end() const { return m_data.end(); }
 

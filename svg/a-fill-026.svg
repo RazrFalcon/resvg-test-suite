@@ -1,8 +1,8 @@
 <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <title>`rgb(int int int)` (UB)</title>
-    <desc>Undefined behavior</desc>
+    <title>FuncIRI to a missing element with fallback color</title>
+    <desc>Should be green</desc>
 
-    <circle cx="100" cy="100" r="80" fill="rgb(0 128 0)"/>
+    <circle cx="100" cy="100" r="80" fill="url(#lg1) green"/>
 
     <!-- image frame -->
     <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>

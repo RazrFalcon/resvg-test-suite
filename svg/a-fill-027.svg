@@ -1,0 +1,12 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <title>Valid FuncIRI with fallback ICC color</title>
+
+    <linearGradient id="lg1">
+        <stop offset="0" stop-color="white"/>
+        <stop offset="1" stop-color="black"/>
+    </linearGradient>
+    <circle cx="100" cy="100" r="80" fill="url(#lg1) green icc-color(acmecmyk, 0.11, 0.48, 0.83, 0.00)"/>
+
+    <!-- image frame -->
+    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+</svg>

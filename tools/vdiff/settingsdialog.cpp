@@ -3,7 +3,7 @@
 #include <QFileDialog>
 #include <QDebug>
 
-#include "db.h"
+#include "tests.h"
 
 #include "settingsdialog.h"
 #include "ui_settingsdialog.h"
@@ -81,17 +81,13 @@ void SettingsDialog::on_btnSelectRsvg_clicked()
 
 void SettingsDialog::on_btnSyncDB_clicked()
 {
-//    try {
-//        DB::sync();
-//        m_isResynced = true;
+    try {
+        Tests::resync();
+        m_isResynced = true;
 
-//        QMessageBox::information(this, "Info", "Database was successfully synced.");
-//    } catch (const QString &msg) {
-//        QMessageBox::critical(this, "Error", msg + "\n\nApplication will close now.");
-
-//        // Restore backup.
-//        QFile::remove(DB::path());
-//        QFile::copy(DB::path() + ".bak", DB::path());
-//        qApp->quit();
-//    }
+        QMessageBox::information(this, "Info", "Database was successfully synced.");
+    } catch (const QString &msg) {
+        QMessageBox::critical(this, "Error", msg + "\n\nApplication will close now.");
+        qApp->quit();
+    }
 }

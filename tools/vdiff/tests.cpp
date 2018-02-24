@@ -1,4 +1,5 @@
 #include <QFile>
+#include <QDir>
 
 #include "paths.h"
 
@@ -87,4 +88,35 @@ void Tests::save()
     }
 
     file.write(text.toUtf8());
+}
+
+void Tests::resync()
+{
+    auto oldTests = load();
+
+    const auto files = QDir(Paths::testsPath()).entryInfoList({ "*.svg" });
+    for (const auto &fi : files) {
+        const auto fileName = fi.fileName();
+
+        bool isExists = false;
+        for (const auto &test : oldTests) {
+            if (test.path == fileName) {
+                isExists = true;
+                break;
+            }
+        }
+
+        if (!isExists) {
+            TestItem item;
+            item.path = fileName;
+
+            oldTests.m_data << item;
+        }
+    }
+
+    std::sort(oldTests.m_data.begin(), oldTests.m_data.end(), [](TestItem &a, TestItem &b) {
+        return a.path < b.path;
+    });
+
+    oldTests.save();
 }

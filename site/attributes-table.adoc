@@ -28,18 +28,24 @@
 || 7. Not trimmed attribute value |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{ok-box}
 || 8. `rgb(int, int, int)` color |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 9. `rgb(int, int, int)` color with extra spaces |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{ok-box}
-|| 10. `rgb(int, int, int)` color without commas |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{ok-box}
+|| 10. `rgb(int int int)` (UB) |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{ok-box}
 || 11. `rgb(int%, int%, int%)` color |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 12. `rgb(int%, int%, int%)` color with overflow |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
 || 13. `rgb(float%, float%, float%)` color |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
-|| 14. `RGB(int%, int%, int%)` color |{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+|| 14. `RGB(int%, int%, int%)` color |{fail-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
 || 15. ICC color |{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 || 16. Linear gradient |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 17. Radial gradient |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 18. Pattern |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
 || 19. Random value |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 20. `none` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
-|| 21. FuncIRI to unsupported element |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 21. `inherit` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 22. `currentColor` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 23. FuncIRI to unsupported element |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 24. FuncIRI with fallback color |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 25. FuncIRI to an invalid element with fallback color |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 26. FuncIRI to a missing element with fallback color |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 27. Valid FuncIRI with fallback ICC color |{fail-box}|{fail-box}|{ok-box}|{ok-box}|{ok-box}
 2+| fill-opacity ^| {unk-box} | {unk-box} | {unk-box} | {unk-box} | {unk-box}
 2+| fill-rule ^| {unk-box} | {unk-box} | {unk-box} | {unk-box} | {unk-box}
 2+| filter ^| {unk-box} | {unk-box} | {unk-box} | {unk-box} | {unk-box}
