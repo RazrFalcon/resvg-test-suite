@@ -1,3 +1,5 @@
+[`resvg`](https://github.com/RazrFalcon/resvg) Test Suite.
+
 ## Notes
 
 - We doesn't test basic shapes rendering with different styles
