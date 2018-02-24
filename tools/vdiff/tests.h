@@ -34,6 +34,8 @@ public:
     TestItem& at(int row) { return m_data[row]; }
     const TestItem& at(int row) const { return m_data.at(row); }
 
+    int size() const { return m_data.size(); }
+
 private:
     QVector<TestItem> m_data;
 };

@@ -3,7 +3,6 @@ description: None
 source: site
 exclude:
   - README.md
-  - Rakefile
 asciidoc: {}
 asciidoctor:
   base_dir: :docdir

@@ -32,3 +32,12 @@ QString Paths::testPath(const QString &fileName) noexcept
 
     return QFileInfo(path).absoluteFilePath();
 }
+
+QString Paths::order() noexcept
+{
+    const auto path = QString("%1/../../order.txt").arg(SRCDIR);
+
+    Q_ASSERT(QFile::exists(path));
+
+    return QFileInfo(path).absoluteFilePath();
+}

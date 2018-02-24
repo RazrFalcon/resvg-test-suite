@@ -114,9 +114,31 @@ void Tests::resync()
         }
     }
 
-    std::sort(oldTests.m_data.begin(), oldTests.m_data.end(), [](TestItem &a, TestItem &b) {
-        return a.path < b.path;
-    });
+    Tests newTests;
 
-    oldTests.save();
+    const auto orderPath = Paths::order();
+    QFile orderFile(orderPath);
+    if (!orderFile.open(QFile::ReadOnly)) {
+        throw QString("Failed to open %1.").arg(orderPath);
+    }
+
+    const QString text = orderFile.readAll();
+    for (const QStringRef &line : text.splitRef('\n')) {
+        if (line.isEmpty()) {
+            break;
+        }
+
+        for (const auto &test : oldTests) {
+            if (test.path == line) {
+                newTests.m_data << test;
+                break;
+            }
+        }
+    }
+
+    if (oldTests.size() != newTests.size()) {
+        throw QString("order.txt has a different amount of tests.").arg(orderPath);
+    }
+
+    newTests.save();
 }
