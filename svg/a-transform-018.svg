@@ -1,0 +1,11 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <title>Empty</title>
+
+    <!-- should be covered -->
+    <path d="M 40,40 H 160 V 160 H 40 Z" fill="red"/>
+
+    <rect x="40" y="40" width="120" height="120" fill="green" transform=""/>
+
+    <!-- image frame -->
+    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+</svg>

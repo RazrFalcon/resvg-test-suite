@@ -1,0 +1,13 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <title>Nested transforms</title>
+
+    <!-- should be covered -->
+    <path d="M 60,20 L 140,100 V 180 L 60,100 Z" fill="red"/>
+
+    <g transform="scale(0.5, 0.5)">
+        <rect x="120" y="-80" width="160" height="160" fill="green" transform="skewY(45)"/>
+    </g>
+
+    <!-- image frame -->
+    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+</svg>

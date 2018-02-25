@@ -1,0 +1,11 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <title>Direct transform</title>
+
+    <!-- should be covered -->
+    <path d="M 60,20 L 140,100 V 180 L 60,100 Z" fill="red"/>
+
+    <rect x="60" y="-40" width="80" height="80" fill="green" transform="skewY(45)"/>
+
+    <!-- image frame -->
+    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+</svg>
