@@ -3,7 +3,7 @@
 [cols="1,10,^1,^1,^1,^1,^1"]
 |===
 | Attribute | Feature | resvg | Chrome | Inkscape | rsvg | QtSvg
-2+| transform ^| {unk-box} | {unk-box} | {unk-box} | {unk-box} | {unk-box}
+2+| transform ^|{ok-box}|{ok-box}|{ok-box}|{part-box}|{ok-box}
 || 1. `matrix(a, b, c, d, e, f)` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 2. `translate(tx, ty)` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 3. `translate(tx)` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
@@ -22,4 +22,5 @@
 || 16. matrix(1, 0, 0, 1, 0, 0) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 17. Numeric character references |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 18. Empty |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+7+^|
 |===
