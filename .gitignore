@@ -1,2 +1,3 @@
 .directory
 Gemfile.lock
+*.pro.user
