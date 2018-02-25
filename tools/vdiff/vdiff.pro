@@ -6,30 +6,29 @@ TEMPLATE = app
 CONFIG += C++11
 
 SOURCES  += \
-    imageview.cpp \
-    main.cpp \
-    mainwindow.cpp \
-    process.cpp \
-    render.cpp \
-    settingsdialog.cpp \
-    tests.cpp \
-    paths.cpp
+    src/imageview.cpp \
+    src/main.cpp \
+    src/mainwindow.cpp \
+    src/process.cpp \
+    src/render.cpp \
+    src/settingsdialog.cpp \
+    src/tests.cpp \
+    src/paths.cpp
 
 HEADERS  += \
-    imageview.h \
-    mainwindow.h \
-    process.h \
-    render.h \
-    settingsdialog.h \
-    either.h \
-    tests.h \
-    paths.h
+    src/imageview.h \
+    src/mainwindow.h \
+    src/process.h \
+    src/render.h \
+    src/settingsdialog.h \
+    src/either.h \
+    src/tests.h \
+    src/paths.h
 
 FORMS    += \
-    mainwindow.ui \
-    settingsdialog.ui
+    src/mainwindow.ui \
+    src/settingsdialog.ui
 
 DEFINES += SRCDIR=\\\"$$PWD/\\\"
 
-RESOURCES += \
-    icons.qrc
+RESOURCES += icons.qrc

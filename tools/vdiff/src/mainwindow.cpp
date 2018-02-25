@@ -70,16 +70,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     initDefaultSettings();
 
-//    try {
-//        if (DB::exists()) {
-//            DB::open();
-//        } else {
-//            DB::init();
-//        }
-//    } catch (const QString &msg) {
-//        QMessageBox::critical(this, "Error", msg);
-//    }
-
     // TODO: check that convertors exists
 
     QTimer::singleShot(5, this, &MainWindow::onStart);
