@@ -16,12 +16,13 @@ with open('order.txt', 'r') as f:
     file_list = f.read().splitlines()
 
 table = PrettyTable()
-table.field_names = ['File', 'Title']
+table.field_names = ['#', 'File', 'Title']
 table.align = "l"
 
 titles = {}
 
-for idx, file_name in enumerate(file_list):
+i = 1
+for file_name in file_list:
     tag_name = file_name[2:];
     tag_name = re.sub('-.*', '', tag_name)
 
@@ -35,7 +36,8 @@ for idx, file_name in enumerate(file_list):
     if title in titles:
         print('Warning: the message \'{}\' already set in \'{}\''.format(title, titles[title]))
 
-    table.add_row([file_name, title])
+    table.add_row([str(i), file_name, title])
+    i += 1
 
     titles[tag_name] = file_name
 

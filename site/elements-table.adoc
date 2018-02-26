@@ -36,9 +36,49 @@
 7+^|
 7+^|https://www.w3.org/TR/SVG/paths.html[Paths]
 2+| path ^|{ok-box}|{ok-box}|{part-box}|{part-box}|{part-box}
-|| 1. Numeric character references in `d` attribute |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
-|| 2. ArcTo parsing |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
-|| 3. Invalid data processing |{ok-box}|{ok-box}|{fail-box}|{fail-box}|{ok-box}
+|| 1. Empty |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 2. M |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 3. M L |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 4. M H |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 5. M V |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 6. M C |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 7. M S |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 8. M Q |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 9. M T |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 10. M A |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 11. M A trimmed |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 12. M L (L) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 13. M C S |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 14. M Q T |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 15. M S S |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 16. M H H |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 17. M H (H) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 18. M V V |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 19. M V (V) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 20. M Z |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 21. M L L Z |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 22. M L L z |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 23. M M |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 24. M m |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 25. m M |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 26. M (M) (M) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 27. m (m) (m) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 28. M L M L |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 29. M L M |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 30. M L M Z |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 31. Numeric character references |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 32. No commawsp between arc flags |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 33. No commawsp between and after arc flags |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 34. Out of range large-arc-flag value |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 35. Negative sweep-flag value |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 36. No commawsp after sweep-flag |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 37. No commawsp before arc flags |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{ok-box}
+|| 38. Out of range sweep-flag value |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 39. Negative large-arc-flag value |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 40. Multi-line data |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 41. Extra spaces |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 42. Missing coordinate in L |{ok-box}|{ok-box}|{fail-box}|{fail-box}|{ok-box}
+|| 43. Invalid data in L |{ok-box}|{ok-box}|{fail-box}|{fail-box}|{ok-box}
 7+^|
 7+^|https://www.w3.org/TR/SVG/shapes.html[Basic Shapes]
 2+| rect ^|{ok-box}|{ok-box}|{part-box}|{part-box}|{part-box}

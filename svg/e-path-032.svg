@@ -1,0 +1,12 @@
+<!-- based on paths-data-20-f.svg from the SVG test suite -->
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <title>No commawsp between arc flags</title>
+
+    <!-- should be covered -->
+    <path d="M 100 100 h 25 a 25 25 0 1 0 -25 25 z" fill="red"/>
+
+    <path d="M 100 100 h 25 a 25 25 0 10 -25 25 z" fill="green"/>
+
+    <!-- image frame -->
+    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+</svg>
