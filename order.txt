@@ -72,6 +72,9 @@ e-image-002.svg
 e-image-003.svg
 e-image-004.svg
 e-image-005.svg
+e-image-006.svg
+e-image-007.svg
+e-image-008.svg
 e-line-001.svg
 e-line-002.svg
 e-line-003.svg

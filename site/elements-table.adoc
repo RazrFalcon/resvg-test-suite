@@ -19,12 +19,15 @@
 7+^|
 2+| use ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| image ^|{part-box}|{ok-box}|{part-box}|{part-box}|{part-box}
-|| 1. JPEG support |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
-|| 2. PNG support |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
-|| 3. SVG support |{fail-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
-|| 4. Embedded JPEG base64 support |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{ok-box}
-|| 5. Embedded PNG base64 support |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+2+| image ^|{part-box}|{part-box}|{part-box}|{part-box}|{part-box}
+|| 1. External JPEG |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 2. External PNG |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 3. External SVG |{fail-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
+|| 4. Embedded JPEG |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{ok-box}
+|| 5. Embedded PNG |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 6. External SVGZ |{fail-box}|{fail-box}|{fail-box}|{fail-box}|{fail-box}
+|| 7. Embedded SVG |{fail-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
+|| 8. Embedded SVGZ (UB) |{fail-box}|{fail-box}|{fail-box}|{ok-box}|{ok-box}
 7+^|
 2+| switch ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
