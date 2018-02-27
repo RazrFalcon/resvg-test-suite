@@ -23,11 +23,12 @@
 || 1. External JPEG |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
 || 2. External PNG |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
 || 3. External SVG |{fail-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
-|| 4. Embedded JPEG |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{ok-box}
-|| 5. Embedded PNG |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
-|| 6. External SVGZ |{fail-box}|{fail-box}|{fail-box}|{fail-box}|{fail-box}
-|| 7. Embedded SVG |{fail-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
-|| 8. Embedded SVGZ (UB) |{fail-box}|{fail-box}|{fail-box}|{ok-box}|{ok-box}
+|| 4. Embedded JPEG as image/jpg |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{ok-box}
+|| 5. Embedded JPEG as image/jpeg |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 6. Embedded PNG |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 7. External SVGZ |{fail-box}|{fail-box}|{fail-box}|{fail-box}|{fail-box}
+|| 8. Embedded SVG |{fail-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
+|| 9. Embedded SVGZ (UB) |{fail-box}|{fail-box}|{fail-box}|{ok-box}|{ok-box}
 7+^|
 2+| switch ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
