@@ -1,4 +1,4 @@
-[`resvg`](https://github.com/RazrFalcon/resvg) Test Suite.
+[resvg](https://github.com/RazrFalcon/resvg) Test Suite.
 
 ## Notes
 
@@ -18,7 +18,6 @@
 - `order.txt` - custom tests order for pretty-printing.
 - `outline.py` - pretty-prints tests.
 - `results.csv` - results of manual testing via `tools/vdiff`.
-- `update-tables.sh` - updates asciidoctor tables.
 
 ### Tests order
 
@@ -29,4 +28,4 @@ tests in any order we want.
 
 ## License
 
-**MIT**
+MIT
