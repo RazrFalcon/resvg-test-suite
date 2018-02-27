@@ -9,7 +9,8 @@
 2+| g ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{part-box}
 || 1. Opacity |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
 7+^|
-2+| defs ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| defs ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 1. Simple case |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
 2+| desc ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
