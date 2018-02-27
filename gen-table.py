@@ -105,6 +105,35 @@ elements_order = [
     'foreignObject',
 ]
 
+out_of_scope_elems = [
+    'desc',
+    'title',
+    'altGlyph',
+    'altGlyphDef',
+    'altGlyphItem',
+    'glyphRef',
+    'color-profile',
+    'cursor',
+    'script',
+    'animate',
+    'set',
+    'animateMotion',
+    'animateColor',
+    'animateTransform',
+    'mpath',
+    'font',
+    'glyph',
+    'missing-glyph',
+    'hkern',
+    'vkern',
+    'font-face',
+    'font-face-src',
+    'font-face-uri',
+    'font-face-format',
+    'font-face-name',
+    'metadata',
+]
+
 presentation_attrs = [
     'alignment-baseline',
     'baseline-shift',
@@ -169,6 +198,11 @@ presentation_attrs = [
     'writing-mode',
 ]
 
+out_of_scope_pres_attrs = [
+    'cursor',
+    'pointer-events',
+]
+
 
 class RowData:
     def __init__(self, type, name, title, flags):
@@ -180,14 +214,20 @@ class RowData:
 
 def global_flags(rows, name):
     flags = [0, 0, 0, 0, 0]
+    has_any_tests = False
     for row in rows:
         if row.name == name:
+            has_any_tests = True
+
             for idx, flag in enumerate(row.flags):
                 if flag == 1 and flags[idx] == 0:
                     flags[idx] = 1
 
                 if flag == 2 or flag == 3:
                     flags[idx] = 4
+
+    if not has_any_tests:
+        flags = [2, 0, 0, 0, 0]
 
     return flags
 
@@ -205,6 +245,8 @@ def flags_to_string(flags):
             flags_str += '|{crash-box}'
         elif flag == 4:
             flags_str += '|{part-box}'
+        elif flag == 5:
+            flags_str += '|{oos-box}'
 
     return flags_str
 
@@ -217,11 +259,16 @@ def gen_header(name):
     return out
 
 
-def get_item_row(rows, name):
-    g_flags = global_flags(rows, name)
+def get_item_row(rows, out_of_scope_list, name):
+    flags = []
+    if name in out_of_scope_list:
+        flags = [5, 5, 5, 5, 5]
+    else:
+        flags = global_flags(rows, name)
+
     # we have to precede cell after span with ^ because of
     # https://github.com/asciidoctor/asciidoctor/issues/989
-    return '2+| {} ^{}\n'.format(name, flags_to_string(g_flags))
+    return '2+| {} ^{}\n'.format(name, flags_to_string(flags))
 
 
 parser = argparse.ArgumentParser()
@@ -258,7 +305,7 @@ if args.type == 'elements' or args.type == 'all':
         if elem.startswith('https'):
             out += '7+^|' + elem + '\n'
         else:
-            out += get_item_row(rows, elem)
+            out += get_item_row(rows, out_of_scope_elems, elem)
 
             i = 1
             for row in rows:
@@ -276,7 +323,7 @@ if args.type == 'presentation' or args.type == 'all':
     out = gen_header('Attribute')
 
     for attr in presentation_attrs:
-        out += get_item_row(rows, attr)
+        out += get_item_row(rows, out_of_scope_pres_attrs, attr)
 
         i = 1
         for row in rows:
@@ -301,7 +348,7 @@ if args.type == 'attributes' or args.type == 'all':
                 attrs_order.add(row.name)
 
     for attr in attrs_order:
-        out += get_item_row(rows, attr)
+        out += get_item_row(rows, [], attr)
 
         i = 1
         for row in rows:

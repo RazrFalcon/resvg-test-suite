@@ -4,20 +4,20 @@
 |===
 | Element | Feature | resvg | Chrome | Inkscape | rsvg | QtSvg
 7+^|https://www.w3.org/TR/SVG/struct.html[Document Structure]
-2+| svg ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| svg ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
 2+| g ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{part-box}
 || 1. Opacity |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
 7+^|
-2+| defs ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| defs ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| desc ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| desc ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
-2+| title ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| title ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
-2+| symbol ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| symbol ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| use ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| use ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
 2+| image ^|{part-box}|{part-box}|{part-box}|{part-box}|{part-box}
 || 1. External JPEG |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
@@ -29,10 +29,10 @@
 || 7. Embedded SVG |{fail-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
 || 8. Embedded SVGZ (UB) |{fail-box}|{fail-box}|{fail-box}|{ok-box}|{ok-box}
 7+^|
-2+| switch ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| switch ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
 7+^|https://www.w3.org/TR/SVG/styling.html[Styling]
-2+| style ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| style ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
 7+^|https://www.w3.org/TR/SVG/paths.html[Paths]
 2+| path ^|{ok-box}|{ok-box}|{part-box}|{part-box}|{part-box}
@@ -148,141 +148,141 @@
 || 5. Missing `points` attribute |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
 7+^|https://www.w3.org/TR/SVG/text.html[Text]
-2+| text ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| text ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| tspan ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| tspan ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| tref ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| tref ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| textPath ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| textPath ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| altGlyph ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| altGlyph ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
-2+| altGlyphDef ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| altGlyphDef ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
-2+| altGlyphItem ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| altGlyphItem ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
-2+| glyphRef ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| glyphRef ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
 7+^|https://www.w3.org/TR/SVG/painting.html[Painting: Filling, Stroking and Marker Symbols]
-2+| marker ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| marker ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
 7+^|https://www.w3.org/TR/SVG/color.html[Color]
-2+| color-profile ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| color-profile ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
 7+^|https://www.w3.org/TR/SVG/pservers.html[Gradients and Patterns]
-2+| linearGradient ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| linearGradient ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
 2+| radialGradient ^|{ok-box}|{part-box}|{ok-box}|{part-box}|{ok-box}
 || 1. Focal point correction |{ok-box}|{fail-box}|{ok-box}|{fail-box}|{ok-box}
 7+^|
-2+| stop ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| stop ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| pattern ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| pattern ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
 7+^|https://www.w3.org/TR/SVG/masking.html[Clipping, Masking and Compositing]
-2+| clipPath ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| clipPath ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| mask ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| mask ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
 7+^|https://www.w3.org/TR/SVG/filters.html[Filter Effects]
-2+| filter ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| filter ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| feDistantLight ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| feDistantLight ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| fePointLight ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| fePointLight ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| feSpotLight ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| feSpotLight ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| feBlend ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| feBlend ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| feColorMatrix ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| feColorMatrix ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| feComponentTransfer ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| feComponentTransfer ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| feComposite ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| feComposite ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| feConvolveMatrix ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| feConvolveMatrix ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| feDiffuseLighting ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| feDiffuseLighting ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| feDisplacementMap ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| feDisplacementMap ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| feFlood ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| feFlood ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| feGaussianBlur ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| feGaussianBlur ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| feImage ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| feImage ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| feMerge ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| feMerge ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| feMorphology ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| feMorphology ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| feOffset ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| feOffset ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| feSpecularLighting ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| feSpecularLighting ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| feTile ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| feTile ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| feTurbulence ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| feTurbulence ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| feFuncR ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| feFuncR ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| feFuncG ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| feFuncG ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| feFuncB ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| feFuncB ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| feFuncA ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| feFuncA ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
 7+^|https://www.w3.org/TR/SVG/interact.html[Interactivity]
-2+| cursor ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| cursor ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
 7+^|https://www.w3.org/TR/SVG/linking.html[Linking]
-2+| a ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| a ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| view ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| view ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
 7+^|https://www.w3.org/TR/SVG/script.html[Scripting]
-2+| script ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| script ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
 7+^|https://www.w3.org/TR/SVG/animate.html[Animation]
-2+| animate ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| animate ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
-2+| set ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| set ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
-2+| animateMotion ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| animateMotion ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
-2+| animateColor ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| animateColor ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
-2+| animateTransform ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| animateTransform ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
-2+| mpath ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| mpath ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
 7+^|https://www.w3.org/TR/SVG/fonts.html[Fonts]
-2+| font ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| font ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
-2+| glyph ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| glyph ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
-2+| missing-glyph ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| missing-glyph ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
-2+| hkern ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| hkern ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
-2+| vkern ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| vkern ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
-2+| font-face ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| font-face ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
-2+| font-face-src ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| font-face-src ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
-2+| font-face-uri ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| font-face-uri ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
-2+| font-face-format ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| font-face-format ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
-2+| font-face-name ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| font-face-name ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
 7+^|https://www.w3.org/TR/SVG/metadata.html[Metadata]
-2+| metadata ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| metadata ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
 7+^|https://www.w3.org/TR/SVG/extend.html[Extensibility]
-2+| foreignObject ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| foreignObject ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
 |===

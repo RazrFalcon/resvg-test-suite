@@ -3,35 +3,35 @@
 [cols="1,10,^1,^1,^1,^1,^1"]
 |===
 | Attribute | Feature | resvg | Chrome | Inkscape | rsvg | QtSvg
-2+| alignment-baseline ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| alignment-baseline ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| baseline-shift ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| baseline-shift ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| clip ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| clip ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| clip-path ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| clip-path ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| clip-rule ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| clip-rule ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| color ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| color ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| color-interpolation ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| color-interpolation ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| color-interpolation-filters ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| color-interpolation-filters ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| color-profile ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| color-profile ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| color-rendering ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| color-rendering ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| cursor ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| cursor ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
-2+| direction ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| direction ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| display ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| display ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| dominant-baseline ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| dominant-baseline ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| enable-background ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| enable-background ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
 2+| fill ^|{part-box}|{part-box}|{part-box}|{part-box}|{part-box}
 || 1. Named color |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
@@ -63,65 +63,65 @@
 || 27. FuncIRI to a missing element with fallback color |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
 || 28. Valid FuncIRI with fallback ICC color |{fail-box}|{fail-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
-2+| fill-opacity ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| fill-opacity ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| fill-rule ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| fill-rule ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| filter ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| filter ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| flood-color ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| flood-color ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| flood-opacity ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| flood-opacity ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| font ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| font ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| font-family ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| font-family ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| font-size ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| font-size ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| font-size-adjust ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| font-size-adjust ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| font-stretch ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| font-stretch ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| font-style ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| font-style ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| font-variant ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| font-variant ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| font-weight ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| font-weight ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| glyph-orientation-horizontal ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| glyph-orientation-horizontal ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| glyph-orientation-vertical ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| glyph-orientation-vertical ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| image-rendering ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| image-rendering ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| kerning ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| kerning ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| letter-spacing ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| letter-spacing ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| lighting-color ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| lighting-color ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| marker ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| marker ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| marker-end ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| marker-end ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| marker-mid ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| marker-mid ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| marker-start ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| marker-start ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| mask ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| mask ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| opacity ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| opacity ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| overflow ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| overflow ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| pointer-events ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| pointer-events ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
-2+| shape-rendering ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| shape-rendering ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| stop-color ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| stop-color ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| stop-opacity ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| stop-opacity ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
 2+| stroke ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{part-box}
 || 1. Named color |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
@@ -131,32 +131,32 @@
 || 5. FuncIRI to unsupported element |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 6. `none` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
-2+| stroke-dasharray ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| stroke-dasharray ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| stroke-dashoffset ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| stroke-dashoffset ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| stroke-linecap ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| stroke-linecap ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| stroke-linejoin ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| stroke-linejoin ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| stroke-miterlimit ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| stroke-miterlimit ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| stroke-opacity ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| stroke-opacity ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| stroke-width ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| stroke-width ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| text-anchor ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| text-anchor ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| text-decoration ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| text-decoration ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| text-rendering ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| text-rendering ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| unicode-bidi ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| unicode-bidi ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| visibility ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| visibility ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| word-spacing ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| word-spacing ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| writing-mode ^|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| writing-mode ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
 |===
