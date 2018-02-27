@@ -1,3 +1,4 @@
 .directory
 Gemfile.lock
 *.pro.user
+/_site

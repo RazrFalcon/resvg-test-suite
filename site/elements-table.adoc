@@ -173,10 +173,68 @@
 2+| color-profile ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
 7+^|https://www.w3.org/TR/SVG/pservers.html[Gradients and Patterns]
-2+| linearGradient ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| linearGradient ^|{part-box}|{ok-box}|{part-box}|{part-box}|{part-box}
+|| 1. Default attributes |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 2. spreadMethod=pad |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 3. spreadMethod=reflect |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 4. spreadMethod=repeat |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 5. spreadMethod=invalid |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 6. gradientUnits=userSpaceOnUse |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 7. Stops via `xlink:href` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 8. Stops via `xlink:href` from `radialGradient` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 9. Stops via `xlink:href` from `rect` |{fail-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 10. Stops via `xlink:href`. Complex order |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 11. Attributes via `xlink:href` |{ok-box}|{ok-box}|{fail-box}|{fail-box}|{ok-box}
+|| 12. Attributes via `xlink:href` from `radialGradient` |{fail-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 13. Attributes via `xlink:href` from `rect` |{fail-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 14. Attributes via `xlink:href`. Only required |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{fail-box}
+|| 15. Attributes via `xlink:href`. Complex order |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{fail-box}
+|| 16. Unresolved `xlink:href` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 17. Invalid `xlink:href` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 18. Self-recursive `xlink:href` |{fail-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 19. Recursive `xlink:href` |{fail-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 20. gradientTransform |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 21. gradientTransform + transform |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 22. Many stops |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 23. Single stop |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 24. No stops |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
-2+| radialGradient ^|{ok-box}|{part-box}|{ok-box}|{part-box}|{ok-box}
-|| 1. Focal point correction |{ok-box}|{fail-box}|{ok-box}|{fail-box}|{ok-box}
+2+| radialGradient ^|{part-box}|{part-box}|{part-box}|{part-box}|{part-box}
+|| 1. Default attributes |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 2. spreadMethod=pad |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 3. spreadMethod=reflect |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 4. spreadMethod=repeat |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 5. spreadMethod=invalid |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 6. gradientUnits=userSpaceOnUse |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 7. Stops via `xlink:href` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 8. Stops via `xlink:href`. Complex order |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 9. Stops via `xlink:href` from `linearGradient` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 10. Stops via `xlink:href` from `rect` |{fail-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 11. Attributes via `xlink:href` |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{fail-box}
+|| 12. Attributes via `xlink:href`. Only required |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{fail-box}
+|| 13. Attributes via `xlink:href`. Complex order |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{fail-box}
+|| 14. Attributes via `xlink:href` from `linearGradient` |{fail-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 15. Attributes via `xlink:href` from `rect` |{fail-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 16. Unresolved `xlink:href` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 17. Invalid `xlink:href` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 18. Self-recursive `xlink:href` |{fail-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 19. Recursive `xlink:href` |{fail-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 20. gradientTransform |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 21. gradientTransform + transform |{fail-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 22. Many stops |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 23. Single stop |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 24. No stops |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 25. `fx` resolving (1) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 26. `fx` resolving (2) |{crash-box}|{fail-box}|{fail-box}|{fail-box}|{fail-box}
+|| 27. `fx` resolving (3) |{crash-box}|{fail-box}|{fail-box}|{fail-box}|{fail-box}
+|| 28. `fy` resolving (1) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 29. `fy` resolving (2) |{crash-box}|{fail-box}|{fail-box}|{fail-box}|{fail-box}
+|| 30. `fy` resolving (3) |{crash-box}|{fail-box}|{fail-box}|{fail-box}|{fail-box}
+|| 31. Focal point correction |{ok-box}|{fail-box}|{ok-box}|{fail-box}|{ok-box}
+|| 32. Negative `r` (UB) |{crash-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+|| 33. Zero `r` |{fail-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
+|| 34. Percentage values with `objectBoundingBox` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 35. Percentage values with `userSpaceOnUse` |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{fail-box}
 7+^|
 2+| stop ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
