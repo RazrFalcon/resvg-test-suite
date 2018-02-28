@@ -231,10 +231,12 @@
 || 29. `fy` resolving (2) |{crash-box}|{fail-box}|{fail-box}|{fail-box}|{fail-box}
 || 30. `fy` resolving (3) |{crash-box}|{fail-box}|{fail-box}|{fail-box}|{fail-box}
 || 31. Focal point correction |{ok-box}|{fail-box}|{ok-box}|{fail-box}|{ok-box}
-|| 32. Negative `r` (UB) |{crash-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
-|| 33. Zero `r` |{fail-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
-|| 34. Percentage values with `objectBoundingBox` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
-|| 35. Percentage values with `userSpaceOnUse` |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{fail-box}
+|| 32. Negative `r` (UB) |{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+|| 33. Zero `r` |{ok-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
+|| 34. Zero `r` with `stop-opacity` (1) |{ok-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
+|| 35. Zero `r` with `stop-opacity` (1) |{ok-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
+|| 36. Percentage values with `objectBoundingBox` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 37. Percentage values with `userSpaceOnUse` |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{fail-box}
 7+^|
 2+| stop ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
