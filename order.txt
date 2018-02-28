@@ -195,6 +195,8 @@ e-radialGradient-030.svg
 e-radialGradient-031.svg
 e-radialGradient-032.svg
 e-radialGradient-033.svg
+e-radialGradient-036.svg
+e-radialGradient-037.svg
 e-radialGradient-034.svg
 e-radialGradient-035.svg
 e-rect-001.svg
