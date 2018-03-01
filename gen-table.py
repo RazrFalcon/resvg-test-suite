@@ -277,9 +277,11 @@ parser.add_argument('type', choices=['elements', 'attributes', 'presentation', '
 args = parser.parse_args()
 
 rows = []
-
 with open('results.csv', 'r') as f:
     for row in csv.reader(f):
+        if row[0] == 'title':
+            continue
+
         file_name = row[0]
         if file_name[0] == 'e':
             type = 'element'

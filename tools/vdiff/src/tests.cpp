@@ -43,6 +43,12 @@ Tests Tests::load()
 
     int row = 1;
     for (const QStringRef &line : text.splitRef('\n')) {
+        // Skip title.
+        if (row == 1) {
+            row++;
+            continue;
+        }
+
         if (line.isEmpty()) {
             break;
         }
@@ -71,7 +77,7 @@ Tests Tests::load()
 
 void Tests::save()
 {
-    QString text;
+    QString text = "title,chrome,resvg,inkscape,librsvg,qtsvg\n";
     for (const auto &item : m_data) {
         text += item.path + ',';
         text += QString::number((int)item.chrome)   + ',';
