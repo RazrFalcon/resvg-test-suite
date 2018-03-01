@@ -1,6 +1,6 @@
 <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Zero `r` with `stop-opacity` (1)</title>
+    <title>Zero `r` with `stop-opacity` (2)</title>
     <desc>Circle should not be visible. Stroke should be transparent</desc>
 
     <radialGradient id="rg-test" r="0">

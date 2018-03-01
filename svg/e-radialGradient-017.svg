@@ -1,6 +1,6 @@
 <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Invalid `xlink:href`</title>
+    <title>`xlink:href` not to gradient</title>
 
     <radialGradient id="rg-ref" cx="0.5" cy="0.5" r="0.5" fx="0.5" fy="0.5"
                     gradientUnits="objectBoundingBox" spreadMethod="pad">

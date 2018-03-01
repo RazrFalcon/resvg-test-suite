@@ -6,7 +6,7 @@
     <rect x="20" y="20" width="160" height="160" fill="red"/>
 
     <g transform="translate(20 0)">
-        <rect y="20" width="160" height="160" fill="black"/>
+        <rect y="20" width="160" height="160" fill="green"/>
     </g>
 
     <!-- image frame -->
