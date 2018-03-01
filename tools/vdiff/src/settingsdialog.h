@@ -14,8 +14,6 @@ public:
     explicit SettingsDialog(QWidget *parent = nullptr);
     ~SettingsDialog();
 
-    bool isResynced() const;
-
 private:
     void loadSettings();
 
@@ -24,9 +22,7 @@ private slots:
     void on_btnSelectInkscape_clicked();
     void on_btnSelectRsvg_clicked();
     void on_btnSelectResvg_clicked();
-    void on_btnSyncDB_clicked();
 
 private:
     Ui::SettingsDialog * const ui;
-    bool m_isResynced = false;
 };

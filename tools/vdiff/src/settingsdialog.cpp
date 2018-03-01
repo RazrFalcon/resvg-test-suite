@@ -3,8 +3,6 @@
 #include <QFileDialog>
 #include <QDebug>
 
-#include "tests.h"
-
 #include "settingsdialog.h"
 #include "ui_settingsdialog.h"
 
@@ -22,11 +20,6 @@ SettingsDialog::SettingsDialog(QWidget *parent)
 SettingsDialog::~SettingsDialog()
 {
     delete ui;
-}
-
-bool SettingsDialog::isResynced() const
-{
-    return m_isResynced;
 }
 
 void SettingsDialog::loadSettings()
@@ -76,18 +69,5 @@ void SettingsDialog::on_btnSelectRsvg_clicked()
     const auto path = QFileDialog::getOpenFileName(this, "rsvg-convert exe path");
     if (!path.isEmpty()) {
         ui->lineEditRsvg->setText(path);
-    }
-}
-
-void SettingsDialog::on_btnSyncDB_clicked()
-{
-    try {
-        Tests::resync();
-        m_isResynced = true;
-
-        QMessageBox::information(this, "Info", "Database was successfully synced.");
-    } catch (const QString &msg) {
-        QMessageBox::critical(this, "Error", msg + "\n\nApplication will close now.");
-        qApp->quit();
     }
 }

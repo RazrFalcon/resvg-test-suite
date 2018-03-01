@@ -283,14 +283,30 @@ void MainWindow::onRenderFinished()
     setAnimationEnabled(false);
 }
 
+void MainWindow::on_btnResync_clicked()
+{
+    const auto ans = QMessageBox::question(this, "Resync?", "Reload test files?",
+                                           QMessageBox::Yes | QMessageBox::No);
+
+    if (ans != QMessageBox::Yes) {
+        return;
+    }
+
+    try {
+        Tests::resync();
+        loadImageList();
+
+        QMessageBox::information(this, "Info", "Tests was successfully synced.");
+    } catch (const QString &msg) {
+        QMessageBox::critical(this, "Error", msg + "\n\nApplication will close now.");
+        qApp->quit();
+    }
+}
+
 void MainWindow::on_btnSettings_clicked()
 {
     SettingsDialog diag(this);
     if (diag.exec()) {
         m_render.loadSettings();
-    }
-
-    if (diag.isResynced()) {
-        loadImageList();
     }
 }

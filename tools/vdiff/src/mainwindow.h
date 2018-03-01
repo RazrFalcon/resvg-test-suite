@@ -44,6 +44,7 @@ private slots:
     void onRenderError(const QString &msg);
     void onRenderFinished();
     void updatePassFlags();
+    void on_btnResync_clicked();
     void on_btnSettings_clicked();
 
 private:
