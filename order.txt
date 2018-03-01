@@ -220,3 +220,7 @@ e-rect-017.svg
 e-rect-018.svg
 e-rect-019.svg
 e-rect-020.svg
+e-stop-001.svg
+e-stop-002.svg
+e-stop-003.svg
+e-stop-004.svg
