@@ -244,6 +244,8 @@
 || 2. `offset` clamping with % |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 3. Stop with smaller `offset` |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{ok-box}
 || 4. Stops with equal `offset` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 5. Stops with equal `offset` (2) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 6. Stops with equal `offset` (3) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
 2+| pattern ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|

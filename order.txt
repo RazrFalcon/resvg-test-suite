@@ -224,3 +224,5 @@ e-stop-001.svg
 e-stop-002.svg
 e-stop-003.svg
 e-stop-004.svg
+e-stop-005.svg
+e-stop-006.svg
