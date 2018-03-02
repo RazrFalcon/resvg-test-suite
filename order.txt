@@ -271,3 +271,10 @@ e-text-011.svg
 e-text-012.svg
 e-text-013.svg
 e-text-014.svg
+e-tref-001.svg
+e-tref-002.svg
+e-tref-003.svg
+e-tref-004.svg
+e-tref-005.svg
+e-tref-006.svg
+e-tref-007.svg

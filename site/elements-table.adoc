@@ -171,7 +171,14 @@
 7+^|
 2+| tspan ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| tref ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| tref ^|{part-box}|{part-box}|{part-box}|{part-box}|{part-box}
+|| 1. Link to `text` |{ok-box}|{fail-box}|{ok-box}|{ok-box}|{fail-box}
+|| 2. Link to complex `text` |{ok-box}|{fail-box}|{fail-box}|{ok-box}|{fail-box}
+|| 3. Link to non-SVG element |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{ok-box}
+|| 4. Link to external file element |{fail-box}|{fail-box}|{ok-box}|{fail-box}|{fail-box}
+|| 5. Nested |{ok-box}|{fail-box}|{fail-box}|{fail-box}|{fail-box}
+|| 6. Position attributes |{ok-box}|{fail-box}|{ok-box}|{fail-box}|{fail-box}
+|| 7. Style attributes |{ok-box}|{fail-box}|{ok-box}|{fail-box}|{fail-box}
 7+^|
 2+| textPath ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
