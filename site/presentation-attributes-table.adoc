@@ -145,9 +145,24 @@
 7+^|
 2+| stroke-width ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| text-anchor ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| text-anchor ^|{part-box}|{ok-box}|{part-box}|{part-box}|{part-box}
+|| 1. `start` on `text` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 2. `middle` on `text` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 3. `end` on `text` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 4. Invalid value on `text` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 5. On `tspan` |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{fail-box}
+|| 6. On `tspan` with arabic |{fail-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
+|| 7. Inheritance |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
-2+| text-decoration ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| text-decoration ^|{ok-box}|{ok-box}|{part-box}|{part-box}|{part-box}
+|| 1. `underline` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 2. `overline` |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 3. `line-through` |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 4. All types |{ok-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
+|| 5. Style resolving (1) |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 6. Style resolving (2) |{ok-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
+|| 7. Style resolving (3) |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 8. `tspan` decoration |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
 7+^|
 2+| text-rendering ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|

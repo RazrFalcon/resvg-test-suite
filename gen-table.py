@@ -293,7 +293,7 @@ with open('results.csv', 'r') as f:
 
         tag_name = file_name
         tag_name = tag_name[2:];
-        tag_name = re.sub('-.*', '', tag_name)
+        tag_name = re.sub('-[0-9]+\.svg', '', tag_name)
 
         tree = ET.parse('svg/' + file_name)
         title = list(tree.getroot())[0].text

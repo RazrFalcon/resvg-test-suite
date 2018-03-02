@@ -3,37 +3,6 @@
 [cols="1,10,^1,^1,^1,^1,^1"]
 |===
 | Attribute | Feature | resvg | Chrome | Inkscape | rsvg | QtSvg
-2+| text ^|{part-box}|{ok-box}|{part-box}|{part-box}|{part-box}
-|| 1. `start` on `text` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
-|| 2. `middle` on `text` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
-|| 3. `end` on `text` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
-|| 4. Invalid value on `text` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
-|| 5. On `tspan` |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{fail-box}
-|| 6. On `tspan` with arabic |{fail-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
-|| 7. Inheritance |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
-|| 8. `underline` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
-|| 9. `overline` |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
-|| 10. `line-through` |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
-|| 11. All types |{ok-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
-|| 12. Style resolving (1) |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
-|| 13. Style resolving (2) |{ok-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
-|| 14. Style resolving (3) |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
-|| 15. `tspan` decoration |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
-|| 16. Simple case |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
-|| 17. `x` and `y` with multiple values |{fail-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
-|| 18. `x` and `y` with less values than characters |{fail-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
-|| 19. `x` and `y` with more values than characters |{fail-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
-|| 20. `dx` and `dy` instead of `x` and `y` |{fail-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
-|| 21. `dx` and `dy` with multiple values |{fail-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
-|| 22. `dx` and `dy` with less values than characters |{fail-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
-|| 23. `dx` and `dy` with more values than characters |{fail-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
-|| 24. `x` and `y` with `dx` and `dy` |{fail-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
-|| 25. `x` and `y` with `dx` and `dy` lists |{fail-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
-|| 26. `rotate` |{fail-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
-|| 27. `rotate` list |{fail-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
-|| 28. `rotate` list less than characters |{fail-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
-|| 29. `rotate` list more than characters |{fail-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
-7+^|
 2+| transform ^|{ok-box}|{ok-box}|{ok-box}|{part-box}|{ok-box}
 || 1. `matrix(a, b, c, d, e, f)` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 2. `translate(tx, ty)` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
