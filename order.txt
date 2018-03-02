@@ -57,6 +57,9 @@ e-circle-004.svg
 e-circle-005.svg
 e-circle-006.svg
 e-defs-001.svg
+e-defs-002.svg
+e-defs-003.svg
+e-defs-004.svg
 e-ellipse-001.svg
 e-ellipse-002.svg
 e-ellipse-003.svg

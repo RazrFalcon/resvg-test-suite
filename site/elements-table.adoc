@@ -11,6 +11,9 @@
 7+^|
 2+| defs ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 1. Simple case |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 2. Out of order |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 3. Multiple `defs` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 4. Nested `defs` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
 2+| desc ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|

@@ -11,7 +11,6 @@ parser.add_argument('-f, --filter', dest='filter', help='Filter tests')
 args = parser.parse_args()
 
 file_list = []
-
 with open('order.txt', 'r') as f:
     file_list = f.read().splitlines()
 
