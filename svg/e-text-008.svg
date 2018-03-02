@@ -1,0 +1,8 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="64">
+    <title>`dx` and `dy` with more values than characters</title>
+
+    <text dx="20 6 10 16 22" dy="100 10 15 20 50 100">Text</text>
+
+    <!-- image frame -->
+    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+</svg>

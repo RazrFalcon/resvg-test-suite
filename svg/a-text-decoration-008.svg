@@ -1,0 +1,18 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="16">
+    <title>`tspan` decoration</title>
+    <desc>Decoration should have yellow fill and green stroke</desc>
+
+    <!-- intersection -->
+    <rect x="100" y="10" width="0.1" height="180" fill="gray"/>
+    <rect x="10" y="100" width="180" height="0.1" fill="gray"/>
+
+    <text x="100" y="100" text-anchor="middle" text-decoration="underline" stroke-width="0.5">
+        <tspan>Some</tspan>
+        <tspan fill="yellow" stroke="red">long</tspan>
+        <tspan fill="yellow" stroke="green" text-decoration="underline">styled</tspan>
+        <tspan fill="yellow" stroke="blue">text</tspan>
+    </text>
+
+    <!-- image frame -->
+    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+</svg>

@@ -1,0 +1,17 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="48">
+    <title>Style resolving (2)</title>
+    <desc>Decoration should have yellow fill and green stroke</desc>
+
+    <!-- intersection -->
+    <rect x="100" y="10" width="0.1" height="180" fill="gray"/>
+    <rect x="10" y="100" width="180" height="0.1" fill="gray"/>
+
+    <g fill="red" stroke="red" text-decoration="line-through">
+        <text x="50" y="110" fill="yellow" stroke="green">
+            <tspan fill="blue" stroke="gray">Text</tspan>
+        </text>
+    </g>
+
+    <!-- image frame -->
+    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+</svg>

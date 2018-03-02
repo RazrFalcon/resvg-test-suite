@@ -1,0 +1,8 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="64">
+    <title>`x` and `y` with multiple values</title>
+
+    <text x="40 70 110 150" y="100 120 140 160">Text</text>
+
+    <!-- image frame -->
+    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+</svg>
