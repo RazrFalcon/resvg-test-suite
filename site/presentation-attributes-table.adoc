@@ -77,7 +77,20 @@
 7+^|
 2+| font-family ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| font-size ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| font-size ^|{ok-box}|{ok-box}|{ok-box}|{part-box}|{part-box}
+|| 1. Simple case |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 2. Inheritance |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 3. Percent value |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 4. Nested percent value |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 5. Named value |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 6. Mixed values |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 7. Percent value without a parent |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 8. Named value without a parent |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 9. Zero size |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 10. Zero size on parent (1) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 11. Zero size on parent (2) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 12. Zero size on parent (3) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 13. Negative size (UB) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
 2+| font-size-adjust ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|

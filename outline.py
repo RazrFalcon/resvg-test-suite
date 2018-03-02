@@ -23,7 +23,7 @@ titles = {}
 i = 1
 for file_name in file_list:
     tag_name = file_name[2:];
-    tag_name = re.sub('-.*', '', tag_name)
+    tag_name = re.sub('-[0-9]+\.svg', '', tag_name)
 
     if args.filter:
         if args.filter != tag_name:
