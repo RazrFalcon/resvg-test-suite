@@ -162,13 +162,28 @@
 || 10. comma-ws separator |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 11. ws separator |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{ok-box}
 7+^|
-2+| stroke-dashoffset ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| stroke-dashoffset ^|{ok-box}|{ok-box}|{part-box}|{part-box}|{part-box}
+|| 1. Default |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 2. `px` value |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 3. `mm` value |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{fail-box}
+|| 4. `em` value |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{fail-box}
+|| 5. `%` value |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 6. Negative value |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{ok-box}
 7+^|
-2+| stroke-linecap ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| stroke-linecap ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 1. `butt` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 2. `round` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 3. `square` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
-2+| stroke-linejoin ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| stroke-linejoin ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 1. `miter` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 2. `round` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 3. `bevel` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
-2+| stroke-miterlimit ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| stroke-miterlimit ^|{ok-box}|{ok-box}|{part-box}|{part-box}|{ok-box}
+|| 1. Default |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 2. Appropriate value |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 3. Invalid value |{ok-box}|{ok-box}|{fail-box}|{fail-box}|{ok-box}
 7+^|
 2+| stroke-opacity ^|{ok-box}|{ok-box}|{ok-box}|{part-box}|{part-box}
 || 1. Half opacity |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}

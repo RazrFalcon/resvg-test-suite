@@ -1,8 +1,8 @@
 <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <title>Even list</title>
+    <title>Default</title>
 
-    <circle cx="100" cy="100" r="60" fill="none" stroke="green"
-            stroke-dasharray="10,6,4,10,6,4"/>
+    <path d="M 40 70 l 80 20 l -80 20"
+          fill="none" stroke="green" stroke-width="30" stroke-linecap="miter"/>
 
     <!-- image frame -->
     <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
