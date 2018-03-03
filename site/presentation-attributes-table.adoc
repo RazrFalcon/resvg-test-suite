@@ -149,7 +149,18 @@
 || 5. FuncIRI to unsupported element |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 6. `none` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
-2+| stroke-dasharray ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| stroke-dasharray ^|{ok-box}|{ok-box}|{part-box}|{part-box}|{part-box}
+|| 1. None |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 2. Even list |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 3. Odd list |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 4. Even list with % |{ok-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
+|| 5. Even list with `em` |{ok-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
+|| 6. Even list with `mm` |{ok-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
+|| 7. Negative values (UB) |{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+|| 8. Zero sum |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{fail-box}
+|| 9. Negative sum (UB) |{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+|| 10. comma-ws separator |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 11. ws separator |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{ok-box}
 7+^|
 2+| stroke-dashoffset ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
@@ -166,7 +177,12 @@
 || 4. With `pattern` |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
 || 5. Nested |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
-2+| stroke-width ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| stroke-width ^|{ok-box}|{part-box}|{part-box}|{ok-box}|{part-box}
+|| 1. Default |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 2. Bold |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 3. Zero |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 4. Negative (UB) |{ok-box}|{fail-box}|{ok-box}|{ok-box}|{fail-box}
+|| 5. Percentage |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{fail-box}
 7+^|
 2+| text-anchor ^|{part-box}|{ok-box}|{part-box}|{part-box}|{part-box}
 || 1. `start` on `text` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
