@@ -26,6 +26,11 @@ a-fill-024.svg
 a-fill-025.svg
 a-fill-026.svg
 a-fill-027.svg
+a-fill-opacity-001.svg
+a-fill-opacity-002.svg
+a-fill-opacity-003.svg
+a-fill-opacity-004.svg
+a-fill-opacity-005.svg
 a-font-size-001.svg
 a-font-size-002.svg
 a-font-size-003.svg
@@ -45,6 +50,11 @@ a-stroke-003.svg
 a-stroke-004.svg
 a-stroke-005.svg
 a-stroke-006.svg
+a-stroke-opacity-001.svg
+a-stroke-opacity-002.svg
+a-stroke-opacity-003.svg
+a-stroke-opacity-004.svg
+a-stroke-opacity-005.svg
 a-text-anchor-001.svg
 a-text-anchor-002.svg
 a-text-anchor-003.svg
