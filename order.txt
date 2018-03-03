@@ -31,6 +31,8 @@ a-fill-opacity-002.svg
 a-fill-opacity-003.svg
 a-fill-opacity-004.svg
 a-fill-opacity-005.svg
+a-fill-rule-001.svg
+a-fill-rule-002.svg
 a-font-size-001.svg
 a-font-size-002.svg
 a-font-size-003.svg
@@ -70,6 +72,9 @@ a-stroke-dashoffset-006.svg
 a-stroke-linecap-001.svg
 a-stroke-linecap-002.svg
 a-stroke-linecap-003.svg
+a-stroke-linecap-004.svg
+a-stroke-linecap-005.svg
+a-stroke-linecap-006.svg
 a-stroke-linejoin-001.svg
 a-stroke-linejoin-002.svg
 a-stroke-linejoin-003.svg
@@ -129,6 +134,7 @@ e-defs-001.svg
 e-defs-002.svg
 e-defs-003.svg
 e-defs-004.svg
+e-defs-005.svg
 e-ellipse-001.svg
 e-ellipse-002.svg
 e-ellipse-003.svg

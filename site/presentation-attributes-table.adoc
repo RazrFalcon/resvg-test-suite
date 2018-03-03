@@ -70,7 +70,9 @@
 || 4. With `pattern` |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
 || 5. Nested |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
-2+| fill-rule ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| fill-rule ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 1. `evenodd` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 2. `evenodd` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
 2+| filter ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
@@ -170,10 +172,13 @@
 || 5. `%` value |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
 || 6. Negative value |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{ok-box}
 7+^|
-2+| stroke-linecap ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+2+| stroke-linecap ^|{part-box}|{ok-box}|{part-box}|{part-box}|{part-box}
 || 1. `butt` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 2. `round` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 3. `square` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 4. Zero length path with `round` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 5. Zero length path with `square` |{fail-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
+|| 6. Zero length path with `butt` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
 2+| stroke-linejoin ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 1. `miter` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}

@@ -1,4 +1,4 @@
-[resvg](https://github.com/RazrFalcon/resvg) Test Suite.
+[resvg](https://github.com/RazrFalcon/resvg) test suite
 
 ## Notes
 

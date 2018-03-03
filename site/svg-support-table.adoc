@@ -40,35 +40,8 @@ include::presentation-attributes-table.adoc[]
 
 include::attributes-table.adoc[]
 
-// === Other
-
-// |===
-// |Attribute |resvg |Inkscape |librsvg |QtSvg |Tests
-// |`preserveAspectRatio` |No |Yes |? |No |
-// |`xml:space` |Yes |Partial |Partial |No |
-// |`requiredFeatures` |Partial |? |? |? |
-// | 5+|Not supported footnoteref:[not-supported]: +
-// - on any element which is not a direct `switch` child
-// |`requiredExtensions` |Partial |? |? |? |
-// | 5+|Not supported footnoteref:[not-supported]: +
-// - on any element which is not a direct `switch` child
-// |`systemLanguage` |Partial |? |? |? |
-// | 5+|Not supported footnoteref:[not-supported]: +
-// - on any element which is not a direct `switch` child
-// |===
-
-// TODO:
-// Custom namespace
-// Non-UTF-8 encoding
-// Element referencing from ENTITY  coords-viewattr-01-b.svg
-
 == Tests
 
 Test files has a following naming convention: `%type%`-`%element name%`-`%consecutive number%`.svg
-
-== Notes
-
-- If element or attribute is marked as supported it doesn't mean that it's 100% supported.
-  Maybe I just don't know about some edge cases that should be supported.
 
 Last update: 2018-02-23

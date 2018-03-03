@@ -14,6 +14,7 @@
 || 2. Out of order |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 3. Multiple `defs` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 4. Nested `defs` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 5. Ignore shapes inside `defs` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
 2+| desc ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
