@@ -1,0 +1,8 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <title>Font list</title>
+
+    <text x="100" y="100" font-family="'Times New Roman', Arial, serif" font-size="40" text-anchor="middle">Text</text>
+
+    <!-- image frame -->
+    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+</svg>

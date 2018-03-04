@@ -82,7 +82,17 @@
 7+^|
 2+| font ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| font-family ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| font-family ^|{part-box}|{ok-box}|{ok-box}|{part-box}|{ok-box}
+|| 1. `serif` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 2. `sans-serif` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 3. `cursive` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 4. `fantasy` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 5. `monospace` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 6. `Verdana` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 7. `Times New Roman` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 8. Font list |{fail-box}|{ok-box}|{ok-box}|{fail-box}|{ok-box}
+|| 9. Fallback (1) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 10. Fallback (2) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
 2+| font-size ^|{ok-box}|{ok-box}|{ok-box}|{part-box}|{part-box}
 || 1. Simple case |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
@@ -101,13 +111,32 @@
 7+^|
 2+| font-size-adjust ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| font-stretch ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| font-stretch ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 1. `wider` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 2. `inherit` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
-2+| font-style ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| font-style ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 1. `italic` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 2. `oblique` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 3. `inherit` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
-2+| font-variant ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| font-variant ^|{part-box}|{ok-box}|{part-box}|{part-box}|{part-box}
+|| 1. `small-caps` |{fail-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
+|| 2. `inherit` |{fail-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
 7+^|
-2+| font-weight ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| font-weight ^|{ok-box}|{part-box}|{part-box}|{part-box}|{part-box}
+|| 1. `normal` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 2. `bold` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 3. `bolder` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 4. `bolder` with clamping |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 5. `bolder` without parent |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 6. `lighter` |{ok-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
+|| 7. `lighter` with clamping |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 8. `lighter` without parent |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 9. `700` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 10. `inherit` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 11. Invalid number |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 12. Invalid number (2) |{ok-box}|{fail-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
 2+| glyph-orientation-horizontal ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|

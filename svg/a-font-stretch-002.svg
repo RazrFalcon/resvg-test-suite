@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="40">
+    <title>`inherit`</title>
+
+    <g font-stretch="wider">
+        <text x="100" y="100" text-anchor="middle" font-stretch="inherit">Text</text>
+    </g>
+
+    <!-- image frame -->
+    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+</svg>
