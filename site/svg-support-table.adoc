@@ -46,6 +46,12 @@ We are testing/comparing `resvg` with Chrome, Inkscape, librsvg and QtSvg for a 
 * QtSvg is used by all the Qt applications and KDE. We plan to replace it as well.
 
 {empty} +
+
+Tests summary:
+
+image:images/chart.svg[]
+
+{empty} +
 {empty} +
 
 Legend:

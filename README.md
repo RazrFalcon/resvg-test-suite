@@ -18,6 +18,7 @@
 - `order.txt` - custom tests order for pretty-printing.
 - `outline.py` - pretty-prints tests.
 - `results.csv` - results of manual testing via `tools/vdiff`.
+- `stats.py` - generates `site/images/chart.svg`.
 
 ### Tests order
 

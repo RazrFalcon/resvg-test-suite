@@ -2,3 +2,5 @@
 Gemfile.lock
 *.pro.user
 /_site
+/barh
+/chart.json
