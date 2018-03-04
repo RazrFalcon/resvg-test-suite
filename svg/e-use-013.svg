@@ -1,0 +1,11 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Indirect recursive</title>
+
+    <g id="g1">
+        <use xlink:href="#use2"/>
+    </g>
+    <use xlink:href="#g1" id="#use2"/>
+
+    <!-- image frame -->
+    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+</svg>

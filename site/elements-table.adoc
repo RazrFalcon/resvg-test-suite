@@ -22,7 +22,21 @@
 7+^|
 2+| symbol ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| use ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| use ^|{part-box}|{part-box}|{ok-box}|{part-box}|{part-box}
+|| 1. Simple case |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 2. From `defs` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 3. Style inheritance |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{ok-box}
+|| 4. Style inheritance (2) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 5. Style inheritance (3) |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{ok-box}
+|| 6. `transform` attribute |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 7. `transform` attribute (2) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 8. xlink to external file |{fail-box}|{fail-box}|{ok-box}|{fail-box}|{fail-box}
+|| 9. CSS rules |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 10. Recursive |{fail-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 11. Self-recursive |{fail-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 12. Nested recursive |{fail-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 13. Indirect recursive |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 14. Non-linear order |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
 7+^|
 2+| image ^|{part-box}|{part-box}|{part-box}|{part-box}|{part-box}
 || 1. External JPEG |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}

@@ -325,3 +325,17 @@ e-tref-004.svg
 e-tref-005.svg
 e-tref-006.svg
 e-tref-007.svg
+e-use-001.svg
+e-use-002.svg
+e-use-003.svg
+e-use-004.svg
+e-use-005.svg
+e-use-006.svg
+e-use-007.svg
+e-use-008.svg
+e-use-009.svg
+e-use-010.svg
+e-use-011.svg
+e-use-012.svg
+e-use-013.svg
+e-use-014.svg

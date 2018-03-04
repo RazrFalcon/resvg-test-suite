@@ -1,0 +1,18 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>CSS rules</title>
+    <desc>CSS should be applied before `use` resolving</desc>
+
+    <style type="text/css">
+        circle { fill:green; }
+    </style>
+
+    <defs>
+        <circle id="circle1" cx="100" cy="100" r="80"/>
+    </defs>
+    <g fill="red">
+        <use xlink:href="#circle1"/>
+    </g>
+
+    <!-- image frame -->
+    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+</svg>

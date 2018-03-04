@@ -72,7 +72,7 @@
 7+^|
 2+| fill-rule ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 1. `evenodd` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
-|| 2. `evenodd` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 2. `nonzero` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
 2+| filter ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|

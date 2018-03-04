@@ -1,5 +1,5 @@
 <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <title>`evenodd`</title>
+    <title>`nonzero`</title>
 
     <path d="M 100 20 l 50 160 l -130 -100 l 160 0 l -130 100 z"
           fill="green" fill-rule="nonzero"/>
