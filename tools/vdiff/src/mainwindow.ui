@@ -321,6 +321,16 @@
        </widget>
       </item>
       <item>
+       <widget class="QComboBox" name="cmbBoxNames">
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="sizeAdjustPolicy">
+         <enum>QComboBox::AdjustToContents</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QComboBox" name="cmbBoxFiles">
         <property name="sizeAdjustPolicy">
          <enum>QComboBox::AdjustToContents</enum>

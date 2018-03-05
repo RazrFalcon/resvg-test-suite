@@ -59,8 +59,15 @@ Tests Tests::load()
             throw QString("Invalid columns count at row %1.").arg(row);
         }
 
+        const auto testPath = items.at(0).toString();
+
+        QString testName = testPath;
+        testName.remove(0, 2); // remove prefix
+        testName.remove(QRegExp("-[0-9]+\\.svg"));
+
         TestItem item;
-        item.path       = items.at(0).toString();
+        item.path       = testPath;
+        item.name       = testName;
         item.chrome     = stateFormStr(items.at(1));
         item.resvg      = stateFormStr(items.at(2));
         item.inkscape   = stateFormStr(items.at(3));

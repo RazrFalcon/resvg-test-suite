@@ -6,6 +6,8 @@
 #include <QDir>
 #include <QScreen>
 #include <QXmlStreamReader>
+#include <QSortFilterProxyModel>
+#include <QStandardItemModel>
 #include <QDebug>
 
 #include "paths.h"
@@ -70,6 +72,11 @@ MainWindow::MainWindow(QWidget *parent)
 
     initDefaultSettings();
 
+    auto *model = new QStandardItemModel(0, 1);
+    auto *sortMmodel = new QSortFilterProxyModel();
+    sortMmodel->setSourceModel(model);
+    ui->cmbBoxFiles->setModel(sortMmodel);
+
     // TODO: check that convertors exists
 
     QTimer::singleShot(5, this, &MainWindow::onStart);
@@ -113,6 +120,9 @@ void MainWindow::loadImageList()
     ui->cmbBoxFiles->blockSignals(true);
     ui->cmbBoxFiles->clear();
 
+    ui->cmbBoxNames->blockSignals(true);
+    ui->cmbBoxNames->clear();
+
     try {
         m_tests = Tests::load();
     } catch (const QString &msg) {
@@ -121,9 +131,18 @@ void MainWindow::loadImageList()
     }
 
 
+    QSet<QString> namesSet;
+    int idx = 0;
     for (const auto &item : m_tests) {
-        ui->cmbBoxFiles->addItem(item.path);
+        ui->cmbBoxFiles->addItem(item.path, idx);
+        namesSet.insert(item.name);
+        idx++;
     }
+
+    QStringList namesList = namesSet.toList();
+    namesList.sort();
+    ui->cmbBoxNames->addItem("");
+    ui->cmbBoxNames->addItems(namesList);
 
     if (ui->cmbBoxFiles->count() != 0) {
         loadImage(ui->cmbBoxFiles->currentText());
@@ -131,6 +150,8 @@ void MainWindow::loadImageList()
 
     ui->cmbBoxFiles->blockSignals(false);
     ui->cmbBoxFiles->setFocus();
+
+    ui->cmbBoxNames->blockSignals(false);
 }
 
 void MainWindow::on_cmbBoxFiles_currentIndexChanged(int)
@@ -199,7 +220,7 @@ void MainWindow::getTitleAndDesc(const QString &path)
 void MainWindow::fillChBoxes()
 {
     try {
-        const auto idx = ui->cmbBoxFiles->currentIndex();
+        const auto idx = ui->cmbBoxFiles->currentData().toUInt();
         const auto &item = m_tests.at(idx);
 
         ui->cmbBoxChromeFlag->setCurrentIndex((int)item.chrome);
@@ -215,7 +236,7 @@ void MainWindow::fillChBoxes()
 void MainWindow::updatePassFlags()
 {
     try {
-        const auto idx = ui->cmbBoxFiles->currentIndex();
+        const auto idx = ui->cmbBoxFiles->currentData().toUInt();
         auto &item = m_tests.at(idx);
 
         item.chrome = (TestState)ui->cmbBoxChromeFlag->currentIndex();
@@ -309,4 +330,10 @@ void MainWindow::on_btnSettings_clicked()
     if (diag.exec()) {
         m_render.loadSettings();
     }
+}
+
+void MainWindow::on_cmbBoxNames_currentIndexChanged(const QString &text)
+{
+    auto *model = static_cast<QSortFilterProxyModel*>(ui->cmbBoxFiles->model());
+    model->setFilterFixedString(text);
 }

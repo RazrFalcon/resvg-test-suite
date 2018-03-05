@@ -46,6 +46,7 @@ private slots:
     void updatePassFlags();
     void on_btnResync_clicked();
     void on_btnSettings_clicked();
+    void on_cmbBoxNames_currentIndexChanged(const QString &text);
 
 private:
     Ui::MainWindow * const ui;
