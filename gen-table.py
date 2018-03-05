@@ -6,6 +6,13 @@ import csv
 import xml.etree.ElementTree as ET
 
 
+UNKNOWN      = 0
+PASSED       = 1
+FAILED       = 2
+CRASHED      = 3
+PARTIAL      = 4
+OUT_OF_SCOPE = 5
+
 elements_order = [
     'https://www.w3.org/TR/SVG/struct.html[Document Structure]',
     'svg',
@@ -213,21 +220,28 @@ class RowData:
 
 
 def global_flags(rows, name):
-    flags = [0, 0, 0, 0, 0]
-    has_any_tests = False
+    passed_list = [0, 0, 0, 0, 0]
+    total = 0
     for row in rows:
-        if row.name == name:
-            has_any_tests = True
+        if row.name != name:
+            continue
 
-            for idx, flag in enumerate(row.flags):
-                if flag == 1 and flags[idx] == 0:
-                    flags[idx] = 1
+        total += 1
+        for idx, flag in enumerate(row.flags):
+            if flag == PASSED:
+                passed_list[idx] += 1
 
-                if flag == 2 or flag == 3:
-                    flags[idx] = 4
+    flags = [UNKNOWN, UNKNOWN, UNKNOWN, UNKNOWN, UNKNOWN]
+    for idx, flag in enumerate(passed_list):
+        if flag == total:
+            flags[idx] = PASSED
+        elif flag == 0:
+            flags[idx] = FAILED
+        else:
+            flags[idx] = PARTIAL
 
-    if not has_any_tests:
-        flags = [2, 0, 0, 0, 0]
+    if passed_list == [0, 0, 0, 0, 0]:
+        flags = [FAILED, UNKNOWN, UNKNOWN, UNKNOWN, UNKNOWN]
 
     return flags
 
@@ -235,17 +249,17 @@ def global_flags(rows, name):
 def flags_to_string(flags):
     flags_str = ''
     for flag in flags:
-        if   flag == 0:
+        if   flag == UNKNOWN:
             flags_str += '|{unk-box}'
-        elif flag == 1:
+        elif flag == PASSED:
             flags_str += '|{ok-box}'
-        elif flag == 2:
+        elif flag == FAILED:
             flags_str += '|{fail-box}'
-        elif flag == 3:
+        elif flag == CRASHED:
             flags_str += '|{crash-box}'
-        elif flag == 4:
+        elif flag == PARTIAL:
             flags_str += '|{part-box}'
-        elif flag == 5:
+        elif flag == OUT_OF_SCOPE:
             flags_str += '|{oos-box}'
 
     return flags_str
@@ -262,7 +276,7 @@ def gen_header(name):
 def get_item_row(rows, out_of_scope_list, name):
     flags = []
     if name in out_of_scope_list:
-        flags = [5, 5, 5, 5, 5]
+        flags = [OUT_OF_SCOPE, OUT_OF_SCOPE, OUT_OF_SCOPE, OUT_OF_SCOPE, OUT_OF_SCOPE]
     else:
         flags = global_flags(rows, name)
 
@@ -271,95 +285,100 @@ def get_item_row(rows, out_of_scope_list, name):
     return '2+| {} ^{}\n'.format(name, flags_to_string(flags))
 
 
-parser = argparse.ArgumentParser()
-parser.add_argument('type', choices=['elements', 'attributes', 'presentation', 'all'],
-                    help='Sets the table type')
-args = parser.parse_args()
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('type', choices=['elements', 'attributes', 'presentation', 'all'],
+                        help='Sets the table type')
+    args = parser.parse_args()
 
-rows = []
-with open('results.csv', 'r') as f:
-    for row in csv.reader(f):
-        if row[0] == 'title':
-            continue
+    rows = []
+    with open('results.csv', 'r') as f:
+        for row in csv.reader(f):
+            if row[0] == 'title':
+                continue
 
-        file_name = row[0]
-        if file_name[0] == 'e':
-            type = 'element'
-        else:
-            type = 'attribute'
+            file_name = row[0]
+            if file_name[0] == 'e':
+                type = 'element'
+            else:
+                type = 'attribute'
 
-        # Note! We swapped resvg and chrome.
-        flags = [int(row[2]), int(row[1]), int(row[3]), int(row[4]), int(row[5])]
+            # Note! We swapped resvg and chrome.
+            flags = [int(row[2]), int(row[1]), int(row[3]), int(row[4]), int(row[5])]
 
-        tag_name = file_name
-        tag_name = tag_name[2:];
-        tag_name = re.sub('-[0-9]+\.svg', '', tag_name)
+            tag_name = file_name
+            tag_name = tag_name[2:];
+            tag_name = re.sub('-[0-9]+\.svg', '', tag_name)
 
-        tree = ET.parse('svg/' + file_name)
-        title = list(tree.getroot())[0].text
+            tree = ET.parse('svg/' + file_name)
+            title = list(tree.getroot())[0].text
 
-        rows.append(RowData(type, tag_name, title, flags))
+            rows.append(RowData(type, tag_name, title, flags))
 
-if args.type == 'elements' or args.type == 'all':
-    out = gen_header('Element')
+    if args.type == 'elements' or args.type == 'all':
+        out = gen_header('Element')
 
-    for elem in elements_order:
-        if elem.startswith('https'):
-            out += '7+^|' + elem + '\n'
-        else:
-            out += get_item_row(rows, out_of_scope_elems, elem)
+        for elem in elements_order:
+            if elem.startswith('https'):
+                out += '7+^|' + elem + '\n'
+            else:
+                out += get_item_row(rows, out_of_scope_elems, elem)
+
+                i = 1
+                for row in rows:
+                    if row.name == elem:
+                        out += '|| {}. {} {}\n'.format(i, row.title, flags_to_string(row.flags))
+                        i += 1
+
+                out += '7+^|\n'
+
+        out += '|===\n'
+        with open('site/elements-table.adoc', 'w') as f:
+            f.write(out)
+
+    if args.type == 'presentation' or args.type == 'all':
+        out = gen_header('Attribute')
+
+        for attr in presentation_attrs:
+            out += get_item_row(rows, out_of_scope_pres_attrs, attr)
 
             i = 1
             for row in rows:
-                if row.name == elem:
+                if row.name == attr:
                     out += '|| {}. {} {}\n'.format(i, row.title, flags_to_string(row.flags))
                     i += 1
 
             out += '7+^|\n'
 
-    out += '|===\n'
-    with open('site/elements-table.adoc', 'w') as f:
-        f.write(out)
+        out += '|===\n'
+        with open('site/presentation-attributes-table.adoc', 'w') as f:
+            f.write(out)
 
-if args.type == 'presentation' or args.type == 'all':
-    out = gen_header('Attribute')
+    if args.type == 'attributes' or args.type == 'all':
+        out = gen_header('Attribute')
 
-    for attr in presentation_attrs:
-        out += get_item_row(rows, out_of_scope_pres_attrs, attr)
-
-        i = 1
+        # collect all non presentation attributes
+        attrs_order = set()
         for row in rows:
-            if row.name == attr:
-                out += '|| {}. {} {}\n'.format(i, row.title, flags_to_string(row.flags))
-                i += 1
+            if row.type == 'attribute':
+                if row.name not in presentation_attrs:
+                    attrs_order.add(row.name)
 
-        out += '7+^|\n'
+        for attr in attrs_order:
+            out += get_item_row(rows, [], attr)
 
-    out += '|===\n'
-    with open('site/presentation-attributes-table.adoc', 'w') as f:
-        f.write(out)
+            i = 1
+            for row in rows:
+                if row.name == attr:
+                    out += '|| {}. {} {}\n'.format(i, row.title, flags_to_string(row.flags))
+                    i += 1
 
-if args.type == 'attributes' or args.type == 'all':
-    out = gen_header('Attribute')
+            out += '7+^|\n'
 
-    # collect all non presentation attributes
-    attrs_order = set()
-    for row in rows:
-        if row.type == 'attribute':
-            if row.name not in presentation_attrs:
-                attrs_order.add(row.name)
+        out += '|===\n'
+        with open('site/attributes-table.adoc', 'w') as f:
+            f.write(out)
 
-    for attr in attrs_order:
-        out += get_item_row(rows, [], attr)
 
-        i = 1
-        for row in rows:
-            if row.name == attr:
-                out += '|| {}. {} {}\n'.format(i, row.title, flags_to_string(row.flags))
-                i += 1
-
-        out += '7+^|\n'
-
-    out += '|===\n'
-    with open('site/attributes-table.adoc', 'w') as f:
-        f.write(out)
+if __name__ == "__main__":
+    main()

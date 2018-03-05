@@ -120,7 +120,7 @@
 || 2. `oblique` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 3. `inherit` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
-2+| font-variant ^|{part-box}|{ok-box}|{part-box}|{part-box}|{part-box}
+2+| font-variant ^|{fail-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
 || 1. `small-caps` |{fail-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
 || 2. `inherit` |{fail-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
 7+^|
@@ -180,7 +180,7 @@
 || 5. FuncIRI to unsupported element |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 6. `none` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
-2+| stroke-dasharray ^|{ok-box}|{ok-box}|{part-box}|{part-box}|{part-box}
+2+| stroke-dasharray ^|{part-box}|{part-box}|{part-box}|{part-box}|{part-box}
 || 1. None |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 2. Even list |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 3. Odd list |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
@@ -242,7 +242,7 @@
 || 6. On `tspan` with arabic |{fail-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
 || 7. Inheritance |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
-2+| text-decoration ^|{ok-box}|{ok-box}|{part-box}|{part-box}|{part-box}
+2+| text-decoration ^|{ok-box}|{ok-box}|{part-box}|{part-box}|{fail-box}
 || 1. `underline` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
 || 2. `overline` |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
 || 3. `line-through` |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}

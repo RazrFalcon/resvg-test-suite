@@ -6,6 +6,13 @@ import json
 import subprocess
 
 
+UNKNOWN      = 0
+PASSED       = 1
+FAILED       = 2
+CRASHED      = 3
+PARTIAL      = 4
+OUT_OF_SCOPE = 5
+
 class RowData:
     def __init__(self, name, flags):
         self.name = name
@@ -34,7 +41,7 @@ for file_name in file_list:
     for row in rows:
         if row.name == file_name:
             for idx, flag in enumerate(row.flags):
-                if flag == 1:
+                if flag == PASSED:
                     passed[idx] = passed[idx] + 1
 
 barh_data = json.dumps(
@@ -68,6 +75,8 @@ barh_data = json.dumps(
     ],
     "hor_axis": {
         "title": "Tests passed",
+        "round_tick_values": True,
+        "width": 700,
         "max_value": len(file_list)
     }
 }, indent=4)

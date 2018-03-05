@@ -6,7 +6,7 @@
 7+^|https://www.w3.org/TR/SVG/struct.html[Document Structure]
 2+| svg ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| g ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{part-box}
+2+| g ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
 || 1. Opacity |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
 7+^|
 2+| defs ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
@@ -286,7 +286,30 @@
 || 5. Stops with equal `offset` (2) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 6. Stops with equal `offset` (3) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
-2+| pattern ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| pattern ^|{part-box}|{ok-box}|{part-box}|{part-box}|{fail-box}
+|| 1. Simple case |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 2. display=none on child |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 3. overflow=visible (UB) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 4. With `patternTransform` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 5. `transform` + `patternTransform` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 6. With `x` and `y` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 7. patternUnits=objectBoundingBox |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{fail-box}
+|| 8. patternContentUnits=objectBoundingBox |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{fail-box}
+|| 9. With `viewBox` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 10. `patternContentUnits` with `viewBox` |{fail-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 11. `preserveAspectRatio` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 12. Missing `width` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 13. Missing `height` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 14. Everything via `xlink:href` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 15. Children via `xlink:href` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 16. Attributes via `xlink:href` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 17. No children |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 18. Text child |{ok-box}|{ok-box}|{crash-box}|{fail-box}|{fail-box}
+|| 19. Pattern on child |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{fail-box}
+|| 20. Out of order referencing |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{fail-box}
+|| 21. Recursive on child |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{fail-box}
+|| 22. Self-recursive |{ok-box}|{ok-box}|{crash-box}|{fail-box}|{fail-box}
+|| 23. Self-recursive on child |{fail-box}|{ok-box}|{crash-box}|{fail-box}|{fail-box}
 7+^|
 7+^|https://www.w3.org/TR/SVG/masking.html[Clipping, Masking and Compositing]
 2+| clipPath ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
