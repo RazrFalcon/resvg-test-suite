@@ -67,6 +67,7 @@ Tests Tests::load()
 
         TestItem item;
         item.path       = testPath;
+        item.fileName   = QFileInfo(testPath).completeBaseName();
         item.name       = testName;
         item.chrome     = stateFormStr(items.at(1));
         item.resvg      = stateFormStr(items.at(2));

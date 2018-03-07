@@ -13,6 +13,7 @@ enum class TestState
 struct TestItem
 {
     QString path;
+    QString fileName;
     QString name;
     TestState chrome    = TestState::Unknown;
     TestState resvg     = TestState::Unknown;

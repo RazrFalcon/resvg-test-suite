@@ -134,7 +134,7 @@ void MainWindow::loadImageList()
     QSet<QString> namesSet;
     int idx = 0;
     for (const auto &item : m_tests) {
-        ui->cmbBoxFiles->addItem(item.path, idx);
+        ui->cmbBoxFiles->addItem(item.fileName, idx);
         namesSet.insert(item.name);
         idx++;
     }
@@ -145,7 +145,7 @@ void MainWindow::loadImageList()
     ui->cmbBoxNames->addItems(namesList);
 
     if (ui->cmbBoxFiles->count() != 0) {
-        loadImage(ui->cmbBoxFiles->currentText());
+        loadImage(ui->cmbBoxFiles->currentText() + ".svg");
     }
 
     ui->cmbBoxFiles->blockSignals(false);
@@ -156,7 +156,7 @@ void MainWindow::loadImageList()
 
 void MainWindow::on_cmbBoxFiles_currentIndexChanged(int)
 {
-    loadImage(ui->cmbBoxFiles->currentText());
+    loadImage(ui->cmbBoxFiles->currentText() + ".svg");
 }
 
 void MainWindow::loadImage(const QString &fileName)

@@ -356,6 +356,7 @@ e-stop-003.svg
 e-stop-004.svg
 e-stop-005.svg
 e-stop-006.svg
+e-svg-001.svg
 e-text-001.svg
 e-text-002.svg
 e-text-003.svg

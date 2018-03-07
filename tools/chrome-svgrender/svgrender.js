@@ -18,14 +18,14 @@ try {
     await page.goto("file://" + svg_path);
 
     var svg_file_size = await page.evaluate(() => {
-        var svg = document.getElementsByTagName("svg")[0];
+        var svg = document.getElementsByTagNameNS("http://www.w3.org/2000/svg", "svg")[0];
         return [
             svg.getAttribute("width"),
             svg.getAttribute("height")
         ]
     });
 
-    var is_dynamic =    (svg_file_size[0] == "100%" && svg_file_size[1] == "100%")
+    var is_dynamic =   (svg_file_size[0] == "100%" && svg_file_size[1] == "100%")
                     || (svg_file_size[0] == null && svg_file_size[1] == null)
 
     if (is_dynamic) {
