@@ -1,0 +1,11 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <title>Percentage values</title>
+
+    <!-- should be covered -->
+    <rect x="20" y="20" width="160" height="160" rx="40" ry="40" fill="red"/>
+
+    <rect x="10%" y="10%" width="80%" height="80%" rx="20%" fill="green"/>
+
+    <!-- image frame -->
+    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+</svg>

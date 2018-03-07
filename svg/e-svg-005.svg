@@ -1,0 +1,12 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd" [
+    <!ENTITY fill_value "green">
+]>
+
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <title>ENTITY reference (2)</title>
+
+    <circle cx="100" cy="100" r="80" fill="&fill_value;"/>
+
+    <!-- image frame -->
+    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+</svg>

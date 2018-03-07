@@ -1,0 +1,12 @@
+<!-- based on struct-frag-05-t.svg -->
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <title>Custom namespace (2)</title>
+
+    <s:g xmlns="http://www.example.org/notsvg" xmlns:s="http://www.w3.org/2000/svg">
+        <s:circle cx="100" cy="100" r="80" fill="green"/>
+        <circle cx="100" cy="100" r="80" fill="red"/>
+    </s:g>
+
+    <!-- image frame -->
+    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+</svg>

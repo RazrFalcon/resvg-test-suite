@@ -1,11 +1,11 @@
-<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="80">
     <title>Pattern on shape</title>
 
     <pattern id="patt1" patternUnits="userSpaceOnUse" width="20" height="20">
         <rect x="0" y="0" width="10" height="10" fill="grey"/>
         <rect x="10" y="10" width="10" height="10" fill="green"/>
     </pattern>
-    <circle cx="100" cy="100" r="80" fill="url(#patt1)"/>
+    <text x="100" y="120" text-anchor="middle" fill="url(#patt1)" stroke="black">Text</text>
 
     <!-- image frame -->
     <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>

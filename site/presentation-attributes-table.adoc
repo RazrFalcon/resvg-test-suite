@@ -50,9 +50,9 @@
 || 14. `rgb(float%, float%, float%)` color with a big fraction part |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 15. `RGB(int%, int%, int%)` color |{ok-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
 || 16. ICC color |{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
-|| 17. Linear gradient |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
-|| 18. Radial gradient |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
-|| 19. Pattern |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 17. Linear gradient on shape |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 18. Radial gradient on shape |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 19. Pattern on shape |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
 || 20. Random value |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 21. `none` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 22. `inherit` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
@@ -62,6 +62,11 @@
 || 26. FuncIRI to an invalid element with fallback color |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 27. FuncIRI to a missing element with fallback color |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
 || 28. Valid FuncIRI with fallback ICC color |{fail-box}|{fail-box}|{ok-box}|{ok-box}|{ok-box}
+|| 29. `inherit` without parent |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 30. `currentColor` without parent |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 31. Linear gradient on text |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 32. Radial gradient on shape |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 33. Pattern on shape |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
 7+^|
 2+| fill-opacity ^|{ok-box}|{ok-box}|{ok-box}|{part-box}|{part-box}
 || 1. Half opacity |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
@@ -179,6 +184,9 @@
 || 4. Pattern |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
 || 5. FuncIRI to unsupported element |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 6. `none` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 7. Linear gradient on text |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 8. Radial gradient on shape |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 9. Pattern on shape |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
 7+^|
 2+| stroke-dasharray ^|{part-box}|{part-box}|{part-box}|{part-box}|{part-box}
 || 1. None |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}

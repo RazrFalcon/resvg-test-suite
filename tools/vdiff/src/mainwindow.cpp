@@ -77,6 +77,9 @@ MainWindow::MainWindow(QWidget *parent)
     sortMmodel->setSourceModel(model);
     ui->cmbBoxFiles->setModel(sortMmodel);
 
+    // TODO: this
+    ui->cmbBoxNames->hide();
+
     // TODO: check that convertors exists
 
     QTimer::singleShot(5, this, &MainWindow::onStart);

@@ -369,7 +369,7 @@ def main():
 
             i = 1
             for row in rows:
-                if row.name == attr:
+                if row.type == 'attribute' and row.name == attr:
                     out += '|| {}. {} {}\n'.format(i, row.title, flags_to_string(row.flags))
                     i += 1
 

@@ -2,9 +2,9 @@
     <title>Opacity</title>
 
     <g opacity=".5">
-      <circle cx="100" cy="60" fill="#f00" r="40"/>
-      <circle cx="70" cy="100" fill="#0f0" r="40"/>
-      <circle cx="130" cy="100" fill="#00f" r="40"/>
+        <circle cx="100" cy="60" fill="#f00" r="40"/>
+        <circle cx="70" cy="100" fill="#0f0" r="40"/>
+        <circle cx="130" cy="100" fill="#00f" r="40"/>
     </g>
 
     <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>

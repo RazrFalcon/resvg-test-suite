@@ -1,0 +1,11 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="40">
+    <title>Escaped text (3)</title>
+
+    <!-- should be covered -->
+    <text x="40" y="120" fill="red">0Text@</text>
+
+    <text x="40" y="120">&#48;Text&#64;</text>
+
+    <!-- image frame -->
+    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+</svg>

@@ -1,0 +1,13 @@
+<!-- based on struct-cond-01-t.svg -->
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <title>Simple case</title>
+
+    <switch>
+        <circle cx="100" cy="100" r="80" fill="red" requiredExtensions="http://example.org/bogus"/>
+        <circle cx="100" cy="100" r="80" fill="green"/>
+        <circle cx="100" cy="100" r="80" fill="red"/>
+    </switch>
+
+    <!-- image frame -->
+    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+</svg>

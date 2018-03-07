@@ -4,11 +4,17 @@
 |===
 | Element | Feature | resvg | Chrome | Inkscape | rsvg | QtSvg
 7+^|https://www.w3.org/TR/SVG/struct.html[Document Structure]
-2+| svg ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
-|| 1. Custom namespace |{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| svg ^|{part-box}|{ok-box}|{part-box}|{part-box}|{part-box}
+|| 1. Custom namespace (1) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 2. Custom namespace (2) |{fail-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 3. Custom namespace (3) |{fail-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 4. ENTITY reference (1) |{fail-box}|{ok-box}|{fail-box}|{ok-box}|{ok-box}
+|| 5. ENTITY reference (2) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 6. Empty |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
-2+| g ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+2+| g ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{part-box}
 || 1. Opacity |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 2. Deeply nested groups |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
 2+| defs ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 1. Simple case |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
@@ -48,12 +54,28 @@
 || 6. Embedded PNG |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 7. External SVGZ |{fail-box}|{fail-box}|{fail-box}|{fail-box}|{fail-box}
 || 8. Embedded SVG |{fail-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
-|| 9. Embedded SVGZ (UB) |{fail-box}|{fail-box}|{fail-box}|{ok-box}|{ok-box}
+|| 9. Embedded SVGZ |{fail-box}|{fail-box}|{fail-box}|{ok-box}|{ok-box}
 7+^|
-2+| switch ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| switch ^|{part-box}|{ok-box}|{part-box}|{ok-box}|{part-box}
+|| 1. Simple case |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 2. `systemLanguage` |{fail-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 3. `requiredFeatures` |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{fail-box}
 7+^|
 7+^|https://www.w3.org/TR/SVG/styling.html[Styling]
-2+| style ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| style ^|{part-box}|{ok-box}|{part-box}|{part-box}|{part-box}
+|| 1. Simple case |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 2. Comments |{fail-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 3. Class selector |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 4. Type selector |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 5. ID selector |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 6. Attribute selector |{fail-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 7. Universal selector |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 8. Combined selectors |{fail-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 9. Unresolved class selector |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 10. Style inside CDATA |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 11. Resolve order |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 12. Style after usage |{ok-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
+|| 13. Invalid type |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{ok-box}
 7+^|
 7+^|https://www.w3.org/TR/SVG/paths.html[Paths]
 2+| path ^|{ok-box}|{ok-box}|{part-box}|{part-box}|{part-box}
@@ -123,6 +145,10 @@
 || 18. `rx` attribute clamping |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 19. `ry` attribute clamping |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 20. `rx` and `ry` attributes clamping order |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 21. Percentage values |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 22. `em` values |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 23. `ex` values |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 24. `mm` values |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
 7+^|
 2+| circle ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{part-box}
 || 1. Simple case |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
@@ -184,6 +210,13 @@
 || 12. `rotate` list |{fail-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
 || 13. `rotate` list less than characters |{fail-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
 || 14. `rotate` list more than characters |{fail-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 15. Percent coordinates |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 16. `em` and `ex` coordinates |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 17. `mm` coordinates |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 18. Escaped text (1) |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{ok-box}
+|| 19. Escaped text (2) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 20. Escaped text (3) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 21. Escaped text (4) |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{ok-box}
 7+^|
 2+| tspan ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
@@ -279,13 +312,21 @@
 || 37. Percentage values with `objectBoundingBox` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
 || 38. Percentage values with `userSpaceOnUse` |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{fail-box}
 7+^|
-2+| stop ^|{ok-box}|{ok-box}|{ok-box}|{part-box}|{ok-box}
+2+| stop ^|{part-box}|{part-box}|{part-box}|{part-box}|{part-box}
 || 1. `offset` clamping |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 2. `offset` clamping with % |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 3. Stop with smaller `offset` |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{ok-box}
 || 4. Stops with equal `offset` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 5. Stops with equal `offset` (2) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 6. Stops with equal `offset` (3) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 7. `stop-color` with `currentColor` (1) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 8. `stop-color` with `currentColor` (2) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 9. `stop-color` with `currentColor` (3) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 10. `stop-color` with `currentColor` (4) |{ok-box}|{ok-box}|{crash-box}|{ok-box}|{ok-box}
+|| 11. `stop-color` with `inherit` (1) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 12. `stop-color` with `inherit` (2) |{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+|| 13. `stop-color` with `inherit` (3) |{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+|| 14. `stop-color` with `inherit` (3) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
 2+| pattern ^|{part-box}|{ok-box}|{part-box}|{part-box}|{fail-box}
 || 1. Simple case |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
