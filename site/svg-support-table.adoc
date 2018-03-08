@@ -40,6 +40,8 @@ which is specifically designed for the https://github.com/RazrFalcon/resvg[resvg
   And we support only a minimal CSS subset.
 * Extended raster image formats features. +
   We assume that underlying PNG and JPEG libraries are good.
+* `a` element. We treating it as `g`.
+* Pointer events.
 * Animations.
 * Scripting.
 * Embedded fonts.

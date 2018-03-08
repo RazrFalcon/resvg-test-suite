@@ -1,3 +1,4 @@
+a-display-001.svg
 a-fill-001.svg
 a-fill-002.svg
 a-fill-003.svg
@@ -163,6 +164,13 @@ a-transform-015.svg
 a-transform-016.svg
 a-transform-017.svg
 a-transform-018.svg
+a-visibility-001.svg
+a-visibility-002.svg
+e-a-001.svg
+e-a-002.svg
+e-a-003.svg
+e-a-004.svg
+e-a-005.svg
 e-circle-001.svg
 e-circle-002.svg
 e-circle-003.svg

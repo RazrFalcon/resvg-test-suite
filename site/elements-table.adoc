@@ -437,7 +437,12 @@
 3+| [[e-cursor]] cursor  ^|{oos-box} ^|{oos-box} ^|{oos-box} ^|{oos-box} ^|{oos-box}
 8+^|
 8+^|https://www.w3.org/TR/SVG/linking.html[Linking]
-3+| [[e-a]] a  ^|{fail-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
+3+| [[e-a]] a  ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{part-box} ^|{part-box}
+||1| On shape ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||2| On text ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||3| Inside text ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box}
+||4| Inside `tspan` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box}
+||5| On `tspan` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
 8+^|
 3+| [[e-view]] view  ^|{fail-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
 8+^|

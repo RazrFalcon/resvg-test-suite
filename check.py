@@ -3,6 +3,7 @@
 import re
 import os
 import subprocess
+import csv
 import xml.etree.ElementTree as ET
 
 
@@ -40,6 +41,26 @@ def check_order():
     print()  # new line
 
     raise ValueError('order.txt is out of date')
+
+
+def check_results():
+    """
+    Checks that results.csv has all tests from order.txt
+    """
+
+    with open('order.txt', 'r') as f:
+        order = f.read().splitlines()
+
+    results = []
+    with open('results.csv', 'r') as f:
+        reader = csv.reader(f)
+        next(reader, None)  # skip header
+        for row in reader:
+            results.append(row[0])
+
+    diff = [x for x in order if x not in results]
+    if diff:
+        raise ValueError('results.csv is out of date')
 
 
 def check_untracked_files():
@@ -104,9 +125,10 @@ def check_node_ids():
 
 def main():
     check_order()
-    check_untracked_files()
+    check_results()
     check_title_uniqueness()
     # check_node_ids()
+    check_untracked_files()
 
 
 if __name__ == '__main__':

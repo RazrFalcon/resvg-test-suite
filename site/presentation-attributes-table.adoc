@@ -27,7 +27,8 @@
 8+^|
 3+| [[a-direction]] direction  ^|{fail-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
 8+^|
-3+| [[a-display]] display  ^|{fail-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
+3+| [[a-display]] display  ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||1| `none` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 8+^|
 3+| [[a-dominant-baseline]] dominant-baseline  ^|{fail-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
 8+^|
@@ -264,7 +265,9 @@
 8+^|
 3+| [[a-unicode-bidi]] unicode-bidi  ^|{fail-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
 8+^|
-3+| [[a-visibility]] visibility  ^|{fail-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
+3+| [[a-visibility]] visibility  ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{part-box} ^|{part-box}
+||1| Simple case ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{ok-box}
+||2| On `g` ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
 8+^|
 3+| [[a-word-spacing]] word-spacing  ^|{fail-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
 8+^|

@@ -1,4 +1,5 @@
 title,chrome,resvg,inkscape,librsvg,qtsvg
+a-display-001.svg,1,1,1,1,1
 a-fill-001.svg,1,1,1,1,1
 a-fill-002.svg,1,1,1,1,1
 a-fill-003.svg,1,1,1,1,1
@@ -164,6 +165,13 @@ a-transform-015.svg,1,1,1,2,1
 a-transform-016.svg,1,1,1,1,1
 a-transform-017.svg,1,1,1,1,1
 a-transform-018.svg,1,1,1,1,1
+a-visibility-001.svg,1,1,2,1,1
+a-visibility-002.svg,1,1,2,2,2
+e-a-001.svg,1,1,1,1,1
+e-a-002.svg,1,1,1,1,1
+e-a-003.svg,1,1,1,2,1
+e-a-004.svg,1,1,1,2,1
+e-a-005.svg,1,1,1,2,2
 e-circle-001.svg,1,1,1,1,1
 e-circle-002.svg,1,1,1,1,1
 e-circle-003.svg,1,1,1,1,1
