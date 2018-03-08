@@ -13,6 +13,9 @@ CRASHED      = 3
 PARTIAL      = 4
 OUT_OF_SCOPE = 5
 
+ELEMENT_TYPE   = 'element'
+ATTRIBUTE_TYPE = 'attribute'
+
 elements_order = [
     'https://www.w3.org/TR/SVG/struct.html[Document Structure]',
     'svg',
@@ -273,16 +276,21 @@ def gen_header(name):
     return out
 
 
-def get_item_row(rows, out_of_scope_list, name):
+def get_item_row(rows, out_of_scope_list, type, name):
     flags = []
     if name in out_of_scope_list:
         flags = [OUT_OF_SCOPE, OUT_OF_SCOPE, OUT_OF_SCOPE, OUT_OF_SCOPE, OUT_OF_SCOPE]
     else:
         flags = global_flags(rows, name)
 
+    if type == ELEMENT_TYPE:
+        anchor = 'e-' + name
+    else:
+        anchor = 'a-' + name
+
     # we have to precede cell after span with ^ because of
     # https://github.com/asciidoctor/asciidoctor/issues/989
-    return '2+| {} ^{}\n'.format(name, flags_to_string(flags))
+    return '2+| [[{}]] {} ^{}\n'.format(anchor, name, flags_to_string(flags))
 
 
 def main():
@@ -299,9 +307,9 @@ def main():
 
             file_name = row[0]
             if file_name[0] == 'e':
-                type = 'element'
+                type = ELEMENT_TYPE
             else:
-                type = 'attribute'
+                type = ATTRIBUTE_TYPE
 
             # Note! We swapped resvg and chrome.
             flags = [int(row[2]), int(row[1]), int(row[3]), int(row[4]), int(row[5])]
@@ -322,7 +330,7 @@ def main():
             if elem.startswith('https'):
                 out += '7+^|' + elem + '\n'
             else:
-                out += get_item_row(rows, out_of_scope_elems, elem)
+                out += get_item_row(rows, out_of_scope_elems, ELEMENT_TYPE, elem)
 
                 i = 1
                 for row in rows:
@@ -340,7 +348,7 @@ def main():
         out = gen_header('Attribute')
 
         for attr in presentation_attrs:
-            out += get_item_row(rows, out_of_scope_pres_attrs, attr)
+            out += get_item_row(rows, out_of_scope_pres_attrs, ATTRIBUTE_TYPE, attr)
 
             i = 1
             for row in rows:
@@ -360,16 +368,16 @@ def main():
         # collect all non presentation attributes
         attrs_order = set()
         for row in rows:
-            if row.type == 'attribute':
+            if row.type == ATTRIBUTE_TYPE:
                 if row.name not in presentation_attrs:
                     attrs_order.add(row.name)
 
         for attr in attrs_order:
-            out += get_item_row(rows, [], attr)
+            out += get_item_row(rows, [], ATTRIBUTE_TYPE, attr)
 
             i = 1
             for row in rows:
-                if row.type == 'attribute' and row.name == attr:
+                if row.type == ATTRIBUTE_TYPE and row.name == attr:
                     out += '|| {}. {} {}\n'.format(i, row.title, flags_to_string(row.flags))
                     i += 1
 

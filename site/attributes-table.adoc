@@ -3,11 +3,7 @@
 [cols="1,10,^1,^1,^1,^1,^1"]
 |===
 | Attribute | Feature | resvg | Chrome | Inkscape | rsvg | QtSvg
-2+| style ^|{part-box}|{ok-box}|{part-box}|{part-box}|{part-box}
-|| 1. Simple case |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
-|| 2. Comments |{fail-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
-7+^|
-2+| transform ^|{ok-box}|{ok-box}|{ok-box}|{part-box}|{ok-box}
+2+| [[a-transform]] transform ^|{ok-box}|{ok-box}|{ok-box}|{part-box}|{ok-box}
 || 1. `matrix(a, b, c, d, e, f)` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 2. `translate(tx, ty)` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 3. `translate(tx)` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
@@ -26,5 +22,9 @@
 || 16. matrix(1, 0, 0, 1, 0, 0) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 17. Numeric character references |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 18. Empty |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+7+^|
+2+| [[a-style]] style ^|{part-box}|{ok-box}|{part-box}|{part-box}|{part-box}
+|| 1. Simple case |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+|| 2. Comments |{fail-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
 7+^|
 |===

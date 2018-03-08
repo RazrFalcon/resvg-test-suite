@@ -3,37 +3,37 @@
 [cols="1,10,^1,^1,^1,^1,^1"]
 |===
 | Attribute | Feature | resvg | Chrome | Inkscape | rsvg | QtSvg
-2+| alignment-baseline ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-alignment-baseline]] alignment-baseline ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| baseline-shift ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-baseline-shift]] baseline-shift ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| clip ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-clip]] clip ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| clip-path ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-clip-path]] clip-path ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| clip-rule ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-clip-rule]] clip-rule ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| color ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-color]] color ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| color-interpolation ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-color-interpolation]] color-interpolation ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| color-interpolation-filters ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-color-interpolation-filters]] color-interpolation-filters ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| color-profile ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-color-profile]] color-profile ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| color-rendering ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-color-rendering]] color-rendering ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| cursor ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
+2+| [[a-cursor]] cursor ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
-2+| direction ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-direction]] direction ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| display ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-display]] display ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| dominant-baseline ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-dominant-baseline]] dominant-baseline ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| enable-background ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-enable-background]] enable-background ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| fill ^|{part-box}|{part-box}|{part-box}|{part-box}|{part-box}
+2+| [[a-fill]] fill ^|{part-box}|{part-box}|{part-box}|{part-box}|{part-box}
 || 1. Named color |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 2. #RRGGBB color |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 3. #RGB color |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
@@ -68,26 +68,26 @@
 || 32. Radial gradient on shape |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 33. Pattern on shape |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
 7+^|
-2+| fill-opacity ^|{ok-box}|{ok-box}|{ok-box}|{part-box}|{part-box}
+2+| [[a-fill-opacity]] fill-opacity ^|{ok-box}|{ok-box}|{ok-box}|{part-box}|{part-box}
 || 1. Half opacity |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 2. With `opacity` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
 || 3. With `linearGradient` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 4. With `pattern` |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
 || 5. Nested |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
-2+| fill-rule ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+2+| [[a-fill-rule]] fill-rule ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 1. `evenodd` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 2. `nonzero` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
-2+| filter ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-filter]] filter ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| flood-color ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-flood-color]] flood-color ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| flood-opacity ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-flood-opacity]] flood-opacity ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| font ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-font]] font ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| font-family ^|{part-box}|{ok-box}|{ok-box}|{part-box}|{ok-box}
+2+| [[a-font-family]] font-family ^|{part-box}|{ok-box}|{ok-box}|{part-box}|{ok-box}
 || 1. `serif` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 2. `sans-serif` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 3. `cursive` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
@@ -99,7 +99,7 @@
 || 9. Fallback (1) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 10. Fallback (2) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
-2+| font-size ^|{ok-box}|{ok-box}|{ok-box}|{part-box}|{part-box}
+2+| [[a-font-size]] font-size ^|{ok-box}|{ok-box}|{ok-box}|{part-box}|{part-box}
 || 1. Simple case |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 2. Inheritance |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 3. Percent value |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
@@ -114,22 +114,22 @@
 || 12. Zero size on parent (3) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
 || 13. Negative size (UB) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
-2+| font-size-adjust ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-font-size-adjust]] font-size-adjust ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| font-stretch ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+2+| [[a-font-stretch]] font-stretch ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 1. `wider` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 2. `inherit` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
-2+| font-style ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+2+| [[a-font-style]] font-style ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 1. `italic` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 2. `oblique` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 3. `inherit` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
-2+| font-variant ^|{fail-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
+2+| [[a-font-variant]] font-variant ^|{fail-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
 || 1. `small-caps` |{fail-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
 || 2. `inherit` |{fail-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
 7+^|
-2+| font-weight ^|{ok-box}|{part-box}|{part-box}|{part-box}|{part-box}
+2+| [[a-font-weight]] font-weight ^|{ok-box}|{part-box}|{part-box}|{part-box}|{part-box}
 || 1. `normal` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 2. `bold` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 3. `bolder` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
@@ -143,41 +143,41 @@
 || 11. Invalid number |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 12. Invalid number (2) |{ok-box}|{fail-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
-2+| glyph-orientation-horizontal ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-glyph-orientation-horizontal]] glyph-orientation-horizontal ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| glyph-orientation-vertical ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-glyph-orientation-vertical]] glyph-orientation-vertical ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| image-rendering ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-image-rendering]] image-rendering ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| kerning ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-kerning]] kerning ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| letter-spacing ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-letter-spacing]] letter-spacing ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| lighting-color ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-lighting-color]] lighting-color ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| marker ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-marker]] marker ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| marker-end ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-marker-end]] marker-end ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| marker-mid ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-marker-mid]] marker-mid ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| marker-start ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-marker-start]] marker-start ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| mask ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-mask]] mask ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| opacity ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-opacity]] opacity ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| overflow ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-overflow]] overflow ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| pointer-events ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
+2+| [[a-pointer-events]] pointer-events ^|{oos-box}|{oos-box}|{oos-box}|{oos-box}|{oos-box}
 7+^|
-2+| shape-rendering ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-shape-rendering]] shape-rendering ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| stop-color ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-stop-color]] stop-color ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| stop-opacity ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-stop-opacity]] stop-opacity ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| stroke ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{part-box}
+2+| [[a-stroke]] stroke ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{part-box}
 || 1. Named color |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 2. Linear gradient |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 3. Radial gradient |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
@@ -188,7 +188,7 @@
 || 8. Radial gradient on shape |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
 || 9. Pattern on shape |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
 7+^|
-2+| stroke-dasharray ^|{part-box}|{part-box}|{part-box}|{part-box}|{part-box}
+2+| [[a-stroke-dasharray]] stroke-dasharray ^|{part-box}|{part-box}|{part-box}|{part-box}|{part-box}
 || 1. None |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 2. Even list |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 3. Odd list |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
@@ -201,7 +201,7 @@
 || 10. comma-ws separator |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 11. ws separator |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{ok-box}
 7+^|
-2+| stroke-dashoffset ^|{ok-box}|{ok-box}|{part-box}|{part-box}|{part-box}
+2+| [[a-stroke-dashoffset]] stroke-dashoffset ^|{ok-box}|{ok-box}|{part-box}|{part-box}|{part-box}
 || 1. Default |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 2. `px` value |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 3. `mm` value |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{fail-box}
@@ -209,7 +209,7 @@
 || 5. `%` value |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
 || 6. Negative value |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{ok-box}
 7+^|
-2+| stroke-linecap ^|{part-box}|{ok-box}|{part-box}|{part-box}|{part-box}
+2+| [[a-stroke-linecap]] stroke-linecap ^|{part-box}|{ok-box}|{part-box}|{part-box}|{part-box}
 || 1. `butt` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 2. `round` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 3. `square` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
@@ -217,31 +217,31 @@
 || 5. Zero length path with `square` |{fail-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
 || 6. Zero length path with `butt` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
-2+| stroke-linejoin ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
+2+| [[a-stroke-linejoin]] stroke-linejoin ^|{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 1. `miter` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 2. `round` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 3. `bevel` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
-2+| stroke-miterlimit ^|{part-box}|{ok-box}|{part-box}|{part-box}|{ok-box}
+2+| [[a-stroke-miterlimit]] stroke-miterlimit ^|{part-box}|{ok-box}|{part-box}|{part-box}|{ok-box}
 || 1. Default |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 2. Appropriate value |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 3. Invalid value |{fail-box}|{ok-box}|{fail-box}|{fail-box}|{ok-box}
 7+^|
-2+| stroke-opacity ^|{ok-box}|{ok-box}|{ok-box}|{part-box}|{part-box}
+2+| [[a-stroke-opacity]] stroke-opacity ^|{ok-box}|{ok-box}|{ok-box}|{part-box}|{part-box}
 || 1. Half opacity |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 2. With `opacity` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
 || 3. With `linearGradient` |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{ok-box}
 || 4. With `pattern` |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
 || 5. Nested |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
-2+| stroke-width ^|{ok-box}|{part-box}|{part-box}|{ok-box}|{part-box}
+2+| [[a-stroke-width]] stroke-width ^|{ok-box}|{part-box}|{part-box}|{ok-box}|{part-box}
 || 1. Default |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 2. Bold |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 3. Zero |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 4. Negative (UB) |{ok-box}|{fail-box}|{ok-box}|{ok-box}|{fail-box}
 || 5. Percentage |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{fail-box}
 7+^|
-2+| text-anchor ^|{part-box}|{ok-box}|{part-box}|{part-box}|{part-box}
+2+| [[a-text-anchor]] text-anchor ^|{part-box}|{ok-box}|{part-box}|{part-box}|{part-box}
 || 1. `start` on `text` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 2. `middle` on `text` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 || 3. `end` on `text` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
@@ -250,7 +250,7 @@
 || 6. On `tspan` with arabic |{fail-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
 || 7. Inheritance |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{ok-box}
 7+^|
-2+| text-decoration ^|{ok-box}|{ok-box}|{part-box}|{part-box}|{fail-box}
+2+| [[a-text-decoration]] text-decoration ^|{ok-box}|{ok-box}|{part-box}|{part-box}|{fail-box}
 || 1. `underline` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
 || 2. `overline` |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
 || 3. `line-through` |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
@@ -260,14 +260,14 @@
 || 7. Style resolving (3) |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
 || 8. `tspan` decoration |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
 7+^|
-2+| text-rendering ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-text-rendering]] text-rendering ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| unicode-bidi ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-unicode-bidi]] unicode-bidi ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| visibility ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-visibility]] visibility ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| word-spacing ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-word-spacing]] word-spacing ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
-2+| writing-mode ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| [[a-writing-mode]] writing-mode ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|
 |===
