@@ -1,7 +1,8 @@
+<?xml version="1.0" encoding="Windows-1251"?>
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <title>`fantasy`</title>
+    <title>Not UTF-8 encoding</title>
 
-    <text id="text1" x="100" y="100" font-family="fantasy" font-size="40" text-anchor="middle">Text</text>
+    <text x="40" y="100" font-family="Arial" font-size="24">Привет мир</text>
 
     <!-- image frame -->
     <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>

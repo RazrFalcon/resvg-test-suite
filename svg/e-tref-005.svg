@@ -1,4 +1,4 @@
-<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+<svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
      font-family="Arial" font-size="64">
     <title>Nested</title>
 
@@ -13,5 +13,5 @@
     <text x="40" y="120"><tref xlink:href="#text1"/></text>
 
     <!-- image frame -->
-    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+    <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
 </svg>

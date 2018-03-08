@@ -1,5 +1,5 @@
 <!-- based on paths-data-20-f.svg from the SVG test suite -->
-<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
     <title>Negative sweep-flag value</title>
 
     <path d="M 100 100 h -25 a 25 25 0 1 1 25 25 z" fill="green"/>
@@ -8,5 +8,5 @@
     <path d="M 100 100 h -25 a 25 25 0 1 -1 25 25 z" fill="red"/>
 
     <!-- image frame -->
-    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+    <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
 </svg>

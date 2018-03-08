@@ -11,6 +11,7 @@
 ||4| ENTITY reference (1) ^|{fail-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{ok-box}
 ||5| ENTITY reference (2) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||6| Empty ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||7| Not UTF-8 encoding ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 8+^|
 3+| [[e-g]] g  ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{part-box}
 ||1| Opacity ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
@@ -326,7 +327,7 @@
 ||11| `stop-color` with `inherit` (1) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||12| `stop-color` with `inherit` (2) ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
 ||13| `stop-color` with `inherit` (3) ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
-||14| `stop-color` with `inherit` (3) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||14| `stop-color` with `inherit` (4) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 8+^|
 3+| [[e-pattern]] pattern  ^|{part-box} ^|{ok-box} ^|{part-box} ^|{part-box} ^|{fail-box}
 ||1| Simple case ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}

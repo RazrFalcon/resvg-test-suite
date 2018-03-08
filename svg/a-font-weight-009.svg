@@ -1,8 +1,8 @@
-<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" font-family="Source Code Pro" font-size="40">
+<svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" font-family="Source Code Pro" font-size="40">
     <title>`700`</title>
 
-    <text x="100" y="100" text-anchor="middle" font-weight="700">Text</text>
+    <text id="text1" x="100" y="100" text-anchor="middle" font-weight="700">Text</text>
 
     <!-- image frame -->
-    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+    <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
 </svg>

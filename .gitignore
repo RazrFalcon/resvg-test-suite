@@ -4,3 +4,5 @@ Gemfile.lock
 /_site
 /barh
 /chart.json
+.idea
+*.iml

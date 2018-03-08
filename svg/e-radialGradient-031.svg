@@ -4,7 +4,7 @@
     intersection of the line from ('cx', 'cy') to ('fx', 'fy') with the circle
     defined by 'cx', 'cy' and 'r'.
 -->
-<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<svg id="svg1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
     <title>Focal point correction</title>
 
     <radialGradient id="grad1" gradientUnits="userSpaceOnUse" cx="10" cy="10" r="75" fx="83.33" fy="75">

@@ -281,7 +281,6 @@ def gen_header():
 
 
 def get_item_row(rows, out_of_scope_list, type, name):
-    flags = []
     if name in out_of_scope_list:
         flags = [OUT_OF_SCOPE, OUT_OF_SCOPE, OUT_OF_SCOPE, OUT_OF_SCOPE, OUT_OF_SCOPE]
     else:
@@ -304,7 +303,7 @@ def main():
     rows = []
     with open('results.csv', 'r') as f:
         reader = csv.reader(f)
-        next(reader, None) # skip header
+        next(reader, None)  # skip header
         for row in reader:
             file_name = row[0]
             if file_name[0] == 'e':
@@ -316,7 +315,7 @@ def main():
             flags = [int(row[2]), int(row[1]), int(row[3]), int(row[4]), int(row[5])]
 
             tag_name = file_name
-            tag_name = tag_name[2:];
+            tag_name = tag_name[2:]
             tag_name = re.sub('-[0-9]+\.svg', '', tag_name)
 
             index = re.sub('\D', '', file_name)
@@ -385,5 +384,5 @@ def main():
             f.write(out)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

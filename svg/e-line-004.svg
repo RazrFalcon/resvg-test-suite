@@ -1,4 +1,4 @@
-<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
     <title>No `y1` coordinate</title>
     <desc>`y1` should be 0</desc>
 
@@ -8,5 +8,5 @@
     <line x1="20" x2="160" y2="180" stroke="green"/>
 
     <!-- image frame -->
-    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+    <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
 </svg>

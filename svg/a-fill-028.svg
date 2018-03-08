@@ -1,8 +1,8 @@
-<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
     <title>`rgb(float%, float%, float%)` color with a big fraction part</title>
 
-    <circle cx="100" cy="100" r="80" fill="rgb(59.60784313725490196078431372549%,98.431372549019607843137254901961%,59.60784313725490196078431372549%)"/>
+    <circle id="circle1" cx="100" cy="100" r="80" fill="rgb(59.60784313725490196078431372549%,98.431372549019607843137254901961%,59.60784313725490196078431372549%)"/>
 
     <!-- image frame -->
-    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+    <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
 </svg>

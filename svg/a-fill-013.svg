@@ -1,8 +1,8 @@
-<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
     <title>`rgb(float%, float%, float%)` color</title>
 
-    <circle cx="100" cy="100" r="80" fill="rgb(0%, 45.5%, 0%)"/>
+    <circle id="circle1" cx="100" cy="100" r="80" fill="rgb(0%, 45.5%, 0%)"/>
 
     <!-- image frame -->
-    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+    <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
 </svg>

@@ -1,15 +1,15 @@
-<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
     <title>With `pattern`</title>
     <desc>`stroke-opacity` affects pattern</desc>
 
     <pattern id="patt1" patternUnits="userSpaceOnUse" width="20" height="20">
-        <rect x="0" y="0" width="10" height="10" fill="grey"/>
-        <rect x="10" y="10" width="10" height="10" fill="green"/>
+        <rect id="rect1" x="0" y="0" width="10" height="10" fill="grey"/>
+        <rect id="rect2" x="10" y="10" width="10" height="10" fill="green"/>
     </pattern>
-    <text x="100" y="100" text-anchor="middle">Failed</text>
-    <circle cx="100" cy="100" r="60" fill="gray"
+    <text id="text1" x="100" y="100" text-anchor="middle">Failed</text>
+    <circle id="circle1" cx="100" cy="100" r="60" fill="gray"
             stroke="url(#patt1)" stroke-opacity="0.5" stroke-width="40"/>
 
     <!-- image frame -->
-    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+    <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
 </svg>

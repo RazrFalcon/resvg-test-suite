@@ -83,7 +83,7 @@ def find_test(dir, test):
 
             parts = line.split(':')
             path = parts[0]
-            path = path[2:] # remove ./
+            path = path[2:]  # remove ./
             line_num = parts[1]
             paths.append(path + ':' + line_num)
         return ', '.join(paths)
@@ -96,7 +96,6 @@ parser.add_argument('-f, --filter', dest='filter', help='Filter tests')
 parser.add_argument('--check', dest='check', help='Find tests in source dir')
 args = parser.parse_args()
 
-file_list = []
 with open('order.txt', 'r') as f:
     file_list = f.read().splitlines()
 
@@ -107,8 +106,6 @@ else:
     table.field_names = ['#', 'File', 'Title']
 
 table.align = "l"
-
-titles = {}
 
 i = 1
 for file_name in file_list:
@@ -122,16 +119,11 @@ for file_name in file_list:
     tree = ET.parse('svg/' + file_name)
     title = list(tree.getroot())[0].text
 
-    if title in titles:
-        print('Warning: the message \'{}\' already set in \'{}\''.format(title, titles[title]))
-
     if args.check:
         table.add_row([str(i), file_name, title, find_test(args.check, file_name)])
     else:
         table.add_row([str(i), file_name, title])
 
     i += 1
-
-    titles[tag_name] = file_name
 
 print(table)

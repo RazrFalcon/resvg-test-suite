@@ -14,6 +14,7 @@
 - `svg/` - SVG images. Actual tests.
 - `tools/` - various testing tools.
 - `_config.yml`, `Gemfile`, `Rakefile` - configs required for github pages.
+- `check.py` - pre-commit hook.
 - `gen-table.py` - asciidoctor tables generator.
 - `order.txt` - custom tests order for pretty-printing.
 - `outline.py` - pretty-prints tests.

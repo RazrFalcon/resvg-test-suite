@@ -1,4 +1,4 @@
-<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg id="svg1" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>External SVG</title>
 
     <image x="8" y="8" width="64" height="64" xlink:href="../images/image-003.svg"/>

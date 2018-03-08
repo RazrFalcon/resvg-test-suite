@@ -1,15 +1,15 @@
-<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" font-family="Arial">
+<svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" font-family="Arial">
     <title>Mixed values</title>
 
     <!-- should be covered -->
-    <text x="100" y="100" fill="red" text-anchor="middle" font-size="38.4">Text</text>
+    <text id="text1" x="100" y="100" fill="red" text-anchor="middle" font-size="38.4">Text</text>
 
-    <g font-size="40">
-        <g font-size="larger">
-            <text x="100" y="100" text-anchor="middle" font-size="80%">Text</text>
+    <g id="g1" font-size="40">
+        <g id="g2" font-size="larger">
+            <text id="text2" x="100" y="100" text-anchor="middle" font-size="80%">Text</text>
         </g>
     </g>
 
     <!-- image frame -->
-    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+    <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
 </svg>

@@ -1,4 +1,4 @@
-<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
     <title>Pattern on child</title>
 
     <pattern id="patt1" patternUnits="objectBoundingBox" width="0.3" height="0.4"
@@ -15,5 +15,5 @@
     <rect x="20" y="110" width="160" height="70" fill="url(#patt2)" stroke="darkblue"/>
 
     <!-- image frame -->
-    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+    <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
 </svg>
