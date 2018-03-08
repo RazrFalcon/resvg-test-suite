@@ -1,0 +1,19 @@
+<svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink" font-family="Arial" font-size="48">
+    <title>Pseudo-multi-line</title>
+
+    <text id="text1">
+        <tspan id="tspan1" x="40" y="70">
+            Line 1
+        </tspan>
+        <tspan id="tspan2" x="40" y="110">
+            Line 2
+        </tspan>
+        <tspan id="tspan3" x="40" y="150">
+            Line 3
+        </tspan>
+    </text>
+
+    <!-- image frame -->
+    <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+</svg>

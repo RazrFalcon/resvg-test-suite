@@ -37,6 +37,7 @@ a-fill-opacity-002.svg
 a-fill-opacity-003.svg
 a-fill-opacity-004.svg
 a-fill-opacity-005.svg
+a-fill-opacity-006.svg
 a-fill-rule-001.svg
 a-fill-rule-002.svg
 a-font-family-001.svg
@@ -113,6 +114,9 @@ a-stroke-linecap-003.svg
 a-stroke-linecap-004.svg
 a-stroke-linecap-005.svg
 a-stroke-linecap-006.svg
+a-stroke-linecap-007.svg
+a-stroke-linecap-008.svg
+a-stroke-linecap-009.svg
 a-stroke-linejoin-001.svg
 a-stroke-linejoin-002.svg
 a-stroke-linejoin-003.svg
@@ -124,6 +128,7 @@ a-stroke-opacity-002.svg
 a-stroke-opacity-003.svg
 a-stroke-opacity-004.svg
 a-stroke-opacity-005.svg
+a-stroke-opacity-006.svg
 a-stroke-width-001.svg
 a-stroke-width-002.svg
 a-stroke-width-003.svg
@@ -454,6 +459,8 @@ e-text-018.svg
 e-text-019.svg
 e-text-020.svg
 e-text-021.svg
+e-text-022.svg
+e-text-023.svg
 e-tref-001.svg
 e-tref-002.svg
 e-tref-003.svg
@@ -461,6 +468,20 @@ e-tref-004.svg
 e-tref-005.svg
 e-tref-006.svg
 e-tref-007.svg
+e-tref-008.svg
+e-tspan-001.svg
+e-tspan-002.svg
+e-tspan-003.svg
+e-tspan-004.svg
+e-tspan-005.svg
+e-tspan-006.svg
+e-tspan-007.svg
+e-tspan-008.svg
+e-tspan-009.svg
+e-tspan-010.svg
+e-tspan-011.svg
+e-tspan-012.svg
+e-tspan-013.svg
 e-use-001.svg
 e-use-002.svg
 e-use-003.svg

@@ -1,0 +1,14 @@
+<svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink" font-family="Arial" font-size="24">
+    <title>Mixed `xml:space` (1)</title>
+
+    <text id="text1" x="-60" y="120">
+        <tspan id="tspan1" fill="green" xml:space="preserve">
+            Text
+        </tspan>
+        Text
+    </text>
+
+    <!-- image frame -->
+    <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+</svg>

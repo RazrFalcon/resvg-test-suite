@@ -196,7 +196,7 @@
 ||5| Missing `points` attribute ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 8+^|
 8+^|https://www.w3.org/TR/SVG/text.html[Text]
-3+| [[e-text]] text  ^|{part-box} ^|{ok-box} ^|{ok-box} ^|{part-box} ^|{part-box}
+3+| [[e-text]] text  ^|{part-box} ^|{ok-box} ^|{part-box} ^|{part-box} ^|{part-box}
 ||1| Simple case ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||2| `x` and `y` with multiple values ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
 ||3| `x` and `y` with less values than characters ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
@@ -218,17 +218,33 @@
 ||19| Escaped text (2) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||20| Escaped text (3) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||21| Escaped text (4) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box}
+||22| `xml:space` ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{ok-box}
+||23| `transform` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 8+^|
-3+| [[e-tspan]] tspan  ^|{fail-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
+3+| [[e-tspan]] tspan  ^|{ok-box} ^|{ok-box} ^|{part-box} ^|{part-box} ^|{part-box}
+||1| Without attributes ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||2| With `x` and `y` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||3| Style override ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||4| Sequential ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{ok-box}
+||5| Mixed ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||6| Nested ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||7| `xml:space` (1) ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{ok-box}
+||8| `xml:space` (2) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box}
+||9| Mixed `xml:space` (1) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
+||10| Mixed `xml:space` (2) ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
+||11| Mixed `xml:space` (3) ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
+||12| `transform` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box}
+||13| Pseudo-multi-line ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 8+^|
-3+| [[e-tref]] tref  ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box}
+3+| [[e-tref]] tref  ^|{part-box} ^|{fail-box} ^|{part-box} ^|{part-box} ^|{fail-box}
 ||1| Link to `text` ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||2| Link to complex `text` ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
-||3| Link to non-SVG element ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box}
+||3| Link to non-SVG element ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
 ||4| Link to external file element ^|{fail-box} ^|{fail-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
 ||5| Nested ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
 ||6| Position attributes ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
 ||7| Style attributes ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
+||8| `xml:space` ^|{fail-box} ^|{fail-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
 8+^|
 3+| [[e-textPath]] textPath  ^|{fail-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
 8+^|
