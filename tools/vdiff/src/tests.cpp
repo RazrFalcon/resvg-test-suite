@@ -150,9 +150,9 @@ void Tests::resync()
         }
     }
 
-    if (oldTests.size() != newTests.size()) {
-        throw QString("order.txt has a different amount of tests.").arg(orderPath);
-    }
+//    if (oldTests.size() != newTests.size()) {
+//        throw QString("order.txt has a different amount of tests.").arg(orderPath);
+//    }
 
     newTests.save();
 }

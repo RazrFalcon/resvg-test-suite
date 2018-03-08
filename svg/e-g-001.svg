@@ -1,10 +1,22 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <title>Opacity</title>
+    <title>Deeply nested groups</title>
 
-    <g opacity=".5">
-        <circle cx="100" cy="60" fill="#f00" r="40"/>
-        <circle cx="70" cy="100" fill="#0f0" r="40"/>
-        <circle cx="130" cy="100" fill="#00f" r="40"/>
+    <g>
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <g>
+                            <g>
+                                <g>
+                                    <circle cx="100" cy="100" r="80" fill="green"/>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
     </g>
 
     <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>

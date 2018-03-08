@@ -1,4 +1,6 @@
 title,chrome,resvg,inkscape,librsvg,qtsvg
+a-clip-path-001.svg,1,1,1,1,2
+a-color-001.svg,1,1,1,1,1
 a-display-001.svg,1,1,1,1,1
 a-fill-001.svg,1,1,1,1,1
 a-fill-002.svg,1,1,1,1,1
@@ -83,6 +85,9 @@ a-font-weight-009.svg,1,1,1,1,1
 a-font-weight-010.svg,1,1,1,1,1
 a-font-weight-011.svg,1,1,1,1,1
 a-font-weight-012.svg,2,1,1,1,1
+a-opacity-001.svg,1,1,1,1,2
+a-stop-color-001.svg,1,1,1,1,1
+a-stop-opacity-001.svg,1,1,1,1,1
 a-stroke-001.svg,1,1,1,1,1
 a-stroke-002.svg,1,1,1,1,1
 a-stroke-003.svg,1,1,1,1,1
@@ -223,8 +228,7 @@ e-ellipse-007.svg,1,1,1,1,1
 e-ellipse-008.svg,1,1,1,1,2
 e-ellipse-009.svg,1,1,1,1,2
 e-ellipse-010.svg,1,1,1,1,2
-e-g-001.svg,1,1,1,1,2
-e-g-002.svg,1,1,1,1,1
+e-g-001.svg,1,1,1,1,1
 e-image-001.svg,1,1,1,2,2
 e-image-002.svg,1,1,1,2,2
 e-image-003.svg,1,2,2,2,2

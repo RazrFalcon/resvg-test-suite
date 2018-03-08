@@ -1,3 +1,5 @@
+a-clip-path-001.svg
+a-color-001.svg
 a-display-001.svg
 a-fill-001.svg
 a-fill-002.svg
@@ -82,6 +84,9 @@ a-font-weight-009.svg
 a-font-weight-010.svg
 a-font-weight-011.svg
 a-font-weight-012.svg
+a-opacity-001.svg
+a-stop-color-001.svg
+a-stop-opacity-001.svg
 a-stroke-001.svg
 a-stroke-002.svg
 a-stroke-003.svg
@@ -223,7 +228,6 @@ e-ellipse-008.svg
 e-ellipse-009.svg
 e-ellipse-010.svg
 e-g-001.svg
-e-g-002.svg
 e-image-001.svg
 e-image-002.svg
 e-image-003.svg
