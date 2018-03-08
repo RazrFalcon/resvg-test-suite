@@ -17,25 +17,34 @@
 This page contains results of the https://github.com/RazrFalcon/resvg-test-suite[resvg test suite]
 which is specifically designed for the https://github.com/RazrFalcon/resvg[resvg] library.
 
-Unlike an official https://www.w3.org/Graphics/SVG/Test/20110816/[SVG test suite]
-this one is focused on edge-cases.
 
-Major differences:
+=== Test suite design
 
-* More edge-cases.
 * One file - one test. +
   In the official test suite, one file can have a lot of tests.
+* More edge-cases. +
+  Unlike the official https://www.w3.org/Graphics/SVG/Test/20110816/[SVG test suite].
 * Only supported SVG subset. +
   `resvg` trying to support only the https://www.w3.org/TR/SVG11/feature#SVG-static[static] SVG subset.
-  So this test suite doesn't have any animation and scripting tests.
-* No embedded fonts. +
-  We don't plan to support them. So there are no tests for now.
+* Tests are grouped by the element and attribute names.
 * No raster images as references. +
-  We are using https://github.com/RazrFalcon/resvg-test-suite/tree/master/tools/vdiff[vdiff] tool to check that test is passed.
-* No percent values in `width` and `height`. +
-  Isn't supported that good.
+  We are using https://github.com/RazrFalcon/resvg-test-suite/tree/master/tools/vdiff[vdiff] tool to check that tests are passed.
 
-{empty} +
+=== What we don't test
+
+* Features that isn't yet implemented in the `resvg`.
+* XML parsing. +
+  Except some DTD and namespace resolving we assume that SVG library supports full XML 1.0 spec.
+* Extended CSS support. +
+  In the `resvg` case CSS parsing is done on the https://github.com/RazrFalcon/libsvgdom[svgdom] side.
+  And we support only a minimal CSS subset.
+* Extended raster image formats features. +
+  We assume that underlying PNG and JPEG libraries are good.
+* Animations.
+* Scripting.
+* Embedded fonts.
+
+=== Other SVG libraries and applications
 
 We are testing/comparing `resvg` with Chrome, Inkscape, librsvg and QtSvg for a reason.
 
@@ -45,16 +54,11 @@ We are testing/comparing `resvg` with Chrome, Inkscape, librsvg and QtSvg for a 
   The goal is to replace `librsvg` with `resvg`.
 * QtSvg is used by all the Qt applications and KDE. We plan to replace it as well.
 
-{empty} +
-
-Tests summary:
+=== Tests summary
 
 image:images/chart.svg[]
 
-{empty} +
-{empty} +
-
-Legend:
+=== Legend
 
 [cols="^1,3,^1,3", width="40%"]
 |===
