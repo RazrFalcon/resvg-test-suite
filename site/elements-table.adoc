@@ -354,7 +354,32 @@
 || 23. Self-recursive on child |{ok-box}|{ok-box}|{crash-box}|{fail-box}|{fail-box}
 7+^|
 7+^|https://www.w3.org/TR/SVG/masking.html[Clipping, Masking and Compositing]
-2+| clipPath ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| clipPath ^|{part-box}|{ok-box}|{part-box}|{part-box}|{fail-box}
+|| 1. Simple case |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 2. `stroke` has no effect |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 3. `fill` has no effect |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 4. `opacity` has no effect |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 5. clipPathUnits=objectBoundingBox |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{fail-box}
+|| 6. `clip-path` with `transform` |{ok-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
+|| 7. `clip-path` with `transform` on text |{ok-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
+|| 8. `transform` on `clipPath` |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{fail-box}
+|| 9. Clipping with text |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 10. Clipping with complex text (1) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 11. Clipping with complex text (2) |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 12. Clipping with complex text and `clip-rule` (UB) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 13. clip-rule=evenodd |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 14. Mixed `clip-rule` |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 15. Multiple children |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 16. One invalid child |{ok-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
+|| 17. Overlapped shapes with `evenodd` |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 18. `clip-rule` from parent node |{ok-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 19. `clip-path` on child |{fail-box}|{ok-box}|{ok-box}|{fail-box}|{fail-box}
+|| 20. `clip-path` on self |{fail-box}|{ok-box}|{fail-box}|{fail-box}|{fail-box}
+|| 21. Nested `clip-path` |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 22. No children |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 23. Invalid child |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
+|| 24. Invisible child (1) |{ok-box}|{ok-box}|{fail-box}|{ok-box}|{fail-box}
+|| 25. Invisible child (2) |{ok-box}|{ok-box}|{ok-box}|{ok-box}|{fail-box}
 7+^|
 2+| mask ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 7+^|

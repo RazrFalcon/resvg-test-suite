@@ -1,0 +1,11 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>No children</title>
+    <desc>Nothing should be rendered</desc>
+
+    <clipPath id="clip1"/>
+
+    <rect x="0" y="0" width="200" height="200" fill="red" clip-path="url(#clip1)"/>
+
+    <!-- image frame -->
+    <rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+</svg>
