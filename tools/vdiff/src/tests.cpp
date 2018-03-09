@@ -25,9 +25,8 @@ static TestState stateFormStr(const QStringRef &str)
     }
 }
 
-Tests Tests::load()
+Tests Tests::load(const QString &path)
 {
-    const auto path = Paths::results();
     QFile file(path);
     if (!file.open(QFile::ReadOnly)) {
         throw QString("Failed to open %1.").arg(path);
@@ -83,7 +82,7 @@ Tests Tests::load()
     return tests;
 }
 
-void Tests::save()
+void Tests::save(const QString &path)
 {
     QString text = "title,chrome,resvg,inkscape,librsvg,qtsvg\n";
     for (const auto &item : m_data) {
@@ -95,7 +94,6 @@ void Tests::save()
         text += QString::number((int)item.qtsvg)    + '\n';
     }
 
-    const auto path = Paths::results();
     QFile file(path);
     if (!file.open(QFile::WriteOnly)) {
         throw QString("Failed to open %1.").arg(path);
@@ -104,11 +102,11 @@ void Tests::save()
     file.write(text.toUtf8());
 }
 
-void Tests::resync()
+void Tests::resync(const Settings &settings)
 {
-    auto oldTests = load();
+    auto oldTests = load(settings.resultsPath());
 
-    const auto files = QDir(Paths::testsPath()).entryInfoList({ "*.svg" });
+    const auto files = QDir(settings.testsPath()).entryInfoList({ "*.svg" });
     for (const auto &fi : files) {
         const auto fileName = fi.fileName();
 
@@ -154,5 +152,5 @@ void Tests::resync()
 //        throw QString("order.txt has a different amount of tests.").arg(orderPath);
 //    }
 
-    newTests.save();
+    newTests.save(settings.resultsPath());
 }

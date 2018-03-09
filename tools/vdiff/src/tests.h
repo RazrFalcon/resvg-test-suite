@@ -2,6 +2,8 @@
 
 #include <QVector>
 
+#include "settings.h"
+
 enum class TestState
 {
     Unknown,
@@ -25,10 +27,10 @@ struct TestItem
 class Tests
 {
 public:
-    static Tests load();
-    void save();
+    static Tests load(const QString &path);
+    void save(const QString &path);
 
-    static void resync();
+    static void resync(const Settings &settings);
 
     QVector<TestItem>::const_iterator begin() const { return m_data.begin(); }
     QVector<TestItem>::const_iterator end() const { return m_data.end(); }

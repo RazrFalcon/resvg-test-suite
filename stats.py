@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 
-import re
+# Usage:
+# ./stats.py results.csv chart.svg
+# ./stats.py official.csv official_chart.svg
+
+import argparse
 import csv
 import json
 import subprocess
@@ -19,8 +23,13 @@ class RowData:
         self.flags = flags
 
 
+parser = argparse.ArgumentParser()
+parser.add_argument('input', help='CSV file')
+parser.add_argument('output', help='SVG file')
+args = parser.parse_args()
+
 rows = []
-with open('results.csv', 'r') as f:
+with open(args.input, 'r') as f:
     for row in csv.reader(f):
         if row[0] == 'title':
             continue
@@ -32,21 +41,14 @@ with open('results.csv', 'r') as f:
 
         rows.append(RowData(file_name, flags))
 
-file_list = []
-with open('order.txt', 'r') as f:
-    file_list = f.read().splitlines()
-
 passed = [0, 0, 0, 0, 0]
-for file_name in file_list:
-    for row in rows:
-        if row.name == file_name:
-            for idx, flag in enumerate(row.flags):
-                if flag == PASSED:
-                    passed[idx] = passed[idx] + 1
+for row in rows:
+    for idx, flag in enumerate(row.flags):
+        if flag == PASSED:
+            passed[idx] = passed[idx] + 1
 
 barh_data = json.dumps(
-    {
-    "title": "resvg test suite",
+{
     "items_font": {
         "family": "Arial",
         "size": 12
@@ -77,7 +79,7 @@ barh_data = json.dumps(
         "title": "Tests passed",
         "round_tick_values": True,
         "width": 700,
-        "max_value": len(file_list)
+        "max_value": len(rows)
     }
 }, indent=4)
 
@@ -85,7 +87,7 @@ with open('chart.json', 'w') as f:
     f.write(barh_data)
 
 try:
-    subprocess.check_call(['./barh', 'chart.json', 'site/images/chart.svg'])
+    subprocess.check_call(['./barh', 'chart.json', 'site/images/' + args.output])
 except FileNotFoundError:
     print('Error: \'barh\' executable is not found.\n'
           'You should build https://github.com/RazrFalcon/barh '

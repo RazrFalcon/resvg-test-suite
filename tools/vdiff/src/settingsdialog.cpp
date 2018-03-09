@@ -1,7 +1,8 @@
-#include <QSettings>
 #include <QMessageBox>
 #include <QFileDialog>
 #include <QDebug>
+
+#include "settings.h"
 
 #include "settingsdialog.h"
 #include "ui_settingsdialog.h"
@@ -24,28 +25,31 @@ SettingsDialog::~SettingsDialog()
 
 void SettingsDialog::loadSettings()
 {
-    QSettings settings;
-    ui->rBtnRelease->setChecked(settings.value("ResvgBuild").toString() == "release");
-
-    ui->lineEditResvg->setText(settings.value("ResvgDir").toString());
-    ui->lineEditInkscape->setText(settings.value("InkscapePath").toString());
-    ui->lineEditRsvg->setText(settings.value("RsvgPath").toString());
+    const auto settings = Settings::load();
+    ui->rBtnSuiteOfficial->setChecked(settings.testSuite == TestSuite::Official);
+    ui->rBtnRelease->setChecked(settings.buildType == BuildType::Release);
+    ui->lineEditResvg->setText(settings.resvgDir);
+    ui->lineEditInkscape->setText(settings.inkscapePath);
+    ui->lineEditRsvg->setText(settings.librsvgPath);
 }
 
 void SettingsDialog::on_buttonBox_accepted()
 {
-    QSettings settings;
+    Settings d;
 
-    const auto resvgBuild = ui->rBtnDebug->isChecked() ? "debug" : "release";
-    settings.setValue("ResvgBuild", resvgBuild);
+    d.testSuite = ui->rBtnSuiteOfficial->isChecked()
+                    ? TestSuite::Official
+                    : TestSuite::Own;
 
-    const auto resvgPath = QString("%1/target/%2/rendersvg")
-                             .arg(ui->lineEditResvg->text(), resvgBuild);
+    d.buildType = ui->rBtnRelease->isChecked()
+                    ? BuildType::Release
+                    : BuildType::Debug;
 
-    settings.setValue("ResvgPath", resvgPath);
-    settings.setValue("ResvgDir", ui->lineEditResvg->text());
-    settings.setValue("InkscapePath", ui->lineEditInkscape->text());
-    settings.setValue("RsvgPath", ui->lineEditRsvg->text());
+    d.resvgDir = ui->lineEditResvg->text();
+    d.inkscapePath = ui->lineEditInkscape->text();
+    d.librsvgPath = ui->lineEditRsvg->text();
+
+    d.save();
 }
 
 void SettingsDialog::on_btnSelectResvg_clicked()

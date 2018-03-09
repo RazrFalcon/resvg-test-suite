@@ -5,6 +5,7 @@
 #include <QImage>
 
 #include "either.h"
+#include "settings.h"
 
 enum class ImageType
 {
@@ -61,7 +62,7 @@ public:
 
     void render(const QString &path);
 
-    void loadSettings();
+    void loadSettings(const Settings &settings);
 
     static QString imageTypeName(const ImageType t);
 

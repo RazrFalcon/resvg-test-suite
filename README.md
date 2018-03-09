@@ -16,9 +16,11 @@
 - `_config.yml`, `Gemfile`, `Rakefile` - configs required for github pages.
 - `check.py` - pre-commit hook.
 - `gen-table.py` - asciidoctor tables generator.
+- `init_official_test_suite.py` - download and prepare the official SVG test suite.
+- `official.csv` - results of manual testing via `tools/vdiff` of the official SVG test suite.
 - `order.txt` - custom tests order for pretty-printing.
 - `outline.py` - pretty-prints tests.
-- `results.csv` - results of manual testing via `tools/vdiff`.
+- `results.csv` - results of manual testing via `tools/vdiff` of the `resvg` test suite.
 - `stats.py` - generates `site/images/chart.svg`.
 
 ### Tests order

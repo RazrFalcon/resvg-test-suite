@@ -1,6 +1,5 @@
 #include <QMessageBox>
 #include <QTimer>
-#include <QSettings>
 #include <QFileInfo>
 #include <QFileDialog>
 #include <QDir>
@@ -23,6 +22,9 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    m_settings = Settings::load();
+
+    m_render.loadSettings(m_settings);
     m_render.setScale(qApp->screens().first()->devicePixelRatio());
 
     adjustSize();
@@ -70,8 +72,6 @@ MainWindow::MainWindow(QWidget *parent)
         connect(cmbBox, SIGNAL(activated(int)), this, SLOT(updatePassFlags()));
     }
 
-    initDefaultSettings();
-
     auto *model = new QStandardItemModel(0, 1);
     auto *sortMmodel = new QSortFilterProxyModel();
     sortMmodel->setSourceModel(model);
@@ -87,21 +87,9 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
-    m_tests.save();
+    m_tests.save(m_settings.resultsPath());
 
     delete ui;
-}
-
-void MainWindow::initDefaultSettings()
-{
-    QSettings settings;
-    if (!settings.contains("ResvgPath")) {
-        settings.setValue("ResvgBuild", "debug");
-        settings.setValue("InkscapePath", "inkscape");
-        settings.setValue("RsvgPath", "rsvg-convert");
-
-        m_render.loadSettings();
-    }
 }
 
 void MainWindow::setGuiEnabled(bool flag)
@@ -127,7 +115,7 @@ void MainWindow::loadImageList()
     ui->cmbBoxNames->clear();
 
     try {
-        m_tests = Tests::load();
+        m_tests = Tests::load(m_settings.resultsPath());
     } catch (const QString &msg) {
         QMessageBox::critical(this, "Error", msg);
         qApp->quit();
@@ -164,7 +152,7 @@ void MainWindow::on_cmbBoxFiles_currentIndexChanged(int)
 
 void MainWindow::loadImage(const QString &fileName)
 {
-    const auto path = Paths::testPath(fileName);
+    const auto path = m_settings.testPath(fileName);
 
     setAnimationEnabled(true);
     getTitleAndDesc(path);
@@ -190,6 +178,10 @@ void MainWindow::setAnimationEnabled(bool flag)
 void MainWindow::getTitleAndDesc(const QString &path)
 {
     ui->lblTitle->clear();
+
+    if (m_settings.testSuite != TestSuite::Own) {
+        return;
+    }
 
     QFile file(path);
     if (!file.open(QFile::ReadOnly)) {
@@ -309,6 +301,11 @@ void MainWindow::onRenderFinished()
 
 void MainWindow::on_btnResync_clicked()
 {
+    if (m_settings.testSuite != TestSuite::Own) {
+        QMessageBox::warning(this, "Warning", "The official SVG test suite cannot be resynced.");
+        return;
+    }
+
     const auto ans = QMessageBox::question(this, "Resync?", "Reload test files?",
                                            QMessageBox::Yes | QMessageBox::No);
 
@@ -317,7 +314,7 @@ void MainWindow::on_btnResync_clicked()
     }
 
     try {
-        Tests::resync();
+        Tests::resync(m_settings);
         loadImageList();
 
         QMessageBox::information(this, "Info", "Tests was successfully synced.");
@@ -331,7 +328,14 @@ void MainWindow::on_btnSettings_clicked()
 {
     SettingsDialog diag(this);
     if (diag.exec()) {
-        m_render.loadSettings();
+        const auto oldTs = m_settings.testSuite;
+
+        m_settings = Settings::load();
+        m_render.loadSettings(m_settings);
+
+        if (m_settings.testSuite != oldTs) {
+            loadImageList();
+        }
     }
 }
 

@@ -1,5 +1,4 @@
 #include <QFile>
-#include <QSettings>
 #include <QPainter>
 #include <QImageReader>
 #include <QSvgRenderer>
@@ -35,8 +34,6 @@ Render::Render(QObject *parent)
             this, &Render::onDiffResult);
     connect(&m_watcher2, &QFutureWatcher<DiffOutput>::finished,
             this, &Render::onDiffFinished);
-
-    loadSettings();
 }
 
 void Render::setScale(qreal s)
@@ -51,13 +48,11 @@ void Render::render(const QString &path)
     renderImages();
 }
 
-void Render::loadSettings()
+void Render::loadSettings(const Settings &settings)
 {
-    QSettings settings;
-
-    m_converters.resvg = settings.value("ResvgPath").toString();
-    m_converters.inkscape = settings.value("InkscapePath").toString();
-    m_converters.rsvg = settings.value("RsvgPath").toString();
+    m_converters.resvg = settings.resvgPath();
+    m_converters.inkscape = settings.inkscapePath;
+    m_converters.rsvg = settings.librsvgPath;
 }
 
 QString Render::imageTypeName(const ImageType t)

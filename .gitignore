@@ -6,3 +6,4 @@ Gemfile.lock
 /chart.json
 .idea
 *.iml
+/official_test_suite

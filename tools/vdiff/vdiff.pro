@@ -13,7 +13,8 @@ SOURCES  += \
     src/render.cpp \
     src/settingsdialog.cpp \
     src/tests.cpp \
-    src/paths.cpp
+    src/paths.cpp \
+    src/settings.cpp
 
 HEADERS  += \
     src/imageview.h \
@@ -23,7 +24,8 @@ HEADERS  += \
     src/settingsdialog.h \
     src/either.h \
     src/tests.h \
-    src/paths.h
+    src/paths.h \
+    src/settings.h
 
 FORMS    += \
     src/mainwindow.ui \

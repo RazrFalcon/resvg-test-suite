@@ -2,6 +2,7 @@
 
 #include <QMainWindow>
 
+#include "settings.h"
 #include "tests.h"
 #include "render.h"
 
@@ -23,7 +24,6 @@ public:
     ~MainWindow();
 
 private:
-    void initDefaultSettings();
     void setGuiEnabled(bool flag);
     void loadImageList();
     void resetImages();
@@ -56,6 +56,7 @@ private:
     QHash<ImageType, QLabel*> m_diffLabels;
     QVector<QComboBox*> m_flagBoxes;
 
+    Settings m_settings;
     Tests m_tests;
     Render m_render;
 };
