@@ -3,6 +3,15 @@
 [cols="1,1,10,1,1,1,1,1"]
 |===
 | | # | Feature | resvg | Chrome | Inkscape | rsvg | QtSvg
+3+| [[a-preserveAspectRatio]] preserveAspectRatio  ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{part-box}
+||1| `none` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||2| *Min meet ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||3| *Mid meet ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||4| *Max meet ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||5| *Min slice ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||6| *Mid slice ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||7| *Max slice ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+8+^|
 3+| [[a-transform]] transform  ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{part-box} ^|{ok-box}
 ||1| `matrix(a, b, c, d, e, f)` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||2| `translate(tx, ty)` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}

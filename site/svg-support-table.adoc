@@ -1,5 +1,5 @@
 :showtitle:
-:page-title: SVG 1.1 Full Support
+:page-title: SVG 1.1 Full Static Support
 
 :ok-box: pass:[image:images/passed.svg[20,20, title="Passed"]]
 :fail-box: pass:[image:images/failed.svg[20,20, title="Failed"]]

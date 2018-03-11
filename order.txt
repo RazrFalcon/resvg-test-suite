@@ -85,6 +85,13 @@ a-font-weight-010.svg
 a-font-weight-011.svg
 a-font-weight-012.svg
 a-opacity-001.svg
+a-preserveAspectRatio-001.svg
+a-preserveAspectRatio-002.svg
+a-preserveAspectRatio-003.svg
+a-preserveAspectRatio-004.svg
+a-preserveAspectRatio-005.svg
+a-preserveAspectRatio-006.svg
+a-preserveAspectRatio-007.svg
 a-stop-color-001.svg
 a-stop-opacity-001.svg
 a-stroke-001.svg
