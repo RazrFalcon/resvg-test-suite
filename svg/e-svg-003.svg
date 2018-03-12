@@ -1,6 +1,6 @@
 <!-- based on struct-frag-05-t.svg -->
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <title>Custom namespace (3)</title>
+    <title>Mixed namespaces</title>
 
     <g font-family="Arial" font-size="40" text-anchor="middle">
         <text x="100" y="100" fill="green">

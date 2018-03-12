@@ -3,7 +3,7 @@
 ]>
 
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <title>ENTITY reference (1)</title>
+    <title>Element via ENTITY reference</title>
 
     <g>&Rect;</g>
 

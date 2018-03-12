@@ -5,13 +5,23 @@
 | | # | Feature | resvg | Chrome | Inkscape | rsvg | QtSvg
 8+^|https://www.w3.org/TR/SVG/struct.html[Document Structure]
 3+| [[e-svg]] svg  ^|{part-box} ^|{ok-box} ^|{part-box} ^|{part-box} ^|{part-box}
-||1| Custom namespace (1) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
-||2| Custom namespace (2) ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
-||3| Custom namespace (3) ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
-||4| ENTITY reference (1) ^|{fail-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{ok-box}
-||5| ENTITY reference (2) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
-||6| Empty ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||1| Explicit `svg` namespace ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||2| `xmlns` validation ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
+||3| Mixed namespaces ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
+||4| Element via ENTITY reference ^|{fail-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{ok-box}
+||5| Attribute value via ENTITY reference ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||6| Empty (no children) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||7| Not UTF-8 encoding ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||8| preserveAspectRatio=none ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||9| preserveAspectRatio=xMinYMin ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||10| preserveAspectRatio=xMidYMid ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||11| preserveAspectRatio=xMaxYMax ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||12| preserveAspectRatio='xMinYMin slice' ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||13| preserveAspectRatio='xMidYMid slice' ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||14| preserveAspectRatio='xMaxYMax slice' ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||15| `preserveAspectRatio` with `viewBox` not at zero pos ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||16| `viewBox` not at zero pos ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||17| Proportional `viewBox` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 8+^|
 3+| [[e-g]] g  ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||1| Deeply nested groups ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}

@@ -1,5 +1,5 @@
 <svg:svg viewBox="0 0 200 200" xmlns:svg="http://www.w3.org/2000/svg">
-    <svg:title>Custom namespace (1)</svg:title>
+    <svg:title>Explicit `svg` namespace</svg:title>
 
     <svg:circle cx="100" cy="100" r="80" fill="green"/>
 

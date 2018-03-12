@@ -1,0 +1,9 @@
+<svg width="200" height="100" viewBox="-50 -100 200 200" preserveAspectRatio="xMinYMin"
+     xmlns="http://www.w3.org/2000/svg">
+    <title>`preserveAspectRatio` with `viewBox` not at zero pos</title>
+
+    <circle cx="100" cy="50" r="40" fill="green"/>
+
+    <!-- image frame -->
+    <rect x="1" y="1" width="199" height="99" fill="none" stroke="black"/>
+</svg>
