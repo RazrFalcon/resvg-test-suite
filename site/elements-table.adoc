@@ -65,6 +65,13 @@
 ||6| External SVGZ ^|{fail-box} ^|{fail-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
 ||7| Embedded SVG ^|{fail-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
 ||8| Embedded SVGZ ^|{fail-box} ^|{fail-box} ^|{fail-box} ^|{ok-box} ^|{ok-box}
+||10| preserveAspectRatio=none ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||11| preserveAspectRatio='xMinYMin meet' ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||12| preserveAspectRatio='xMidYMid meet' ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||13| preserveAspectRatio='xMaxYMax meet' ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||14| preserveAspectRatio='xMinYMin slice' ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||15| preserveAspectRatio='xMidYMid slice' ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||16| preserveAspectRatio='xMaxYMax slice' ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 8+^|
 3+| [[e-switch]] switch  ^|{part-box} ^|{ok-box} ^|{part-box} ^|{ok-box} ^|{part-box}
 ||1| Simple case ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}

@@ -1,6 +1,6 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>`none`</title>
+    <title>preserveAspectRatio=none</title>
 
     <image id="image1" x="36" y="68" width="128" height="64" xlink:href="data:image/png;base64,
 iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAB3RJTUUH4gMLDwAjrsLbtwAAAAlw

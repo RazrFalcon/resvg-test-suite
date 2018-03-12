@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-import argparse
 import re
 import csv
 import xml.etree.ElementTree as ET
@@ -294,11 +293,6 @@ def get_item_row(rows, out_of_scope_list, type, name):
 
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('type', choices=['elements', 'attributes', 'presentation', 'all'],
-                        help='Sets the table type')
-    args = parser.parse_args()
-
     rows = []
     with open('results.csv', 'r') as f:
         reader = csv.reader(f)
@@ -324,63 +318,60 @@ def main():
 
             rows.append(RowData(type, tag_name, int(index), title, flags))
 
-    if args.type == 'elements' or args.type == 'all':
-        out = gen_header()
-
-        for elem in elements_order:
-            if elem.startswith('https'):
-                out += '8+^|' + elem + '\n'
-            else:
-                out += get_item_row(rows, out_of_scope_elems, ELEMENT_TYPE, elem)
-
-                for row in rows:
-                    if row.name == elem:
-                        out += '||{}| {}{}\n'.format(row.index, row.title, flags_to_string(row.flags))
-
-                out += '8+^|\n'
-
-        out += '|===\n'
-        with open('site/elements-table.adoc', 'w') as f:
-            f.write(out)
-
-    if args.type == 'presentation' or args.type == 'all':
-        out = gen_header()
-
-        for attr in presentation_attrs:
-            out += get_item_row(rows, out_of_scope_pres_attrs, ATTRIBUTE_TYPE, attr)
+    # gen elements table
+    out = gen_header()
+    for elem in elements_order:
+        if elem.startswith('https'):
+            out += '8+^|' + elem + '\n'
+        else:
+            out += get_item_row(rows, out_of_scope_elems, ELEMENT_TYPE, elem)
 
             for row in rows:
-                if row.name == attr:
+                if row.name == elem:
                     out += '||{}| {}{}\n'.format(row.index, row.title, flags_to_string(row.flags))
 
             out += '8+^|\n'
 
-        out += '|===\n'
-        with open('site/presentation-attributes-table.adoc', 'w') as f:
-            f.write(out)
+    out += '|===\n'
+    with open('site/elements-table.adoc', 'w') as f:
+        f.write(out)
 
-    if args.type == 'attributes' or args.type == 'all':
-        out = gen_header()
+    # gen presentation table
+    out = gen_header()
+    for attr in presentation_attrs:
+        out += get_item_row(rows, out_of_scope_pres_attrs, ATTRIBUTE_TYPE, attr)
 
-        # collect all non presentation attributes
-        attrs_order = set()
         for row in rows:
-            if row.type == ATTRIBUTE_TYPE:
-                if row.name not in presentation_attrs:
-                    attrs_order.add(row.name)
+            if row.name == attr:
+                out += '||{}| {}{}\n'.format(row.index, row.title, flags_to_string(row.flags))
 
-        for attr in attrs_order:
-            out += get_item_row(rows, [], ATTRIBUTE_TYPE, attr)
+        out += '8+^|\n'
 
-            for row in rows:
-                if row.type == ATTRIBUTE_TYPE and row.name == attr:
-                    out += '||{}| {}{}\n'.format(row.index, row.title, flags_to_string(row.flags))
+    out += '|===\n'
+    with open('site/presentation-attributes-table.adoc', 'w') as f:
+        f.write(out)
 
-            out += '8+^|\n'
+    # gen attributes table
+    out = gen_header()
+    # collect all non presentation attributes
+    attrs_order = set()
+    for row in rows:
+        if row.type == ATTRIBUTE_TYPE:
+            if row.name not in presentation_attrs:
+                attrs_order.add(row.name)
 
-        out += '|===\n'
-        with open('site/attributes-table.adoc', 'w') as f:
-            f.write(out)
+    for attr in attrs_order:
+        out += get_item_row(rows, [], ATTRIBUTE_TYPE, attr)
+
+        for row in rows:
+            if row.type == ATTRIBUTE_TYPE and row.name == attr:
+                out += '||{}| {}{}\n'.format(row.index, row.title, flags_to_string(row.flags))
+
+        out += '8+^|\n'
+
+    out += '|===\n'
+    with open('site/attributes-table.adoc', 'w') as f:
+        f.write(out)
 
 
 if __name__ == '__main__':

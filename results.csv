@@ -86,13 +86,6 @@ a-font-weight-010.svg,1,1,1,1,1
 a-font-weight-011.svg,1,1,1,1,1
 a-font-weight-012.svg,2,1,1,1,1
 a-opacity-001.svg,1,1,1,1,2
-a-preserveAspectRatio-001.svg,1,1,1,1,1
-a-preserveAspectRatio-002.svg,1,1,1,1,2
-a-preserveAspectRatio-003.svg,1,1,1,1,2
-a-preserveAspectRatio-004.svg,1,1,1,1,2
-a-preserveAspectRatio-005.svg,1,1,1,1,2
-a-preserveAspectRatio-006.svg,1,1,1,1,2
-a-preserveAspectRatio-007.svg,1,1,1,1,2
 a-stop-color-001.svg,1,1,1,1,1
 a-stop-opacity-001.svg,1,1,1,1,1
 a-stroke-001.svg,1,1,1,1,1
@@ -245,6 +238,13 @@ e-image-005.svg,1,1,1,1,1
 e-image-006.svg,2,2,2,2,2
 e-image-007.svg,1,2,2,2,2
 e-image-008.svg,2,2,2,1,1
+e-image-010.svg,1,1,1,1,1
+e-image-011.svg,1,1,1,1,2
+e-image-012.svg,1,1,1,1,2
+e-image-013.svg,1,1,1,1,2
+e-image-014.svg,1,1,1,1,2
+e-image-015.svg,1,1,1,1,2
+e-image-016.svg,1,1,1,1,2
 e-line-001.svg,1,1,1,1,1
 e-line-002.svg,1,1,1,1,1
 e-line-003.svg,1,1,1,1,1
