@@ -1,6 +1,9 @@
 language: ruby
 rvm:
     - 2.2.0
+branches:
+  only:
+    - master
 sudo: false
 script: bundle exec rake deploy
 env:
