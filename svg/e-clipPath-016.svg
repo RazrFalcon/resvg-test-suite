@@ -1,5 +1,5 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>One invalid child</title>
+    <title>Invalid child (1)</title>
 
     <clipPath id="clip1" clip-rule="evenodd">
         <path d="M 100 15 l 50 160 l -130 -100 l 160 0 l -130 100 z"/>

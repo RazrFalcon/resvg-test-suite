@@ -1,8 +1,8 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Invalid child (2)</title>
+    <title>Invalid child (3)</title>
 
     <clipPath id="clip1">
-        <path d=""/>
+        <line x1="10" y1="10" x2="20" y2="20"/>
     </clipPath>
 
     <rect x="0" y="0" width="200" height="200" fill="red" clip-path="url(#clip1)"/>

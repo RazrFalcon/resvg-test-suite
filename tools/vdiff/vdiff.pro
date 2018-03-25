@@ -3,7 +3,7 @@ QT      += core gui widgets svg concurrent sql
 TARGET   = vdiff
 TEMPLATE = app
 
-CONFIG += C++11
+CONFIG += c++11
 
 SOURCES  += \
     src/imageview.cpp \
