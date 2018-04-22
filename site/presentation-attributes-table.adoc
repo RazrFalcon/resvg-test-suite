@@ -165,7 +165,24 @@
 8+^|
 3+| [[a-marker-end]] marker-end  ^|{fail-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
 8+^|
-3+| [[a-mask]] mask  ^|{fail-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
+3+| [[a-mask]] mask  ^|{part-box} ^|{ok-box} ^|{part-box} ^|{part-box} ^|{fail-box}
+||1| Simple case ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||2| maskUnits=userSpaceOnUse without rect ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
+||3| maskUnits=userSpaceOnUse with `width` only ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
+||4| maskUnits=userSpaceOnUse with rect ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
+||5| maskContentUnits=objectBoundingBox ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
+||6| `transform` has no effect ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
+||7| `transform` on shape ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
+||8| No children ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||9| Invalid child ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||10| Invisible child (1) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||11| Invisible child (2) ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
+||12| With opacity (1) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||13| With opacity (2) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||14| With opacity (3) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||15| With `clip-path` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||16| Nested `objectBoundingBox` ^|{fail-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
+||17| color-interpolation=linearRGB ^|{fail-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
 8+^|
 3+| [[a-opacity]] opacity  ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||1| Group opacity ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}

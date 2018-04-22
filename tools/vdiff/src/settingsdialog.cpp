@@ -54,7 +54,7 @@ void SettingsDialog::on_buttonBox_accepted()
 
 void SettingsDialog::on_btnSelectResvg_clicked()
 {
-    const auto path = QFileDialog::getExistingDirectory(this, "rendersvg source path");
+    const auto path = QFileDialog::getExistingDirectory(this, "resvg source path");
     if (!path.isEmpty()) {
         ui->lineEditResvg->setText(path);
     }

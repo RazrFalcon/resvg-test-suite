@@ -385,6 +385,7 @@
 ||21| Recursive on child ^|{ok-box} ^|{ok-box} ^|{crash-box} ^|{fail-box} ^|{fail-box}
 ||22| Self-recursive ^|{fail-box} ^|{ok-box} ^|{crash-box} ^|{fail-box} ^|{fail-box}
 ||23| Self-recursive on child ^|{ok-box} ^|{ok-box} ^|{crash-box} ^|{fail-box} ^|{fail-box}
+||24| Nested `objectBoundingBox` ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 8+^|
 8+^|https://www.w3.org/TR/SVG/masking.html[Clipping, Masking and Compositing]
 3+| [[e-clipPath]] clipPath  ^|{part-box} ^|{ok-box} ^|{part-box} ^|{part-box} ^|{fail-box}
@@ -403,18 +404,36 @@
 ||13| clip-rule=evenodd ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||14| Mixed `clip-rule` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
 ||15| Multiple children ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
-||16| One invalid child ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
 ||17| Overlapped shapes with `evenodd` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
 ||18| `clip-rule` from parent node ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
 ||19| `clip-path` on child ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
 ||20| `clip-path` on self ^|{fail-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
 ||21| Nested `clip-path` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||22| No children ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
-||23| Invalid child ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||16| Invalid child (1) ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
+||23| Invalid child (2) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||26| Invalid child (3) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||24| Invisible child (1) ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
 ||25| Invisible child (2) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 8+^|
-3+| [[e-mask]] mask  ^|{fail-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
+3+| [[e-mask]] mask  ^|{part-box} ^|{ok-box} ^|{part-box} ^|{part-box} ^|{fail-box}
+||1| Simple case ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||2| maskUnits=userSpaceOnUse without rect ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
+||3| maskUnits=userSpaceOnUse with `width` only ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
+||4| maskUnits=userSpaceOnUse with rect ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
+||5| maskContentUnits=objectBoundingBox ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
+||6| `transform` has no effect ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
+||7| `transform` on shape ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
+||8| No children ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||9| Invalid child ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||10| Invisible child (1) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||11| Invisible child (2) ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
+||12| With opacity (1) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||13| With opacity (2) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||14| With opacity (3) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||15| With `clip-path` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||16| Nested `objectBoundingBox` ^|{fail-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
+||17| color-interpolation=linearRGB ^|{fail-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
 8+^|
 8+^|https://www.w3.org/TR/SVG/filters.html[Filter Effects]
 3+| [[e-filter]] filter  ^|{fail-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}

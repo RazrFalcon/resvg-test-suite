@@ -88,10 +88,10 @@ linking-frag-01-f.svg,1,1,1,1,1
 linking-uri-01-b.svg,1,1,1,1,1
 linking-uri-02-b.svg,1,1,1,1,1
 linking-uri-03-t.svg,1,1,1,1,1
-masking-filter-01-f.svg,1,2,1,2,2
-masking-intro-01-f.svg,1,2,2,1,2
-masking-mask-01-b.svg,1,2,1,1,2
-masking-mask-02-f.svg,1,2,1,1,2
+masking-filter-01-f.svg,1,1,1,2,2
+masking-intro-01-f.svg,1,1,2,1,2
+masking-mask-01-b.svg,1,1,1,1,2
+masking-mask-02-f.svg,1,1,1,1,2
 masking-opacity-01-b.svg,1,1,1,1,2
 masking-path-01-b.svg,1,1,1,1,2
 masking-path-02-b.svg,1,1,2,1,2
@@ -101,8 +101,8 @@ masking-path-05-f.svg,1,1,1,1,2
 masking-path-06-b.svg,1,2,1,2,2
 masking-path-07-b.svg,1,2,2,2,2
 masking-path-08-b.svg,1,1,2,1,2
-masking-path-10-b.svg,1,2,1,2,2
-masking-path-11-b.svg,1,2,2,2,2
+masking-path-10-b.svg,1,1,1,2,2
+masking-path-11-b.svg,1,1,2,2,2
 masking-path-13-f.svg,1,1,1,1,2
 masking-path-14-f.svg,1,2,1,1,2
 metadata-example-01-t.svg,1,1,1,1,1

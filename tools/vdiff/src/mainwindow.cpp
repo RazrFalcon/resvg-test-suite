@@ -64,10 +64,10 @@ MainWindow::MainWindow(QWidget *parent)
     connect(&m_render, &Render::finished, this, &MainWindow::onRenderFinished);
 
     for (QComboBox *cmbBox : m_flagBoxes) {
-        cmbBox->addItem(QIcon(":/icons/unknown"), "Unknown");
-        cmbBox->addItem(QIcon(":/icons/passed"), "Passed");
-        cmbBox->addItem(QIcon(":/icons/failed"), "Failed");
-        cmbBox->addItem(QIcon(":/icons/crashed"), "Crashed");
+        cmbBox->addItem(QIcon(":/icons/unknown.svgz"), "Unknown");
+        cmbBox->addItem(QIcon(":/icons/passed.svgz"), "Passed");
+        cmbBox->addItem(QIcon(":/icons/failed.svgz"), "Failed");
+        cmbBox->addItem(QIcon(":/icons/crashed.svgz"), "Crashed");
 
         connect(cmbBox, SIGNAL(activated(int)), this, SLOT(updatePassFlags()));
     }
