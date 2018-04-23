@@ -59,7 +59,7 @@ barh_data = json.dumps(
             "value": passed[0]
         },
         {
-            "name": "Chromium r536395",
+            "name": "Chromium r549031",
             "value": passed[1]
         },
         {

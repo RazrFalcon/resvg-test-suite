@@ -99,7 +99,7 @@ def check_title_uniqueness():
 
 def check_node_ids():
     """
-    Checks that all elements has ID attribute.
+    Checks that all elements has an unique ID attribute.
     """
 
     files = sorted(os.listdir('svg/'))
@@ -116,6 +116,8 @@ def check_node_ids():
         for node in tree.getroot().iter():
             # extract tag name without namespace
             _, tag = node.tag[1:].split('}')  # WTF python?!
+
+            # TODO: check for uniqueness
 
             if tag not in ignore_tags:
                 if not node.get('id'):

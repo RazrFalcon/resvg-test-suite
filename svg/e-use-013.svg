@@ -2,9 +2,9 @@
     <title>Indirect recursive</title>
 
     <g id="g1">
-        <use xlink:href="#use2"/>
+        <use id="use1" xlink:href="#use2"/>
     </g>
-    <use xlink:href="#g1" id="#use2"/>
+    <use id="use2" xlink:href="#g1"/>
 
     <!-- image frame -->
     <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
