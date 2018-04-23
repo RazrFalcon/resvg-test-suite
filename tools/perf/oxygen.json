@@ -1,0 +1,35 @@
+{
+    "title": "Time to render Oxygen Icon Theme",
+    "items": [
+        {
+            "value": 159,
+            "name": "resvg 0.2.0 (cairo)"
+        },
+        {
+            "value": 163,
+            "name": "resvg 0.2.0 (qt)"
+        },
+        {
+            "value": 200,
+            "name": "librsvg 2.40.18"
+        },
+        {
+            "value": 502,
+            "name": "QtSvg 5.9.4"
+        },
+        {
+            "value": 1610,
+            "name": "Inkscape 0.92.2"
+        }
+    ],
+    "hor_axis": {
+        "round_tick_values": true,
+        "title": "Time passed",
+        "width": 700,
+        "suffix": "sec"
+    },
+    "items_font": {
+        "family": "Arial",
+        "size": 12
+    }
+}
