@@ -221,11 +221,11 @@ class RowData:
         self.flags = flags
 
 
-def global_flags(rows, name):
+def global_flags(rows, type, name):
     passed_list = [0, 0, 0, 0, 0]
     total = 0
     for row in rows:
-        if row.name != name:
+        if row.type != type or row.name != name:
             continue
 
         total += 1
@@ -282,7 +282,7 @@ def get_item_row(rows, out_of_scope_list, type, name):
     if name in out_of_scope_list:
         flags = [OUT_OF_SCOPE, OUT_OF_SCOPE, OUT_OF_SCOPE, OUT_OF_SCOPE, OUT_OF_SCOPE]
     else:
-        flags = global_flags(rows, name)
+        flags = global_flags(rows, type, name)
 
     if type == ELEMENT_TYPE:
         anchor = 'e-' + name
@@ -327,7 +327,7 @@ def main():
             out += get_item_row(rows, out_of_scope_elems, ELEMENT_TYPE, elem)
 
             for row in rows:
-                if row.name == elem:
+                if row.type == ELEMENT_TYPE and row.name == elem:
                     out += '||{}| {}{}\n'.format(row.index, row.title, flags_to_string(row.flags))
 
             out += '8+^|\n'
@@ -342,7 +342,7 @@ def main():
         out += get_item_row(rows, out_of_scope_pres_attrs, ATTRIBUTE_TYPE, attr)
 
         for row in rows:
-            if row.name == attr:
+            if row.type == ATTRIBUTE_TYPE and row.name == attr:
                 out += '||{}| {}{}\n'.format(row.index, row.title, flags_to_string(row.flags))
 
         out += '8+^|\n'

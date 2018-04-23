@@ -42,16 +42,16 @@
 3+| [[e-use]] use  ^|{part-box} ^|{part-box} ^|{ok-box} ^|{part-box} ^|{part-box}
 ||1| Simple case ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||2| From `defs` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
-||3| Style inheritance ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box}
+||3| Style inheritance (1) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box}
 ||4| Style inheritance (2) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||5| Style inheritance (3) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box}
 ||6| `transform` attribute ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||7| `transform` attribute (2) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||8| xlink to external file ^|{fail-box} ^|{fail-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
 ||9| CSS rules ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
-||10| Recursive ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
-||11| Self-recursive ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
-||12| Nested recursive ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||10| Recursive ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||11| Self-recursive ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||12| Nested recursive ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||13| Indirect recursive ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||14| Non-linear order ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 8+^|
@@ -80,8 +80,6 @@
 8+^|
 8+^|https://www.w3.org/TR/SVG/styling.html[Styling]
 3+| [[e-style]] style  ^|{part-box} ^|{ok-box} ^|{part-box} ^|{part-box} ^|{part-box}
-||1| Simple case ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
-||2| Comments ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
 ||1| Class selector ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
 ||2| Type selector ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
 ||3| ID selector ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
@@ -297,8 +295,8 @@
 ||15| Attributes via `xlink:href`. Complex order ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
 ||16| Unresolved `xlink:href` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||17| Invalid `xlink:href` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
-||18| Self-recursive `xlink:href` ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
-||19| Recursive `xlink:href` ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||18| Self-recursive `xlink:href` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||19| Recursive `xlink:href` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||20| gradientTransform ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||21| gradientTransform + transform ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
 ||22| Many stops ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
@@ -324,8 +322,8 @@
 ||16| Unresolved `xlink:href` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||17| `xlink:href` not to gradient ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||38| Invalid `xlink:href` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
-||18| Self-recursive `xlink:href` ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
-||19| Recursive `xlink:href` ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||18| Self-recursive `xlink:href` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||19| Recursive `xlink:href` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||20| gradientTransform ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||21| gradientTransform + transform ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
 ||22| Many stops ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
@@ -383,7 +381,7 @@
 ||19| Pattern on child ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
 ||20| Out of order referencing ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
 ||21| Recursive on child ^|{ok-box} ^|{ok-box} ^|{crash-box} ^|{fail-box} ^|{fail-box}
-||22| Self-recursive ^|{fail-box} ^|{ok-box} ^|{crash-box} ^|{fail-box} ^|{fail-box}
+||22| Self-recursive ^|{ok-box} ^|{ok-box} ^|{crash-box} ^|{fail-box} ^|{fail-box}
 ||23| Self-recursive on child ^|{ok-box} ^|{ok-box} ^|{crash-box} ^|{fail-box} ^|{fail-box}
 ||24| Nested `objectBoundingBox` ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 8+^|
