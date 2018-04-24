@@ -370,7 +370,7 @@
 ||8| patternContentUnits=objectBoundingBox ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
 ||9| With `viewBox` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||10| `patternContentUnits` with `viewBox` ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
-||11| `preserveAspectRatio` ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||11| `preserveAspectRatio` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||12| Missing `width` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||13| Missing `height` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||14| Everything via `xlink:href` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
@@ -379,7 +379,7 @@
 ||17| No children ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||18| Text child ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||19| Pattern on child ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
-||20| Out of order referencing ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
+||20| Out of order referencing ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||21| Recursive on child ^|{ok-box} ^|{ok-box} ^|{crash-box} ^|{fail-box} ^|{fail-box}
 ||22| Self-recursive ^|{ok-box} ^|{ok-box} ^|{crash-box} ^|{fail-box} ^|{fail-box}
 ||23| Self-recursive on child ^|{ok-box} ^|{ok-box} ^|{crash-box} ^|{fail-box} ^|{fail-box}
