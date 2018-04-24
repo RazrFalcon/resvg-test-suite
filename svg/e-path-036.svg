@@ -3,9 +3,9 @@
     <title>No commawsp after sweep-flag</title>
 
     <!-- should be covered -->
-    <path d="M 100 100 h 25 a 25 25 0 1 1 -25 -25 z" fill="red"/>
+    <path id="path1" d="M 100 100 h 25 a 25 25 0 1 1 -25 -25 z" fill="red"/>
 
-    <path d="M 100 100 h 25 a 25 25 0 1 1-25 -25 z" fill="green"/>
+    <path id="path2" d="M 100 100 h 25 a 25 25 0 1 1-25 -25 z" fill="green"/>
 
     <!-- image frame -->
     <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>

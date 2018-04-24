@@ -3,14 +3,14 @@
     <desc>Decoration should have yellow fill and green stroke</desc>
 
     <!-- intersection -->
-    <rect x="100" y="10" width="0.1" height="180" fill="gray"/>
-    <rect x="10" y="100" width="180" height="0.1" fill="gray"/>
+    <rect id="rect1" x="100" y="10" width="0.1" height="180" fill="gray"/>
+    <rect id="rect2" x="10" y="100" width="180" height="0.1" fill="gray"/>
 
-    <text x="100" y="100" text-anchor="middle" text-decoration="underline" stroke-width="0.5">
-        <tspan>Some</tspan>
-        <tspan fill="yellow" stroke="red">long</tspan>
-        <tspan fill="yellow" stroke="green" text-decoration="underline">styled</tspan>
-        <tspan fill="yellow" stroke="blue">text</tspan>
+    <text id="text1" x="100" y="100" text-anchor="middle" text-decoration="underline" stroke-width="0.5">
+        <tspan id="tspan1">Some</tspan>
+        <tspan id="tspan2" fill="yellow" stroke="red">long</tspan>
+        <tspan id="tspan3" fill="yellow" stroke="green" text-decoration="underline">styled</tspan>
+        <tspan id="tspan4" fill="yellow" stroke="blue">text</tspan>
     </text>
 
     <!-- image frame -->

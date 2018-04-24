@@ -3,10 +3,10 @@
     <desc>`x` should be 0</desc>
 
     <!-- should be covered -->
-    <rect x="20" y="20" width="160" height="160" fill="red"/>
+    <rect id="rect1" x="20" y="20" width="160" height="160" fill="red"/>
 
-    <g transform="translate(20 0)">
-        <rect y="20" width="160" height="160" fill="green"/>
+    <g id="g1" transform="translate(20 0)">
+        <rect id="rect2" y="20" width="160" height="160" fill="green"/>
     </g>
 
     <!-- image frame -->

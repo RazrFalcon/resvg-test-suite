@@ -1,8 +1,8 @@
-<svg:svg viewBox="0 0 200 200" xmlns:svg="http://www.w3.org/2000/svg">
+<svg:svg id="svg1" viewBox="0 0 200 200" xmlns:svg="http://www.w3.org/2000/svg">
     <svg:title>Explicit `svg` namespace</svg:title>
 
-    <svg:circle cx="100" cy="100" r="80" fill="green"/>
+    <svg:circle id="circle" cx="100" cy="100" r="80" fill="green"/>
 
     <!-- image frame -->
-    <svg:rect x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+    <svg:rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
 </svg:svg>

@@ -5,10 +5,10 @@
     <not-a-text id="text1">Text</not-a-text>
 
     <!-- should be covered -->
-    <text x="40" y="120" fill="red">Text</text>
+    <text id="text2" x="40" y="120" fill="red">Text</text>
 
-    <text x="40" y="120">
-        <tref xlink:href="../images/simple-text.svg#text1"/>
+    <text id="text3" x="40" y="120">
+        <tref id="tref1" xlink:href="../images/simple-text.svg#text1"/>
     </text>
 
     <!-- image frame -->

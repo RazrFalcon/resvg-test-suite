@@ -3,10 +3,10 @@
 
     <pattern id="patt1" patternUnits="userSpaceOnUse" width="20" height="20"
              patternTransform="rotate(30)">
-        <rect x="0" y="0" width="10" height="10" fill="grey"/>
-        <rect x="10" y="10" width="10" height="10" fill="green"/>
+        <rect id="rect1" x="0" y="0" width="10" height="10" fill="grey"/>
+        <rect id="rect2" x="10" y="10" width="10" height="10" fill="green"/>
     </pattern>
-    <rect x="20" y="20" width="140" height="140" rx="20" ry="20" fill="url(#patt1)" stroke="darkblue"
+    <rect id="rect3" x="20" y="20" width="140" height="140" rx="20" ry="20" fill="url(#patt1)" stroke="darkblue"
           transform="rotate(-30, 110, 70)"/>
 
     <!-- image frame -->

@@ -2,9 +2,9 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>On `tspan`</title>
 
-    <text x="100" y="100" text-anchor="middle" font-family="Arial" font-size="12">
-        A <a xlink:href="https://www.w3.org/TR/SVG/">
-            <tspan fill="blue">
+    <text id="text1" x="100" y="100" text-anchor="middle" font-family="Arial" font-size="12">
+        A <a id="a1" xlink:href="https://www.w3.org/TR/SVG/">
+            <tspan id="tspan1" fill="blue">
                 link
                 around tspan
             </tspan>

@@ -2,10 +2,10 @@
     <title>Invalid data in L</title>
 
     <!-- should be covered -->
-    <path d="M 30 40 L 110 160"
+    <path id="path1" d="M 30 40 L 110 160"
           fill="none" stroke="red" stroke-width="5"/>
 
-    <path d="M 30 40 L 110 160 L 150#80"
+    <path id="path2" d="M 30 40 L 110 160 L 150#80"
           fill="none" stroke="green" stroke-width="5"/>
 
     <!-- image frame -->

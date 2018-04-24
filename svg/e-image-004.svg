@@ -1,7 +1,7 @@
 <svg id="svg1" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Embedded JPEG as image/jpg</title>
 
-    <image x="8" y="8" width="64" height="64" xlink:href="data:image/jpg;base64,
+    <image id="image1" x="8" y="8" width="64" height="64" xlink:href="data:image/jpg;base64,
 /9j/4AAQSkZJRgABAQIAGAAYAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsK
 CwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQU
 FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wgARCABAAEADAREA
@@ -63,5 +63,5 @@ v0/iMUGkTjLWnQFBA2mDuBGS8ejvvWmJCFqtRI9GwfWMwGHPaQ5NZ6fuHrt7htnY1yQ2UwrbIsoY
 sSouiGSZuWwVYCYFYT90EQoj6NpybGB5IzRAYNQM001n+BzHvCAPm4qMYZKOk6Ym+hlJbTiYKtor
 Xq56p31CMg8UDxMZkIz3oTQaos1o1jd3GwbdQVWamp5uv//Z"/>
 
-    <rect x="1" y="1" width="79" height="79" fill="none" stroke="black"/>
+    <rect id="frame" x="1" y="1" width="79" height="79" fill="none" stroke="black"/>
 </svg>

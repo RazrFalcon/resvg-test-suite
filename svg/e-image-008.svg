@@ -1,7 +1,7 @@
 <svg id="svg1" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Embedded SVGZ</title>
 
-    <image x="8" y="8" width="64" height="64" xlink:href="data:image/svg+xml;base64,
+    <image id="image1" x="8" y="8" width="64" height="64" xlink:href="data:image/svg+xml;base64,
 H4sIAAAAAAACA4RP1ZVCMRBtZc7sfxR36GSJ4xKselyfxuXadLZ7B/tgDqPlsYsMGHB2nwjH+Wyx
 7aKPcdWi9HA4kIMky42jgjFGrzzsdTZGRbBhNuvin20yBG+C87GLd4XNVbKCcAg6+scTTVDsmMvx
 h1VNkaopjjaNKmMlHDg+ttNLwX2n7HVU2KiZAfWEqSuON8hVYvM80B9MXZDKAyXqpJaHavDbn7p7
@@ -28,5 +28,5 @@ QUleEtUdKb7WdcjmItGOnJrt3VbRTc/ptptxQr5PMlCklxOQ/DqaLqUuOiHWgm2rku7WdEhruo0T
 Usde+1HTyg+aXndNLz+a5pZ0wfJ+P3W1ErSUIC32e1Q6g1sIlcm4cQb59zwWH/zyJP99+3aQXwT/
 9X8cQRD9Rg4AAA=="/>
 
-    <rect x="1" y="1" width="79" height="79" fill="none" stroke="black"/>
+    <rect id="frame" x="1" y="1" width="79" height="79" fill="none" stroke="black"/>
 </svg>

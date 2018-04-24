@@ -9,9 +9,9 @@
     </radialGradient>
 
     <!-- should be covered -->
-    <circle cx="100" cy="100" r="40" fill="red"/>
+    <circle id="circle1" cx="100" cy="100" r="40" fill="red"/>
 
-    <rect x="20" y="20" width="160" height="160" stroke="url(#rg-test)"
+    <rect id="rect1" x="20" y="20" width="160" height="160" stroke="url(#rg-test)"
           stroke-width="20" stroke-opacity="0.5"/>
 
     <!-- image frame -->

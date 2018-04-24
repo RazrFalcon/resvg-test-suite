@@ -2,9 +2,9 @@
     <title>Simple case</title>
 
     <!-- should be covered -->
-    <path d="M 20 40 L 160 180 L 30 150" fill="none" stroke="red"/>
+    <path id="path1" d="M 20 40 L 160 180 L 30 150" fill="none" stroke="red"/>
 
-    <polyline points="20 40 160 180 30 150" fill="none" stroke="green"/>
+    <polyline id="polyline1" points="20 40 160 180 30 150" fill="none" stroke="green"/>
 
     <!-- image frame -->
     <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>

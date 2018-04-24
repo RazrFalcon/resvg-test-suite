@@ -2,9 +2,9 @@
     <title>Simple case</title>
 
     <!-- should be covered -->
-    <path d="M170 100C170 66.86 134.18 40 90 40 45.82 40 10 66.86 10 100 10 133.14 45.82 160 90 160 134.18 160 170 133.14 170 100Z" fill="red"/>
+    <path id="path1" d="M170 100C170 66.86 134.18 40 90 40 45.82 40 10 66.86 10 100 10 133.14 45.82 160 90 160 134.18 160 170 133.14 170 100Z" fill="red"/>
 
-    <ellipse cx="90" cy="100" rx="80" ry="60" fill="green"/>
+    <ellipse id="ellipse1" cx="90" cy="100" rx="80" ry="60" fill="green"/>
 
     <!-- image frame -->
     <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>

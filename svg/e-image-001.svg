@@ -1,7 +1,7 @@
 <svg id="svg1" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>External JPEG</title>
 
-    <image x="8" y="8" width="64" height="64" xlink:href="../images/image-001.jpg"/>
+    <image id="image1" x="8" y="8" width="64" height="64" xlink:href="../images/image-001.jpg"/>
 
-    <rect x="1" y="1" width="79" height="79" fill="none" stroke="black"/>
+    <rect id="frame" x="1" y="1" width="79" height="79" fill="none" stroke="black"/>
 </svg>

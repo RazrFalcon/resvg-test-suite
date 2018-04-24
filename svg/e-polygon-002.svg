@@ -2,7 +2,7 @@
     <title>Not enough points</title>
     <desc>Must contain at least 4 points</desc>
 
-    <polygon points="20 40 160" fill="none" stroke="red"/>
+    <polygon id="polygon1" points="20 40 160" fill="none" stroke="red"/>
 
     <!-- image frame -->
     <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>

@@ -1,7 +1,7 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="14">
     <title>`xml:space`</title>
 
-    <text x="100" y="100" text-anchor="middle" xml:space="preserve">A   lot     of
+    <text id="text1" x="100" y="100" text-anchor="middle" xml:space="preserve">A   lot     of
 
 
         spaces</text>

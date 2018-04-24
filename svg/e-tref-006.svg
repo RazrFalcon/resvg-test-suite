@@ -2,14 +2,14 @@
      font-family="Arial" font-size="64">
     <title>Position attributes</title>
 
-    <defs>
+    <defs id="defs1">
         <text id="text1">Text</text>
     </defs>
 
     <!-- should be covered -->
-    <text x="40" y="120" fill="red">Text</text>
+    <text id="text2" x="40" y="120" fill="red">Text</text>
 
-    <text y="120"><tref x="40" xlink:href="#text1"/></text>
+    <text id="text3" y="120"><tref id="tref1" x="40" xlink:href="#text1"/></text>
 
     <!-- image frame -->
     <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>

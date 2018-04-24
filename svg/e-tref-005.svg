@@ -2,15 +2,15 @@
      font-family="Arial" font-size="64">
     <title>Nested</title>
 
-    <defs>
-        <text id="text1"><tref xlink:href="#text2"/></text>
+    <defs id="defs1">
+        <text id="text1"><tref id="tref1" xlink:href="#text2"/></text>
         <text id="text2">Text</text>
     </defs>
 
     <!-- should be covered -->
-    <text x="40" y="120" fill="red">Text</text>
+    <text id="text3" x="40" y="120" fill="red">Text</text>
 
-    <text x="40" y="120"><tref xlink:href="#text1"/></text>
+    <text id="text4" x="40" y="120"><tref id="tref2" xlink:href="#text1"/></text>
 
     <!-- image frame -->
     <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>

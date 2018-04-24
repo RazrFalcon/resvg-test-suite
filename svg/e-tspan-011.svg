@@ -5,7 +5,7 @@
     <text id="text1" x="0" y="120" xml:space="preserve">
         <tspan id="tspan1" fill="green" xml:space="default">
             Text
-            <tspan id="tspan1" fill="blue" xml:space="preserve">
+            <tspan id="tspan2" fill="blue" xml:space="preserve">
                 Text
             </tspan>
         </tspan>

@@ -1,7 +1,7 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="64">
     <title>`dx` and `dy` with multiple values</title>
 
-    <text dx="20 6 10 16" dy="100 10 15 20">Text</text>
+    <text id="text1" dx="20 6 10 16" dy="100 10 15 20">Text</text>
 
     <!-- image frame -->
     <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>

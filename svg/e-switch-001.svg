@@ -2,10 +2,10 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
     <title>Simple case</title>
 
-    <switch>
-        <circle cx="100" cy="100" r="80" fill="red" requiredExtensions="http://example.org/bogus"/>
-        <circle cx="100" cy="100" r="80" fill="green"/>
-        <circle cx="100" cy="100" r="80" fill="red"/>
+    <switch id="switch1">
+        <circle id="circle1" cx="100" cy="100" r="80" fill="red" requiredExtensions="http://example.org/bogus"/>
+        <circle id="circle2" cx="100" cy="100" r="80" fill="green"/>
+        <circle id="circle3" cx="100" cy="100" r="80" fill="red"/>
     </switch>
 
     <!-- image frame -->

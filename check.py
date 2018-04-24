@@ -108,28 +108,37 @@ def check_node_ids():
     ignore_tags = [
         'title',
         'desc',
+        'stop',
     ]
 
     for file in files:
         tree = ET.parse('svg/' + file)
+        ids = set()
 
         for node in tree.getroot().iter():
             # extract tag name without namespace
             _, tag = node.tag[1:].split('}')  # WTF python?!
 
-            # TODO: check for uniqueness
-
             if tag not in ignore_tags:
-                if not node.get('id'):
+                node_id = node.get('id')
+                # ID must be set
+                if not node_id:
                     raise ValueError('\'{}\' element in {} has no ID'
                                      .format(tag, file))
+                else:
+                    # Check that ID is unique
+                    if node_id in ids:
+                        raise ValueError('\'{}\' ID already exist in {}'
+                                     .format(node_id, file))
+                    else:
+                        ids.add(node_id)
 
 
 def main():
     check_order()
     check_results()
     check_title_uniqueness()
-    # check_node_ids()
+    check_node_ids()
     check_untracked_files()
 
 

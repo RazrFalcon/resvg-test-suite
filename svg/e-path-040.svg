@@ -2,10 +2,10 @@
     <title>Multi-line data</title>
 
     <!-- should be covered -->
-    <path d="M 30 40 L 110 160 L 150 60"
+    <path id="path1" d="M 30 40 L 110 160 L 150 60"
           fill="none" stroke="red" stroke-width="5"/>
 
-    <path d="M 30 40
+    <path id="path2" d="M 30 40
              L 110 160
              L 150 60"
           fill="none" stroke="green" stroke-width="5"/>

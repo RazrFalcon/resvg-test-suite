@@ -2,9 +2,9 @@
     <title>Escaped text (3)</title>
 
     <!-- should be covered -->
-    <text x="40" y="120" fill="red">0Text@</text>
+    <text id="text1" x="40" y="120" fill="red">0Text@</text>
 
-    <text x="40" y="120">&#48;Text&#64;</text>
+    <text id="text2" x="40" y="120">&#48;Text&#64;</text>
 
     <!-- image frame -->
     <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>

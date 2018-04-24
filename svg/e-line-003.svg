@@ -3,9 +3,9 @@
     <desc>`x1` should be 0</desc>
 
     <!-- should be covered -->
-    <path d="M 0 40 L 160 180" stroke="red"/>
+    <path id="path1" d="M 0 40 L 160 180" stroke="red"/>
 
-    <line y1="40" x2="160" y2="180" stroke="green"/>
+    <line id="line1" y1="40" x2="160" y2="180" stroke="green"/>
 
     <!-- image frame -->
     <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>

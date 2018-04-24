@@ -1,9 +1,9 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
     <title>`requiredFeatures`</title>
 
-    <switch>
-        <circle cx="100" cy="100" r="80" fill="green" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Structure"/>
-        <circle cx="100" cy="100" r="80" fill="red"/>
+    <switch id="switch1">
+        <circle id="circle1" cx="100" cy="100" r="80" fill="green" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Structure"/>
+        <circle id="circle2" cx="100" cy="100" r="80" fill="red"/>
     </switch>
 
     <!-- image frame -->

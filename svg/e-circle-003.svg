@@ -3,9 +3,9 @@
     <desc>`cx` should be 0</desc>
 
     <!-- should be covered -->
-    <circle cx="0" cy="100" r="80" fill="red"/>
+    <circle id="circle1" cx="0" cy="100" r="80" fill="red"/>
 
-    <circle cy="100" r="80" fill="green"/>
+    <circle id="circle2" cy="100" r="80" fill="green"/>
 
     <!-- image frame -->
     <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>

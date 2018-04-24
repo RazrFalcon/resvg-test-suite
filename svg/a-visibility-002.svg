@@ -1,7 +1,7 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
     <title>On `g`</title>
 
-    <g visibility="hidden">
+    <g id="g1" visibility="hidden">
         <circle id="circle1" cx="100" cy="100" r="80" fill="green" visibility="visible"/>
 
         <!-- should not be rendered -->

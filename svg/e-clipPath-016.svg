@@ -2,12 +2,12 @@
     <title>Invalid child (1)</title>
 
     <clipPath id="clip1" clip-rule="evenodd">
-        <path d="M 100 15 l 50 160 l -130 -100 l 160 0 l -130 100 z"/>
-        <g>
-            <circle cx="100" cy="100" r="10"/>
+        <path id="path1" d="M 100 15 l 50 160 l -130 -100 l 160 0 l -130 100 z"/>
+        <g id="g1">
+            <circle id="circle1" cx="100" cy="100" r="10"/>
         </g>
     </clipPath>
-    <rect x="0" y="0" width="200" height="200" fill="green" clip-path="url(#clip1)"/>
+    <rect id="rect1" x="0" y="0" width="200" height="200" fill="green" clip-path="url(#clip1)"/>
 
     <!-- image frame -->
     <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>

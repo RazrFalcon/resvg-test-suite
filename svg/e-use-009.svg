@@ -2,15 +2,15 @@
     <title>CSS rules</title>
     <desc>CSS should be applied before `use` resolving</desc>
 
-    <style type="text/css">
+    <style id="style1" type="text/css">
         circle { fill:green; }
     </style>
 
-    <defs>
+    <defs id="defs1">
         <circle id="circle1" cx="100" cy="100" r="80"/>
     </defs>
-    <g fill="red">
-        <use xlink:href="#circle1"/>
+    <g id="g1" fill="red">
+        <use id="use1" xlink:href="#circle1"/>
     </g>
 
     <!-- image frame -->

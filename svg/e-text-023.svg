@@ -2,7 +2,7 @@
      font-family="Arial" font-size="64">
     <title>`transform`</title>
 
-    <g transform="skewX(30) translate(-40 10)">
+    <g id="g1" transform="skewX(30) translate(-40 10)">
         <text id="text1" x="100" y="100" text-anchor="middle">Text</text>
     </g>
 

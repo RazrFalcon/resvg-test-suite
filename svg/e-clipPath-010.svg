@@ -2,12 +2,12 @@
     <title>Clipping with complex text (1)</title>
 
     <clipPath id="clip1">
-        <text x="20" y="110" font-family="Arial" font-size="40">
-            <tspan>Text</tspan>
-            <tspan font-weight="bold">Text</tspan>
+        <text id="text1" x="20" y="110" font-family="Arial" font-size="40">
+            <tspan id="tspan1">Text</tspan>
+            <tspan id="tspan2" font-weight="bold">Text</tspan>
         </text>
     </clipPath>
-    <rect x="0" y="0" width="200" height="200" fill="green" clip-path="url(#clip1)"/>
+    <rect id="rect1" x="0" y="0" width="200" height="200" fill="green" clip-path="url(#clip1)"/>
 
     <!-- image frame -->
     <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>

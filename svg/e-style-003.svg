@@ -1,7 +1,7 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
     <title>ID selector</title>
 
-    <style>
+    <style id="style1">
         #circle1 { fill: green; }
     </style>
     <circle id="circle1" cx="100" cy="100" r="80"/>
