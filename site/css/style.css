@@ -1,0 +1,14 @@
+@supports (position: sticky) or (position: -webkit-sticky) {
+  thead {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+  }
+
+  /* workaround for Blink not supporting sticky positioning on thead/tr */
+  th {
+    position: sticky;
+    top: 0px;
+    background-color: #f7f8f7;
+  }
+}
