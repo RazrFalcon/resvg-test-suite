@@ -1,5 +1,5 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>xlink to external file</title>
+    <title>xlink to an external file</title>
 
     <use id="use1" xlink:href="../images/simple-text.svg#text1" fill="green"
          font-family="Arial" font-size="64"/>
