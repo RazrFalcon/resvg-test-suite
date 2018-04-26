@@ -23,7 +23,25 @@
 - `results.csv` - results of manual testing via `tools/vdiff` of the `resvg` test suite.
 - `stats.py` - generates `site/images/chart.svg`.
 
-### Tests order
+## Requirements
+
+Linux. Other OS'es aren't supported, but should work.
+
+Apps and libraries:
+- node.js
+- Qt 5
+- Inkscape
+- librsvg
+- Python 3
+- Ruby (bundler)
+- ... and [resvg](https://github.com/RazrFalcon/resvg) itself
+
+Fonts:
+- Arial
+- Times New Roman
+- Source Code Pro (all weights)
+
+## Tests order
 
 Test names must not be changed. All new test files should increment the latest number.
 But if we need to insert some test in the middle of the order - we also have to increment
