@@ -13,7 +13,7 @@ class MainWindow;
 class QLabel;
 class QComboBox;
 
-class ImageView;
+class BackendWidget;
 
 class MainWindow : public QMainWindow
 {
@@ -24,6 +24,7 @@ public:
     ~MainWindow();
 
 private:
+    void prepareBackends();
     void setGuiEnabled(bool flag);
     void loadImageList();
     void resetImages();
@@ -32,14 +33,12 @@ private:
     void getTitleAndDesc(const QString &path);
     void fillChBoxes();
 
-    void setDiffText(QLabel *lbl, uint diff, float percent) const;
-
 private slots:
     void onStart();
     void on_cmbBoxFiles_currentIndexChanged(int index);
-    void onImageReady(const ImageType type, const QImage &img);
-    void onDiffReady(const ImageType type, const QImage &img);
-    void onDiffStats(const ImageType type, const uint value, const float percent);
+    void onImageReady(const Backend type, const QImage &img);
+    void onDiffReady(const Backend type, const QImage &img);
+    void onDiffStats(const Backend type, const uint value, const float percent);
     void onRenderWarning(const QString &msg);
     void onRenderError(const QString &msg);
     void onRenderFinished();
@@ -51,10 +50,7 @@ private slots:
 private:
     Ui::MainWindow * const ui;
 
-    QHash<ImageType, ImageView*> m_imgViews;
-    QHash<ImageType, ImageView*> m_diffViews;
-    QHash<ImageType, QLabel*> m_diffLabels;
-    QVector<QComboBox*> m_flagBoxes;
+    QHash<Backend, BackendWidget*> m_backendWidges;
 
     Settings m_settings;
     Tests m_tests;

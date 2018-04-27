@@ -1,8 +1,22 @@
 #pragma once
 
 #include <QVector>
+#include <QHash>
 
 #include "settings.h"
+
+enum class Backend
+{
+    Chrome,
+    ResvgCairo,
+    ResvgQt,
+    Inkscape,
+    librsvg,
+    QtSvg,
+};
+
+Q_DECL_PURE_FUNCTION inline uint qHash(const Backend &key, uint seed = 0)
+{ return qHash((uint)key, seed); }
 
 enum class TestState
 {
@@ -17,11 +31,7 @@ struct TestItem
     QString path;
     QString fileName;
     QString name;
-    TestState chrome    = TestState::Unknown;
-    TestState resvg     = TestState::Unknown;
-    TestState inkscape  = TestState::Unknown;
-    TestState librsvg   = TestState::Unknown;
-    TestState qtsvg     = TestState::Unknown;
+    QHash<Backend, TestState> state;
 };
 
 class Tests

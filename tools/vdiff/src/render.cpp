@@ -55,15 +55,15 @@ void Render::loadSettings(const Settings &settings)
     m_converters.rsvg = settings.librsvgPath;
 }
 
-QString Render::imageTypeName(const ImageType t)
+QString Render::backendName(const Backend t)
 {
     switch (t) {
-        case ImageType::Chrome : return "Chrome";
-        case ImageType::ResvgCairo : return "Resvg (cairo)";
-        case ImageType::ResvgQt : return "Resvg (Qt)";
-        case ImageType::Inkscape : return "Inkscape";
-        case ImageType::Rsvg : return "rsvg";
-        case ImageType::QtSvg : return "QtSvg";
+        case Backend::Chrome : return "Chrome";
+        case Backend::ResvgCairo : return "Resvg (cairo)";
+        case Backend::ResvgQt : return "Resvg (Qt)";
+        case Backend::Inkscape : return "Inkscape";
+        case Backend::librsvg : return "rsvg";
+        case Backend::QtSvg : return "QtSvg";
     }
 }
 
@@ -86,8 +86,8 @@ QImage Render::renderViaChrome(const RenderData &data)
 
 QImage Render::renderViaResvg(const RenderData &data)
 {
-    const QString outPath = (data.type == ImageType::ResvgCairo) ? ImgName::ResvgCairo
-                                                                 : ImgName::ResvgQt;
+    const QString outPath = (data.type == Backend::ResvgCairo) ? ImgName::ResvgCairo
+                                                               : ImgName::ResvgQt;
 
     const QString out = Process::run(data.convPath,
       {
@@ -95,7 +95,7 @@ QImage Render::renderViaResvg(const RenderData &data)
         outPath,
         "-w", QString::number(data.viewSize),
         "--background=white",
-        QString("--backend=") + ((data.type == ImageType::ResvgCairo) ? "cairo" : "qt")
+        QString("--backend=") + ((data.type == Backend::ResvgCairo) ? "cairo" : "qt")
       },
       true);
 
@@ -163,12 +163,12 @@ QImage Render::renderViaQtSvg(const RenderData &data)
 void Render::renderImages()
 {
     QVector<RenderData> list;
-    list.append({ ImageType::Chrome, m_viewSize, m_imgPath, QString() });
-    list.append({ ImageType::ResvgCairo, m_viewSize, m_imgPath, m_converters.resvg });
-    list.append({ ImageType::ResvgQt, m_viewSize, m_imgPath, m_converters.resvg });
-    list.append({ ImageType::Inkscape, m_viewSize, m_imgPath, m_converters.inkscape });
-    list.append({ ImageType::Rsvg, m_viewSize, m_imgPath, m_converters.rsvg });
-    list.append({ ImageType::QtSvg, m_viewSize, m_imgPath, QString() });
+    list.append({ Backend::Chrome, m_viewSize, m_imgPath, QString() });
+    list.append({ Backend::ResvgCairo, m_viewSize, m_imgPath, m_converters.resvg });
+    list.append({ Backend::ResvgQt, m_viewSize, m_imgPath, m_converters.resvg });
+    list.append({ Backend::Inkscape, m_viewSize, m_imgPath, m_converters.inkscape });
+    list.append({ Backend::librsvg, m_viewSize, m_imgPath, m_converters.rsvg });
+    list.append({ Backend::QtSvg, m_viewSize, m_imgPath, QString() });
 
     const auto future = QtConcurrent::mapped(list, &Render::renderImage);
     m_watcher1.setFuture(future);
@@ -190,12 +190,12 @@ RenderResult Render::renderImage(const RenderData &data)
     try {
         QImage img;
         switch (data.type) {
-            case ImageType::Chrome     : img = renderViaChrome(data); break;
-            case ImageType::ResvgCairo : img = renderViaResvg(data); break;
-            case ImageType::ResvgQt    : img = renderViaResvg(data); break;
-            case ImageType::Inkscape   : img = renderViaInkscape(data); break;
-            case ImageType::Rsvg       : img = renderViaRsvg(data); break;
-            case ImageType::QtSvg      : img = renderViaQtSvg(data); break;
+            case Backend::Chrome     : img = renderViaChrome(data); break;
+            case Backend::ResvgCairo : img = renderViaResvg(data); break;
+            case Backend::ResvgQt    : img = renderViaResvg(data); break;
+            case Backend::Inkscape   : img = renderViaInkscape(data); break;
+            case Backend::librsvg    : img = renderViaRsvg(data); break;
+            case Backend::QtSvg      : img = renderViaQtSvg(data); break;
         }
 
         return {{ data.type, img }};
@@ -222,7 +222,7 @@ DiffOutput Render::diffImage(const DiffData &data)
         QString msg = QString("Images size mismatch: %1x%2 != %3x%4 Chrome vs %5")
             .arg(data.img1.width()).arg(data.img1.height())
             .arg(data.img2.width()).arg(data.img2.height())
-            .arg(imageTypeName(data.type));
+            .arg(backendName(data.type));
 
         qWarning() << msg;
     }
@@ -278,23 +278,23 @@ void Render::onImageRendered(const int idx)
 
 void Render::onImagesRendered()
 {
-    if (!m_imgs.contains(ImageType::Chrome)) {
+    if (!m_imgs.contains(Backend::Chrome)) {
         emit error("Image must be rendered via Chrome to calculate diff images.");
         emit finished();
         return;
     }
 
-    const QImage chromeImg = m_imgs.value(ImageType::Chrome);
+    const QImage chromeImg = m_imgs.value(Backend::Chrome);
 
     QVector<DiffData> list;
-    const auto append = [&](const ImageType type){
-        if (m_imgs.contains(type) && type != ImageType::Chrome) {
+    const auto append = [&](const Backend type){
+        if (m_imgs.contains(type) && type != Backend::Chrome) {
             list.append({ type, chromeImg, m_imgs.value(type) });
         }
     };
 
-    for (int t = (int)ImageType::ResvgCairo; t <= (int)ImageType::QtSvg; ++t) {
-        append((ImageType)t);
+    for (int t = (int)Backend::ResvgCairo; t <= (int)Backend::QtSvg; ++t) {
+        append((Backend)t);
     }
 
     const auto future = QtConcurrent::mapped(list, &Render::diffImage);
@@ -313,7 +313,7 @@ void Render::onDiffFinished()
     emit finished();
 }
 
-QDebug operator<<(QDebug dbg, const ImageType &t)
+QDebug operator<<(QDebug dbg, const Backend &t)
 {
-    return dbg << QString("ImageType(%1)").arg(Render::imageTypeName(t));
+    return dbg << QString("ImageType(%1)").arg(Render::backendName(t));
 }

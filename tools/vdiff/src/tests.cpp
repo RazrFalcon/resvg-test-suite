@@ -68,11 +68,11 @@ Tests Tests::load(const QString &path)
         item.path       = testPath;
         item.fileName   = QFileInfo(testPath).completeBaseName();
         item.name       = testName;
-        item.chrome     = stateFormStr(items.at(1));
-        item.resvg      = stateFormStr(items.at(2));
-        item.inkscape   = stateFormStr(items.at(3));
-        item.librsvg    = stateFormStr(items.at(4));
-        item.qtsvg      = stateFormStr(items.at(5));
+        item.state.insert(Backend::Chrome, stateFormStr(items.at(1)));
+        item.state.insert(Backend::ResvgCairo, stateFormStr(items.at(2)));
+        item.state.insert(Backend::Inkscape, stateFormStr(items.at(3)));
+        item.state.insert(Backend::librsvg, stateFormStr(items.at(4)));
+        item.state.insert(Backend::QtSvg, stateFormStr(items.at(5)));
 
         tests.m_data << item;
 
@@ -87,11 +87,11 @@ void Tests::save(const QString &path)
     QString text = "title,chrome,resvg,inkscape,librsvg,qtsvg\n";
     for (const auto &item : m_data) {
         text += item.path + ',';
-        text += QString::number((int)item.chrome)   + ',';
-        text += QString::number((int)item.resvg)    + ',';
-        text += QString::number((int)item.inkscape) + ',';
-        text += QString::number((int)item.librsvg)  + ',';
-        text += QString::number((int)item.qtsvg)    + '\n';
+        text += QString::number((int)item.state.value(Backend::Chrome))     + ',';
+        text += QString::number((int)item.state.value(Backend::ResvgCairo)) + ',';
+        text += QString::number((int)item.state.value(Backend::Inkscape))   + ',';
+        text += QString::number((int)item.state.value(Backend::librsvg))    + ',';
+        text += QString::number((int)item.state.value(Backend::QtSvg))      + '\n';
     }
 
     QFile file(path);

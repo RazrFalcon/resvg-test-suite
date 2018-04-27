@@ -4,22 +4,13 @@
 #include <QFutureWatcher>
 #include <QImage>
 
+#include "tests.h"
 #include "either.h"
 #include "settings.h"
 
-enum class ImageType
-{
-    Chrome,
-    ResvgCairo,
-    ResvgQt,
-    Inkscape,
-    Rsvg,
-    QtSvg,
-};
-
 struct RenderData
 {
-    ImageType type;
+    Backend type;
     int viewSize;
     QString imgPath;
     QString convPath;
@@ -27,20 +18,20 @@ struct RenderData
 
 struct RenderOutput
 {
-    ImageType type;
+    Backend type;
     QImage img;
 };
 
 struct DiffData
 {
-    ImageType type;
+    Backend type;
     QImage img1;
     QImage img2;
 };
 
 struct DiffOutput
 {
-    ImageType type;
+    Backend type;
     uint value;
     float percent;
     QImage img;
@@ -64,12 +55,12 @@ public:
 
     void loadSettings(const Settings &settings);
 
-    static QString imageTypeName(const ImageType t);
+    static QString backendName(const Backend t);
 
 signals:
-    void imageReady(ImageType, QImage);
-    void diffReady(ImageType, QImage);
-    void diffStats(ImageType, uint, float);
+    void imageReady(Backend, QImage);
+    void diffReady(Backend, QImage);
+    void diffStats(Backend, uint, float);
     void warning(QString);
     void error(QString);
     void finished();
@@ -97,7 +88,7 @@ private:
     QFutureWatcher<RenderResult> m_watcher1;
     QFutureWatcher<DiffOutput> m_watcher2;
     QString m_imgPath;
-    QHash<ImageType, QImage> m_imgs;
+    QHash<Backend, QImage> m_imgs;
 
     struct Converters {
         QString resvg;
@@ -106,7 +97,4 @@ private:
     } m_converters;
 };
 
-Q_DECL_PURE_FUNCTION inline uint qHash(const ImageType &key, uint seed = 0)
-{ return qHash((uint)key, seed); }
-
-QDebug operator<<(QDebug dbg, const ImageType &t);
+QDebug operator<<(QDebug dbg, const Backend &t);

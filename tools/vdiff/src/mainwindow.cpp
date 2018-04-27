@@ -12,6 +12,7 @@
 #include "paths.h"
 #include "settingsdialog.h"
 #include "process.h"
+#include "backendwidget.h"
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -27,34 +28,9 @@ MainWindow::MainWindow(QWidget *parent)
     m_render.loadSettings(m_settings);
     m_render.setScale(qApp->screens().first()->devicePixelRatio());
 
+    prepareBackends();
+
     adjustSize();
-
-    m_imgViews.insert(ImageType::Chrome, ui->imgViewChrome);
-    m_imgViews.insert(ImageType::ResvgCairo, ui->imgViewResvgCairo);
-    m_imgViews.insert(ImageType::ResvgQt, ui->imgViewResvgQt);
-    m_imgViews.insert(ImageType::Inkscape, ui->imgViewInkscape);
-    m_imgViews.insert(ImageType::Rsvg, ui->imgViewRsvg);
-    m_imgViews.insert(ImageType::QtSvg, ui->imgViewQtSvg);
-
-    m_diffViews.insert(ImageType::ResvgCairo, ui->imgViewResvgCairoDiff);
-    m_diffViews.insert(ImageType::ResvgQt, ui->imgViewResvgQtDiff);
-    m_diffViews.insert(ImageType::Inkscape, ui->imgViewInkscapeDiff);
-    m_diffViews.insert(ImageType::Rsvg, ui->imgViewRsvgDiff);
-    m_diffViews.insert(ImageType::QtSvg, ui->imgViewQtSvgDiff);
-
-    m_diffLabels.insert(ImageType::ResvgCairo, ui->lblResvgCairoDiff);
-    m_diffLabels.insert(ImageType::ResvgQt, ui->lblResvgQtDiff);
-    m_diffLabels.insert(ImageType::Inkscape, ui->lblInkscapeDiff);
-    m_diffLabels.insert(ImageType::Rsvg, ui->lblRsvgDiff);
-    m_diffLabels.insert(ImageType::QtSvg, ui->lblQtSvgDiff);
-
-    m_flagBoxes = {
-        ui->cmbBoxChromeFlag,
-        ui->cmbBoxResvgFlag,
-        ui->cmbBoxInkscapeFlag,
-        ui->cmbBoxLibrsvgFlag,
-        ui->cmbBoxQtSvgFlag,
-    };
 
     connect(&m_render, &Render::imageReady, this, &MainWindow::onImageReady);
     connect(&m_render, &Render::diffReady, this, &MainWindow::onDiffReady);
@@ -62,15 +38,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(&m_render, &Render::warning, this, &MainWindow::onRenderWarning);
     connect(&m_render, &Render::error, this, &MainWindow::onRenderError);
     connect(&m_render, &Render::finished, this, &MainWindow::onRenderFinished);
-
-    for (QComboBox *cmbBox : m_flagBoxes) {
-        cmbBox->addItem(QIcon(":/icons/unknown.svgz"), "Unknown");
-        cmbBox->addItem(QIcon(":/icons/passed.svgz"), "Passed");
-        cmbBox->addItem(QIcon(":/icons/failed.svgz"), "Failed");
-        cmbBox->addItem(QIcon(":/icons/crashed.svgz"), "Crashed");
-
-        connect(cmbBox, SIGNAL(activated(int)), this, SLOT(updatePassFlags()));
-    }
 
     auto *model = new QStandardItemModel(0, 1);
     auto *sortMmodel = new QSortFilterProxyModel();
@@ -92,12 +59,35 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::prepareBackends()
+{
+    const QVector<Backend> backends = {
+        Backend::Chrome,
+        Backend::ResvgCairo,
+        Backend::ResvgQt,
+        Backend::Inkscape,
+        Backend::librsvg,
+        Backend::QtSvg,
+    };
+
+    for (const Backend backend : backends) {
+        auto w = new BackendWidget(backend);
+        w->setTitle(Render::backendName(backend));
+        m_backendWidges.insert(backend, w);
+
+        ui->layBackends->addWidget(w);
+    }
+
+    m_backendWidges.value(Backend::Chrome)->setDiffVisible(false);
+    m_backendWidges.value(Backend::ResvgQt)->setTestStateVisible(false);
+}
+
 void MainWindow::setGuiEnabled(bool flag)
 {
     ui->btnSettings->setEnabled(flag);
     ui->cmbBoxFiles->setEnabled(flag);
-    for (auto *cmbBox : m_flagBoxes) {
-        cmbBox->setEnabled(flag);
+    for (auto *w : m_backendWidges.values()) {
+        w->setEnabled(flag);
     }
 }
 
@@ -166,12 +156,8 @@ void MainWindow::loadImage(const QString &fileName)
 
 void MainWindow::setAnimationEnabled(bool flag)
 {
-    for (ImageView *view : m_imgViews) {
-        view->setAnimationEnabled(flag);
-    }
-
-    for (ImageView *view : m_diffViews) {
-        view->setAnimationEnabled(flag);
+    for (auto *w : m_backendWidges.values()) {
+        w->setAnimationEnabled(flag);
     }
 }
 
@@ -218,11 +204,9 @@ void MainWindow::fillChBoxes()
         const auto idx = ui->cmbBoxFiles->currentData().toUInt();
         const auto &item = m_tests.at(idx);
 
-        ui->cmbBoxChromeFlag->setCurrentIndex((int)item.chrome);
-        ui->cmbBoxResvgFlag->setCurrentIndex((int)item.resvg);
-        ui->cmbBoxInkscapeFlag->setCurrentIndex((int)item.inkscape);
-        ui->cmbBoxLibrsvgFlag->setCurrentIndex((int)item.librsvg);
-        ui->cmbBoxQtSvgFlag->setCurrentIndex((int)item.qtsvg);
+        for (auto *w : m_backendWidges.values()) {
+            w->setTestState(item.state.value(w->backend()));
+        }
     } catch (const QString &msg) {
         QMessageBox::critical(this, "Error", msg);
     }
@@ -234,11 +218,9 @@ void MainWindow::updatePassFlags()
         const auto idx = ui->cmbBoxFiles->currentData().toUInt();
         auto &item = m_tests.at(idx);
 
-        item.chrome = (TestState)ui->cmbBoxChromeFlag->currentIndex();
-        item.resvg = (TestState)ui->cmbBoxResvgFlag->currentIndex();
-        item.inkscape = (TestState)ui->cmbBoxInkscapeFlag->currentIndex();
-        item.librsvg = (TestState)ui->cmbBoxLibrsvgFlag->currentIndex();
-        item.qtsvg = (TestState)ui->cmbBoxQtSvgFlag->currentIndex();
+        for (auto *w : m_backendWidges.values()) {
+            item.state.insert(w->backend(), w->testState());
+        }
     } catch (const QString &msg) {
         QMessageBox::critical(this, "Error", msg);
     }
@@ -246,39 +228,29 @@ void MainWindow::updatePassFlags()
 
 void MainWindow::resetImages()
 {
-    for (ImageView *view : m_imgViews) {
-        view->resetImage();
-    }
-
-    for (ImageView *view : m_diffViews) {
-        view->resetImage();
+    for (auto *w : m_backendWidges.values()) {
+        w->resetImages();
     }
 }
 
-void MainWindow::setDiffText(QLabel *lbl, uint diff, float percent) const
-{
-    lbl->setText(QString::number(diff) + "/" + QString::number(percent, 'f', 2) + "%");
-}
-
-void MainWindow::onImageReady(const ImageType type, const QImage &img)
+void MainWindow::onImageReady(const Backend type, const QImage &img)
 {
     Q_ASSERT(!img.isNull());
 
-    const auto view = m_imgViews.value(type);
-    view->setAnimationEnabled(false);
+    const auto view = m_backendWidges.value(type);
     view->setImage(img);
 }
 
-void MainWindow::onDiffReady(const ImageType type, const QImage &img)
+void MainWindow::onDiffReady(const Backend type, const QImage &img)
 {
-    const auto view = m_diffViews.value(type);
-    view->setAnimationEnabled(false);
-    view->setImage(img);
+    const auto view = m_backendWidges.value(type);
+    view->setDiffImage(img);
 }
 
-void MainWindow::onDiffStats(const ImageType type, const uint value, const float percent)
+void MainWindow::onDiffStats(const Backend type, const uint value, const float percent)
 {
-    setDiffText(m_diffLabels.value(type), value, percent);
+    const auto view = m_backendWidges.value(type);
+    view->setDiffStats(value, percent);
 }
 
 void MainWindow::onRenderWarning(const QString &msg)
