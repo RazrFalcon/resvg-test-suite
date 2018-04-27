@@ -1,21 +1,23 @@
 #include <QMessageBox>
 #include <QFileDialog>
-#include <QDebug>
 
 #include "settings.h"
 
 #include "settingsdialog.h"
 #include "ui_settingsdialog.h"
 
-SettingsDialog::SettingsDialog(QWidget *parent)
+SettingsDialog::SettingsDialog(Settings *settings, QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::SettingsDialog)
+    , m_settings(settings)
 {
     ui->setupUi(this);
 
     loadSettings();
     setMinimumWidth(600);
     adjustSize();
+
+    ui->buttonBox->setFocus();
 }
 
 SettingsDialog::~SettingsDialog()
@@ -25,31 +27,38 @@ SettingsDialog::~SettingsDialog()
 
 void SettingsDialog::loadSettings()
 {
-    const auto settings = Settings::load();
-    ui->rBtnSuiteOfficial->setChecked(settings.testSuite == TestSuite::Official);
-    ui->rBtnRelease->setChecked(settings.buildType == BuildType::Release);
-    ui->lineEditResvg->setText(settings.resvgDir);
-    ui->lineEditInkscape->setText(settings.inkscapePath);
-    ui->lineEditRsvg->setText(settings.librsvgPath);
+    ui->rBtnSuiteOfficial->setChecked(m_settings->testSuite == TestSuite::Official);
+    ui->rBtnRelease->setChecked(m_settings->buildType == BuildType::Release);
+    ui->lineEditResvg->setText(m_settings->resvgDir);
+
+    ui->chBoxUseInkscape->setChecked(m_settings->useInkscape);
+    ui->lineEditInkscape->setText(m_settings->inkscapePath);
+
+    ui->chBoxUseLibrsvg->setChecked(m_settings->useLibrsvg);
+    ui->lineEditRsvg->setText(m_settings->librsvgPath);
+
+    ui->chBoxUseQtSvg->setChecked(m_settings->useQtSvg);
 }
 
 void SettingsDialog::on_buttonBox_accepted()
 {
-    Settings d;
-
-    d.testSuite = ui->rBtnSuiteOfficial->isChecked()
+    m_settings->testSuite = ui->rBtnSuiteOfficial->isChecked()
                     ? TestSuite::Official
                     : TestSuite::Own;
 
-    d.buildType = ui->rBtnRelease->isChecked()
+    m_settings->buildType = ui->rBtnRelease->isChecked()
                     ? BuildType::Release
                     : BuildType::Debug;
 
-    d.resvgDir = ui->lineEditResvg->text();
-    d.inkscapePath = ui->lineEditInkscape->text();
-    d.librsvgPath = ui->lineEditRsvg->text();
+    m_settings->useInkscape = ui->chBoxUseInkscape->isChecked();
+    m_settings->useLibrsvg = ui->chBoxUseLibrsvg->isChecked();
+    m_settings->useQtSvg = ui->chBoxUseQtSvg->isChecked();
 
-    d.save();
+    m_settings->resvgDir = ui->lineEditResvg->text();
+    m_settings->inkscapePath = ui->lineEditInkscape->text();
+    m_settings->librsvgPath = ui->lineEditRsvg->text();
+
+    m_settings->save();
 }
 
 void SettingsDialog::on_btnSelectResvg_clicked()

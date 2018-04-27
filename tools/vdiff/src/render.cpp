@@ -48,12 +48,7 @@ void Render::render(const QString &path)
     renderImages();
 }
 
-void Render::loadSettings(const Settings &settings)
-{
-    m_converters.resvg = settings.resvgPath();
-    m_converters.inkscape = settings.inkscapePath;
-    m_converters.rsvg = settings.librsvgPath;
-}
+
 
 QString Render::backendName(const Backend t)
 {
@@ -62,7 +57,7 @@ QString Render::backendName(const Backend t)
         case Backend::ResvgCairo : return "Resvg (cairo)";
         case Backend::ResvgQt : return "Resvg (Qt)";
         case Backend::Inkscape : return "Inkscape";
-        case Backend::librsvg : return "rsvg";
+        case Backend::Librsvg : return "rsvg";
         case Backend::QtSvg : return "QtSvg";
     }
 }
@@ -164,11 +159,20 @@ void Render::renderImages()
 {
     QVector<RenderData> list;
     list.append({ Backend::Chrome, m_viewSize, m_imgPath, QString() });
-    list.append({ Backend::ResvgCairo, m_viewSize, m_imgPath, m_converters.resvg });
-    list.append({ Backend::ResvgQt, m_viewSize, m_imgPath, m_converters.resvg });
-    list.append({ Backend::Inkscape, m_viewSize, m_imgPath, m_converters.inkscape });
-    list.append({ Backend::librsvg, m_viewSize, m_imgPath, m_converters.rsvg });
-    list.append({ Backend::QtSvg, m_viewSize, m_imgPath, QString() });
+    list.append({ Backend::ResvgCairo, m_viewSize, m_imgPath, m_settings->resvgPath() });
+    list.append({ Backend::ResvgQt, m_viewSize, m_imgPath, m_settings->resvgPath() });
+
+    if (m_settings->useInkscape) {
+        list.append({ Backend::Inkscape, m_viewSize, m_imgPath, m_settings->inkscapePath });
+    }
+
+    if (m_settings->useLibrsvg) {
+        list.append({ Backend::Librsvg, m_viewSize, m_imgPath, m_settings->librsvgPath });
+    }
+
+    if (m_settings->useQtSvg) {
+        list.append({ Backend::QtSvg, m_viewSize, m_imgPath, QString() });
+    }
 
     const auto future = QtConcurrent::mapped(list, &Render::renderImage);
     m_watcher1.setFuture(future);
@@ -194,7 +198,7 @@ RenderResult Render::renderImage(const RenderData &data)
             case Backend::ResvgCairo : img = renderViaResvg(data); break;
             case Backend::ResvgQt    : img = renderViaResvg(data); break;
             case Backend::Inkscape   : img = renderViaInkscape(data); break;
-            case Backend::librsvg    : img = renderViaRsvg(data); break;
+            case Backend::Librsvg    : img = renderViaRsvg(data); break;
             case Backend::QtSvg      : img = renderViaQtSvg(data); break;
         }
 

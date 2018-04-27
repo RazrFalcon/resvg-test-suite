@@ -11,7 +11,7 @@ enum class Backend
     ResvgCairo,
     ResvgQt,
     Inkscape,
-    librsvg,
+    Librsvg,
     QtSvg,
 };
 

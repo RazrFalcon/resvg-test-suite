@@ -6,12 +6,14 @@ namespace Ui {
 class SettingsDialog;
 }
 
+class Settings;
+
 class SettingsDialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit SettingsDialog(QWidget *parent = nullptr);
+    explicit SettingsDialog(Settings *settings, QWidget *parent = nullptr);
     ~SettingsDialog();
 
 private:
@@ -25,4 +27,5 @@ private slots:
 
 private:
     Ui::SettingsDialog * const ui;
+    Settings * const m_settings;
 };

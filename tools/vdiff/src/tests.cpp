@@ -71,7 +71,7 @@ Tests Tests::load(const QString &path)
         item.state.insert(Backend::Chrome, stateFormStr(items.at(1)));
         item.state.insert(Backend::ResvgCairo, stateFormStr(items.at(2)));
         item.state.insert(Backend::Inkscape, stateFormStr(items.at(3)));
-        item.state.insert(Backend::librsvg, stateFormStr(items.at(4)));
+        item.state.insert(Backend::Librsvg, stateFormStr(items.at(4)));
         item.state.insert(Backend::QtSvg, stateFormStr(items.at(5)));
 
         tests.m_data << item;
@@ -90,7 +90,7 @@ void Tests::save(const QString &path)
         text += QString::number((int)item.state.value(Backend::Chrome))     + ',';
         text += QString::number((int)item.state.value(Backend::ResvgCairo)) + ',';
         text += QString::number((int)item.state.value(Backend::Inkscape))   + ',';
-        text += QString::number((int)item.state.value(Backend::librsvg))    + ',';
+        text += QString::number((int)item.state.value(Backend::Librsvg))    + ',';
         text += QString::number((int)item.state.value(Backend::QtSvg))      + '\n';
     }
 

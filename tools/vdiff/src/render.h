@@ -53,7 +53,7 @@ public:
 
     void render(const QString &path);
 
-    void loadSettings(const Settings &settings);
+    void setSettings(Settings *settings) { m_settings = settings; }
 
     static QString backendName(const Backend t);
 
@@ -84,17 +84,12 @@ private slots:
     void onDiffFinished();
 
 private:
+    Settings * m_settings = nullptr;
     int m_viewSize = 300;
     QFutureWatcher<RenderResult> m_watcher1;
     QFutureWatcher<DiffOutput> m_watcher2;
     QString m_imgPath;
     QHash<Backend, QImage> m_imgs;
-
-    struct Converters {
-        QString resvg;
-        QString inkscape;
-        QString rsvg;
-    } m_converters;
 };
 
 QDebug operator<<(QDebug dbg, const Backend &t);

@@ -17,8 +17,8 @@ enum class BuildType
 class Settings
 {
 public:
-    static Settings load();
-    void save();
+    void load() noexcept;
+    void save() const noexcept;
 
     QString resvgPath() const noexcept;
     QString resultsPath() const noexcept;
@@ -28,7 +28,10 @@ public:
 public:
     TestSuite testSuite = TestSuite::Own;
     BuildType buildType = BuildType::Debug;
-    QString resvgDir; // it's dir, not path
+    bool useInkscape = true;
+    bool useLibrsvg = true;
+    bool useQtSvg = true;
+    QString resvgDir; // it's a dir, not a path
     QString inkscapePath;
     QString librsvgPath;
 };

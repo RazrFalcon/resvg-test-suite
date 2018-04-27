@@ -23,14 +23,12 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    m_settings = Settings::load();
+    m_settings.load();
 
-    m_render.loadSettings(m_settings);
+    m_render.setSettings(&m_settings);
     m_render.setScale(qApp->screens().first()->devicePixelRatio());
 
     prepareBackends();
-
-    adjustSize();
 
     connect(&m_render, &Render::imageReady, this, &MainWindow::onImageReady);
     connect(&m_render, &Render::diffReady, this, &MainWindow::onDiffReady);
@@ -61,14 +59,31 @@ MainWindow::~MainWindow()
 
 void MainWindow::prepareBackends()
 {
-    const QVector<Backend> backends = {
+    while (ui->layBackends->count() > 0) {
+        auto item = ui->layBackends->takeAt(0);
+        delete item->widget();
+        delete item;
+    }
+    m_backendWidges.clear();
+
+    QVector<Backend> backends = {
         Backend::Chrome,
         Backend::ResvgCairo,
         Backend::ResvgQt,
-        Backend::Inkscape,
-        Backend::librsvg,
-        Backend::QtSvg,
     };
+
+    if (m_settings.useInkscape) {
+        backends << Backend::Inkscape;
+    }
+
+    if (m_settings.useLibrsvg) {
+        backends << Backend::Librsvg;
+    }
+
+    if (m_settings.useQtSvg) {
+        backends << Backend::QtSvg;
+    }
+
 
     for (const Backend backend : backends) {
         auto w = new BackendWidget(backend);
@@ -80,6 +95,8 @@ void MainWindow::prepareBackends()
 
     m_backendWidges.value(Backend::Chrome)->setDiffVisible(false);
     m_backendWidges.value(Backend::ResvgQt)->setTestStateVisible(false);
+
+    QTimer::singleShot(50, this, [this](){ adjustSize(); });
 }
 
 void MainWindow::setGuiEnabled(bool flag)
@@ -298,16 +315,10 @@ void MainWindow::on_btnResync_clicked()
 
 void MainWindow::on_btnSettings_clicked()
 {
-    SettingsDialog diag(this);
+    SettingsDialog diag(&m_settings, this);
     if (diag.exec()) {
-        const auto oldTs = m_settings.testSuite;
-
-        m_settings = Settings::load();
-        m_render.loadSettings(m_settings);
-
-        if (m_settings.testSuite != oldTs) {
-            loadImageList();
-        }
+        prepareBackends();
+        loadImageList();
     }
 }
 
