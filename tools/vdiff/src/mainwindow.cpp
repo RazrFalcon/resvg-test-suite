@@ -72,6 +72,10 @@ void MainWindow::prepareBackends()
         Backend::ResvgQt,
     };
 
+    if (m_settings.useBatik) {
+        backends << Backend::Batik;
+    }
+
     if (m_settings.useInkscape) {
         backends << Backend::Inkscape;
     }
@@ -88,6 +92,7 @@ void MainWindow::prepareBackends()
     for (const Backend backend : backends) {
         auto w = new BackendWidget(backend);
         w->setTitle(Render::backendName(backend));
+        connect(w, &BackendWidget::testStateChanged, this, &MainWindow::updatePassFlags);
         m_backendWidges.insert(backend, w);
 
         ui->layBackends->addWidget(w);

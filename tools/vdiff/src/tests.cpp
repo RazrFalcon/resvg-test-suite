@@ -36,7 +36,7 @@ Tests Tests::load(const QString &path)
 
     // A minimal csv parser.
     //
-    // We don't cate about escape characters, because they are not used.
+    // We don't care about escape characters, because they are not used.
 
     Tests tests;
 
@@ -54,7 +54,7 @@ Tests Tests::load(const QString &path)
 
         const auto items = line.split(',');
 
-        if (items.size() != 6) {
+        if (items.size() != BackendsCount) {
             throw QString("Invalid columns count at row %1.").arg(row);
         }
 
@@ -68,11 +68,12 @@ Tests Tests::load(const QString &path)
         item.path       = testPath;
         item.fileName   = QFileInfo(testPath).completeBaseName();
         item.name       = testName;
-        item.state.insert(Backend::Chrome, stateFormStr(items.at(1)));
-        item.state.insert(Backend::ResvgCairo, stateFormStr(items.at(2)));
-        item.state.insert(Backend::Inkscape, stateFormStr(items.at(3)));
-        item.state.insert(Backend::Librsvg, stateFormStr(items.at(4)));
-        item.state.insert(Backend::QtSvg, stateFormStr(items.at(5)));
+        item.state.insert(Backend::Chrome,      stateFormStr(items.at(1)));
+        item.state.insert(Backend::ResvgCairo,  stateFormStr(items.at(2)));
+        item.state.insert(Backend::Batik,       stateFormStr(items.at(3)));
+        item.state.insert(Backend::Inkscape,    stateFormStr(items.at(4)));
+        item.state.insert(Backend::Librsvg,     stateFormStr(items.at(5)));
+        item.state.insert(Backend::QtSvg,       stateFormStr(items.at(6)));
 
         tests.m_data << item;
 
@@ -84,11 +85,12 @@ Tests Tests::load(const QString &path)
 
 void Tests::save(const QString &path)
 {
-    QString text = "title,chrome,resvg,inkscape,librsvg,qtsvg\n";
+    QString text = "title,chrome,resvg,batik,inkscape,librsvg,qtsvg\n";
     for (const auto &item : m_data) {
         text += item.path + ',';
         text += QString::number((int)item.state.value(Backend::Chrome))     + ',';
         text += QString::number((int)item.state.value(Backend::ResvgCairo)) + ',';
+        text += QString::number((int)item.state.value(Backend::Batik))      + ',';
         text += QString::number((int)item.state.value(Backend::Inkscape))   + ',';
         text += QString::number((int)item.state.value(Backend::Librsvg))    + ',';
         text += QString::number((int)item.state.value(Backend::QtSvg))      + '\n';

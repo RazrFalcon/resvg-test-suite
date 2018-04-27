@@ -28,10 +28,12 @@ public:
 public:
     TestSuite testSuite = TestSuite::Own;
     BuildType buildType = BuildType::Debug;
+    bool useBatik = true;
     bool useInkscape = true;
     bool useLibrsvg = true;
     bool useQtSvg = true;
     QString resvgDir; // it's a dir, not a path
+    QString batikPath;
     QString inkscapePath;
     QString librsvgPath;
 };

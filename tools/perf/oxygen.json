@@ -20,6 +20,10 @@
         {
             "value": 1610,
             "name": "Inkscape 0.92.2"
+        },
+        {
+            "value": 3686,
+            "name": "Batik 1.9"
         }
     ],
     "hor_axis": {

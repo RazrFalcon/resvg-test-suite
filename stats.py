@@ -37,11 +37,11 @@ with open(args.input, 'r') as f:
         file_name = row[0]
 
         # Note! We swapped resvg and chrome.
-        flags = [int(row[2]), int(row[1]), int(row[3]), int(row[4]), int(row[5])]
+        flags = [int(row[2]), int(row[1]), int(row[3]), int(row[4]), int(row[5]), int(row[6])]
 
         rows.append(RowData(file_name, flags))
 
-passed = [0, 0, 0, 0, 0]
+passed = [0, 0, 0, 0, 0, 0]
 for row in rows:
     for idx, flag in enumerate(row.flags):
         if flag == PASSED:
@@ -63,16 +63,20 @@ barh_data = json.dumps(
             "value": passed[1]
         },
         {
-            "name": "Inkscape 0.92.2",
+            "name": "Batik 1.9",
             "value": passed[2]
         },
         {
-            "name": "librsvg 2.40.18",
+            "name": "Inkscape 0.92.2",
             "value": passed[3]
         },
         {
-            "name": "QtSvg 5.9.4",
+            "name": "librsvg 2.40.18",
             "value": passed[4]
+        },
+        {
+            "name": "QtSvg 5.9.4",
+            "value": passed[5]
         }
     ],
     "hor_axis": {

@@ -51,6 +51,7 @@ which is specifically designed for the https://github.com/RazrFalcon/resvg[resvg
 We are testing/comparing `resvg` with Chrome, Inkscape, librsvg and QtSvg for a reason.
 
 * Chrome has the best SVG support and used as a reference implementation.
+* Batik is the most popular Java library for SVG rendering.
 * Inkscape is an obvious choice on Linux.
 * librsvg is the main `resvg` rival. Used in GNOME, XFCE for SVG rendering.
   The goal is to replace `librsvg` with `resvg`.
@@ -71,9 +72,9 @@ image:images/chart.svg[]
 
 Rows like this indicate that such element/attribute is planned but not yet implemented.
 
-[cols="1,10,^1,^1,^1,^1,^1"]
+[cols="1,10,^1,^1,^1,^1,^1,^1"]
 |===
-2+| name ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| name ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
 |===
 
 == Elements

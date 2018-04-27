@@ -25,6 +25,8 @@ private slots:
     void on_btnSelectRsvg_clicked();
     void on_btnSelectResvg_clicked();
 
+    void on_btnSelectBatik_clicked();
+
 private:
     Ui::SettingsDialog * const ui;
     Settings * const m_settings;

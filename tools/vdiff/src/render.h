@@ -14,6 +14,7 @@ struct RenderData
     int viewSize;
     QString imgPath;
     QString convPath;
+    TestSuite testSuite;
 };
 
 struct RenderOutput
@@ -71,6 +72,7 @@ private:
     static QImage loadImage(const QString &path);
     static QImage renderViaChrome(const RenderData &data);
     static QImage renderViaResvg(const RenderData &data);
+    static QImage renderViaBatik(const RenderData &data);
     static QImage renderViaInkscape(const RenderData &data);
     static QImage renderViaRsvg(const RenderData &data);
     static QImage renderViaQtSvg(const RenderData &data);

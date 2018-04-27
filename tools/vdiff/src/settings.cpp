@@ -7,8 +7,10 @@ namespace Key {
     static const QString TestSuite = "TestSuite";
     static const QString ResvgBuild = "ResvgBuild";
     static const QString ResvgDir = "ResvgDir";
+    static const QString BatikPath = "BatikPath";
     static const QString InkscapePath = "InkscapePath";
     static const QString RsvgPath = "RsvgPath";
+    static const QString UseBatik = "UseBatik";
     static const QString UseInkscape = "UseInkscape";
     static const QString UseLibrsvg = "UseLibrsvg";
     static const QString UseQtSvg = "UseQtSvg";
@@ -41,11 +43,13 @@ void Settings::load() noexcept
                         ? BuildType::Release
                         : BuildType::Debug;
 
+    this->useInkscape = appSettings.value(Key::UseBatik).toBool();
     this->useInkscape = appSettings.value(Key::UseInkscape).toBool();
     this->useLibrsvg = appSettings.value(Key::UseLibrsvg).toBool();
     this->useQtSvg = appSettings.value(Key::UseQtSvg).toBool();
 
     this->resvgDir = appSettings.value(Key::ResvgDir).toString();
+    this->batikPath = appSettings.value(Key::BatikPath).toString();
     this->inkscapePath = appSettings.value(Key::InkscapePath).toString();
     this->librsvgPath = appSettings.value(Key::RsvgPath).toString();
 }
@@ -55,10 +59,12 @@ void Settings::save() const noexcept
     QSettings appSettings;
     appSettings.setValue(Key::TestSuite, testSuiteToStr(this->testSuite));
     appSettings.setValue(Key::ResvgBuild, buildTypeToStr(this->buildType));
+    appSettings.setValue(Key::UseBatik, this->useBatik);
     appSettings.setValue(Key::UseInkscape, this->useInkscape);
     appSettings.setValue(Key::UseLibrsvg, this->useLibrsvg);
     appSettings.setValue(Key::UseQtSvg, this->useQtSvg);
     appSettings.setValue(Key::ResvgDir, this->resvgDir);
+    appSettings.setValue(Key::BatikPath, this->batikPath);
     appSettings.setValue(Key::InkscapePath, this->inkscapePath);
     appSettings.setValue(Key::RsvgPath, this->librsvgPath);
 }
