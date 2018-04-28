@@ -92,6 +92,7 @@ void MainWindow::prepareBackends()
     for (const Backend backend : backends) {
         auto w = new BackendWidget(backend);
         w->setTitle(Render::backendName(backend));
+        w->setViewSize(QSize(m_settings.viewSize, m_settings.viewSize));
         connect(w, &BackendWidget::testStateChanged, this, &MainWindow::updatePassFlags);
         m_backendWidges.insert(backend, w);
 
@@ -322,6 +323,12 @@ void MainWindow::on_btnSettings_clicked()
 {
     SettingsDialog diag(&m_settings, this);
     if (diag.exec()) {
+        m_render.setScale(qApp->screens().first()->devicePixelRatio());
+
+        for (auto *w : m_backendWidges.values()) {
+            w->setViewSize(QSize(m_settings.viewSize, m_settings.viewSize));
+        }
+
         prepareBackends();
         loadImageList();
     }

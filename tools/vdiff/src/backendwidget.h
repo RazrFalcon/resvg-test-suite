@@ -22,6 +22,7 @@ public:
     void setDiffVisible(bool flag);
     void setDiffStats(uint diff, float percent);
     void setAnimationEnabled(bool flag);
+    void setViewSize(const QSize &size);
 
     void resetImages();
 

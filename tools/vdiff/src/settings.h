@@ -28,6 +28,7 @@ public:
 public:
     TestSuite testSuite = TestSuite::Own;
     BuildType buildType = BuildType::Debug;
+    int viewSize = 300;
     bool useBatik = true;
     bool useInkscape = true;
     bool useLibrsvg = true;

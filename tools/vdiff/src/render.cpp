@@ -39,7 +39,7 @@ Render::Render(QObject *parent)
 
 void Render::setScale(qreal s)
 {
-    m_viewSize = 300 * s;
+    m_viewSize = m_settings->viewSize * s;
 }
 
 void Render::render(const QString &path)

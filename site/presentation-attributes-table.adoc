@@ -43,27 +43,27 @@
 ||4| #RRGGBB uppercase color ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||5| Named color in uppercase ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||6| Named color in mixedcase ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
-||7| Not trimmed attribute value ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box}
+||7| Not trimmed attribute value ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||8| `rgb(int, int, int)` color ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
-||9| `rgb(int, int, int)` color with extra spaces ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box}
+||9| `rgb(int, int, int)` color with extra spaces ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||10| `rgb(int int int)` (UB) ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
 ||11| `rgb(int%, int%, int%)` color ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||12| `rgb(int%, int%, int%)` color with overflow ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||13| `rgb(float%, float%, float%)` color ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||28| `rgb(float%, float%, float%)` color with a big fraction part ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
-||14| `RGB(int%, int%, int%)` color ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
-||15| ICC color ^|{unk-box} ^|{unk-box} ^|{ok-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
+||14| `RGB(int%, int%, int%)` color ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
+||15| ICC color ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
 ||16| Linear gradient on shape ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||17| Radial gradient on shape ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||18| Pattern on shape ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
-||19| Random value ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||19| Random value ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box}
 ||20| `none` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||21| `inherit` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||22| `currentColor` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
-||23| FuncIRI to unsupported element ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||23| FuncIRI to unsupported element ^|{ok-box} ^|{ok-box} ^|{crash-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||24| FuncIRI with fallback color ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
-||25| FuncIRI to an invalid element with fallback color ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
-||26| FuncIRI to a missing element with fallback color ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
+||25| FuncIRI to an invalid element with fallback color ^|{fail-box} ^|{fail-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
+||26| FuncIRI to a missing element with fallback color ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||27| Valid FuncIRI with fallback ICC color ^|{fail-box} ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||29| `inherit` without parent ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||30| `currentColor` without parent ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
@@ -116,7 +116,7 @@
 ||10| Zero size on parent (1) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||11| Zero size on parent (2) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||12| Zero size on parent (3) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
-||13| Negative size (UB) ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
+||13| Negative size (UB) ^|{unk-box} ^|{unk-box} ^|{crash-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
 9+^|
 3+| [[a-font-size-adjust]] font-size-adjust  ^|{fail-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
 9+^|
@@ -195,23 +195,23 @@
 9+^|
 3+| [[a-stroke-dasharray]] stroke-dasharray  ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box}
 ||1| None ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
-||2| Even list ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
-||3| Odd list ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||2| Even list ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box}
+||3| Odd list ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box}
 ||4| Even list with % ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
 ||5| Even list with `em` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
 ||6| Even list with `mm` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
-||7| Negative values (UB) ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
+||7| Negative values (UB) ^|{unk-box} ^|{unk-box} ^|{crash-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
 ||8| Zero sum ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
-||9| Negative sum (UB) ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
-||10| comma-ws separator ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||9| Negative sum (UB) ^|{unk-box} ^|{unk-box} ^|{crash-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
+||10| comma-ws separator ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box}
 ||11| ws separator ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box}
 9+^|
-3+| [[a-stroke-dashoffset]] stroke-dashoffset  ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{part-box} ^|{part-box} ^|{part-box}
-||1| Default ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
-||2| `px` value ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
-||3| `mm` value ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
-||4| `em` value ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
-||5| `%` value ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+3+| [[a-stroke-dashoffset]] stroke-dashoffset  ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{part-box} ^|{fail-box} ^|{part-box}
+||1| Default ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box}
+||2| `px` value ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box}
+||3| `mm` value ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
+||4| `em` value ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
+||5| `%` value ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
 ||6| Negative value ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box}
 9+^|
 3+| [[a-stroke-linecap]] stroke-linecap  ^|{part-box} ^|{ok-box} ^|{ok-box} ^|{part-box} ^|{part-box} ^|{part-box}

@@ -14,6 +14,7 @@ namespace Key {
     static const QString UseInkscape = "UseInkscape";
     static const QString UseLibrsvg = "UseLibrsvg";
     static const QString UseQtSvg = "UseQtSvg";
+    static const QString ViewSize = "ViewSize";
 }
 
 static QString testSuiteToStr(TestSuite t) noexcept
@@ -43,6 +44,8 @@ void Settings::load() noexcept
                         ? BuildType::Release
                         : BuildType::Debug;
 
+    this->viewSize = appSettings.value(Key::ViewSize, 300).toUInt();
+
     this->useBatik = appSettings.value(Key::UseBatik).toBool();
     this->useInkscape = appSettings.value(Key::UseInkscape).toBool();
     this->useLibrsvg = appSettings.value(Key::UseLibrsvg).toBool();
@@ -59,6 +62,7 @@ void Settings::save() const noexcept
     QSettings appSettings;
     appSettings.setValue(Key::TestSuite, testSuiteToStr(this->testSuite));
     appSettings.setValue(Key::ResvgBuild, buildTypeToStr(this->buildType));
+    appSettings.setValue(Key::ViewSize, this->viewSize);
     appSettings.setValue(Key::UseBatik, this->useBatik);
     appSettings.setValue(Key::UseInkscape, this->useInkscape);
     appSettings.setValue(Key::UseLibrsvg, this->useLibrsvg);

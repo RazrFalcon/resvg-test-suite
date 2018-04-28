@@ -75,7 +75,7 @@ barh_data = json.dumps(
             "value": passed[3]
         },
         {
-            "name": "librsvg 2.40.18",
+            "name": "librsvg 2.42.3",
             "value": passed[4]
         },
         {

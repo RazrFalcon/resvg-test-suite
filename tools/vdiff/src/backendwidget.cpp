@@ -73,6 +73,12 @@ void BackendWidget::setAnimationEnabled(bool flag)
     m_diffView->setAnimationEnabled(flag);
 }
 
+void BackendWidget::setViewSize(const QSize &size)
+{
+    m_imageView->setFixedSize(size);
+    m_diffView->setFixedSize(size);
+}
+
 void BackendWidget::resetImages()
 {
     m_imageView->resetImage();

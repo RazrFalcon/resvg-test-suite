@@ -86,7 +86,7 @@ private slots:
     void onDiffFinished();
 
 private:
-    Settings * m_settings = nullptr;
+    Settings *m_settings = nullptr;
     int m_viewSize = 300;
     QFutureWatcher<RenderResult> m_watcher1;
     QFutureWatcher<DiffOutput> m_watcher2;

@@ -3,10 +3,6 @@
 [cols="1,1,10,1,1,1,1,1,1",options="header"]
 |===
 | | # | Feature | resvg | Chrome | Batik | Inkscape | librsvg | QtSvg
-3+| [[a-style]] style  ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{part-box} ^|{part-box}
-||1| Simple case ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
-||2| Comments ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
-9+^|
 3+| [[a-transform]] transform  ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{part-box} ^|{ok-box}
 ||1| `matrix(a, b, c, d, e, f)` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||2| `translate(tx, ty)` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
@@ -22,9 +18,13 @@
 ||12| Transform list ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||13| `matrix(a b c d e f)` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||14| Extra spaces ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
-||15| matrix(0, 0, 0, 0, 0, 0) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box}
+||15| matrix(0, 0, 0, 0, 0, 0) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||16| matrix(1, 0, 0, 1, 0, 0) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||17| Numeric character references ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
-||18| Empty ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||18| Empty ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box}
+9+^|
+3+| [[a-style]] style  ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{part-box} ^|{part-box}
+||1| Simple case ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||2| Comments ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
 9+^|
 |===

@@ -41,6 +41,13 @@ void SettingsDialog::loadSettings()
     ui->lineEditRsvg->setText(m_settings->librsvgPath);
 
     ui->chBoxUseQtSvg->setChecked(m_settings->useQtSvg);
+
+    const auto idx = ui->cmbBoxViewSize->findText(QString::number(m_settings->viewSize));
+    if (idx != -1) {
+        ui->cmbBoxViewSize->setCurrentIndex(idx);
+    } else {
+        ui->cmbBoxViewSize->setCurrentIndex(3);
+    }
 }
 
 void SettingsDialog::on_buttonBox_accepted()
@@ -52,6 +59,8 @@ void SettingsDialog::on_buttonBox_accepted()
     m_settings->buildType = ui->rBtnRelease->isChecked()
                     ? BuildType::Release
                     : BuildType::Debug;
+
+    m_settings->viewSize = ui->cmbBoxViewSize->currentText().toInt();
 
     m_settings->useBatik = ui->chBoxUseBatik->isChecked();
     m_settings->useInkscape = ui->chBoxUseInkscape->isChecked();

@@ -2,7 +2,7 @@
     <title>`square`</title>
 
     <line id="line1" x1="40" y1="40" x2="160" y2="160"
-          stroke="green" stroke-width="5" stroke-linecap="square"/>
+          stroke="green" stroke-width="10" stroke-linecap="square"/>
 
     <!-- image frame -->
     <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
