@@ -1,5 +1,5 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Clipping with complex text and `clip-rule` (UB)</title>
+    <title>Clipping with complex text and `clip-rule`</title>
 
     <clipPath id="clip1" clip-rule="evenodd">
         <text id="text1" x="20" y="110" font-family="Arial" font-size="40">

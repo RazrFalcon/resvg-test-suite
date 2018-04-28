@@ -60,7 +60,7 @@ barh_data = json.dumps(
         },
         {
             "name": "resvg 0.2.0",
-            "value": 490
+            "value": 484
         },
         {
             "name": "Chromium r549031",
