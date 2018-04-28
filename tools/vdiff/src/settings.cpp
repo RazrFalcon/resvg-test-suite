@@ -43,7 +43,7 @@ void Settings::load() noexcept
                         ? BuildType::Release
                         : BuildType::Debug;
 
-    this->useInkscape = appSettings.value(Key::UseBatik).toBool();
+    this->useBatik = appSettings.value(Key::UseBatik).toBool();
     this->useInkscape = appSettings.value(Key::UseInkscape).toBool();
     this->useLibrsvg = appSettings.value(Key::UseLibrsvg).toBool();
     this->useQtSvg = appSettings.value(Key::UseQtSvg).toBool();
