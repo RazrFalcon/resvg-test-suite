@@ -32,6 +32,8 @@
 ||3| Multiple `defs` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||4| Nested `defs` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||5| Ignore shapes inside `defs` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||6| Style inheritance ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||7| Style inheritance on text ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 9+^|
 3+| [[e-desc]] desc  ^|{oos-box} ^|{oos-box} ^|{oos-box} ^|{oos-box} ^|{oos-box} ^|{oos-box}
 9+^|

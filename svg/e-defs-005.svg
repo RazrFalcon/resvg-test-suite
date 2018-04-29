@@ -3,7 +3,7 @@
     <desc>Nothing should be rendered</desc>
 
     <defs id="defs1">
-        <circle id="circle1" cx="100" cy="100" r="-80" fill="red"/>
+        <circle id="circle1" cx="100" cy="100" r="80" fill="red"/>
     </defs>
 
     <!-- image frame -->
