@@ -479,6 +479,7 @@ e-svg-016.svg
 e-svg-017.svg
 e-svg-018.svg
 e-svg-019.svg
+e-svg-020.svg
 e-switch-001.svg
 e-switch-002.svg
 e-switch-003.svg
