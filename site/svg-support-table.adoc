@@ -69,6 +69,7 @@ PS: No, it's not as good as Chrome.
 * All libraries are rendering text a bit different. We don't treat this as an error.
 * Some tests are marked as UB (undefined behavior). This means that I don't know how the correct
   result should look like. Usually, all libraries will render those files differently.
+  Those tests are marked as *Unknown*, but they must not crash anyway.
 
 === Legend
 

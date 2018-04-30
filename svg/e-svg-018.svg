@@ -1,0 +1,13 @@
+<svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Invalid `id` attribute (UB) (1)</title>
+    <desc>`id` should not start with a digit</desc>
+
+    <defs id="defs1">
+        <circle id="1" cx="100" cy="100" r="80" fill="green"/>
+    </defs>
+    <use id="use1" xlink:href="#1"/>
+
+    <!-- image frame -->
+    <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+</svg>
