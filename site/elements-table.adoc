@@ -4,7 +4,7 @@
 |===
 | | # | Feature | resvg | Chrome | Batik | Inkscape | librsvg | QtSvg
 9+^|https://www.w3.org/TR/SVG/struct.html[Document Structure]
-3+| [[e-svg]] svg  ^|{part-box} ^|{ok-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box}
+3+| [[e-svg]] svg  ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box}
 ||1| Explicit `svg` namespace ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||2| `xmlns` validation ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
 ||3| Mixed namespaces ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
@@ -22,6 +22,9 @@
 ||15| `preserveAspectRatio` with `viewBox` not at zero pos ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||16| `viewBox` not at zero pos ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||17| Proportional `viewBox` ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||18| Invalid `id` attribute (UB) (1) ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
+||19| Invalid `id` attribute (UB) (2) ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
+||20| `FuncIRI` parsing ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
 9+^|
 3+| [[e-g]] g  ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||1| Deeply nested groups ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
@@ -303,6 +306,9 @@
 ||21| gradientTransform + transform ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
 ||22| Many stops ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||23| Single stop ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||25| Single stop with opacity used by `fill` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||26| Single stop with opacity used by `stroke` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||27| Single stop with opacity used by `fill` and `stroke` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||24| No stops ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 9+^|
 3+| [[e-radialGradient]] radialGradient  ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box}

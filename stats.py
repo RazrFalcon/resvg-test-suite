@@ -59,10 +59,6 @@ barh_data = json.dumps(
             "value": passed[0]
         },
         {
-            "name": "resvg 0.2.0",
-            "value": 484
-        },
-        {
             "name": "Chromium r549031",
             "value": passed[1]
         },

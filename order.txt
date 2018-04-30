@@ -278,6 +278,9 @@ e-linearGradient-020.svg
 e-linearGradient-021.svg
 e-linearGradient-022.svg
 e-linearGradient-023.svg
+e-linearGradient-025.svg
+e-linearGradient-026.svg
+e-linearGradient-027.svg
 e-linearGradient-024.svg
 e-mask-001.svg
 e-mask-002.svg
