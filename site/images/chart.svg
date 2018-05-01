@@ -5,30 +5,30 @@
     <text font-family="Arial" font-size="16" x="4" y="71">Chromium r549031</text>
     <text font-family="Arial" font-size="16" x="76" y="104">Batik 1.9</text>
     <text font-family="Arial" font-size="16" x="25" y="137">Inkscape 0.92.2</text>
-    <text font-family="Arial" font-size="16" x="43" y="168">librsvg 2.42.3</text>
+    <text font-family="Arial" font-size="16" x="43" y="170">librsvg 2.42.3</text>
     <text font-family="Arial" font-size="16" x="54" y="203">QtSvg 5.9.4</text>
     <rect fill="#ccc" height="209" width="1" x="142" y="10"/>
     <text fill="#000" font-family="Arial" font-size="16" x="138" y="233">0</text>
     <rect fill="#ccc" height="209" width="1" x="312" y="10"/>
-    <text fill="#000" font-family="Arial" font-size="16" x="299" y="233">137</text>
+    <text fill="#000" font-family="Arial" font-size="16" x="299" y="233">140</text>
     <rect fill="#ccc" height="209" width="1" x="483" y="10"/>
-    <text fill="#000" font-family="Arial" font-size="16" x="470" y="233">273</text>
+    <text fill="#000" font-family="Arial" font-size="16" x="470" y="233">279</text>
     <rect fill="#ccc" height="209" width="1" x="654" y="10"/>
-    <text fill="#000" font-family="Arial" font-size="16" x="641" y="233">410</text>
+    <text fill="#000" font-family="Arial" font-size="16" x="641" y="233">419</text>
     <rect fill="#ccc" height="209" width="1" x="825" y="10"/>
-    <text fill="#000" font-family="Arial" font-size="16" x="812" y="233">546</text>
-    <rect fill="#3260cd" height="22" width="615" x="142" y="21"/>
-    <text fill="#fff" font-family="Arial" font-size="16" x="727" y="38">492</text>
-    <rect fill="#3260cd" height="22" width="645" x="142" y="54"/>
-    <text fill="#fff" font-family="Arial" font-size="16" x="757" y="71">516</text>
-    <rect fill="#3260cd" height="22" width="522" x="142" y="87"/>
-    <text fill="#fff" font-family="Arial" font-size="16" x="634" y="104">418</text>
-    <rect fill="#3260cd" height="22" width="571" x="142" y="120"/>
-    <text fill="#fff" font-family="Arial" font-size="16" x="683" y="137">457</text>
-    <rect fill="#3260cd" height="22" width="527" x="142" y="153"/>
-    <text fill="#fff" font-family="Arial" font-size="16" x="639" y="168">422</text>
-    <rect fill="#3260cd" height="22" width="386" x="142" y="186"/>
-    <text fill="#fff" font-family="Arial" font-size="16" x="498" y="203">309</text>
+    <text fill="#000" font-family="Arial" font-size="16" x="812" y="233">558</text>
+    <rect fill="#3260cd" height="22" width="616" x="142" y="21"/>
+    <text fill="#fff" font-family="Arial" font-size="16" x="728" y="38">504</text>
+    <rect fill="#3260cd" height="22" width="646" x="142" y="54"/>
+    <text fill="#fff" font-family="Arial" font-size="16" x="758" y="71">528</text>
+    <rect fill="#3260cd" height="22" width="526" x="142" y="87"/>
+    <text fill="#fff" font-family="Arial" font-size="16" x="638" y="104">430</text>
+    <rect fill="#3260cd" height="22" width="570" x="142" y="120"/>
+    <text fill="#fff" font-family="Arial" font-size="16" x="682" y="137">466</text>
+    <rect fill="#3260cd" height="22" width="529" x="142" y="153"/>
+    <text fill="#fff" font-family="Arial" font-size="16" x="641" y="170">433</text>
+    <rect fill="#3260cd" height="22" width="385" x="142" y="186"/>
+    <text fill="#fff" font-family="Arial" font-size="16" x="497" y="203">315</text>
     <rect fill="#333" height="209" width="1" x="142" y="10"/>
     <text font-family="Arial" font-size="16" font-style="italic" x="442" y="255">Tests passed</text>
 </svg>

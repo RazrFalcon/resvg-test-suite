@@ -42,7 +42,13 @@
 9+^|
 3+| [[e-title]] title  ^|{oos-box} ^|{oos-box} ^|{oos-box} ^|{oos-box} ^|{oos-box} ^|{oos-box}
 9+^|
-3+| [[e-symbol]] symbol  ^|{fail-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
+3+| [[e-symbol]] symbol  ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{part-box} ^|{part-box} ^|{fail-box}
+||1| Simple case ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||2| Unused symbol ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||3| With `viewBox` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||4| With `viewBox` and custom `use` size ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
+||5| With custom `use` size ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
+||6| With `viewBox` and custom `use` rect ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
 9+^|
 3+| [[e-use]] use  ^|{part-box} ^|{part-box} ^|{part-box} ^|{ok-box} ^|{part-box} ^|{part-box}
 ||1| Simple case ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
@@ -64,6 +70,7 @@
 ||12| Nested recursive ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||13| Indirect recursive ^|{ok-box} ^|{ok-box} ^|{crash-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||14| Non-linear order ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||20| With size ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 9+^|
 3+| [[e-image]] image  ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box}
 ||1| External JPEG ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
