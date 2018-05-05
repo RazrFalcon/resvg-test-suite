@@ -24,8 +24,9 @@ private slots:
     void on_btnSelectInkscape_clicked();
     void on_btnSelectRsvg_clicked();
     void on_btnSelectResvg_clicked();
-
     void on_btnSelectBatik_clicked();
+    void on_btnSelectTest_clicked();
+    void prepareTestsPathWidgets();
 
 private:
     Ui::SettingsDialog * const ui;

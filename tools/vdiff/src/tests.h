@@ -32,15 +32,15 @@ enum class TestState
 struct TestItem
 {
     QString path;
-    QString fileName;
-    QString name;
+    QString baseName;
     QHash<Backend, TestState> state;
 };
 
 class Tests
 {
 public:
-    static Tests load(const QString &path);
+    static Tests load(const QString &path, const QString &testsPath);
+    static Tests loadCustom(const QString &path);
     void save(const QString &path);
 
     static void resync(const Settings &settings);

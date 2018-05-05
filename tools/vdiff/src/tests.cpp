@@ -1,5 +1,6 @@
 #include <QFile>
 #include <QDir>
+#include <QDirIterator>
 
 #include "paths.h"
 
@@ -25,7 +26,7 @@ static TestState stateFormStr(const QStringRef &str)
     }
 }
 
-Tests Tests::load(const QString &path)
+Tests Tests::load(const QString &path, const QString &testsPath)
 {
     QFile file(path);
     if (!file.open(QFile::ReadOnly)) {
@@ -58,16 +59,11 @@ Tests Tests::load(const QString &path)
             throw QString("Invalid columns count at row %1.").arg(row);
         }
 
-        const auto testPath = items.at(0).toString();
-
-        QString testName = testPath;
-        testName.remove(0, 2); // remove prefix
-        testName.remove(QRegExp("-[0-9]+\\.svg"));
+        const auto testPath = testsPath + '/' + items.at(0).toString();
 
         TestItem item;
-        item.path       = testPath;
-        item.fileName   = QFileInfo(testPath).completeBaseName();
-        item.name       = testName;
+        item.path     = QFileInfo(testPath).absoluteFilePath();
+        item.baseName = QFileInfo(testPath).completeBaseName();
         item.state.insert(Backend::Chrome,      stateFormStr(items.at(1)));
         item.state.insert(Backend::ResvgCairo,  stateFormStr(items.at(2)));
         item.state.insert(Backend::Batik,       stateFormStr(items.at(3)));
@@ -83,11 +79,36 @@ Tests Tests::load(const QString &path)
     return tests;
 }
 
+Tests Tests::loadCustom(const QString &path)
+{
+    Tests tests;
+
+    static const QStringList filesFilter = { "*.svg", "*.svgz" };
+
+    QStringList paths;
+    QDirIterator it(path, filesFilter, QDir::Files | QDir::NoDotAndDotDot | QDir::NoSymLinks,
+                    QDirIterator::Subdirectories);
+    while (it.hasNext()) {
+        paths << it.next();
+    }
+
+    paths.sort();
+
+    for (const QString &filePath : paths) {
+        TestItem item;
+        item.path     = filePath;
+        item.baseName = QDir(path).relativeFilePath(filePath);
+        tests.m_data << item;
+    }
+
+    return tests;
+}
+
 void Tests::save(const QString &path)
 {
     QString text = "title,chrome,resvg,batik,inkscape,librsvg,qtsvg\n";
-    for (const auto &item : m_data) {
-        text += item.path + ',';
+    for (const TestItem &item : m_data) {
+        text += QFileInfo(item.path).fileName() + ',';
         text += QString::number((int)item.state.value(Backend::Chrome))     + ',';
         text += QString::number((int)item.state.value(Backend::ResvgCairo)) + ',';
         text += QString::number((int)item.state.value(Backend::Batik))      + ',';
@@ -106,14 +127,14 @@ void Tests::save(const QString &path)
 
 void Tests::resync(const Settings &settings)
 {
-    auto oldTests = load(settings.resultsPath());
+    auto oldTests = load(settings.resultsPath(), settings.testsPath());
 
     const auto files = QDir(settings.testsPath()).entryInfoList({ "*.svg" });
     for (const auto &fi : files) {
         const auto fileName = fi.fileName();
 
         bool isExists = false;
-        for (const auto &test : oldTests) {
+        for (const TestItem &test : oldTests) {
             if (test.path == fileName) {
                 isExists = true;
                 break;
@@ -142,7 +163,7 @@ void Tests::resync(const Settings &settings)
             break;
         }
 
-        for (const auto &test : oldTests) {
+        for (const TestItem &test : oldTests) {
             if (test.path == line) {
                 newTests.m_data << test;
                 break;

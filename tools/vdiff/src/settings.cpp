@@ -5,6 +5,7 @@
 
 namespace Key {
     static const QString TestSuite = "TestSuite";
+    static const QString CustomTestsPath = "CustomTestsPath";
     static const QString ResvgBuild = "ResvgBuild";
     static const QString ResvgDir = "ResvgDir";
     static const QString BatikPath = "BatikPath";
@@ -22,6 +23,18 @@ static QString testSuiteToStr(TestSuite t) noexcept
     switch (t) {
         case TestSuite::Own      : return "results";
         case TestSuite::Official : return "official";
+        case TestSuite::Custom   : return "custom";
+    }
+}
+
+static TestSuite testSuiteFromStr(const QString &str) noexcept
+{
+    if (str == "official") {
+        return TestSuite::Official;
+    } else if (str == "custom") {
+        return TestSuite::Custom;
+    } else {
+        return TestSuite::Own;
     }
 }
 
@@ -36,9 +49,8 @@ static QString buildTypeToStr(BuildType t) noexcept
 void Settings::load() noexcept
 {
     QSettings appSettings;
-    this->testSuite = appSettings.value(Key::TestSuite).toString() == "official"
-                        ? TestSuite::Official
-                        : TestSuite::Own;
+    this->testSuite = testSuiteFromStr(appSettings.value(Key::TestSuite).toString());
+    this->customTestsPath = appSettings.value(Key::CustomTestsPath).toString();
 
     this->buildType = appSettings.value(Key::ResvgBuild).toString() == "release"
                         ? BuildType::Release
@@ -61,6 +73,7 @@ void Settings::save() const noexcept
 {
     QSettings appSettings;
     appSettings.setValue(Key::TestSuite, testSuiteToStr(this->testSuite));
+    appSettings.setValue(Key::CustomTestsPath, this->customTestsPath);
     appSettings.setValue(Key::ResvgBuild, buildTypeToStr(this->buildType));
     appSettings.setValue(Key::ViewSize, this->viewSize);
     appSettings.setValue(Key::UseBatik, this->useBatik);
@@ -81,6 +94,7 @@ QString Settings::resvgPath() const noexcept
 QString Settings::resultsPath() const noexcept
 {
     Q_ASSERT(!QString(SRCDIR).isEmpty());
+    Q_ASSERT(this->testSuite != TestSuite::Custom);
 
     const auto path = QString("%1/../../%2.csv").arg(SRCDIR).arg(testSuiteToStr(this->testSuite));
 
@@ -95,13 +109,9 @@ QString Settings::testsPath() const noexcept
     switch (this->testSuite) {
         case TestSuite::Own      : path = QString("%1/../../svg").arg(SRCDIR); break;
         case TestSuite::Official : path = QString("%1/../../official_test_suite/svg").arg(SRCDIR); break;
+        case TestSuite::Custom   : Q_UNREACHABLE();
     }
 
     Q_ASSERT(QFile::exists(path));
     return QFileInfo(path).absoluteFilePath();
-}
-
-QString Settings::testPath(const QString &fileName) const noexcept
-{
-    return testsPath() + '/' + fileName;
 }

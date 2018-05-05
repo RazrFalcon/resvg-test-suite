@@ -17,6 +17,13 @@ SettingsDialog::SettingsDialog(Settings *settings, QWidget *parent)
     setMinimumWidth(600);
     adjustSize();
 
+    auto suiteGroup = new QButtonGroup(this);
+    suiteGroup->addButton(ui->rBtnSuiteResvg);
+    suiteGroup->addButton(ui->rBtnSuiteOfficial);
+    suiteGroup->addButton(ui->rBtnSuiteCustom);
+    connect(suiteGroup, SIGNAL(buttonToggled(QAbstractButton*,bool)),
+            this, SLOT(prepareTestsPathWidgets()));
+
     ui->buttonBox->setFocus();
 }
 
@@ -28,7 +35,9 @@ SettingsDialog::~SettingsDialog()
 void SettingsDialog::loadSettings()
 {
     ui->rBtnSuiteOfficial->setChecked(m_settings->testSuite == TestSuite::Official);
+    ui->rBtnSuiteCustom->setChecked(m_settings->testSuite == TestSuite::Custom);
     ui->rBtnRelease->setChecked(m_settings->buildType == BuildType::Release);
+    ui->lineEditTestsPath->setText(m_settings->customTestsPath);
     ui->lineEditResvg->setText(m_settings->resvgDir);
 
     ui->chBoxUseBatik->setChecked(m_settings->useBatik);
@@ -48,13 +57,26 @@ void SettingsDialog::loadSettings()
     } else {
         ui->cmbBoxViewSize->setCurrentIndex(3);
     }
+
+    prepareTestsPathWidgets();
+}
+
+void SettingsDialog::prepareTestsPathWidgets()
+{
+    ui->lineEditTestsPath->setVisible(ui->rBtnSuiteCustom->isChecked());
+    ui->btnSelectTest->setVisible(ui->rBtnSuiteCustom->isChecked());
 }
 
 void SettingsDialog::on_buttonBox_accepted()
 {
-    m_settings->testSuite = ui->rBtnSuiteOfficial->isChecked()
-                    ? TestSuite::Official
-                    : TestSuite::Own;
+    auto suite = TestSuite::Own;
+    if (ui->rBtnSuiteOfficial->isChecked()) {
+        suite = TestSuite::Official;
+    } else if (ui->rBtnSuiteCustom->isChecked()) {
+        suite = TestSuite::Custom;
+    }
+    m_settings->testSuite = suite;
+    m_settings->customTestsPath = ui->lineEditTestsPath->text();
 
     m_settings->buildType = ui->rBtnRelease->isChecked()
                     ? BuildType::Release
@@ -73,6 +95,15 @@ void SettingsDialog::on_buttonBox_accepted()
     m_settings->librsvgPath = ui->lineEditRsvg->text();
 
     m_settings->save();
+}
+
+void SettingsDialog::on_btnSelectTest_clicked()
+{
+    const auto path = QFileDialog::getExistingDirectory(this, "Custom tests path",
+                                                        ui->lineEditTestsPath->text());
+    if (!path.isEmpty()) {
+        ui->lineEditTestsPath->setText(path);
+    }
 }
 
 void SettingsDialog::on_btnSelectResvg_clicked()

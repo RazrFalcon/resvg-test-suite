@@ -6,6 +6,7 @@ enum class TestSuite
 {
     Own,
     Official,
+    Custom,
 };
 
 enum class BuildType
@@ -23,11 +24,11 @@ public:
     QString resvgPath() const noexcept;
     QString resultsPath() const noexcept;
     QString testsPath() const noexcept;
-    QString testPath(const QString &fileName) const noexcept;
 
 public:
     TestSuite testSuite = TestSuite::Own;
     BuildType buildType = BuildType::Debug;
+    QString customTestsPath;
     int viewSize = 300;
     bool useBatik = true;
     bool useInkscape = true;

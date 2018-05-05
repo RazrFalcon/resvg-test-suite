@@ -7,7 +7,6 @@
 #include <QXmlStreamReader>
 #include <QSortFilterProxyModel>
 #include <QStandardItemModel>
-#include <QDebug>
 
 #include "paths.h"
 #include "settingsdialog.h"
@@ -37,14 +36,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(&m_render, &Render::error, this, &MainWindow::onRenderError);
     connect(&m_render, &Render::finished, this, &MainWindow::onRenderFinished);
 
-    auto *model = new QStandardItemModel(0, 1);
-    auto *sortMmodel = new QSortFilterProxyModel();
-    sortMmodel->setSourceModel(model);
-    ui->cmbBoxFiles->setModel(sortMmodel);
-
-    // TODO: this
-    ui->cmbBoxNames->hide();
-
     // TODO: check that convertors exists
 
     QTimer::singleShot(5, this, &MainWindow::onStart);
@@ -52,7 +43,9 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
-    m_tests.save(m_settings.resultsPath());
+    if (m_settings.testSuite != TestSuite::Custom) {
+        m_tests.save(m_settings.resultsPath());
+    }
 
     delete ui;
 }
@@ -102,6 +95,14 @@ void MainWindow::prepareBackends()
     m_backendWidges.value(Backend::Chrome)->setDiffVisible(false);
     m_backendWidges.value(Backend::ResvgQt)->setTestStateVisible(false);
 
+    if (m_settings.testSuite == TestSuite::Custom) {
+        for (auto *w : m_backendWidges.values()) {
+            w->setTestStateVisible(false);
+        }
+    }
+
+    ui->btnResync->setVisible(m_settings.testSuite != TestSuite::Custom);
+
     QTimer::singleShot(50, this, [this](){ adjustSize(); });
 }
 
@@ -124,48 +125,38 @@ void MainWindow::loadImageList()
     ui->cmbBoxFiles->blockSignals(true);
     ui->cmbBoxFiles->clear();
 
-    ui->cmbBoxNames->blockSignals(true);
-    ui->cmbBoxNames->clear();
-
     try {
-        m_tests = Tests::load(m_settings.resultsPath());
+        if (m_settings.testSuite == TestSuite::Custom) {
+            m_tests = Tests::loadCustom(m_settings.customTestsPath);
+        } else {
+            m_tests = Tests::load(m_settings.resultsPath(), m_settings.testsPath());
+        }
     } catch (const QString &msg) {
         QMessageBox::critical(this, "Error", msg);
         qApp->quit();
     }
 
 
-    QSet<QString> namesSet;
-    int idx = 0;
-    for (const auto &item : m_tests) {
-        ui->cmbBoxFiles->addItem(item.fileName, idx);
-        namesSet.insert(item.name);
-        idx++;
+    for (const TestItem &item : m_tests) {
+        ui->cmbBoxFiles->addItem(item.baseName);
     }
 
-    QStringList namesList = namesSet.toList();
-    namesList.sort();
-    ui->cmbBoxNames->addItem("");
-    ui->cmbBoxNames->addItems(namesList);
-
     if (ui->cmbBoxFiles->count() != 0) {
-        loadImage(ui->cmbBoxFiles->currentText() + ".svg");
+        loadTest(0);
     }
 
     ui->cmbBoxFiles->blockSignals(false);
     ui->cmbBoxFiles->setFocus();
-
-    ui->cmbBoxNames->blockSignals(false);
 }
 
-void MainWindow::on_cmbBoxFiles_currentIndexChanged(int)
+void MainWindow::on_cmbBoxFiles_currentIndexChanged(int idx)
 {
-    loadImage(ui->cmbBoxFiles->currentText() + ".svg");
+    loadTest(idx);
 }
 
-void MainWindow::loadImage(const QString &fileName)
+void MainWindow::loadTest(const int idx)
 {
-    const auto path = m_settings.testPath(fileName);
+    const auto path = m_tests.at(idx).path;
 
     setAnimationEnabled(true);
     getTitleAndDesc(path);
@@ -224,7 +215,7 @@ void MainWindow::getTitleAndDesc(const QString &path)
 void MainWindow::fillChBoxes()
 {
     try {
-        const auto idx = ui->cmbBoxFiles->currentData().toUInt();
+        const auto idx = ui->cmbBoxFiles->currentIndex();
         const auto &item = m_tests.at(idx);
 
         for (auto *w : m_backendWidges.values()) {
@@ -238,7 +229,7 @@ void MainWindow::fillChBoxes()
 void MainWindow::updatePassFlags()
 {
     try {
-        const auto idx = ui->cmbBoxFiles->currentData().toUInt();
+        const auto idx = ui->cmbBoxFiles->currentIndex();
         auto &item = m_tests.at(idx);
 
         for (auto *w : m_backendWidges.values()) {
@@ -332,10 +323,4 @@ void MainWindow::on_btnSettings_clicked()
         prepareBackends();
         loadImageList();
     }
-}
-
-void MainWindow::on_cmbBoxNames_currentIndexChanged(const QString &text)
-{
-    auto *model = static_cast<QSortFilterProxyModel*>(ui->cmbBoxFiles->model());
-    model->setFilterFixedString(text);
 }
