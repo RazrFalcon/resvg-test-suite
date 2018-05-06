@@ -368,9 +368,10 @@
 ||1| `offset` clamping ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||2| `offset` clamping with % ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||3| Stop with smaller `offset` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
-||4| Stops with equal `offset` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||4| Stops with equal `offset` (1) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||5| Stops with equal `offset` (2) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||6| Stops with equal `offset` (3) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||15| Stops with equal `offset` (4) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||7| `stop-color` with `currentColor` (1) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||8| `stop-color` with `currentColor` (2) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||9| `stop-color` with `currentColor` (3) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
