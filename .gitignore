@@ -1,9 +1,9 @@
 .directory
 Gemfile.lock
 *.pro.user
-/_site
+/.site
 /barh
 /chart.json
-.idea
+/.idea
 *.iml
 /official_test_suite

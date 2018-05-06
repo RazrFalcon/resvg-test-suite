@@ -1,6 +1,7 @@
 title: resvg test suite
 description: None
 source: site
+destination: .site
 exclude:
   - README.md
   - attributes-table.adoc
