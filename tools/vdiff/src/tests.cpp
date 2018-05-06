@@ -130,12 +130,12 @@ void Tests::resync(const Settings &settings)
     auto oldTests = load(settings.resultsPath(), settings.testsPath());
 
     const auto files = QDir(settings.testsPath()).entryInfoList({ "*.svg" });
-    for (const auto &fi : files) {
-        const auto fileName = fi.fileName();
+    for (const QFileInfo &fi : files) {
+        const auto baseName = fi.completeBaseName();
 
         bool isExists = false;
         for (const TestItem &test : oldTests) {
-            if (test.path == fileName) {
+            if (test.baseName == baseName) {
                 isExists = true;
                 break;
             }
@@ -143,7 +143,7 @@ void Tests::resync(const Settings &settings)
 
         if (!isExists) {
             TestItem item;
-            item.path = fileName;
+            item.path = fi.absoluteFilePath();
 
             oldTests.m_data << item;
         }
@@ -164,16 +164,12 @@ void Tests::resync(const Settings &settings)
         }
 
         for (const TestItem &test : oldTests) {
-            if (test.path == line) {
+            if (QFileInfo(test.path).fileName() == line) {
                 newTests.m_data << test;
                 break;
             }
         }
     }
-
-//    if (oldTests.size() != newTests.size()) {
-//        throw QString("order.txt has a different amount of tests.").arg(orderPath);
-//    }
 
     newTests.save(settings.resultsPath());
 }
