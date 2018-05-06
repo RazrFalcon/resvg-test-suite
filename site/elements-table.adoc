@@ -25,6 +25,7 @@
 ||18| Invalid `id` attribute (UB) (1) ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
 ||19| Invalid `id` attribute (UB) (2) ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
 ||20| `FuncIRI` parsing (UB) ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
+||21| `FuncIRI` with invalid characters (UB) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 9+^|
 3+| [[e-g]] g  ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||1| Deeply nested groups ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
@@ -406,7 +407,7 @@
 ||24| Nested `objectBoundingBox` ^|{fail-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 9+^|
 9+^|https://www.w3.org/TR/SVG/masking.html[Clipping, Masking and Compositing]
-3+| [[e-clipPath]] clipPath  ^|{part-box} ^|{ok-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{fail-box}
+3+| [[e-clipPath]] clipPath  ^|{part-box} ^|{ok-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box}
 ||1| Simple case ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||2| `stroke` has no effect ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||3| `fill` has no effect ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
@@ -433,8 +434,10 @@
 ||26| Invalid child (3) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||24| Invisible child (1) ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
 ||25| Invisible child (2) ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||27| `none` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||28| Invalid FuncIRI ^|{ok-box} ^|{ok-box} ^|{crash-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 9+^|
-3+| [[e-mask]] mask  ^|{part-box} ^|{ok-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{fail-box}
+3+| [[e-mask]] mask  ^|{part-box} ^|{ok-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box}
 ||1| Simple case ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||2| maskUnits=userSpaceOnUse without rect ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||3| maskUnits=userSpaceOnUse with `width` only ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
@@ -452,6 +455,8 @@
 ||15| With `clip-path` ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||16| Nested `objectBoundingBox` ^|{fail-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
 ||17| color-interpolation=linearRGB ^|{fail-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
+||18| `none` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||19| Invalid FuncIRI ^|{ok-box} ^|{ok-box} ^|{crash-box} ^|{ok-box} ^|{fail-box} ^|{ok-box}
 9+^|
 9+^|https://www.w3.org/TR/SVG/filters.html[Filter Effects]
 3+| [[e-filter]] filter  ^|{fail-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
