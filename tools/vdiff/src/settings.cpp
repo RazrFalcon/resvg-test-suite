@@ -25,6 +25,8 @@ static QString testSuiteToStr(TestSuite t) noexcept
         case TestSuite::Official : return "official";
         case TestSuite::Custom   : return "custom";
     }
+
+    Q_UNREACHABLE();
 }
 
 static TestSuite testSuiteFromStr(const QString &str) noexcept
@@ -36,6 +38,8 @@ static TestSuite testSuiteFromStr(const QString &str) noexcept
     } else {
         return TestSuite::Own;
     }
+
+    Q_UNREACHABLE();
 }
 
 static QString buildTypeToStr(BuildType t) noexcept

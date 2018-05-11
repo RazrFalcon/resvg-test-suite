@@ -60,6 +60,8 @@ QString Render::backendName(const Backend t)
         case Backend::Librsvg : return "rsvg";
         case Backend::QtSvg : return "QtSvg";
     }
+
+    Q_UNREACHABLE();
 }
 
 QImage Render::renderViaChrome(const RenderData &data)

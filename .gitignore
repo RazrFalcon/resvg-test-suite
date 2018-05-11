@@ -1,9 +1,11 @@
-.directory
-Gemfile.lock
+*.iml
 *.pro.user
+.directory
+/.bundle
+/.idea
 /.site
 /barh
 /chart.json
-/.idea
-*.iml
 /official_test_suite
+/vendor
+Gemfile.lock
