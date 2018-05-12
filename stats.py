@@ -95,4 +95,4 @@ try:
 except FileNotFoundError:
     print('Error: \'barh\' executable is not found.\n'
           'You should build https://github.com/RazrFalcon/barh '
-          'and link resultig binary to current directory.')
+          'and link resultig binary to the current directory.')

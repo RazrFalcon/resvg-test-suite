@@ -56,10 +56,17 @@ a-font-size-001.svg
 a-font-size-002.svg
 a-font-size-003.svg
 a-font-size-004.svg
+a-font-size-020.svg
 a-font-size-005.svg
 a-font-size-006.svg
 a-font-size-007.svg
 a-font-size-008.svg
+a-font-size-014.svg
+a-font-size-015.svg
+a-font-size-016.svg
+a-font-size-017.svg
+a-font-size-018.svg
+a-font-size-019.svg
 a-font-size-009.svg
 a-font-size-010.svg
 a-font-size-011.svg

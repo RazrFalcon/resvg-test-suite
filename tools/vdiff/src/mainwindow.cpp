@@ -109,6 +109,7 @@ void MainWindow::prepareBackends()
 void MainWindow::setGuiEnabled(bool flag)
 {
     ui->btnSettings->setEnabled(flag);
+    ui->btnResync->setEnabled(flag);
     ui->cmbBoxFiles->setEnabled(flag);
     for (auto *w : m_backendWidges.values()) {
         w->setEnabled(flag);
