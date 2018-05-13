@@ -101,7 +101,7 @@ void MainWindow::prepareBackends()
         }
     }
 
-    ui->btnResync->setVisible(m_settings.testSuite != TestSuite::Custom);
+    ui->btnResync->setVisible(m_settings.testSuite == TestSuite::Own);
 
     QTimer::singleShot(50, this, [this](){ adjustSize(); });
 }

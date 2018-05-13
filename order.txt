@@ -497,6 +497,15 @@ e-svg-018.svg
 e-svg-019.svg
 e-svg-020.svg
 e-svg-021.svg
+e-svg-022.svg
+e-svg-023.svg
+e-svg-024.svg
+e-svg-025.svg
+e-svg-026.svg
+e-svg-027.svg
+e-svg-028.svg
+e-svg-029.svg
+e-svg-030.svg
 e-switch-001.svg
 e-switch-002.svg
 e-switch-003.svg
@@ -506,6 +515,7 @@ e-symbol-003.svg
 e-symbol-004.svg
 e-symbol-005.svg
 e-symbol-006.svg
+e-symbol-007.svg
 e-text-001.svg
 e-text-002.svg
 e-text-003.svg
