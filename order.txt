@@ -274,6 +274,7 @@ e-linearGradient-007.svg
 e-linearGradient-008.svg
 e-linearGradient-009.svg
 e-linearGradient-010.svg
+e-linearGradient-028.svg
 e-linearGradient-011.svg
 e-linearGradient-012.svg
 e-linearGradient-013.svg

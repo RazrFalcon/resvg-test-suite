@@ -31,7 +31,7 @@ coords-units-02-b.svg,1,1,1,1,1,2
 coords-units-03-b.svg,1,1,1,1,1,2
 coords-viewattr-01-b.svg,1,2,1,2,1,2
 coords-viewattr-02-b.svg,1,2,1,1,1,2
-coords-viewattr-03-b.svg,1,2,1,1,1,2
+coords-viewattr-03-b.svg,1,1,1,1,1,2
 coords-viewattr-04-f.svg,2,2,1,2,2,2
 filters-background-01-f.svg,2,2,1,1,1,2
 filters-blend-01-b.svg,1,2,3,2,2,2
@@ -234,7 +234,7 @@ struct-frag-04-t.svg,2,2,1,2,1,2
 struct-frag-05-t.svg,1,2,1,1,2,2
 struct-frag-06-t.svg,1,1,1,1,1,1
 struct-group-01-t.svg,1,1,1,1,1,1
-struct-group-02-b.svg,1,2,1,1,1,2
+struct-group-02-b.svg,1,1,1,1,1,2
 struct-group-03-t.svg,1,1,1,1,2,1
 struct-image-01-t.svg,1,1,1,1,2,2
 struct-image-02-b.svg,1,2,1,2,2,2
