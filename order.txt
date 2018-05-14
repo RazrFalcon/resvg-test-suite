@@ -243,10 +243,11 @@ e-g-001.svg
 e-image-001.svg
 e-image-002.svg
 e-image-003.svg
+e-image-017.svg
+e-image-006.svg
 e-image-004.svg
 e-image-009.svg
 e-image-005.svg
-e-image-006.svg
 e-image-007.svg
 e-image-008.svg
 e-image-010.svg
@@ -256,6 +257,13 @@ e-image-013.svg
 e-image-014.svg
 e-image-015.svg
 e-image-016.svg
+e-image-018.svg
+e-image-019.svg
+e-image-020.svg
+e-image-021.svg
+e-image-022.svg
+e-image-023.svg
+e-image-024.svg
 e-line-001.svg
 e-line-002.svg
 e-line-003.svg

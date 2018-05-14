@@ -48,6 +48,8 @@ static QString buildTypeToStr(BuildType t) noexcept
         case BuildType::Debug   : return "debug";
         case BuildType::Release : return "release";
     }
+
+    Q_UNREACHABLE();
 }
 
 void Settings::load() noexcept
