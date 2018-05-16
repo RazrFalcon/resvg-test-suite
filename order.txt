@@ -527,6 +527,7 @@ e-symbol-004.svg
 e-symbol-005.svg
 e-symbol-006.svg
 e-symbol-007.svg
+e-symbol-008.svg
 e-text-001.svg
 e-text-002.svg
 e-text-003.svg
