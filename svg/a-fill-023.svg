@@ -1,5 +1,5 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <title>FuncIRI to unsupported element</title>
+    <title>FuncIRI to an unsupported element</title>
     <desc>Nothing should be rendered</desc>
 
     <defs id="defs1">

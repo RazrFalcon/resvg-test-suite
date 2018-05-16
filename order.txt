@@ -28,6 +28,10 @@ a-fill-023.svg
 a-fill-024.svg
 a-fill-025.svg
 a-fill-026.svg
+a-fill-034.svg
+a-fill-035.svg
+a-fill-036.svg
+a-fill-037.svg
 a-fill-027.svg
 a-fill-029.svg
 a-fill-030.svg
