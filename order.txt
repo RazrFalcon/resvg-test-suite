@@ -520,6 +520,7 @@ e-svg-030.svg
 e-switch-001.svg
 e-switch-002.svg
 e-switch-003.svg
+e-switch-004.svg
 e-symbol-001.svg
 e-symbol-002.svg
 e-symbol-003.svg
