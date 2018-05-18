@@ -1,5 +1,6 @@
 title,chrome,resvg,batik,inkscape,librsvg,qtsvg
 a-clip-path-001.svg,1,1,1,1,1,2
+a-clip-rule-001.svg,1,1,1,1,1,2
 a-color-001.svg,1,1,1,1,1,1
 a-display-001.svg,1,1,1,1,1,1
 a-fill-001.svg,1,1,1,1,1,1
@@ -96,6 +97,7 @@ a-font-weight-009.svg,1,1,1,1,1,1
 a-font-weight-010.svg,1,1,1,1,1,1
 a-font-weight-011.svg,1,1,1,1,1,1
 a-font-weight-012.svg,2,1,1,1,1,1
+a-mask-001.svg,1,1,2,1,1,2
 a-opacity-001.svg,1,1,1,1,1,2
 a-stop-color-001.svg,1,1,1,1,1,1
 a-stop-opacity-001.svg,1,1,1,1,1,1
