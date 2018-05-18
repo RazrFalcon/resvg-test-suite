@@ -1,6 +1,3 @@
-*~
-/_site/
-/.bundle/
-/tmp/
-*.bundle
-Gemfile.lock
+attributes-table.adoc
+elements-table.adoc
+presentation-attributes-table.adoc
