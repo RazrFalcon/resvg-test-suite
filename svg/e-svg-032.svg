@@ -1,0 +1,16 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd" [
+    <!ENTITY Rect "
+    <circle id='circle1' r='30' fill='green'/>
+    <use xlink:href='#circle1' y='80'/>
+">
+]>
+
+<svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Elements via ENTITY reference (3)</title>
+
+    <g id="g1" transform="translate(55 55)">&Rect;</g>
+    <g id="g2" transform="translate(155 55)">&Rect;</g>
+
+    <!-- image frame -->
+    <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+</svg>

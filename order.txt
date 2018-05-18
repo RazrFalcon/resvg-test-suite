@@ -503,6 +503,8 @@ e-svg-001.svg
 e-svg-002.svg
 e-svg-003.svg
 e-svg-004.svg
+e-svg-031.svg
+e-svg-032.svg
 e-svg-005.svg
 e-svg-006.svg
 e-svg-007.svg

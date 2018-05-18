@@ -102,11 +102,19 @@ def check_node_ids():
 
     files = sorted(os.listdir('svg/'))
 
+    ignore_files = [
+        'e-svg-031.svg', # because of ENTITY
+        'e-svg-032.svg', # because of ENTITY
+    ]
+
     ignore_tags = [
         'title',
         'desc',
         'stop',
     ]
+
+    for file in ignore_files:
+        files.remove(file)
 
     for file in files:
         tree = ET.parse('svg/' + file)
