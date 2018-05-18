@@ -107,6 +107,12 @@ a-stroke-006.svg
 a-stroke-007.svg
 a-stroke-008.svg
 a-stroke-009.svg
+a-stroke-010.svg
+a-stroke-011.svg
+a-stroke-012.svg
+a-stroke-013.svg
+a-stroke-014.svg
+a-stroke-015.svg
 a-stroke-dasharray-001.svg
 a-stroke-dasharray-002.svg
 a-stroke-dasharray-003.svg
