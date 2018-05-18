@@ -231,7 +231,7 @@ def global_flags(rows, type, name):
 
         total += 1
         for idx, flag in enumerate(row.flags):
-            if flag == PASSED:
+            if flag == PASSED or flag == UNKNOWN:
                 passed_list[idx] += 1
 
     flags = [UNKNOWN, UNKNOWN, UNKNOWN, UNKNOWN, UNKNOWN, UNKNOWN]

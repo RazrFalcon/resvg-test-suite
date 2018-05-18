@@ -4,7 +4,7 @@
 |===
 | | # | Feature | resvg | Chrome | Batik | Inkscape | librsvg | QtSvg
 9+^|https://www.w3.org/TR/SVG/struct.html[Document Structure]
-3+| [[e-svg]] svg  ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box}
+3+| [[e-svg]] svg  ^|{part-box} ^|{ok-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box}
 ||1| Explicit `svg` namespace ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||2| `xmlns` validation ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
 ||3| Mixed namespaces ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
@@ -26,6 +26,15 @@
 ||19| Invalid `id` attribute (UB) (2) ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
 ||20| `FuncIRI` parsing (UB) ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
 ||21| `FuncIRI` with invalid characters (UB) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||22| Nested svg ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||23| Nested svg with viewBox ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||24| Nested svg with rect ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
+||25| Nested svg with rect and viewBox (1) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
+||26| Nested svg with rect and viewBox (2) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
+||27| Nested svg with rect and viewBox (3) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
+||28| Nested svg with overflow:visible ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||29| Nested svg with overflow:auto ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||30| Deeply nested svg ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
 9+^|
 3+| [[e-g]] g  ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||1| Deeply nested groups ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
@@ -43,13 +52,15 @@
 9+^|
 3+| [[e-title]] title  ^|{oos-box} ^|{oos-box} ^|{oos-box} ^|{oos-box} ^|{oos-box} ^|{oos-box}
 9+^|
-3+| [[e-symbol]] symbol  ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{part-box} ^|{part-box} ^|{fail-box}
-||1| Simple case ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+3+| [[e-symbol]] symbol  ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{part-box} ^|{part-box} ^|{part-box}
+||1| Simple case ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||2| Unused symbol ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||3| With `viewBox` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||4| With `viewBox` and custom `use` size ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
 ||5| With custom `use` size ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
 ||6| With `viewBox` and custom `use` rect ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
+||7| With overflow:visible ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||8| With `use` transform ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
 9+^|
 3+| [[e-use]] use  ^|{part-box} ^|{part-box} ^|{part-box} ^|{ok-box} ^|{part-box} ^|{part-box}
 ||1| Simple case ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
@@ -73,16 +84,17 @@
 ||14| Non-linear order ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||20| With size ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 9+^|
-3+| [[e-image]] image  ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box}
+3+| [[e-image]] image  ^|{ok-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box}
 ||1| External JPEG ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
 ||2| External PNG ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box}
-||3| External SVG ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
+||3| External SVG ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
+||17| External SVG with transform ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
+||6| External SVGZ ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
 ||4| Embedded JPEG as image/jpg ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box}
 ||9| Embedded JPEG as image/jpeg ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||5| Embedded PNG ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
-||6| External SVGZ ^|{fail-box} ^|{fail-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
-||7| Embedded SVG ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
-||8| Embedded SVGZ ^|{fail-box} ^|{fail-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{ok-box}
+||7| Embedded SVG ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
+||8| Embedded SVGZ ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{ok-box}
 ||10| preserveAspectRatio=none ^|{ok-box} ^|{ok-box} ^|{crash-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||11| preserveAspectRatio='xMinYMin meet' ^|{ok-box} ^|{ok-box} ^|{crash-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||12| preserveAspectRatio='xMidYMid meet' ^|{ok-box} ^|{ok-box} ^|{crash-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
@@ -90,11 +102,19 @@
 ||14| preserveAspectRatio='xMinYMin slice' ^|{ok-box} ^|{ok-box} ^|{crash-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||15| preserveAspectRatio='xMidYMid slice' ^|{ok-box} ^|{ok-box} ^|{crash-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||16| preserveAspectRatio='xMaxYMax slice' ^|{ok-box} ^|{ok-box} ^|{crash-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||18| preserveAspectRatio=none on SVG ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
+||19| preserveAspectRatio='xMinYMin meet' on SVG ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
+||20| preserveAspectRatio='xMidYMid meet' on SVG ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
+||21| preserveAspectRatio='xMaxYMax meet' on SVG ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
+||22| preserveAspectRatio='xMinYMin slice' on SVG ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
+||23| preserveAspectRatio='xMidYMid slice' on SVG ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
+||24| preserveAspectRatio='xMaxYMax slice' on SVG ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
 9+^|
 3+| [[e-switch]] switch  ^|{part-box} ^|{ok-box} ^|{ok-box} ^|{part-box} ^|{ok-box} ^|{part-box}
 ||1| Simple case ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||2| `systemLanguage` ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||3| `requiredFeatures` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
+||4| With attributes ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 9+^|
 9+^|https://www.w3.org/TR/SVG/styling.html[Styling]
 3+| [[e-style]] style  ^|{part-box} ^|{ok-box} ^|{ok-box} ^|{part-box} ^|{part-box} ^|{part-box}
@@ -111,7 +131,7 @@
 ||11| Invalid type ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{ok-box}
 9+^|
 9+^|https://www.w3.org/TR/SVG/paths.html[Paths]
-3+| [[e-path]] path  ^|{ok-box} ^|{ok-box} ^|{part-box} ^|{part-box} ^|{ok-box} ^|{part-box}
+3+| [[e-path]] path  ^|{ok-box} ^|{ok-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box}
 ||1| Empty ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||2| M ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||3| M L ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
@@ -155,6 +175,7 @@
 ||41| Extra spaces ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||42| Missing coordinate in L ^|{ok-box} ^|{ok-box} ^|{crash-box} ^|{fail-box} ^|{ok-box} ^|{ok-box}
 ||43| Invalid data in L ^|{ok-box} ^|{ok-box} ^|{crash-box} ^|{fail-box} ^|{ok-box} ^|{ok-box}
+||44| Control points validation with stroke ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{fail-box} ^|{fail-box} ^|{fail-box}
 9+^|
 9+^|https://www.w3.org/TR/SVG/shapes.html[Basic Shapes]
 3+| [[e-rect]] rect  ^|{ok-box} ^|{ok-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box}
@@ -305,8 +326,9 @@
 ||7| Stops via `xlink:href` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||8| Stops via `xlink:href` from `radialGradient` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||9| Stops via `xlink:href` from `rect` ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
-||10| Stops via `xlink:href`. Complex order ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
-||11| Attributes via `xlink:href` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{ok-box}
+||10| Stops via `xlink:href`. Complex order (1) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||28| Stops via `xlink:href`. Complex order (2) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
+||11| Attributes via `xlink:href` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
 ||12| Attributes via `xlink:href` from `radialGradient` ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||13| Attributes via `xlink:href` from `rect` ^|{ok-box} ^|{ok-box} ^|{crash-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||14| Attributes via `xlink:href`. Only required ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
@@ -324,7 +346,7 @@
 ||27| Single stop with opacity used by `fill` and `stroke` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||24| No stops ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 9+^|
-3+| [[e-radialGradient]] radialGradient  ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box}
+3+| [[e-radialGradient]] radialGradient  ^|{ok-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box}
 ||1| Default attributes ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||2| spreadMethod=pad ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||3| spreadMethod=reflect ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
@@ -364,7 +386,7 @@
 ||34| Percentage values with `objectBoundingBox` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||35| Percentage values with `userSpaceOnUse` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box} ^|{ok-box} ^|{fail-box}
 9+^|
-3+| [[e-stop]] stop  ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box}
+3+| [[e-stop]] stop  ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{part-box} ^|{ok-box} ^|{part-box}
 ||1| `offset` clamping ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||2| `offset` clamping with % ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||3| Stop with smaller `offset` ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
@@ -372,6 +394,8 @@
 ||5| Stops with equal `offset` (2) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||6| Stops with equal `offset` (3) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||15| Stops with equal `offset` (4) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||16| Stops with equal `offset` (5) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
+||17| Stops with equal `offset` (6) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||7| `stop-color` with `currentColor` (1) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||8| `stop-color` with `currentColor` (2) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 ||9| `stop-color` with `currentColor` (3) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
@@ -381,7 +405,7 @@
 ||13| `stop-color` with `inherit` (3) ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
 ||14| `stop-color` with `inherit` (4) ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box}
 9+^|
-3+| [[e-pattern]] pattern  ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{fail-box}
+3+| [[e-pattern]] pattern  ^|{part-box} ^|{ok-box} ^|{part-box} ^|{part-box} ^|{part-box} ^|{part-box}
 ||1| Simple case ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||2| display=none on child ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{ok-box} ^|{fail-box}
 ||3| overflow=visible (UB) ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box} ^|{unk-box}
