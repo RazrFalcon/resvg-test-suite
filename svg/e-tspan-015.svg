@@ -1,12 +1,9 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
-     font-family="Arial" font-size="32">
-    <title>Sequential</title>
+     font-family="Arial" font-size="64">
+    <title>Only with `y`</title>
 
-    <text id="text1" x="40" y="120" fill="red">
-        <tspan id="tspan1" fill="green">
-            Text
-        </tspan>
-        <tspan id="tspan2" fill="blue">
+    <text id="text1" x="40">
+        <tspan id="tspan1" y="120">
             Text
         </tspan>
     </text>

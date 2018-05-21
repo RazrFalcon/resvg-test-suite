@@ -1,5 +1,5 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
-     xmlns:xlink="http://www.w3.org/1999/xlink" font-family="Arial" font-size="32">
+     font-family="Arial" font-size="32">
     <title>`xml:space` (1)</title>
 
     <text id="text1" x="-120" y="120" fill="red" xml:space="preserve">

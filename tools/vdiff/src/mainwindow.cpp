@@ -315,6 +315,11 @@ void MainWindow::on_btnSettings_clicked()
 {
     SettingsDialog diag(&m_settings, this);
     if (diag.exec()) {
+        // Save in case of any changes.
+        if (m_settings.testSuite != TestSuite::Custom) {
+            m_tests.save(m_settings.resultsPath());
+        }
+
         m_render.setScale(qApp->screens().first()->devicePixelRatio());
 
         for (auto *w : m_backendWidges.values()) {

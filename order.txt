@@ -167,6 +167,8 @@ a-text-anchor-004.svg
 a-text-anchor-005.svg
 a-text-anchor-006.svg
 a-text-anchor-007.svg
+a-text-anchor-008.svg
+a-text-anchor-009.svg
 a-text-decoration-001.svg
 a-text-decoration-002.svg
 a-text-decoration-003.svg
@@ -175,6 +177,7 @@ a-text-decoration-005.svg
 a-text-decoration-006.svg
 a-text-decoration-007.svg
 a-text-decoration-008.svg
+a-text-decoration-009.svg
 a-transform-001.svg
 a-transform-002.svg
 a-transform-003.svg
@@ -547,6 +550,8 @@ e-text-001.svg
 e-text-002.svg
 e-text-003.svg
 e-text-004.svg
+e-text-024.svg
+e-text-030.svg
 e-text-005.svg
 e-text-006.svg
 e-text-007.svg
@@ -566,6 +571,12 @@ e-text-020.svg
 e-text-021.svg
 e-text-022.svg
 e-text-023.svg
+e-text-025.svg
+e-text-026.svg
+e-text-027.svg
+e-text-028.svg
+e-text-029.svg
+e-text-031.svg
 e-tref-001.svg
 e-tref-002.svg
 e-tref-003.svg
@@ -576,6 +587,8 @@ e-tref-007.svg
 e-tref-008.svg
 e-tspan-001.svg
 e-tspan-002.svg
+e-tspan-014.svg
+e-tspan-015.svg
 e-tspan-003.svg
 e-tspan-004.svg
 e-tspan-005.svg
