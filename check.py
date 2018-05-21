@@ -73,9 +73,9 @@ def check_untracked_files():
     raise ValueError('not all tests are added to the git')
 
 
-def check_title_uniqueness():
+def check_title():
     """
-    Checks that element/attribute tests has unique titles
+    Checks that element/attribute tests has unique titles and shorter than 60 symbols
     """
 
     files = os.listdir('svg/')
@@ -87,6 +87,9 @@ def check_title_uniqueness():
 
         tree = ET.parse('svg/' + file)
         title = list(tree.getroot())[0].text
+
+        if len(title) > 60:
+            raise ValueError('{} has title longer than 60 symbols'.format(file))
 
         if title in titles:
             if titles[title][0] == tag_name:
@@ -165,7 +168,7 @@ def check_line_width():
 def main():
     check_order()
     check_results()
-    check_title_uniqueness()
+    check_title()
     check_node_ids()
     check_untracked_files()
     check_line_width()

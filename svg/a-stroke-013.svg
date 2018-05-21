@@ -1,5 +1,5 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <title>Pattern with `objectBoundingBox` and fallback on shape without a bbox</title>
+    <title>Pattern with `objectBoundingBox` and fallback on null shape</title>
 
     <pattern id="patt1" gradientUnits="objectBoundingBox">
         <rect id="rect1" width="50" height="50" fill="red"/>

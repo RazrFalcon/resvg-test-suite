@@ -1,5 +1,5 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <title>Gradient with `objectBoundingBox` and fallback on ver. and hor. lines</title>
+    <title>Gradient with `objectBoundingBox` and fallback on lines</title>
     <desc>
         Horizontal and vertical lines cannot be linked to the painting server
         with `objectBoundingBox` units.
