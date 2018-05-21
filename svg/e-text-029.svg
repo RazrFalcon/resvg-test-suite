@@ -2,7 +2,8 @@
      font-family="Arial" font-size="32">
     <title>Compound emojis and coordinates list</title>
 
-    <path id="crosshair" d="M 20 100 L 180 100 M 100 20 L 100 180" stroke="gray" stroke-width="0.5"/>
+    <path id="crosshair" d="M 20 100 L 180 100 M 100 20 L 100 180"
+          stroke="gray" stroke-width="0.5"/>
     <text id="text1" x="52" y="90 111 130 150">😁🦀🏳️‍🌈</text>
 
     <!-- image frame -->

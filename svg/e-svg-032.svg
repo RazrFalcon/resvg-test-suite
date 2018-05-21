@@ -5,7 +5,8 @@
 ">
 ]>
 
-<svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Elements via ENTITY reference (3)</title>
 
     <g id="g1" transform="translate(55 55)">&Rect;</g>

@@ -78,7 +78,7 @@ def check_title_uniqueness():
     Checks that element/attribute tests has unique titles
     """
 
-    files = sorted(os.listdir('svg/'))
+    files = os.listdir('svg/')
 
     titles = {}
     for file in files:
@@ -100,11 +100,11 @@ def check_node_ids():
     Checks that all elements has an unique ID attribute.
     """
 
-    files = sorted(os.listdir('svg/'))
+    files = os.listdir('svg/')
 
     ignore_files = [
-        'e-svg-031.svg', # because of ENTITY
-        'e-svg-032.svg', # because of ENTITY
+        'e-svg-031.svg',  # because of ENTITY
+        'e-svg-032.svg',  # because of ENTITY
     ]
 
     ignore_tags = [
@@ -134,9 +134,32 @@ def check_node_ids():
                     # Check that ID is unique
                     if node_id in ids:
                         raise ValueError('\'{}\' ID already exist in {}'
-                                     .format(node_id, file))
+                                         .format(node_id, file))
                     else:
                         ids.add(node_id)
+
+
+def check_line_width():
+    allow = [
+        'e-svg-004.svg',
+        'e-svg-005.svg',
+        'e-svg-007.svg',
+        'e-svg-031.svg',
+        'e-svg-032.svg',
+        'a-fill-028.svg',
+    ]
+
+    files = os.listdir('svg/')
+
+    for file in allow:
+        files.remove(file)
+
+    for file in files:
+        with open('svg/' + file, 'r') as f:
+            for i, line in enumerate(f.read().splitlines()):
+                if len(line) > 100:
+                    subprocess.run(['kate', 'svg/' + file])
+                    raise ValueError('Line {} in {} is longer than 100 characters'.format(i, file))
 
 
 def main():
@@ -145,6 +168,7 @@ def main():
     check_title_uniqueness()
     check_node_ids()
     check_untracked_files()
+    check_line_width()
 
 
 if __name__ == '__main__':

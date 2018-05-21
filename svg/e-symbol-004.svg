@@ -1,4 +1,5 @@
-<svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>With `viewBox` and custom `use` size</title>
 
     <symbol id="symbol1" viewBox="-100 -100 200 200">

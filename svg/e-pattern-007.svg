@@ -1,7 +1,8 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
     <title>patternUnits=objectBoundingBox</title>
 
-    <pattern id="patt1" patternUnits="objectBoundingBox" x="0.075" y="0.05" width="0.2" height="0.2">
+    <pattern id="patt1" patternUnits="objectBoundingBox"
+             x="0.075" y="0.05" width="0.2" height="0.2">
         <rect id="rect1" x="0" y="0" width="10" height="10" fill="grey"/>
         <rect id="rect2" x="10" y="10" width="10" height="10" fill="green"/>
     </pattern>

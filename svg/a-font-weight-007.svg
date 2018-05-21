@@ -5,7 +5,8 @@
 
     <text id="text1" x="100" y="100" font-weight="100" fill="red">Text</text>
     <g id="g1" font-weight="100">
-        <text id="text2" x="100" y="100" opacity="0.8" fill="lightgreen" font-weight="lighter">Text</text>
+        <text id="text2" x="100" y="100" opacity="0.8" fill="lightgreen"
+              font-weight="lighter">Text</text>
     </g>
 
     <!-- image frame -->

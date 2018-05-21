@@ -1,7 +1,8 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
     <title>gradientUnits=userSpaceOnUse</title>
 
-    <radialGradient id="rg1" cx="100" cy="100" r="70" fx="100" fy="100" gradientUnits="userSpaceOnUse">
+    <radialGradient id="rg1" cx="100" cy="100" r="70" fx="100" fy="100"
+                    gradientUnits="userSpaceOnUse">
         <stop offset="0" stop-color="white"/>
         <stop offset="1" stop-color="black"/>
     </radialGradient>

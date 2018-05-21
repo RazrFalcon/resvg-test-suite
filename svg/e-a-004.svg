@@ -1,5 +1,6 @@
 <!-- based on linking-a-09-b.svg -->
-<svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Inside `tspan`</title>
 
     <text id="text1" x="100" y="100" text-anchor="middle" font-family="Arial" font-size="12">

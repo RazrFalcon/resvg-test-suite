@@ -6,10 +6,12 @@
     </pattern>
 
     <!-- vertical line -->
-    <line id="line2" x1="100" y1="20" x2="100" y2="180" stroke="url(#patt1) green" stroke-width="3"/>
+    <line id="line2" x1="100" y1="20" x2="100" y2="180"
+          stroke="url(#patt1) green" stroke-width="3"/>
 
     <!-- horizontal line -->
-    <line id="line4" x1="20" y1="100" x2="180" y2="100" stroke="url(#patt1) green" stroke-width="3"/>
+    <line id="line4" x1="20" y1="100" x2="180" y2="100"
+          stroke="url(#patt1) green" stroke-width="3"/>
 
 
     <!-- image frame -->

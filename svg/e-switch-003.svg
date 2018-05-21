@@ -2,7 +2,8 @@
     <title>`requiredFeatures`</title>
 
     <switch id="switch1">
-        <circle id="circle1" cx="100" cy="100" r="80" fill="green" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Structure"/>
+        <circle id="circle1" cx="100" cy="100" r="80" fill="green"
+                requiredFeatures="http://www.w3.org/TR/SVG11/feature#Structure"/>
         <circle id="circle2" cx="100" cy="100" r="80" fill="red"/>
     </switch>
 

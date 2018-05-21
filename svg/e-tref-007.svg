@@ -1,5 +1,5 @@
-<svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-     font-family="Arial" font-size="64">
+<svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink" font-family="Arial" font-size="64">
     <title>Style attributes</title>
 
     <defs id="defs1">
@@ -9,7 +9,9 @@
     <!-- should be covered -->
     <text id="text2" x="40" y="120" fill="red">Text</text>
 
-    <text id="text3" x="40" y="120" fill="red"><tref id="tref1" fill="black" xlink:href="#text1"/></text>
+    <text id="text3" x="40" y="120" fill="red">
+        <tref id="tref1" fill="black" xlink:href="#text1"/>
+    </text>
 
     <!-- image frame -->
     <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>

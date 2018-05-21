@@ -1,4 +1,5 @@
-<svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="64">
+<svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
+     font-family="Arial" font-size="64">
     <title>Percent coordinates</title>
 
     <text id="text1" x="20%" y="60%">Text</text>

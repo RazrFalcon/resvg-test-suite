@@ -8,7 +8,8 @@
         <g id="g2">
             <g id="g3" font-size="200%">
                 <g id="g4">
-                    <text id="text2" x="100" y="100" text-anchor="middle" font-size="50%">Text</text>
+                    <text id="text2" x="100" y="100" text-anchor="middle"
+                          font-size="50%">Text</text>
                 </g>
             </g>
         </g>

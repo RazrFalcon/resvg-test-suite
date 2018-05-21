@@ -1,4 +1,5 @@
-<svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" font-family="Source Code Pro" font-size="40">
+<svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
+     font-family="Source Code Pro" font-size="40">
     <title>`bolder`</title>
     <desc>Should be 600</desc>
 

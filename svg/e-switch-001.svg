@@ -3,7 +3,8 @@
     <title>Simple case</title>
 
     <switch id="switch1">
-        <circle id="circle1" cx="100" cy="100" r="80" fill="red" requiredExtensions="http://example.org/bogus"/>
+        <circle id="circle1" cx="100" cy="100" r="80" fill="red"
+                requiredExtensions="http://example.org/bogus"/>
         <circle id="circle2" cx="100" cy="100" r="80" fill="green"/>
         <circle id="circle3" cx="100" cy="100" r="80" fill="red"/>
     </switch>
