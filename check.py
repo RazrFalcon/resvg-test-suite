@@ -150,6 +150,7 @@ def check_line_width():
         'e-svg-031.svg',
         'e-svg-032.svg',
         'a-fill-028.svg',
+        'e-tspan-010.svg',
     ]
 
     files = os.listdir('svg/')
@@ -161,7 +162,6 @@ def check_line_width():
         with open('svg/' + file, 'r') as f:
             for i, line in enumerate(f.read().splitlines()):
                 if len(line) > 100:
-                    subprocess.run(['kate', 'svg/' + file])
                     raise ValueError('Line {} in {} is longer than 100 characters'.format(i, file))
 
 

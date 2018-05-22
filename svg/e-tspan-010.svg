@@ -2,12 +2,8 @@
      font-family="Arial" font-size="24">
     <title>Mixed `xml:space` (2)</title>
 
-    <text id="text1" x="-40" y="120" xml:space="preserve">
-        <tspan id="tspan1" fill="green" xml:space="default">
-            Text
-        </tspan>
-        Text
-    </text>
+    <text id="text1" x="10" y="100" xml:space="preserve" fill="red">  Text  Text   Text  </text>
+    <text id="text2" x="10" y="100" xml:space="preserve">  Text  <tspan id="tspan1" fill="green" xml:space="default">  Text  </tspan>  Text  </text>
 
     <!-- image frame -->
     <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>

@@ -2,10 +2,8 @@
      font-family="Arial" font-size="32">
     <title>`xml:space` (2)</title>
 
-    <text id="text1" x="-40" y="120" fill="red">
-        <tspan id="tspan1" fill="green" xml:space="preserve">
-            Text
-        </tspan>
+    <text id="text1" x="25" y="100">
+        <tspan id="tspan1" xml:space="preserve">Text    Text</tspan>
     </text>
 
     <!-- image frame -->

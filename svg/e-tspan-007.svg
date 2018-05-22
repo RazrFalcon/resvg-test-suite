@@ -2,11 +2,7 @@
      font-family="Arial" font-size="32">
     <title>`xml:space` (1)</title>
 
-    <text id="text1" x="-120" y="120" fill="red" xml:space="preserve">
-        <tspan id="tspan1" fill="green">
-            Text
-        </tspan>
-    </text>
+    <text id="text1" x="25" y="100" xml:space="preserve">Text    Text</text>
 
     <!-- image frame -->
     <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
