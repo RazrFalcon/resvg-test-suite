@@ -2,8 +2,11 @@
      font-family="Arial" font-size="64">
     <title>With `x` and `y`</title>
 
+    <path id="crosshair" d="M 20 100 L 180 100 M 100 20 L 100 180"
+          stroke="gray" stroke-width="0.5"/>
+
     <text id="text1" x="20" y="10">
-        <tspan id="tspan1" x="40" y="120">
+        <tspan id="tspan1" x="33" y="100">
             Text
         </tspan>
     </text>

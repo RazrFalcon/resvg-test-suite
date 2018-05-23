@@ -2,7 +2,10 @@
      font-family="Arial" font-size="64">
     <title>`rotate` with more values than characters</title>
 
-    <text id="text1" x="40" y="120" rotate="10 20 30 40 50 60">Text</text>
+    <path id="crosshair" d="M 20 100 L 180 100 M 100 20 L 100 180"
+          stroke="gray" stroke-width="0.5"/>
+
+    <text id="text1" x="33" y="100" rotate="10 20 30 40 50 60">Text</text>
 
     <!-- image frame -->
     <rect id="frame" x="1" y="1" width="198" height="198" fill="none" stroke="black"/>

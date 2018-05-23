@@ -2,6 +2,9 @@
      font-family="Arial" font-size="64">
     <title>`dx` and `dy` with multiple values</title>
 
+    <path id="crosshair" d="M 20 100 L 180 100 M 100 20 L 100 180"
+          stroke="gray" stroke-width="0.5"/>
+
     <text id="text1" dx="20 6 10 16" dy="100 10 15 20">Text</text>
 
     <!-- image frame -->

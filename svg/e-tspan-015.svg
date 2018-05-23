@@ -2,8 +2,11 @@
      font-family="Arial" font-size="64">
     <title>Only with `y`</title>
 
-    <text id="text1" x="40">
-        <tspan id="tspan1" y="120">
+    <path id="crosshair" d="M 20 100 L 180 100 M 100 20 L 100 180"
+          stroke="gray" stroke-width="0.5"/>
+
+    <text id="text1" x="33">
+        <tspan id="tspan1" y="100">
             Text
         </tspan>
     </text>

@@ -4,6 +4,9 @@
     <title>Link to complex `text`</title>
     <desc>Only text data should be referenced</desc>
 
+    <path id="crosshair" d="M 20 100 L 180 100 M 100 20 L 100 180"
+          stroke="gray" stroke-width="0.5"/>
+
     <defs id="defs1">
         <text id="text1" fill="red">
             Some

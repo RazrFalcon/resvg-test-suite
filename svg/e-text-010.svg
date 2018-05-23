@@ -2,6 +2,9 @@
      font-family="Arial" font-size="64">
     <title>`x` and `y` with `dx` and `dy` lists</title>
 
+    <path id="crosshair" d="M 20 100 L 180 100 M 100 20 L 100 180"
+          stroke="gray" stroke-width="0.5"/>
+
     <text id="text1" x="30 40" dx="10 40" y="100 100" dy="5 20">Text</text>
 
     <!-- image frame -->

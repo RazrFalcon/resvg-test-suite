@@ -2,10 +2,13 @@
      font-family="Arial" font-size="64">
     <title>Escaped text (4)</title>
 
-    <!-- should be covered -->
-    <text id="text1" x="90" y="120" fill="red">А</text>
+    <path id="crosshair" d="M 20 100 L 180 100 M 100 20 L 100 180"
+          stroke="gray" stroke-width="0.5"/>
 
-    <text id="text2" x="90" y="120">&#x410;</text>
+    <!-- should be covered -->
+    <text id="text1" x="79" y="100" fill="red">А</text>
+
+    <text id="text2" x="79" y="100">&#x410;</text>
 
     <!-- image frame -->
     <rect id="frame" x="1" y="1" width="198" height="198" fill="none" stroke="black"/>

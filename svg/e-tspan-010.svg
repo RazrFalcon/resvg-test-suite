@@ -2,6 +2,9 @@
      font-family="Arial" font-size="24">
     <title>Mixed `xml:space` (2)</title>
 
+    <path id="crosshair" d="M 20 100 L 180 100 M 100 20 L 100 180"
+          stroke="gray" stroke-width="0.5"/>
+
     <text id="text1" x="10" y="100" xml:space="preserve" fill="red">  Text  Text   Text  </text>
     <text id="text2" x="10" y="100" xml:space="preserve">  Text  <tspan id="tspan1" fill="green" xml:space="default">  Text  </tspan>  Text  </text>
 
