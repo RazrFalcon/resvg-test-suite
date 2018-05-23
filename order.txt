@@ -286,6 +286,7 @@ e-image-028.svg
 e-image-029.svg
 e-image-030.svg
 e-image-031.svg
+e-image-032.svg
 e-line-001.svg
 e-line-002.svg
 e-line-003.svg
