@@ -562,6 +562,8 @@ e-text-011.svg
 e-text-012.svg
 e-text-013.svg
 e-text-014.svg
+e-text-032.svg
+e-text-033.svg
 e-text-015.svg
 e-text-016.svg
 e-text-017.svg
@@ -600,6 +602,7 @@ e-tspan-010.svg
 e-tspan-011.svg
 e-tspan-012.svg
 e-tspan-013.svg
+e-tspan-016.svg
 e-use-001.svg
 e-use-002.svg
 e-use-003.svg
