@@ -5,5 +5,5 @@
     <text id="text1" x="20%" y="60%">Text</text>
 
     <!-- image frame -->
-    <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+    <rect id="frame" x="1" y="1" width="198" height="198" fill="none" stroke="black"/>
 </svg>

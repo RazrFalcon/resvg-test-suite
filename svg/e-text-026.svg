@@ -7,5 +7,5 @@
     <text id="text1" x="60" y="80 100 120">a̐éö̲</text>
 
     <!-- image frame -->
-    <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+    <rect id="frame" x="1" y="1" width="198" height="198" fill="none" stroke="black"/>
 </svg>

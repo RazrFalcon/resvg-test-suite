@@ -9,5 +9,5 @@
           fill="none" stroke="green" stroke-width="5"/>
 
     <!-- image frame -->
-    <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+    <rect id="frame" x="1" y="1" width="198" height="198" fill="none" stroke="black"/>
 </svg>

@@ -5,5 +5,5 @@
             fill="red icc-color(acmecmyk, 0.11, 0.48, 0.83, 0.00)"/>
 
     <!-- image frame -->
-    <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+    <rect id="frame" x="1" y="1" width="198" height="198" fill="none" stroke="black"/>
 </svg>

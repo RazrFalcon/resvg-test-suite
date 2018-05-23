@@ -4,5 +4,5 @@
     <circle id="circle1" cx="100" cy="50" r="40" fill="green"/>
 
     <!-- image frame -->
-    <rect id="frame" x="1" y="1" width="199" height="99" fill="none" stroke="black"/>
+    <rect id="frame" x="1" y="1" width="198" height="98" fill="none" stroke="black"/>
 </svg>

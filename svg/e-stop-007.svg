@@ -16,5 +16,5 @@
     <rect id="rect2" x="20" y="110" width="160" height="70" fill="url(#lg-test)"/>
 
     <!-- image frame -->
-    <rect id="frame" x="1" y="1" width="199" height="199" fill="none" stroke="black"/>
+    <rect id="frame" x="1" y="1" width="198" height="198" fill="none" stroke="black"/>
 </svg>
