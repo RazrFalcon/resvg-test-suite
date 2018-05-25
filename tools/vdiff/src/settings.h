@@ -2,12 +2,7 @@
 
 #include <QString>
 
-enum class TestSuite
-{
-    Own,
-    Official,
-    Custom,
-};
+#include "tests.h"
 
 enum class BuildType
 {

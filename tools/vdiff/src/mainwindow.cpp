@@ -4,9 +4,6 @@
 #include <QFileDialog>
 #include <QDir>
 #include <QScreen>
-#include <QXmlStreamReader>
-#include <QSortFilterProxyModel>
-#include <QStandardItemModel>
 
 #include "paths.h"
 #include "settingsdialog.h"
@@ -130,7 +127,8 @@ void MainWindow::loadImageList()
         if (m_settings.testSuite == TestSuite::Custom) {
             m_tests = Tests::loadCustom(m_settings.customTestsPath);
         } else {
-            m_tests = Tests::load(m_settings.resultsPath(), m_settings.testsPath());
+            m_tests = Tests::load(m_settings.testSuite, m_settings.resultsPath(),
+                                  m_settings.testsPath());
         }
     } catch (const QString &msg) {
         QMessageBox::critical(this, "Error", msg);
@@ -139,7 +137,13 @@ void MainWindow::loadImageList()
 
 
     for (const TestItem &item : m_tests) {
-        ui->cmbBoxFiles->addItem(item.baseName);
+        QString title = item.baseName;
+        if (m_settings.testSuite == TestSuite::Own) {
+            title += " - " + item.title;
+            title.replace('`', '\'');
+        }
+
+        ui->cmbBoxFiles->addItem(title);
     }
 
     if (ui->cmbBoxFiles->count() != 0) {
@@ -160,7 +164,6 @@ void MainWindow::loadTest(const int idx)
     const auto path = m_tests.at(idx).path;
 
     setAnimationEnabled(true);
-    getTitleAndDesc(path);
     resetImages();
     fillChBoxes();
 
@@ -174,43 +177,6 @@ void MainWindow::setAnimationEnabled(bool flag)
     for (auto *w : m_backendWidges.values()) {
         w->setAnimationEnabled(flag);
     }
-}
-
-void MainWindow::getTitleAndDesc(const QString &path)
-{
-    ui->lblTitle->clear();
-
-    if (m_settings.testSuite != TestSuite::Own) {
-        return;
-    }
-
-    QFile file(path);
-    if (!file.open(QFile::ReadOnly)) {
-        qWarning() << "failed to open:" << path;
-        return;
-    }
-
-    QString title;
-
-    QXmlStreamReader reader(&file);
-    while (!reader.atEnd() && !reader.hasError()) {
-        if (reader.readNextStartElement()) {
-            if (reader.name() == "title") {
-                reader.readNext();
-                title += reader.text().toString();
-            }
-
-            if (reader.name() == "desc") {
-                reader.readNext();
-
-                title += ". " + reader.text().toString();
-            }
-        }
-    }
-
-    title += '.';
-
-    ui->lblTitle->setText(title);
 }
 
 void MainWindow::fillChBoxes()

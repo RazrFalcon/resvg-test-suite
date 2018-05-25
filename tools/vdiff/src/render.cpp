@@ -53,11 +53,11 @@ QString Render::backendName(const Backend t)
 {
     switch (t) {
         case Backend::Chrome : return "Chrome";
-        case Backend::ResvgCairo : return "Resvg (cairo)";
-        case Backend::ResvgQt : return "Resvg (Qt)";
+        case Backend::ResvgCairo : return "resvg (cairo)";
+        case Backend::ResvgQt : return "resvg (Qt)";
         case Backend::Batik : return "Batik";
         case Backend::Inkscape : return "Inkscape";
-        case Backend::Librsvg : return "rsvg";
+        case Backend::Librsvg : return "librsvg";
         case Backend::QtSvg : return "QtSvg";
     }
 

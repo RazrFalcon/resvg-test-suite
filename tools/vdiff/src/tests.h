@@ -3,7 +3,14 @@
 #include <QVector>
 #include <QHash>
 
-#include "settings.h"
+class Settings;
+
+enum class TestSuite
+{
+    Own,
+    Official,
+    Custom,
+};
 
 enum class Backend
 {
@@ -33,13 +40,14 @@ struct TestItem
 {
     QString path;
     QString baseName;
+    QString title;
     QHash<Backend, TestState> state;
 };
 
 class Tests
 {
 public:
-    static Tests load(const QString &path, const QString &testsPath);
+    static Tests load(const TestSuite testSuite, const QString &path, const QString &testsPath);
     static Tests loadCustom(const QString &path);
     void save(const QString &path);
 

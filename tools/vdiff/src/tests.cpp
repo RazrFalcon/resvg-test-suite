@@ -1,8 +1,11 @@
 #include <QFile>
 #include <QDir>
 #include <QDirIterator>
+#include <QXmlStreamReader>
+#include <QDebug>
 
 #include "paths.h"
+#include "settings.h"
 
 #include "tests.h"
 
@@ -26,7 +29,29 @@ static TestState stateFormStr(const QStringRef &str)
     }
 }
 
-Tests Tests::load(const QString &path, const QString &testsPath)
+static QString parseTitle(const QString &path)
+{
+    QFile file(path);
+    if (!file.open(QFile::ReadOnly)) {
+        return QString();
+    }
+
+    QString title;
+    QXmlStreamReader reader(&file);
+    while (!reader.atEnd() && !reader.hasError()) {
+        if (reader.readNextStartElement()) {
+            if (reader.name() == "title") {
+                reader.readNext();
+                title = reader.text().toString();
+                break;
+            }
+        }
+    }
+
+    return title;
+}
+
+Tests Tests::load(const TestSuite testSuite, const QString &path, const QString &testsPath)
 {
     QFile file(path);
     if (!file.open(QFile::ReadOnly)) {
@@ -64,12 +89,17 @@ Tests Tests::load(const QString &path, const QString &testsPath)
         TestItem item;
         item.path     = QFileInfo(testPath).absoluteFilePath();
         item.baseName = QFileInfo(testPath).completeBaseName();
+
         item.state.insert(Backend::Chrome,      stateFormStr(items.at(1)));
         item.state.insert(Backend::ResvgCairo,  stateFormStr(items.at(2)));
         item.state.insert(Backend::Batik,       stateFormStr(items.at(3)));
         item.state.insert(Backend::Inkscape,    stateFormStr(items.at(4)));
         item.state.insert(Backend::Librsvg,     stateFormStr(items.at(5)));
         item.state.insert(Backend::QtSvg,       stateFormStr(items.at(6)));
+
+        if (testSuite == TestSuite::Own) {
+            item.title = parseTitle(testPath);
+        }
 
         tests.m_data << item;
 
@@ -127,7 +157,7 @@ void Tests::save(const QString &path)
 
 void Tests::resync(const Settings &settings)
 {
-    auto oldTests = load(settings.resultsPath(), settings.testsPath());
+    auto oldTests = load(settings.testSuite, settings.resultsPath(), settings.testsPath());
 
     const auto files = QDir(settings.testsPath()).entryInfoList({ "*.svg" });
     for (const QFileInfo &fi : files) {

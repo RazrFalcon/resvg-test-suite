@@ -30,7 +30,6 @@ private:
     void resetImages();
     void loadTest(const int idx);
     void setAnimationEnabled(bool flag);
-    void getTitleAndDesc(const QString &path);
     void fillChBoxes();
 
 private slots:
