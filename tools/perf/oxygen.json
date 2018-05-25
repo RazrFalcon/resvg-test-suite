@@ -10,12 +10,12 @@
             "name": "resvg 0.2.0 (qt)"
         },
         {
-            "value": 242,
-            "name": "librsvg 2.42.4"
+            "value": 161,
+            "name": "QtSvg 5.10.1"
         },
         {
-            "value": 335,
-            "name": "QtSvg 5.10.1"
+            "value": 242,
+            "name": "librsvg 2.42.4"
         },
         {
             "value": 1610,

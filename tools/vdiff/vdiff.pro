@@ -1,4 +1,4 @@
-QT      += core gui widgets svg concurrent
+QT      += core gui widgets concurrent
 
 TARGET   = vdiff
 TEMPLATE = app

@@ -16,9 +16,8 @@ barh oxygen.json ../../site/images/perf.svg
 
 - Oxygen Icon Theme 4.12
 - Contains 4947 files.
-- All images are converted from `.svgz` to `.svg`.
+- All images are converted from `.svgz` to `.svg` beforehand.
 - In the `resvg` >80% of the time is spent during PNG generation.
-- The `librsvg` is slower than `resvg` because those icons are using Gaussian blur heavily, which is expensive.
-- QtSvg is suspiciously slow for no reasons. Source code can be found
-  [here](https://github.com/RazrFalcon/resvg-test-suite/tree/master/tools/qtsvgrender).
 - Batik is used with icedtea-bin 3.7.0.
+- The `librsvg` is slower than `resvg` because those icons are using Gaussian blur heavily, which is expensive.
+- QtSvg is fast, because it doesn't support Gaussian blur, clipPath, mask and pattern that are heavily used in the Oxygen Icon Theme.

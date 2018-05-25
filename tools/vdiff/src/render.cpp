@@ -1,7 +1,6 @@
 #include <QFile>
 #include <QPainter>
 #include <QImageReader>
-#include <QSvgRenderer>
 #include <QtConcurrent/QtConcurrentMap>
 #include <QtConcurrent/QtConcurrentRun>
 
@@ -18,6 +17,7 @@ namespace ImgName {
     static const QString Batik      = "batik.png";
     static const QString Inkscape   = "ink.png";
     static const QString Rsvg       = "rsvg.png";
+    static const QString QtSvg      = "qtsvg.png";
 }
 
 Render::Render(QObject *parent)
@@ -128,14 +128,12 @@ QImage Render::renderViaBatik(const RenderData &data)
 
 QImage Render::renderViaInkscape(const RenderData &data)
 {
-    /*const QString out = */Process::run(data.convPath,
-      {
+    /*const QString out = */Process::run(data.convPath, {
         data.imgPath,
         "--export-background=white",
         "-w", QString::number(data.viewSize),
         "--export-png=" + ImgName::Inkscape
-      }
-    );
+    });
 
 //    if (!out.isEmpty()) {
 //        qDebug().noquote() << "inkscape:" << out;
@@ -146,15 +144,13 @@ QImage Render::renderViaInkscape(const RenderData &data)
 
 QImage Render::renderViaRsvg(const RenderData &data)
 {
-    const QString out = Process::run(data.convPath,
-      {
+    const QString out = Process::run(data.convPath, {
         "-f", "png",
         "-w", QString::number(data.viewSize),
         "--background-color=white",
         data.imgPath,
         "-o", ImgName::Rsvg
-      }
-    );
+    });
 
     if (!out.isEmpty()) {
         qDebug().noquote() << "rsvg:" << out;
@@ -165,19 +161,17 @@ QImage Render::renderViaRsvg(const RenderData &data)
 
 QImage Render::renderViaQtSvg(const RenderData &data)
 {
-    // TODO: move to a separate exe
+    const QString out = Process::run(QString(SRCDIR) + "../qtsvgrender/qtsvgrender", {
+        data.imgPath,
+        ImgName::QtSvg,
+        QString::number(data.viewSize)
+    }, true);
 
-    QSvgRenderer render(data.imgPath);
-    const QSize s = render.viewBox().size()
-                          .scaled(data.viewSize, data.viewSize, Qt::KeepAspectRatio);
-    QImage img(s, QImage::Format_RGB32);
-    img.fill(Qt::white);
+    if (!out.isEmpty()) {
+        qDebug().noquote() << "qtsvg:" << out;
+    }
 
-    QPainter p(&img);
-    render.render(&p);
-    p.end();
-
-    return img;
+    return loadImage(ImgName::QtSvg);
 }
 
 void Render::renderImages()
