@@ -297,6 +297,7 @@ e-line-005.svg
 e-line-006.svg
 e-line-007.svg
 e-line-008.svg
+e-line-009.svg
 e-linearGradient-001.svg
 e-linearGradient-002.svg
 e-linearGradient-003.svg
