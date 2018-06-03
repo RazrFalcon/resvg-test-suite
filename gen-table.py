@@ -273,18 +273,8 @@ def get_item_row(rows, out_of_scope_list, type, name):
         total = 0
         passed = 0
     else:
-        passed_list, total = global_flags(rows, type, name)
-
-        flags = [UNKNOWN, UNKNOWN, UNKNOWN, UNKNOWN, UNKNOWN, UNKNOWN]
-        for idx, count in enumerate(passed_list):
-            if count == total:
-                flags[idx] = PASSED
-            elif count == 0:
-                flags[idx] = FAILED
-            else:
-                flags[idx] = '{}/{}'.format(count, total)
-
-        if passed_list == [0, 0, 0, 0, 0, 0]:
+        flags, total = global_flags(rows, type, name)
+        if flags == [0, 0, 0, 0, 0, 0]:
             flags = [FAILED, UNKNOWN, UNKNOWN, UNKNOWN, UNKNOWN, UNKNOWN]
 
     if type == ELEMENT_TYPE:
@@ -293,19 +283,18 @@ def get_item_row(rows, out_of_scope_list, type, name):
         anchor = 'a-' + name
 
     flags_str = ''
-    for flag in flags:
-        if   flag == UNKNOWN:
-            flags_str += ' ^|{unk-box}'
-        elif flag == PASSED:
-            flags_str += ' ^|{ok-box}'
-        elif flag == FAILED:
-            flags_str += ' ^|{fail-box}'
-        elif flag == CRASHED:
-            flags_str += ' ^|{crash-box}'
-        elif flag == OUT_OF_SCOPE:
-            flags_str += ' ^|{oos-box}'
-        else:
-            flags_str += ' ^|{}'.format(flag)
+    if total != 0:
+        for count in flags:
+            v = (float(count) / float(total)) * 100.0
+            flags_str += ' ^|{:.0f}%'.format(v)
+    else:
+        for flag in flags:
+            if   flag == UNKNOWN:
+                flags_str += ' ^|{unk-box}'
+            elif flag == FAILED:
+                flags_str += ' ^|{fail-box}'
+            elif flag == OUT_OF_SCOPE:
+                flags_str += ' ^|{oos-box}'
 
     return '3+| [[{}]] {} {}\n'.format(anchor, name, flags_str)
 
