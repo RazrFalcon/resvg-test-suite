@@ -1,6 +1,6 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Percentage values with `objectBoundingBox`</title>
+    <title>gradientUnits=objectBoundingBox with %</title>
 
     <radialGradient id="rg-ref" cx="0.6" cy="0.5" r="0.5" fx="0.6" fy="0.5"
                     gradientUnits="objectBoundingBox" spreadMethod="pad">

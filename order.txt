@@ -304,6 +304,8 @@ e-linearGradient-003.svg
 e-linearGradient-004.svg
 e-linearGradient-005.svg
 e-linearGradient-006.svg
+e-linearGradient-029.svg
+e-linearGradient-030.svg
 e-linearGradient-007.svg
 e-linearGradient-008.svg
 e-linearGradient-009.svg
@@ -331,6 +333,8 @@ e-mask-002.svg
 e-mask-003.svg
 e-mask-004.svg
 e-mask-005.svg
+e-mask-020.svg
+e-mask-021.svg
 e-mask-006.svg
 e-mask-007.svg
 e-mask-008.svg
@@ -396,6 +400,8 @@ e-pattern-004.svg
 e-pattern-005.svg
 e-pattern-006.svg
 e-pattern-007.svg
+e-pattern-025.svg
+e-pattern-026.svg
 e-pattern-008.svg
 e-pattern-009.svg
 e-pattern-010.svg
@@ -429,6 +435,8 @@ e-radialGradient-003.svg
 e-radialGradient-004.svg
 e-radialGradient-005.svg
 e-radialGradient-006.svg
+e-radialGradient-035.svg
+e-radialGradient-034.svg
 e-radialGradient-007.svg
 e-radialGradient-008.svg
 e-radialGradient-009.svg
@@ -459,8 +467,6 @@ e-radialGradient-032.svg
 e-radialGradient-033.svg
 e-radialGradient-036.svg
 e-radialGradient-037.svg
-e-radialGradient-034.svg
-e-radialGradient-035.svg
 e-rect-001.svg
 e-rect-002.svg
 e-rect-003.svg
