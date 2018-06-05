@@ -2,10 +2,10 @@
     <title>On `g`</title>
 
     <g id="g1" visibility="hidden">
-        <circle id="circle1" cx="100" cy="100" r="80" fill="green" visibility="visible"/>
+        <rect id="rect1" x="20" y="20" width="160" height="160" fill="green" visibility="visible"/>
 
         <!-- should not be rendered -->
-        <circle id="circle2" cx="100" cy="100" r="80" fill="red"/>
+        <rect id="rect2" x="20" y="20" width="160" height="160" fill="red"/>
     </g>
 
     <!-- image frame -->

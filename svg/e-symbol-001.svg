@@ -3,7 +3,7 @@
     <title>Simple case</title>
 
     <symbol id="symbol1">
-        <circle id="circle1" cx="100" cy="100" r="80" fill="green"/>
+        <rect id="rect1" x="20" y="20" width="160" height="160" fill="green"/>
     </symbol>
     <use id="use1" xlink:href="#symbol1"/>
 

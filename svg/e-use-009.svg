@@ -4,14 +4,14 @@
     <desc>CSS should be applied before `use` resolving</desc>
 
     <style id="style1" type="text/css">
-        circle { fill:green; }
+        rect { fill:green; }
     </style>
 
     <defs id="defs1">
-        <circle id="circle1" cx="100" cy="100" r="80"/>
+        <rect id="rect1" x="20" y="20" width="160" height="160"/>
     </defs>
     <g id="g1" fill="red">
-        <use id="use1" xlink:href="#circle1"/>
+        <use id="use1" xlink:href="#rect1"/>
     </g>
 
     <!-- image frame -->

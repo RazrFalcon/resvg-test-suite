@@ -9,7 +9,8 @@
                         <g id="g6">
                             <g id="g7">
                                 <g id="g8">
-                                    <circle id="circle1" cx="100" cy="100" r="80" fill="green"/>
+                                    <rect id="rect1" x="20" y="20" width="160" height="160"
+                                          fill="green"/>
                                 </g>
                             </g>
                         </g>

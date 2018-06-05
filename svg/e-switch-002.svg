@@ -2,9 +2,9 @@
     <title>`systemLanguage`</title>
 
     <switch id="switch1">
-        <circle id="circle1" cx="100" cy="100" r="80" fill="red" systemLanguage="is"/>
-        <circle id="circle2" cx="100" cy="100" r="80" fill="green"/>
-        <circle id="circle3" cx="100" cy="100" r="80" fill="red"/>
+        <rect id="rect1" x="20" y="20" width="160" height="160" fill="red" systemLanguage="is"/>
+        <rect id="rect2" x="20" y="20" width="160" height="160" fill="green"/>
+        <rect id="rect3" x="20" y="20" width="160" height="160" fill="red"/>
     </switch>
 
     <!-- image frame -->

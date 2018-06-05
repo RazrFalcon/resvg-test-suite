@@ -2,7 +2,7 @@
     <title>`inherit`</title>
 
     <g id="g1" fill="green">
-        <circle id="circle1" cx="100" cy="100" r="80" fill="inherit"/>
+        <rect id="rect1" x="20" y="20" width="160" height="160" fill="inherit"/>
     </g>
 
     <!-- image frame -->

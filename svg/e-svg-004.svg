@@ -1,5 +1,5 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd" [
-    <!ENTITY Rect "<circle id='circle1' cx='100' cy='100' r='80' fill='green'/>">
+    <!ENTITY Rect "<rect id='rect1' x='20' y='20' width='160' height='160' fill='green'/>">
 ]>
 
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">

@@ -3,8 +3,8 @@
     <title>`xmlns` validation</title>
 
     <s:g id="g1" xmlns="http://www.example.org/notsvg" xmlns:s="http://www.w3.org/2000/svg">
-        <s:circle id="circle1" cx="100" cy="100" r="80" fill="green"/>
-        <circle id="circle2" cx="100" cy="100" r="80" fill="red"/>
+        <s:rect id="rect1" x="20" y="20" width="160" height="160" fill="green"/>
+        <rect id="rect2" x="20" y="20" width="160" height="160" fill="red"/>
     </s:g>
 
     <!-- image frame -->

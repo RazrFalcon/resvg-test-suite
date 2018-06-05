@@ -4,7 +4,7 @@
     <desc>`id` should not start with a digit</desc>
 
     <defs id="defs1">
-        <circle id="1" cx="100" cy="100" r="80" fill="green"/>
+        <rect id="1" x="20" y="20" width="160" height="160" fill="green"/>
     </defs>
     <use id="use1" xlink:href="#1"/>
 
