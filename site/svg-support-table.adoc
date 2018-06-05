@@ -107,13 +107,14 @@ For example the _polyline - 3. Ignore odd points_ will lead to `e-polyline-003.s
 
 == Additional notes
 
-// TODO: Add an image for batik's incorrect text shaping.
-
 * `batik` doesn't support anti-aliasing during `clipPath`, but we are ignoring this.
 * `batik` doesn't support text shaping (probably an incorrect term),
   so characters will be aligned incorrectly, but we are ignoring this because otherwise we have to
   mark all text-based test as failed, which is not fair.
-* All libraries are rendering text a bit different. We don't treat this as an error.
+* All libraries are rendering text a bit different. We do not treat this as an error.
 * Some tests are marked as UB (undefined behavior). This means that I don't know how the correct
   result should look like. Usually, all libraries will render those files differently.
   Those tests are marked as *Unknown*, but they must not crash anyway.
+* Every application and library are rendering the basic shapes a bit differently.
+  We do not treat this as an error.
+  image:images/shapes-diff.png[]
