@@ -1,7 +1,7 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
     <title>On text</title>
 
-    <circle id="circle1" cx="100" cy="100" r="30" fill="green"/>
+    <rect id="rect1" x="40" y="93" width="120" height="20" fill="green"/>
 
     <text id="text1" x="100" y="120" text-anchor="middle"
           font-family="Arial" font-size="64"
