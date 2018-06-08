@@ -24,6 +24,9 @@ SettingsDialog::SettingsDialog(Settings *settings, QWidget *parent)
     connect(suiteGroup, SIGNAL(buttonToggled(QAbstractButton*,bool)),
             this, SLOT(prepareTestsPathWidgets()));
 
+    // TODO: implement
+    ui->rBtnSuiteCustom->hide();
+
     ui->buttonBox->setFocus();
 }
 
@@ -51,13 +54,6 @@ void SettingsDialog::loadSettings()
 
     ui->chBoxUseQtSvg->setChecked(m_settings->useQtSvg);
 
-    const auto idx = ui->cmbBoxViewSize->findText(QString::number(m_settings->viewSize));
-    if (idx != -1) {
-        ui->cmbBoxViewSize->setCurrentIndex(idx);
-    } else {
-        ui->cmbBoxViewSize->setCurrentIndex(3);
-    }
-
     prepareTestsPathWidgets();
 }
 
@@ -78,11 +74,15 @@ void SettingsDialog::on_buttonBox_accepted()
     m_settings->testSuite = suite;
     m_settings->customTestsPath = ui->lineEditTestsPath->text();
 
+    int viewSize = Settings::ViewSizeOwn;
+    if (suite == TestSuite::Official) {
+        viewSize = Settings::ViewSizeOfficial;
+    }
+    m_settings->viewSize = viewSize / 2;
+
     m_settings->buildType = ui->rBtnRelease->isChecked()
                     ? BuildType::Release
                     : BuildType::Debug;
-
-    m_settings->viewSize = ui->cmbBoxViewSize->currentText().toInt();
 
     m_settings->useBatik = ui->chBoxUseBatik->isChecked();
     m_settings->useInkscape = ui->chBoxUseInkscape->isChecked();

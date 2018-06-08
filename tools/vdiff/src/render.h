@@ -70,6 +70,7 @@ private:
     void renderImages();
 
     static QImage loadImage(const QString &path);
+    static QImage renderReference(const RenderData &data);
     static QImage renderViaChrome(const RenderData &data);
     static QImage renderViaResvg(const RenderData &data);
     static QImage renderViaBatik(const RenderData &data);

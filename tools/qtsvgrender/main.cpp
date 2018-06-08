@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
     }
 
     QImage img(imgSize, QImage::Format_ARGB32);
-    img.fill(Qt::white); // make transparent optional
+    img.fill(Qt::transparent);
 
     QPainter p(&img);
     render.render(&p);

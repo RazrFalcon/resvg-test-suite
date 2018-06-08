@@ -25,18 +25,16 @@ which is specifically designed for the https://github.com/RazrFalcon/resvg[resvg
 * More edge-cases. +
   Unlike the official https://www.w3.org/Graphics/SVG/Test/20110816/[SVG test suite].
 * Only supported SVG subset. +
-  `resvg` trying to support only the https://www.w3.org/TR/SVG11/feature#SVG-static[static] SVG subset.
+  _resvg_ trying to support only the https://www.w3.org/TR/SVG11/feature#SVG-static[static] SVG subset.
 * Tests are grouped by the element and attribute names.
-* No raster images as references. +
-  We are using https://github.com/RazrFalcon/resvg-test-suite/tree/master/tools/vdiff[vdiff] tool to check that tests are passed.
 
 === What we don't test
 
-* Features that isn't yet implemented in the `resvg`.
+* Features that isn't yet implemented in the _resvg_.
 * XML parsing. +
   Except some DTD and namespace resolving we assume that SVG library supports full XML 1.0 spec.
 * Extended CSS support. +
-  In the `resvg` case CSS parsing is done on the https://github.com/RazrFalcon/libsvgdom[svgdom] side.
+  In the _resvg_ case CSS parsing is done on the https://github.com/RazrFalcon/libsvgdom[svgdom] side.
   And we support only a minimal CSS subset.
 * Extended raster image formats features. +
   We assume that underlying PNG and JPEG libraries are good.
@@ -48,14 +46,13 @@ which is specifically designed for the https://github.com/RazrFalcon/resvg[resvg
 
 === Other SVG libraries and applications
 
-We are testing/comparing `resvg` with Chrome, Inkscape, librsvg and QtSvg for a reason.
+We are testing/comparing _resvg_ with Chrome, Inkscape, librsvg and QtSvg for a reason.
 
-* Chrome has the best SVG support and used as a reference implementation.
+* Chrome has the best SVG support so far.
 * Batik is the most popular Java library for SVG rendering.
 * Inkscape is an obvious choice on Linux.
-* librsvg is the main `resvg` rival. Used in GNOME, XFCE for SVG rendering.
-  The goal is to replace `librsvg` with `resvg`.
-* QtSvg is used by all the Qt applications and KDE. We plan to replace it as well.
+* librsvg is the main _resvg_ rival. Used in GNOME, XFCE for SVG rendering.
+* QtSvg is used by all the Qt applications and KDE.
 
 === Tests summary
 
@@ -107,8 +104,8 @@ For example the _polyline - 3. Ignore odd points_ will lead to `e-polyline-003.s
 
 == Additional notes
 
-* `batik` doesn't support anti-aliasing during `clipPath`, but we are ignoring this.
-* `batik` doesn't support text shaping (probably an incorrect term),
+* _batik_ doesn't support anti-aliasing during `clipPath`, but we are ignoring this.
+* _batik_ doesn't support text shaping (probably an incorrect term),
   so characters will be aligned incorrectly, but we are ignoring this because otherwise we have to
   mark all text-based test as failed, which is not fair.
 * All libraries are rendering text a bit different. We do not treat this as an error.

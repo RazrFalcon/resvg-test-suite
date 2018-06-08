@@ -14,6 +14,7 @@ enum class TestSuite
 
 enum class Backend
 {
+    Reference,
     Chrome,
     ResvgCairo,
     ResvgQt,

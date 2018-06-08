@@ -21,10 +21,13 @@ public:
     QString testsPath() const noexcept;
 
 public:
+    static constexpr int ViewSizeOwn = 500;
+    static constexpr int ViewSizeOfficial = 480;
+
     TestSuite testSuite = TestSuite::Own;
     BuildType buildType = BuildType::Debug;
     QString customTestsPath;
-    int viewSize = 300;
+    int viewSize = ViewSizeOwn / 2;
     bool useBatik = true;
     bool useInkscape = true;
     bool useLibrsvg = true;

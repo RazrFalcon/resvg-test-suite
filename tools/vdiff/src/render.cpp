@@ -1,4 +1,5 @@
 #include <QFile>
+#include <QFileInfo>
 #include <QPainter>
 #include <QImageReader>
 #include <QtConcurrent/QtConcurrentMap>
@@ -52,16 +53,32 @@ void Render::render(const QString &path)
 QString Render::backendName(const Backend t)
 {
     switch (t) {
-        case Backend::Chrome : return "Chrome";
-        case Backend::ResvgCairo : return "resvg (cairo)";
-        case Backend::ResvgQt : return "resvg (Qt)";
-        case Backend::Batik : return "Batik";
-        case Backend::Inkscape : return "Inkscape";
-        case Backend::Librsvg : return "librsvg";
-        case Backend::QtSvg : return "QtSvg";
+        case Backend::Reference :   return "Reference";
+        case Backend::Chrome :      return "Chrome";
+        case Backend::ResvgCairo :  return "resvg (cairo)";
+        case Backend::ResvgQt :     return "resvg (Qt)";
+        case Backend::Batik :       return "Batik";
+        case Backend::Inkscape :    return "Inkscape";
+        case Backend::Librsvg :     return "librsvg";
+        case Backend::QtSvg :       return "QtSvg";
     }
 
     Q_UNREACHABLE();
+}
+
+QImage Render::renderReference(const RenderData &data)
+{
+    const QFileInfo fi(data.imgPath);
+    const QString path = fi.absolutePath() + "/../png/" + fi.completeBaseName() + ".png";
+
+    const QSize targetSize(data.viewSize, data.viewSize);
+
+    QImage img(path);
+    if (img.size() != targetSize) {
+        img = img.scaled(targetSize, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    }
+
+    return img.convertToFormat(QImage::Format_ARGB32);
 }
 
 QImage Render::renderViaChrome(const RenderData &data)
@@ -89,7 +106,6 @@ QImage Render::renderViaResvg(const RenderData &data)
         data.imgPath,
         outPath,
         "-w", QString::number(data.viewSize),
-        "--background=white",
         QString("--backend=") + ((data.type == Backend::ResvgCairo) ? "cairo" : "qt")
     }, true);
 
@@ -116,7 +132,6 @@ QImage Render::renderViaBatik(const RenderData &data)
         "-d", ImgName::Batik,
         "-w", QString::number(w),
         "-h", QString::number(h),
-        "-bg", "255.255.255.255"
     }, true);
 
     if (!out.contains("success")) {
@@ -130,7 +145,6 @@ QImage Render::renderViaInkscape(const RenderData &data)
 {
     /*const QString out = */Process::run(data.convPath, {
         data.imgPath,
-        "--export-background=white",
         "-w", QString::number(data.viewSize),
         "--export-png=" + ImgName::Inkscape
     });
@@ -144,10 +158,11 @@ QImage Render::renderViaInkscape(const RenderData &data)
 
 QImage Render::renderViaRsvg(const RenderData &data)
 {
+//    qDebug() <<  Process::run(data.convPath, { "-v" });
+
     const QString out = Process::run(data.convPath, {
         "-f", "png",
         "-w", QString::number(data.viewSize),
-        "--background-color=white",
         data.imgPath,
         "-o", ImgName::Rsvg
     });
@@ -179,6 +194,7 @@ void Render::renderImages()
     const auto ts = m_settings->testSuite;
 
     QVector<RenderData> list;
+    list.append({ Backend::Reference, m_viewSize, m_imgPath, QString(), ts });
     list.append({ Backend::Chrome, m_viewSize, m_imgPath, QString(), ts });
     list.append({ Backend::ResvgCairo, m_viewSize, m_imgPath, m_settings->resvgPath(), ts });
     list.append({ Backend::ResvgQt, m_viewSize, m_imgPath, m_settings->resvgPath(), ts });
@@ -219,6 +235,7 @@ RenderResult Render::renderImage(const RenderData &data)
     try {
         QImage img;
         switch (data.type) {
+            case Backend::Reference  : img = renderReference(data); break;
             case Backend::Chrome     : img = renderViaChrome(data); break;
             case Backend::ResvgCairo : img = renderViaResvg(data); break;
             case Backend::ResvgQt    : img = renderViaResvg(data); break;
@@ -238,7 +255,18 @@ RenderResult Render::renderImage(const RenderData &data)
     }
 }
 
-int colorDistance(const QColor &color1, const QColor &color2)
+static QImage toRGBFormat(const QImage &img, const QColor &bg)
+{
+    QImage newImg(img.size(), QImage::Format_RGB32);
+    newImg.fill(bg);
+
+    QPainter p(&newImg);
+    p.drawImage(0, 0, img);
+    p.end();
+    return newImg;
+}
+
+static int colorDistance(const QColor &color1, const QColor &color2)
 {
     const int rd = std::pow(color1.red() - color2.red(), 2);
     const int gd = std::pow(color1.green() - color2.green(), 2);
@@ -257,18 +285,27 @@ DiffOutput Render::diffImage(const DiffData &data)
         qWarning() << msg;
     }
 
+    Q_ASSERT(data.img1.format() == data.img2.format());
+
     uint diffValue = 0;
 
     const int w = qMin(data.img1.width(), data.img2.width());
     const int h = qMin(data.img1.height(), data.img2.height());
 
+    // We have to convert ARGB images to RGB one with a white background,
+    // because colorDistance() doesn't work with alpha.
+    //
+    // TODO: remove, because expensive.
+    const auto img1 = toRGBFormat(data.img1, Qt::white);
+    const auto img2 = toRGBFormat(data.img2, Qt::white);
+
     QImage diffImg(data.img1.size(), QImage::Format_RGB32);
-    diffImg.fill(Qt::green);
+    diffImg.fill(Qt::red);
 
     for (int y = 0; y < h; ++y) {
-        QRgb *s1 = (QRgb*)(data.img1.scanLine(y));
-        QRgb *s2 = (QRgb*)(data.img2.scanLine(y));
-        QRgb *s3 = (QRgb*)(diffImg.scanLine(y));
+        auto s1 = (QRgb*)(img1.constScanLine(y));
+        auto s2 = (QRgb*)(img2.constScanLine(y));
+        auto s3 = (QRgb*)(diffImg.scanLine(y));
 
         for (int x = 0; x < w; ++x) {
             QRgb c1 = *s1;
@@ -276,7 +313,6 @@ DiffOutput Render::diffImage(const DiffData &data)
 
             if (colorDistance(c1, c2) > 5) {
                 diffValue++;
-
                 *s3 = qRgb(255, 0, 0);
             } else {
                 *s3 = qRgb(255, 255, 255);
@@ -308,22 +344,16 @@ void Render::onImageRendered(const int idx)
 
 void Render::onImagesRendered()
 {
-    if (!m_imgs.contains(Backend::Chrome)) {
-        emit error("Image must be rendered via Chrome to calculate diff images.");
-        emit finished();
-        return;
-    }
-
-    const QImage chromeImg = m_imgs.value(Backend::Chrome);
+    const QImage refImg = m_imgs.value(Backend::Reference);
 
     QVector<DiffData> list;
     const auto append = [&](const Backend type){
-        if (m_imgs.contains(type) && type != Backend::Chrome) {
-            list.append({ type, chromeImg, m_imgs.value(type) });
+        if (m_imgs.contains(type) && type != Backend::Reference) {
+            list.append({ type, refImg, m_imgs.value(type) });
         }
     };
 
-    for (int t = (int)Backend::ResvgCairo; t <= (int)Backend::QtSvg; ++t) {
+    for (int t = (int)Backend::Chrome; t <= (int)Backend::QtSvg; ++t) {
         append((Backend)t);
     }
 

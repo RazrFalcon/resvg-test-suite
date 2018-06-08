@@ -62,7 +62,7 @@ void Settings::load() noexcept
                         ? BuildType::Release
                         : BuildType::Debug;
 
-    this->viewSize = appSettings.value(Key::ViewSize, 300).toUInt();
+    this->viewSize = appSettings.value(Key::ViewSize, ViewSizeOwn / 2).toUInt();
 
     this->useBatik = appSettings.value(Key::UseBatik).toBool();
     this->useInkscape = appSettings.value(Key::UseInkscape).toBool();

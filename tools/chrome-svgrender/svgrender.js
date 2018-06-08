@@ -74,7 +74,8 @@ try {
 
         await page.screenshot({
             path: png_path,
-            clip: { x: 0, y: y, width: view_size[0], height: h }
+            clip: { x: 0, y: y, width: view_size[0], height: h },
+            omitBackground: true
         });
     } else {
         var svg_rect = await page.evaluate(() => {
@@ -100,7 +101,8 @@ try {
 
         await page.screenshot({
             path: png_path,
-            clip: { x: svg_rect[0], y: svg_rect[1], width: svg_rect[2], height: svg_rect[3] }
+            clip: { x: svg_rect[0], y: svg_rect[1], width: svg_rect[2], height: svg_rect[3] },
+            omitBackground: true
         });
     }
 
