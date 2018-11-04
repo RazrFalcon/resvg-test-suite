@@ -313,7 +313,7 @@ def main():
 
             index = re.sub('\D', '', file_name)
 
-            tree = ET.parse('svg/' + file_name)
+            tree = ET.parse('../svg/' + file_name)
             title = list(tree.getroot())[0].text
 
             rows.append(RowData(type, tag_name, int(index), title, flags))
