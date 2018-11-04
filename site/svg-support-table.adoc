@@ -104,8 +104,10 @@ For example the _polyline - 3. Ignore odd points_ will lead to `e-polyline-003.s
 
 == Additional notes
 
+// TODO: add kerning image
+
 * _batik_ doesn't support anti-aliasing during `clipPath`, but we are ignoring this.
-* _batik_ doesn't support text shaping (probably an incorrect term),
+* _batik_ doesn't support text kerning,
   so characters will be aligned incorrectly, but we are ignoring this because otherwise we have to
   mark all text-based test as failed, which is not fair.
 * All libraries are rendering text a bit different. We do not treat this as an error.
