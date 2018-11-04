@@ -11,6 +11,7 @@ namespace Key {
     static const QString BatikPath = "BatikPath";
     static const QString InkscapePath = "InkscapePath";
     static const QString RsvgPath = "RsvgPath";
+    static const QString UseChrome = "UseChrome";
     static const QString UseBatik = "UseBatik";
     static const QString UseInkscape = "UseInkscape";
     static const QString UseLibrsvg = "UseLibrsvg";
@@ -64,6 +65,7 @@ void Settings::load() noexcept
 
     this->viewSize = appSettings.value(Key::ViewSize, ViewSizeOwn / 2).toUInt();
 
+    this->useChrome = appSettings.value(Key::UseChrome).toBool();
     this->useBatik = appSettings.value(Key::UseBatik).toBool();
     this->useInkscape = appSettings.value(Key::UseInkscape).toBool();
     this->useLibrsvg = appSettings.value(Key::UseLibrsvg).toBool();
@@ -82,6 +84,7 @@ void Settings::save() const noexcept
     appSettings.setValue(Key::CustomTestsPath, this->customTestsPath);
     appSettings.setValue(Key::ResvgBuild, buildTypeToStr(this->buildType));
     appSettings.setValue(Key::ViewSize, this->viewSize);
+    appSettings.setValue(Key::UseChrome, this->useChrome);
     appSettings.setValue(Key::UseBatik, this->useBatik);
     appSettings.setValue(Key::UseInkscape, this->useInkscape);
     appSettings.setValue(Key::UseLibrsvg, this->useLibrsvg);

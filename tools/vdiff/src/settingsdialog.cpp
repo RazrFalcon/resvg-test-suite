@@ -1,5 +1,6 @@
-#include <QMessageBox>
+#include <QButtonGroup>
 #include <QFileDialog>
+#include <QMessageBox>
 
 #include "settings.h"
 
@@ -43,6 +44,8 @@ void SettingsDialog::loadSettings()
     ui->lineEditTestsPath->setText(m_settings->customTestsPath);
     ui->lineEditResvg->setText(m_settings->resvgDir);
 
+    ui->chBoxUseChrome->setChecked(m_settings->useChrome);
+
     ui->chBoxUseBatik->setChecked(m_settings->useBatik);
     ui->lineEditBatik->setText(m_settings->batikPath);
 
@@ -84,6 +87,7 @@ void SettingsDialog::on_buttonBox_accepted()
                     ? BuildType::Release
                     : BuildType::Debug;
 
+    m_settings->useChrome = ui->chBoxUseChrome->isChecked();
     m_settings->useBatik = ui->chBoxUseBatik->isChecked();
     m_settings->useInkscape = ui->chBoxUseInkscape->isChecked();
     m_settings->useLibrsvg = ui->chBoxUseLibrsvg->isChecked();

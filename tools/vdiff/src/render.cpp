@@ -113,7 +113,9 @@ QImage Render::renderViaResvg(const RenderData &data)
         qDebug().noquote() << "resvg:" << out;
     }
 
-    return loadImage(outPath);
+    // TODO: convertToFormat is a temporary hack for e-radialGradient-031.svg + cairo backend
+    // for some reasons, it creates an RGB image, not RGBA.
+    return loadImage(outPath).convertToFormat(QImage::Format_ARGB32);
 }
 
 QImage Render::renderViaBatik(const RenderData &data)
@@ -158,7 +160,7 @@ QImage Render::renderViaInkscape(const RenderData &data)
 
 QImage Render::renderViaRsvg(const RenderData &data)
 {
-//    qDebug() <<  Process::run(data.convPath, { "-v" });
+//    qDebug() << Process::run(data.convPath, { "-v" });
 
     const QString out = Process::run(data.convPath, {
         "-f", "png",
@@ -171,7 +173,9 @@ QImage Render::renderViaRsvg(const RenderData &data)
         qDebug().noquote() << "rsvg:" << out;
     }
 
-    return loadImage(ImgName::Rsvg);
+    // TODO: convertToFormat is a temporary hack for e-radialGradient-031.svg
+    // for some reasons, it creates an RGB image, not RGBA.
+    return loadImage(ImgName::Rsvg).convertToFormat(QImage::Format_ARGB32);
 }
 
 QImage Render::renderViaQtSvg(const RenderData &data)
@@ -195,9 +199,12 @@ void Render::renderImages()
 
     QVector<RenderData> list;
     list.append({ Backend::Reference, m_viewSize, m_imgPath, QString(), ts });
-    list.append({ Backend::Chrome, m_viewSize, m_imgPath, QString(), ts });
     list.append({ Backend::ResvgCairo, m_viewSize, m_imgPath, m_settings->resvgPath(), ts });
     list.append({ Backend::ResvgQt, m_viewSize, m_imgPath, m_settings->resvgPath(), ts });
+
+    if (m_settings->useChrome) {
+        list.append({ Backend::Chrome, m_viewSize, m_imgPath, QString(), ts });
+    }
 
     if (m_settings->useBatik) {
         list.append({ Backend::Batik, m_viewSize, m_imgPath, m_settings->batikPath, ts });

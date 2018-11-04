@@ -1,14 +1,14 @@
-#include <QMessageBox>
-#include <QTimer>
-#include <QFileInfo>
-#include <QFileDialog>
 #include <QDir>
+#include <QFileDialog>
+#include <QFileInfo>
+#include <QMessageBox>
 #include <QScreen>
+#include <QTimer>
 
-#include "paths.h"
-#include "settingsdialog.h"
-#include "process.h"
 #include "backendwidget.h"
+#include "paths.h"
+#include "process.h"
+#include "settingsdialog.h"
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -16,6 +16,7 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
+    , m_autosaveTimer(new QTimer(this))
 {
     ui->setupUi(this);
 
@@ -33,6 +34,10 @@ MainWindow::MainWindow(QWidget *parent)
     connect(&m_render, &Render::error, this, &MainWindow::onRenderError);
     connect(&m_render, &Render::finished, this, &MainWindow::onRenderFinished);
 
+    connect(m_autosaveTimer, &QTimer::timeout, this, &MainWindow::save);
+    m_autosaveTimer->setInterval(10000); // 10 sec
+    m_autosaveTimer->start();
+
     // TODO: check that convertors exists
 
     QTimer::singleShot(5, this, &MainWindow::onStart);
@@ -40,9 +45,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
-    if (m_settings.testSuite != TestSuite::Custom) {
-        m_tests.save(m_settings.resultsPath());
-    }
+    save();
 
     delete ui;
 }
@@ -58,10 +61,13 @@ void MainWindow::prepareBackends()
 
     QVector<Backend> backends = {
         Backend::Reference,
-        Backend::Chrome,
         Backend::ResvgCairo,
         Backend::ResvgQt,
     };
+
+    if (m_settings.useChrome) {
+        backends.insert(1, Backend::Chrome);
+    }
 
     if (m_settings.useBatik) {
         backends << Backend::Batik;
@@ -195,6 +201,13 @@ void MainWindow::fillChBoxes()
     }
 }
 
+void MainWindow::save()
+{
+    if (m_settings.testSuite != TestSuite::Custom) {
+        m_tests.save(m_settings.resultsPath());
+    }
+}
+
 void MainWindow::updatePassFlags()
 {
     try {
@@ -282,12 +295,12 @@ void MainWindow::on_btnResync_clicked()
 void MainWindow::on_btnSettings_clicked()
 {
     // Save in case of any changes.
-    if (m_settings.testSuite != TestSuite::Custom) {
-        m_tests.save(m_settings.resultsPath());
-    }
+    save();
 
     SettingsDialog diag(&m_settings, this);
     if (diag.exec()) {
+        m_autosaveTimer->stop();
+
         m_render.setScale(qApp->screens().first()->devicePixelRatio());
 
         for (auto *w : m_backendWidges.values()) {
@@ -296,5 +309,6 @@ void MainWindow::on_btnSettings_clicked()
 
         prepareBackends();
         loadImageList();
+        m_autosaveTimer->start();
     }
 }

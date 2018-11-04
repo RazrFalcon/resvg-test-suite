@@ -31,6 +31,7 @@ private:
     void loadTest(const int idx);
     void setAnimationEnabled(bool flag);
     void fillChBoxes();
+    void save();
 
 private slots:
     void onStart();
@@ -47,6 +48,7 @@ private slots:
 
 private:
     Ui::MainWindow * const ui;
+    QTimer * const m_autosaveTimer;
 
     QHash<Backend, BackendWidget*> m_backendWidges;
 

@@ -28,6 +28,7 @@ public:
     BuildType buildType = BuildType::Debug;
     QString customTestsPath;
     int viewSize = ViewSizeOwn / 2;
+    bool useChrome = true;
     bool useBatik = true;
     bool useInkscape = true;
     bool useLibrsvg = true;
