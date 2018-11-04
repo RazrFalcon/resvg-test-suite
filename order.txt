@@ -2,6 +2,12 @@ a-clip-path-001.svg
 a-clip-rule-001.svg
 a-color-001.svg
 a-display-001.svg
+a-display-002.svg
+a-display-003.svg
+a-display-004.svg
+a-display-005.svg
+a-display-006.svg
+a-display-007.svg
 a-fill-001.svg
 a-fill-002.svg
 a-fill-003.svg
