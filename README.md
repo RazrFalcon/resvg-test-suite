@@ -9,6 +9,7 @@
 - `tools/` - various testing tools
 - `check.py` - pre-commit hook
 - `init_official_test_suite.py` - download and prepare the official SVG test suite
+- `gh-pages.sh` - generates github pages
 - `official.csv` - results of manual testing via `tools/vdiff` of the official SVG test suite
 - `order.txt` - custom tests order for pretty-printing
 - `outline.py` - pretty-print tests
