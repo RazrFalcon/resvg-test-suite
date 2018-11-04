@@ -7,9 +7,7 @@
 - `svg/` - SVG images. Actual tests
 - `png/` - PNG images with expected rendering results
 - `tools/` - various testing tools
-- `_config.yml`, `Gemfile`, `Rakefile` - configs required for github pages
 - `check.py` - pre-commit hook
-- `gen-table.py` - asciidoctor tables generator
 - `init_official_test_suite.py` - download and prepare the official SVG test suite
 - `official.csv` - results of manual testing via `tools/vdiff` of the official SVG test suite
 - `order.txt` - custom tests order for pretty-printing
@@ -28,7 +26,7 @@ Apps and libraries:
 - librsvg
 - Batik (Java)
 - Python 3
-- Ruby (for `bundler`)
+- asciidoctor (for github pages)
 - ... and the [resvg](https://github.com/RazrFalcon/resvg) itself
 
 Fonts:

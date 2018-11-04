@@ -2,15 +2,17 @@
 
 set -x
 
+cd site
+
 ./gen-page.py
+asciidoctor -o index.html index.adoc
 
-asciidoctor -o site/index.html site/index.adoc
-
-cp site/index.html .
-cp site/svg-support-table.html .
-cp site/favicon.ico .
-cp site/fontello-embedded.css .
-cp -a site/images .
+cp index.html ..
+cp svg-support-table.html ..
+cp favicon.ico ..
+cp fontello-embedded.css ..
+cp -a images ..
+cd ..
 rm -rf site
 
 git config --global user.email "travis@travis-ci.org"
