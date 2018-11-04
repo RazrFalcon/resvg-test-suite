@@ -1,13 +1,14 @@
 language: ruby
 rvm:
-    - 2.2.0
+    - 2.5.0
 branches:
   only:
     - master
 sudo: false
 script:
-    - ./gen-table.py
-    - bundle exec rake deploy
+    - set -x
+    - gem install asciidoctor
+    - ./gh-pages.sh
 env:
   global:
     secure: ev8xNow3awFlVdGlckmAh3jhHPTJLmmkS4WSJcd95x7lK6/qipfIaC35gTRDpy+l1g5UY5jdBmRvnZbz7KkGWJIK66LXEKdbajkw413WFhrhgxyRr/RwCcSPsWfyaHqG8tWmVArA9GTC4lMa5XdWKTCdNXA3/0AykL7rwt98LoxnXPWmCy4xceMztMFFzKjFZ8g8LsEn9xRSBMqnjCbLktx3UsV4Eb8KSv511tVl/qfyTgq2eeVz1sTjAujh2WJTx3AP/mOmrYLkIe4si7FCvXDPNOMw85lVKgsLzhl80vqo3BysSEEI9gS0X5EdGW2GudD+Lif1O/0khgIrTkQ8/PoIaMgSTYViohZc2uxD8tslb2jUudW40M7JN2AO6yS0350LFk/vvyhG13hA32c2H+cS/VtHCpai1zDYkFhQim3d5l3dn5eRsPsZV4hVoW8OzA9gstlkiIKNRmwVWkbcJVuzZNS7S5R+xUmG0oMfhNUN/rEYqLgRCAA/imVB5kcHBMaim29Zbezs4aZdkdMlLMYObgt2hFlL6hfWw73FC9kFa8vkiUhseCHTC3fpXlvvXSunPrPcDmnJR81BPXeLg/Db57NsCYwXyAz4loBJA3vUgGQ4HYBuiPJUqKRSQL+vX229g/Ylknc4EjsvtbyNYBz0246SsT+i88flZ4Ey47A=

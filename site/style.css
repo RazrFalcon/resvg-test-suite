@@ -1,0 +1,128 @@
+/* Thanks to @smaximov */
+@supports (position: sticky) or (position: -webkit-sticky) {
+    thead {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0px;
+    }
+
+    /* Workaround for Blink not supporting sticky positioning on thead/tr */
+    th {
+        position: sticky;
+        top: 0px;
+        background-color: #f7f8f7;
+    }
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid lightgray;
+}
+
+th, td {
+    padding: 10px;
+}
+
+td p {
+    margin: 0;
+}
+
+img {
+    max-width:100%;
+}
+
+thead {
+    display:table-header-group;
+}
+
+a {
+    color: #2156a5
+}
+
+h1, h2, h3 {
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 2.75em;
+}
+
+h2 {
+    font-size: 2.3em;
+}
+
+h3 {
+    font-size: 1.7em;
+}
+
+html {
+    font-family: sans;
+}
+
+body {
+    color: rgba(0,0,0,.8);
+    font-size: 12pt;
+}
+
+code {
+    padding: .1em .5ex;
+    background-color: #f7f7f8;
+    border-radius: 4px;
+}
+
+#toc a {
+    text-decoration: none;
+}
+
+#toc a:hover {
+    text-decoration: underline;
+}
+
+#toc ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding: 0;
+}
+
+#toc ul.sectlevel2 {
+    margin-left: 1em;
+}
+
+ul {
+    line-height: 1.6;
+}
+
+ul>li p {
+    margin-bottom: .5em;
+    margin-top: .5em;
+}
+
+.root {
+    width: 970px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.td-align {
+    text-align: center;
+}
+
+.test-passed {
+    color: #00BB00;
+}
+
+.test-failed {
+    color: #EA0000;
+}
+
+.test-crashed {
+    color: orange;
+}
+
+.sect1 {
+    padding-bottom:.625em;
+    border-top: 1px solid #efefed;
+}

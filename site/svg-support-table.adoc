@@ -1,12 +1,6 @@
 :showtitle:
 :page-title: SVG 1.1 Full Static Support
-
-:ok-box: pass:[image:images/passed.svg[20,20, title="Passed"]]
-:fail-box: pass:[image:images/failed.svg[20,20, title="Failed"]]
-:part-box: pass:[image:images/partial.svg[20,20, title="Partial"]]
-:unk-box: pass:[image:images/unknown.svg[20,20, title="Unknown"]]
-:crash-box: pass:[image:images/crashed.svg[20,20, title="Crashed"]]
-:oos-box: pass:[image:images/out-of-scope.svg[20,20, title="Out of scope"]]
+:stylesheet: style.css
 
 = SVG 1.1 Full Static Support
 :toc:
@@ -62,33 +56,36 @@ PS: No, it's not as good as Chrome.
 
 === Legend
 
-[cols="^1,3,^1,3", width="40%"]
-|===
-| {ok-box}   | Passed  | {unk-box}   | Unknown
-| {fail-box} | Failed  | {crash-box} | Crashed
-| {part-box} | Partial | {oos-box}   | Out of scope
-|===
+++++
+include::legend.html[]
+++++
 
 Rows like this indicate that such element/attribute is planned but not yet implemented.
 
 [cols="1,10,^1,^1,^1,^1,^1,^1"]
 |===
-2+| name ^|{fail-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}|{unk-box}
+2+| name ^||||||
 |===
 
 == Elements
 
-include::elements-table.adoc[]
+++++
+include::autogen-elements-table.html[]
+++++
 
 == Attributes
 
 === Presentation
 
-include::presentation-attributes-table.adoc[]
+++++
+include::autogen-presentation-attributes-table.html[]
+++++
 
 === Other
 
-include::attributes-table.adoc[]
+++++
+include::autogen-attributes-table.html[]
+++++
 
 == Tests
 
@@ -105,6 +102,7 @@ For example the _polyline - 3. Ignore odd points_ will lead to `e-polyline-003.s
 == Additional notes
 
 // TODO: add kerning image
+
 
 * _batik_ doesn't support anti-aliasing during `clipPath`, but we are ignoring this.
 * _batik_ doesn't support text kerning,

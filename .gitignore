@@ -1,11 +1,5 @@
 *.iml
 *.pro.user
 .directory
-/.bundle
 /.idea
-/.site
-/barh
-/chart.json
 /official_test_suite
-/vendor
-Gemfile.lock
