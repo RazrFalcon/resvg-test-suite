@@ -59,7 +59,7 @@ barh_data = json.dumps(
             "value": passed[0]
         },
         {
-            "name": "Chromium r555668",
+            "name": "Chromium r599821",
             "value": passed[1]
         },
         {
@@ -71,11 +71,11 @@ barh_data = json.dumps(
             "value": passed[3]
         },
         {
-            "name": "librsvg 2.42.4",
+            "name": "librsvg 2.44.8",
             "value": passed[4]
         },
         {
-            "name": "QtSvg 5.10.1",
+            "name": "QtSvg 5.11.1",
             "value": passed[5]
         }
     ],

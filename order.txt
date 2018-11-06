@@ -254,6 +254,8 @@ e-clipPath-024.svg
 e-clipPath-025.svg
 e-clipPath-027.svg
 e-clipPath-028.svg
+e-clipPath-029.svg
+e-clipPath-030.svg
 e-defs-001.svg
 e-defs-002.svg
 e-defs-003.svg
@@ -366,6 +368,8 @@ e-mask-016.svg
 e-mask-017.svg
 e-mask-018.svg
 e-mask-019.svg
+e-mask-022.svg
+e-mask-023.svg
 e-path-001.svg
 e-path-002.svg
 e-path-003.svg
