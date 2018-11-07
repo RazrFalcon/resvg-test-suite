@@ -244,7 +244,12 @@ e-clipPath-015.svg
 e-clipPath-017.svg
 e-clipPath-018.svg
 e-clipPath-019.svg
+e-clipPath-034.svg
+e-clipPath-031.svg
 e-clipPath-020.svg
+e-clipPath-036.svg
+e-clipPath-032.svg
+e-clipPath-033.svg
 e-clipPath-021.svg
 e-clipPath-022.svg
 e-clipPath-016.svg
@@ -256,6 +261,8 @@ e-clipPath-027.svg
 e-clipPath-028.svg
 e-clipPath-029.svg
 e-clipPath-030.svg
+e-clipPath-035.svg
+e-clipPath-037.svg
 e-defs-001.svg
 e-defs-002.svg
 e-defs-003.svg
