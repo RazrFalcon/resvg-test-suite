@@ -35,16 +35,15 @@ with open(args.input, 'r') as f:
             continue
 
         file_name = row[0]
-
-        # Note! We swapped resvg and chrome.
-        flags = [int(row[2]), int(row[1]), int(row[3]), int(row[4]), int(row[5]), int(row[6])]
+        flags = [int(row[1]), int(row[2]), int(row[3]), int(row[4]),
+                 int(row[5]), int(row[6]), int(row[7])]
 
         rows.append(RowData(file_name, flags))
 
-passed = [0, 0, 0, 0, 0, 0]
+passed = [0, 0, 0, 0, 0, 0, 0]
 for row in rows:
     for idx, flag in enumerate(row.flags):
-        if flag == PASSED:
+        if flag == PASSED or flag == UNKNOWN:
             passed[idx] = passed[idx] + 1
 
 barh_data = json.dumps(
@@ -56,27 +55,31 @@ barh_data = json.dumps(
     "items": [
         {
             "name": "resvg git",
-            "value": passed[0]
-        },
-        {
-            "name": "Chromium r599821",
-            "value": passed[1]
-        },
-        {
-            "name": "Inkscape 0.92.2",
-            "value": passed[3]
-        },
-        {
-            "name": "Batik 1.9",
             "value": passed[2]
         },
         {
-            "name": "librsvg 2.44.8",
+            "name": "Firefox 63.0.1",
+            "value": passed[1]
+        },
+        {
+            "name": "Chromium r599821",
+            "value": passed[0]
+        },
+        {
+            "name": "Inkscape 0.92.2",
             "value": passed[4]
         },
         {
-            "name": "QtSvg 5.11.1",
+            "name": "librsvg 2.44.8",
             "value": passed[5]
+        },
+        {
+            "name": "Batik 1.9",
+            "value": passed[3]
+        },
+        {
+            "name": "QtSvg 5.11.1",
+            "value": passed[6]
         }
     ],
     "hor_axis": {

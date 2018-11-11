@@ -29,11 +29,13 @@ public:
     QString customTestsPath;
     int viewSize = ViewSizeOwn / 2;
     bool useChrome = true;
+    bool useFirefox = true;
     bool useBatik = true;
     bool useInkscape = true;
     bool useLibrsvg = true;
     bool useQtSvg = true;
     QString resvgDir; // it's a dir, not a path
+    QString firefoxPath;
     QString batikPath;
     QString inkscapePath;
     QString librsvgPath;

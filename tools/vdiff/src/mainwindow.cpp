@@ -66,7 +66,11 @@ void MainWindow::prepareBackends()
     };
 
     if (m_settings.useChrome) {
-        backends.insert(1, Backend::Chrome);
+        backends << Backend::Chrome;
+    }
+
+    if (m_settings.useFirefox) {
+        backends << Backend::Firefox;
     }
 
     if (m_settings.useBatik) {

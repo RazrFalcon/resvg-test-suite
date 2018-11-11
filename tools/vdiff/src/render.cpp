@@ -13,6 +13,7 @@
 
 namespace ImgName {
     static const QString Chrome     = "chrome.png";
+    static const QString Firefox    = "firefox.png";
     static const QString ResvgCairo = "resvg-cairo.png";
     static const QString ResvgQt    = "resvg-qt.png";
     static const QString Batik      = "batik.png";
@@ -55,6 +56,7 @@ QString Render::backendName(const Backend t)
     switch (t) {
         case Backend::Reference :   return "Reference";
         case Backend::Chrome :      return "Chrome";
+        case Backend::Firefox :     return "Firefox";
         case Backend::ResvgCairo :  return "resvg (cairo)";
         case Backend::ResvgQt :     return "resvg (Qt)";
         case Backend::Batik :       return "Batik";
@@ -70,6 +72,8 @@ QImage Render::renderReference(const RenderData &data)
 {
     const QFileInfo fi(data.imgPath);
     const QString path = fi.absolutePath() + "/../png/" + fi.completeBaseName() + ".png";
+
+    Q_ASSERT(QFile(path).exists());
 
     const QSize targetSize(data.viewSize, data.viewSize);
 
@@ -95,6 +99,34 @@ QImage Render::renderViaChrome(const RenderData &data)
     }
 
     return loadImage(ImgName::Chrome);
+}
+
+QImage Render::renderViaFirefox(const RenderData &data)
+{
+    int w = data.viewSize;
+    int h = data.viewSize;
+
+    // TODO: fix this temporary hack
+    if (data.testSuite == TestSuite::Official) {
+        h *= 0.75;
+    }
+
+    const QString out = Process::run(data.convPath, {
+        "--headless",
+        "--window-size",
+        QString("%1,%2").arg(w).arg(h),
+        "--screenshot",
+        QFileInfo(ImgName::Firefox).absoluteFilePath(),
+        data.imgPath,
+    }, true);
+
+    if (!out.isEmpty()) {
+        if (out.simplified() != "*** You are running in headless mode.") {
+            qDebug().noquote() << "firefox:" << out;
+        }
+    }
+
+    return loadImage(ImgName::Firefox);
 }
 
 QImage Render::renderViaResvg(const RenderData &data)
@@ -206,6 +238,10 @@ void Render::renderImages()
         list.append({ Backend::Chrome, m_viewSize, m_imgPath, QString(), ts });
     }
 
+    if (m_settings->useFirefox) {
+        list.append({ Backend::Firefox, m_viewSize, m_imgPath, m_settings->firefoxPath, ts });
+    }
+
     if (m_settings->useBatik) {
         list.append({ Backend::Batik, m_viewSize, m_imgPath, m_settings->batikPath, ts });
     }
@@ -244,6 +280,7 @@ RenderResult Render::renderImage(const RenderData &data)
         switch (data.type) {
             case Backend::Reference  : img = renderReference(data); break;
             case Backend::Chrome     : img = renderViaChrome(data); break;
+            case Backend::Firefox    : img = renderViaFirefox(data); break;
             case Backend::ResvgCairo : img = renderViaResvg(data); break;
             case Backend::ResvgQt    : img = renderViaResvg(data); break;
             case Backend::Batik      : img = renderViaBatik(data); break;

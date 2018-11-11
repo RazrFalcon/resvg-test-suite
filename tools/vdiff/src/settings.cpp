@@ -4,19 +4,21 @@
 #include "settings.h"
 
 namespace Key {
-    static const QString TestSuite = "TestSuite";
-    static const QString CustomTestsPath = "CustomTestsPath";
-    static const QString ResvgBuild = "ResvgBuild";
-    static const QString ResvgDir = "ResvgDir";
-    static const QString BatikPath = "BatikPath";
-    static const QString InkscapePath = "InkscapePath";
-    static const QString RsvgPath = "RsvgPath";
-    static const QString UseChrome = "UseChrome";
-    static const QString UseBatik = "UseBatik";
-    static const QString UseInkscape = "UseInkscape";
-    static const QString UseLibrsvg = "UseLibrsvg";
-    static const QString UseQtSvg = "UseQtSvg";
-    static const QString ViewSize = "ViewSize";
+    static const QString TestSuite          = "TestSuite";
+    static const QString CustomTestsPath    = "CustomTestsPath";
+    static const QString ResvgBuild         = "ResvgBuild";
+    static const QString ResvgDir           = "ResvgDir";
+    static const QString FirefoxPath        = "FirefoxPath";
+    static const QString BatikPath          = "BatikPath";
+    static const QString InkscapePath       = "InkscapePath";
+    static const QString RsvgPath           = "RsvgPath";
+    static const QString UseChrome          = "UseChrome";
+    static const QString UseFirefox         = "UseFirefox";
+    static const QString UseBatik           = "UseBatik";
+    static const QString UseInkscape        = "UseInkscape";
+    static const QString UseLibrsvg         = "UseLibrsvg";
+    static const QString UseQtSvg           = "UseQtSvg";
+    static const QString ViewSize           = "ViewSize";
 }
 
 static QString testSuiteToStr(TestSuite t) noexcept
@@ -66,12 +68,14 @@ void Settings::load() noexcept
     this->viewSize = appSettings.value(Key::ViewSize, ViewSizeOwn / 2).toUInt();
 
     this->useChrome = appSettings.value(Key::UseChrome).toBool();
+    this->useFirefox = appSettings.value(Key::UseFirefox).toBool();
     this->useBatik = appSettings.value(Key::UseBatik).toBool();
     this->useInkscape = appSettings.value(Key::UseInkscape).toBool();
     this->useLibrsvg = appSettings.value(Key::UseLibrsvg).toBool();
     this->useQtSvg = appSettings.value(Key::UseQtSvg).toBool();
 
     this->resvgDir = appSettings.value(Key::ResvgDir).toString();
+    this->firefoxPath = appSettings.value(Key::FirefoxPath).toString();
     this->batikPath = appSettings.value(Key::BatikPath).toString();
     this->inkscapePath = appSettings.value(Key::InkscapePath).toString();
     this->librsvgPath = appSettings.value(Key::RsvgPath).toString();
@@ -85,11 +89,13 @@ void Settings::save() const noexcept
     appSettings.setValue(Key::ResvgBuild, buildTypeToStr(this->buildType));
     appSettings.setValue(Key::ViewSize, this->viewSize);
     appSettings.setValue(Key::UseChrome, this->useChrome);
+    appSettings.setValue(Key::UseFirefox, this->useFirefox);
     appSettings.setValue(Key::UseBatik, this->useBatik);
     appSettings.setValue(Key::UseInkscape, this->useInkscape);
     appSettings.setValue(Key::UseLibrsvg, this->useLibrsvg);
     appSettings.setValue(Key::UseQtSvg, this->useQtSvg);
     appSettings.setValue(Key::ResvgDir, this->resvgDir);
+    appSettings.setValue(Key::FirefoxPath, this->firefoxPath);
     appSettings.setValue(Key::BatikPath, this->batikPath);
     appSettings.setValue(Key::InkscapePath, this->inkscapePath);
     appSettings.setValue(Key::RsvgPath, this->librsvgPath);

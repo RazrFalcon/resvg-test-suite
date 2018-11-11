@@ -52,8 +52,6 @@ We are testing/comparing _resvg_ with Chrome, Inkscape, librsvg and QtSvg for a 
 
 image:images/chart.svg[]
 
-PS: No, it's not as good as Chrome.
-
 === Legend
 
 ++++

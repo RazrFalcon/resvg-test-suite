@@ -91,11 +91,12 @@ Tests Tests::load(const TestSuite testSuite, const QString &path, const QString 
         item.baseName = QFileInfo(testPath).completeBaseName();
 
         item.state.insert(Backend::Chrome,      stateFormStr(items.at(1)));
-        item.state.insert(Backend::ResvgCairo,  stateFormStr(items.at(2)));
-        item.state.insert(Backend::Batik,       stateFormStr(items.at(3)));
-        item.state.insert(Backend::Inkscape,    stateFormStr(items.at(4)));
-        item.state.insert(Backend::Librsvg,     stateFormStr(items.at(5)));
-        item.state.insert(Backend::QtSvg,       stateFormStr(items.at(6)));
+        item.state.insert(Backend::Firefox,     stateFormStr(items.at(2)));
+        item.state.insert(Backend::ResvgCairo,  stateFormStr(items.at(3)));
+        item.state.insert(Backend::Batik,       stateFormStr(items.at(4)));
+        item.state.insert(Backend::Inkscape,    stateFormStr(items.at(5)));
+        item.state.insert(Backend::Librsvg,     stateFormStr(items.at(6)));
+        item.state.insert(Backend::QtSvg,       stateFormStr(items.at(7)));
 
         if (testSuite == TestSuite::Own) {
             item.title = parseTitle(testPath);
@@ -136,10 +137,11 @@ Tests Tests::loadCustom(const QString &path)
 
 void Tests::save(const QString &path)
 {
-    QString text = "title,chrome,resvg,batik,inkscape,librsvg,qtsvg\n";
+    QString text = "title,chrome,firefox,resvg,batik,inkscape,librsvg,qtsvg\n";
     for (const TestItem &item : m_data) {
         text += QFileInfo(item.path).fileName() + ',';
         text += QString::number((int)item.state.value(Backend::Chrome))     + ',';
+        text += QString::number((int)item.state.value(Backend::Firefox))    + ',';
         text += QString::number((int)item.state.value(Backend::ResvgCairo)) + ',';
         text += QString::number((int)item.state.value(Backend::Batik))      + ',';
         text += QString::number((int)item.state.value(Backend::Inkscape))   + ',';

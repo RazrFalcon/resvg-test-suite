@@ -16,6 +16,7 @@ enum class Backend
 {
     Reference,
     Chrome,
+    Firefox,
     ResvgCairo,
     ResvgQt,
     Batik,
@@ -24,7 +25,7 @@ enum class Backend
     QtSvg,
 };
 
-constexpr int BackendsCount = 7;
+constexpr int BackendsCount = 8;
 
 Q_DECL_PURE_FUNCTION inline uint qHash(const Backend &key, uint seed = 0)
 { return qHash((uint)key, seed); }

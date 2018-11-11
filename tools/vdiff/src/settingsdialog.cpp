@@ -46,6 +46,9 @@ void SettingsDialog::loadSettings()
 
     ui->chBoxUseChrome->setChecked(m_settings->useChrome);
 
+    ui->chBoxUseFirefox->setChecked(m_settings->useFirefox);
+    ui->lineEditFirefox->setText(m_settings->firefoxPath);
+
     ui->chBoxUseBatik->setChecked(m_settings->useBatik);
     ui->lineEditBatik->setText(m_settings->batikPath);
 
@@ -88,12 +91,14 @@ void SettingsDialog::on_buttonBox_accepted()
                     : BuildType::Debug;
 
     m_settings->useChrome = ui->chBoxUseChrome->isChecked();
+    m_settings->useFirefox = ui->chBoxUseFirefox->isChecked();
     m_settings->useBatik = ui->chBoxUseBatik->isChecked();
     m_settings->useInkscape = ui->chBoxUseInkscape->isChecked();
     m_settings->useLibrsvg = ui->chBoxUseLibrsvg->isChecked();
     m_settings->useQtSvg = ui->chBoxUseQtSvg->isChecked();
 
     m_settings->resvgDir = ui->lineEditResvg->text();
+    m_settings->firefoxPath = ui->lineEditFirefox->text();
     m_settings->batikPath = ui->lineEditBatik->text();
     m_settings->inkscapePath = ui->lineEditInkscape->text();
     m_settings->librsvgPath = ui->lineEditRsvg->text();
@@ -115,6 +120,14 @@ void SettingsDialog::on_btnSelectResvg_clicked()
     const auto path = QFileDialog::getExistingDirectory(this, "resvg source path");
     if (!path.isEmpty()) {
         ui->lineEditResvg->setText(path);
+    }
+}
+
+void SettingsDialog::on_btnSelectFirefox_clicked()
+{
+    const auto path = QFileDialog::getOpenFileName(this, "Firefox exe path");
+    if (!path.isEmpty()) {
+        ui->lineEditFirefox->setText(path);
     }
 }
 
