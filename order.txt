@@ -536,6 +536,7 @@ e-stop-011.svg
 e-stop-012.svg
 e-stop-013.svg
 e-stop-014.svg
+e-stop-018.svg
 e-style-001.svg
 e-style-002.svg
 e-style-003.svg
