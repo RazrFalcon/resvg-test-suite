@@ -676,3 +676,4 @@ e-use-013.svg
 e-use-014.svg
 e-use-020.svg
 e-use-021.svg
+e-use-022.svg
