@@ -8,6 +8,7 @@ a-display-004.svg
 a-display-005.svg
 a-display-006.svg
 a-display-007.svg
+a-display-008.svg
 a-fill-001.svg
 a-fill-002.svg
 a-fill-003.svg
@@ -104,6 +105,7 @@ a-font-weight-011.svg
 a-font-weight-012.svg
 a-mask-001.svg
 a-opacity-001.svg
+a-opacity-002.svg
 a-stop-color-001.svg
 a-stop-opacity-001.svg
 a-stroke-001.svg
@@ -215,6 +217,11 @@ a-transform-017.svg
 a-transform-018.svg
 a-visibility-001.svg
 a-visibility-002.svg
+a-visibility-003.svg
+a-visibility-004.svg
+a-visibility-005.svg
+a-visibility-006.svg
+a-visibility-007.svg
 e-a-001.svg
 e-a-002.svg
 e-a-003.svg

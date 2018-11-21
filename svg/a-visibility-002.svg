@@ -1,5 +1,5 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <title>On `g`</title>
+    <title>`hidden` on group</title>
 
     <g id="g1" visibility="hidden">
         <rect id="rect1" x="20" y="20" width="160" height="160" fill="green" visibility="visible"/>
