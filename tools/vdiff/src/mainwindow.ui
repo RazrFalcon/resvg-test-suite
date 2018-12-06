@@ -83,6 +83,20 @@
        </widget>
       </item>
       <item>
+       <widget class="QPushButton" name="btnPrint">
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="toolTip">
+         <string>Print</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../icons.qrc">
+          <normaloff>:/icons/print.svgz</normaloff>:/icons/print.svgz</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QPushButton" name="btnSettings">
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>

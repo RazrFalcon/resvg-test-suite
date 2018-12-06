@@ -23,6 +23,11 @@ void ImageView::setAnimationEnabled(bool flag)
     update();
 }
 
+QImage ImageView::image() const
+{
+    return m_img;
+}
+
 void ImageView::setImage(const QImage &img)
 {
     m_img = img;

@@ -46,6 +46,8 @@ private slots:
     void on_btnResync_clicked();
     void on_btnSettings_clicked();
 
+    void on_btnPrint_clicked();
+
 private:
     Ui::MainWindow * const ui;
     QTimer * const m_autosaveTimer;

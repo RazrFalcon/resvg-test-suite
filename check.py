@@ -78,7 +78,7 @@ def check_title():
     Checks that element/attribute tests has unique titles and shorter than 60 symbols
     """
 
-    files = os.listdir('svg/')
+    files = sorted(os.listdir('svg/'))
 
     titles = {}
     for file in files:
@@ -103,7 +103,7 @@ def check_node_ids():
     Checks that all elements has an unique ID attribute.
     """
 
-    files = os.listdir('svg/')
+    files = sorted(os.listdir('svg/'))
 
     ignore_files = [
         'e-svg-031.svg',  # because of ENTITY
@@ -114,6 +114,17 @@ def check_node_ids():
         'title',
         'desc',
         'stop',
+        'feBlend',
+        'feColorMatrix',
+        'feComponentTransfer',
+        'feComposite',
+        'feFlood',
+        'feGaussianBlur',
+        'feImage',
+        'feMerge',
+        'feMergeNode',
+        'feOffset',
+        'feTile',
     ]
 
     for file in ignore_files:
@@ -153,7 +164,7 @@ def check_line_width():
         'e-tspan-010.svg',
     ]
 
-    files = os.listdir('svg/')
+    files = sorted(os.listdir('svg/'))
 
     for file in allow:
         files.remove(file)

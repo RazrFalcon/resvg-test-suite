@@ -12,6 +12,7 @@ public:
 
     void setAnimationEnabled(bool flag);
 
+    QImage image() const;
     void setImage(const QImage &img);
     void resetImage();
 

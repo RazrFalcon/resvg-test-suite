@@ -2,13 +2,13 @@
 
 ## Structure
 
-- `images/` - raster images
-- `site/` - sources for github pages
 - `svg/` - SVG images. Actual tests
 - `png/` - PNG images with expected rendering results
+- `images/` - images that will be included to the SVG via the `image` tag
+- `site/` - sources for github pages
 - `tools/` - various testing tools
 - `check.py` - pre-commit hook
-- `init_official_test_suite.py` - download and prepare the official SVG test suite
+- `init_official_test_suite.py` - download and prepare the official SVG test suite (optional)
 - `gh-pages.sh` - generates github pages
 - `official.csv` - results of manual testing via `tools/vdiff` of the official SVG test suite
 - `order.txt` - custom tests order for pretty-printing

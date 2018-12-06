@@ -39,9 +39,19 @@ BackendWidget::BackendWidget(const Backend backend, QWidget *parent)
     connect(m_cmbBoxState, SIGNAL(activated(int)), this, SIGNAL(testStateChanged()));
 }
 
+QString BackendWidget::title() const
+{
+    return m_lblTitle->text();
+}
+
 void BackendWidget::setTitle(const QString &title)
 {
     m_lblTitle->setText(title);
+}
+
+QImage BackendWidget::image() const
+{
+    return m_imageView->image();
 }
 
 void BackendWidget::setImage(const QImage &img)

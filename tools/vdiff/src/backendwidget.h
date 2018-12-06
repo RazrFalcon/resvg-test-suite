@@ -16,7 +16,9 @@ class BackendWidget : public QWidget
 public:
     explicit BackendWidget(const Backend backend, QWidget *parent = nullptr);
 
+    QString title() const;
     void setTitle(const QString &title);
+    QImage image() const;
     void setImage(const QImage &img);
     void setDiffImage(const QImage &img);
     void setDiffVisible(bool flag);
