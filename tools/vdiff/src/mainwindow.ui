@@ -69,12 +69,12 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="btnResync">
+       <widget class="QPushButton" name="btnSync">
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
         <property name="toolTip">
-         <string>Resync</string>
+         <string>Sync</string>
         </property>
         <property name="icon">
          <iconset resource="../icons.qrc">

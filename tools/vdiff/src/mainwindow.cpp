@@ -111,7 +111,7 @@ void MainWindow::prepareBackends()
         }
     }
 
-    ui->btnResync->setVisible(m_settings.testSuite == TestSuite::Own);
+    ui->btnSync->setVisible(m_settings.testSuite == TestSuite::Own);
 
     QTimer::singleShot(50, this, [this](){ adjustSize(); });
 }
@@ -119,7 +119,7 @@ void MainWindow::prepareBackends()
 void MainWindow::setGuiEnabled(bool flag)
 {
     ui->btnSettings->setEnabled(flag);
-    ui->btnResync->setEnabled(flag);
+    ui->btnSync->setEnabled(flag);
     ui->btnPrint->setEnabled(flag);
     ui->cmbBoxFiles->setEnabled(flag);
     for (auto *w : m_backendWidges.values()) {
@@ -273,7 +273,7 @@ void MainWindow::onRenderFinished()
     setAnimationEnabled(false);
 }
 
-void MainWindow::on_btnResync_clicked()
+void MainWindow::on_btnSync_clicked()
 {
     if (m_settings.testSuite != TestSuite::Own) {
         QMessageBox::warning(this, "Warning", "The official SVG test suite cannot be resynced.");
