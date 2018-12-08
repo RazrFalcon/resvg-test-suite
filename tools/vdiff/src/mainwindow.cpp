@@ -61,10 +61,13 @@ void MainWindow::prepareBackends()
     m_backendWidges.clear();
 
     QVector<Backend> backends = {
-        Backend::Reference,
         Backend::ResvgCairo,
         Backend::ResvgQt,
     };
+
+    if (m_settings.testSuite != TestSuite::Custom) {
+        backends.prepend(Backend::Reference);
+    }
 
     if (m_settings.useChrome) {
         backends << Backend::Chrome;
@@ -101,8 +104,11 @@ void MainWindow::prepareBackends()
         ui->layBackends->addWidget(w);
     }
 
-    m_backendWidges.value(Backend::Reference)->setDiffVisible(false);
-    m_backendWidges.value(Backend::Reference)->setTestStateVisible(false);
+    if (m_settings.testSuite != TestSuite::Custom) {
+        m_backendWidges.value(Backend::Reference)->setDiffVisible(false);
+        m_backendWidges.value(Backend::Reference)->setTestStateVisible(false);
+    }
+
     m_backendWidges.value(Backend::ResvgQt)->setTestStateVisible(false);
 
     if (m_settings.testSuite == TestSuite::Custom) {

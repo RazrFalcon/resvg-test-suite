@@ -25,9 +25,6 @@ SettingsDialog::SettingsDialog(Settings *settings, QWidget *parent)
     connect(suiteGroup, SIGNAL(buttonToggled(QAbstractButton*,bool)),
             this, SLOT(prepareTestsPathWidgets()));
 
-    // TODO: implement
-    ui->rBtnSuiteCustom->hide();
-
     ui->buttonBox->setFocus();
 }
 

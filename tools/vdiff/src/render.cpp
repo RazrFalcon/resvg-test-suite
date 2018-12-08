@@ -230,7 +230,11 @@ void Render::renderImages()
     const auto ts = m_settings->testSuite;
 
     QVector<RenderData> list;
-    list.append({ Backend::Reference, m_viewSize, m_imgPath, QString(), ts });
+
+    if (ts != TestSuite::Custom) {
+        list.append({ Backend::Reference, m_viewSize, m_imgPath, QString(), ts });
+    }
+
     list.append({ Backend::ResvgCairo, m_viewSize, m_imgPath, m_settings->resvgPath(), ts });
     list.append({ Backend::ResvgQt, m_viewSize, m_imgPath, m_settings->resvgPath(), ts });
 
@@ -388,21 +392,41 @@ void Render::onImageRendered(const int idx)
 
 void Render::onImagesRendered()
 {
-    const QImage refImg = m_imgs.value(Backend::Reference);
+    if (m_settings->testSuite == TestSuite::Custom) {
+        // Use Chrome as a reference.
 
-    QVector<DiffData> list;
-    const auto append = [&](const Backend type){
-        if (m_imgs.contains(type) && type != Backend::Reference) {
-            list.append({ type, refImg, m_imgs.value(type) });
+        const QImage refImg = m_imgs.value(Backend::Chrome);
+
+        QVector<DiffData> list;
+        const auto append = [&](const Backend type){
+            if (m_imgs.contains(type) && type != Backend::Chrome) {
+                list.append({ type, refImg, m_imgs.value(type) });
+            }
+        };
+
+        for (int t = (int)Backend::Firefox; t <= (int)Backend::QtSvg; ++t) {
+            append((Backend)t);
         }
-    };
 
-    for (int t = (int)Backend::Chrome; t <= (int)Backend::QtSvg; ++t) {
-        append((Backend)t);
+        const auto future = QtConcurrent::mapped(list, &Render::diffImage);
+        m_watcher2.setFuture(future);
+    } else {
+        const QImage refImg = m_imgs.value(Backend::Reference);
+
+        QVector<DiffData> list;
+        const auto append = [&](const Backend type){
+            if (m_imgs.contains(type) && type != Backend::Reference) {
+                list.append({ type, refImg, m_imgs.value(type) });
+            }
+        };
+
+        for (int t = (int)Backend::Chrome; t <= (int)Backend::QtSvg; ++t) {
+            append((Backend)t);
+        }
+
+        const auto future = QtConcurrent::mapped(list, &Render::diffImage);
+        m_watcher2.setFuture(future);
     }
-
-    const auto future = QtConcurrent::mapped(list, &Render::diffImage);
-    m_watcher2.setFuture(future);
 }
 
 void Render::onDiffResult(const int idx)
