@@ -3,19 +3,19 @@
     "items": [
         {
             "value": 140,
-            "name": "resvg 0.2.0 (cairo)"
+            "name": "resvg 0.4.0 (cairo)"
         },
         {
             "value": 154,
-            "name": "resvg 0.2.0 (qt)"
+            "name": "resvg 0.4.0 (qt)"
         },
         {
             "value": 161,
-            "name": "QtSvg 5.10.1"
+            "name": "QtSvg 5.11.1"
         },
         {
-            "value": 242,
-            "name": "librsvg 2.42.4"
+            "value": 150,
+            "name": "librsvg 2.44.8"
         },
         {
             "value": 1610,
