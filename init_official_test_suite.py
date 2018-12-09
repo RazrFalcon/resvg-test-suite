@@ -94,6 +94,7 @@ out_of_scope_tests = [
     'coords-dom-04-f.svg',
     'extend-namespace-01-f.svg',
     'filters-conv-03-f.svg',
+    'filters-image-02-b.svg',
     'fonts-desc-01-t.svg',
     'fonts-desc-02-t.svg',
     'fonts-desc-03-t.svg',

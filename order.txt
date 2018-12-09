@@ -331,6 +331,17 @@ e-feGaussianBlur-007.svg
 e-feGaussianBlur-008.svg
 e-feGaussianBlur-009.svg
 e-feGaussianBlur-010.svg
+e-feImage-001.svg
+e-feImage-002.svg
+e-feImage-003.svg
+e-feImage-004.svg
+e-feImage-005.svg
+e-feImage-006.svg
+e-feImage-007.svg
+e-feImage-008.svg
+e-feImage-009.svg
+e-feImage-010.svg
+e-feImage-011.svg
 e-feMerge-001.svg
 e-feMerge-002.svg
 e-feOffset-001.svg
@@ -358,6 +369,7 @@ e-filter-009.svg
 e-filter-010.svg
 e-filter-011.svg
 e-filter-012.svg
+e-filter-055.svg
 e-filter-013.svg
 e-filter-014.svg
 e-filter-015.svg

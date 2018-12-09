@@ -2,11 +2,11 @@
     "title": "Time to render Oxygen Icon Theme",
     "items": [
         {
-            "value": 140,
+            "value": 200,
             "name": "resvg 0.4.0 (cairo)"
         },
         {
-            "value": 154,
+            "value": 200,
             "name": "resvg 0.4.0 (qt)"
         },
         {
