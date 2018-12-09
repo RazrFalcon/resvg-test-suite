@@ -4,7 +4,7 @@
 
     <defs id="defs1">
         <filter id="filter1">
-            <feImage xlink:href="#rect2"/>
+            <feImage xlink:href="#rect3"/>
         </filter>
         <rect id="rect3" x="36" y="36" width="120" height="120" fill="green"/>
     </defs>
