@@ -5,6 +5,7 @@
 #include <QMessageBox>
 #include <QScreen>
 #include <QTimer>
+#include <QShortcut>
 
 #include "backendwidget.h"
 #include "paths.h"
@@ -38,6 +39,14 @@ MainWindow::MainWindow(QWidget *parent)
     connect(m_autosaveTimer, &QTimer::timeout, this, &MainWindow::save);
     m_autosaveTimer->setInterval(10000); // 10 sec
     m_autosaveTimer->start();
+
+    auto shortcut = new QShortcut(QKeySequence("Ctrl+R"), this);
+    connect(shortcut, &QShortcut::activated, [this]() {
+        const auto idx = ui->cmbBoxFiles->currentIndex();
+        if (idx >= 0) {
+            loadTest(idx);
+        }
+    });
 
     // TODO: check that convertors exists
 
