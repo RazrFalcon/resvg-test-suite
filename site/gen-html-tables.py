@@ -265,6 +265,7 @@ def get_item_row(rows, out_of_scope_list, type, name):
                  '<td></td>\n'
                  '<td></td>\n'
                  '<td></td>\n'
+                 '<td></td>\n'
                  '<td></td>\n')
 
     html += '</tr>\n'
