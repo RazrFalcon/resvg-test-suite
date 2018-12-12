@@ -13,8 +13,6 @@ def render_file(render, exe):
         args = [exe, in_svg, out_png, '--backend', 'cairo']
     elif render == 'batik':
         args = [exe, '-scriptSecurityOff', in_svg, '-d', out_png]
-    elif render == 'inkscape':
-        args = [exe, in_svg, '--export-png=' + out_png]
     elif render == 'librsvg':
         args = [exe, '-f', 'png', in_svg, '-o', out_png]
     elif render == 'qtsvg':
@@ -27,7 +25,7 @@ def render_file(render, exe):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('render', help='Render type',
-                        choices=['resvg-qt', 'resvg-cairo', 'batik', 'inkscape', 'librsvg', 'qtsvg'])
+                        choices=['resvg-qt', 'resvg-cairo', 'batik', 'librsvg', 'qtsvg'])
     parser.add_argument('exe', help='Render executable')
     parser.add_argument('in_dir', help='Input directory')
     parser.add_argument('out_dir', help='Output directory')

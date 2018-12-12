@@ -58,11 +58,11 @@ barh_data = json.dumps(
             "value": passed[2]
         },
         {
-            "name": "Firefox 63.0.3",
+            "name": "Firefox 64.0",
             "value": passed[1]
         },
         {
-            "name": "Chromium r599821",
+            "name": "Chromium r609904",
             "value": passed[0]
         },
         {
@@ -70,7 +70,7 @@ barh_data = json.dumps(
             "value": passed[4]
         },
         {
-            "name": "librsvg 2.50.0",
+            "name": "librsvg 2.45.1",
             "value": passed[5]
         },
         {
