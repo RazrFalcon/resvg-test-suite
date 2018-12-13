@@ -58,13 +58,6 @@ image:images/chart.svg[]
 include::legend.html[]
 ++++
 
-Rows like this indicate that such element/attribute is planned but not yet implemented.
-
-[cols="1,10,^1,^1,^1,^1,^1,^1"]
-|===
-2+| name ^||||||
-|===
-
 == Elements
 
 ++++
