@@ -1,20 +1,20 @@
 {
-    "title": "Time to render Oxygen Icon Theme 4.12",
+    "title": "Time to render Elementary OS Icon Theme 5.0",
     "items": [
         {
-            "value": 200,
+            "value": 22,
             "name": "resvg 0.4.0 (cairo)"
         },
         {
-            "value": 210,
+            "value": 38,
             "name": "resvg 0.4.0 (qt)"
         },
         {
-            "value": 205,
+            "value": 30,
             "name": "QtSvg 5.11.1"
         },
         {
-            "value": 155,
+            "value": 19,
             "name": "librsvg 2.45.1"
         }
     ],
