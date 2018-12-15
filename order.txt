@@ -14,6 +14,9 @@ a-fill-001.svg
 a-fill-002.svg
 a-fill-003.svg
 a-fill-004.svg
+a-fill-038.svg
+a-fill-039.svg
+a-fill-040.svg
 a-fill-005.svg
 a-fill-006.svg
 a-fill-007.svg
