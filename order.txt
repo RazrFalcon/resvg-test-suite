@@ -168,6 +168,8 @@ a-stroke-linejoin-003.svg
 a-stroke-miterlimit-001.svg
 a-stroke-miterlimit-002.svg
 a-stroke-miterlimit-003.svg
+a-stroke-miterlimit-004.svg
+a-stroke-miterlimit-005.svg
 a-stroke-opacity-001.svg
 a-stroke-opacity-002.svg
 a-stroke-opacity-003.svg
