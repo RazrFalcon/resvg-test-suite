@@ -678,6 +678,15 @@ e-stop-012.svg
 e-stop-013.svg
 e-stop-014.svg
 e-stop-018.svg
+e-stop-019.svg
+e-stop-020.svg
+e-stop-021.svg
+e-stop-022.svg
+e-stop-023.svg
+e-stop-024.svg
+e-stop-025.svg
+e-stop-026.svg
+e-stop-027.svg
 e-style-001.svg
 e-style-002.svg
 e-style-003.svg
