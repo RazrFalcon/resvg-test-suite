@@ -293,11 +293,21 @@ RenderResult Render::renderImage(const RenderData &data)
             case Backend::QtSvg      : img = renderViaQtSvg(data); break;
         }
 
-        return {{ data.type, img }};
+        return { data.type, img };
     } catch (const QString &s) {
-        return { s };
-    } catch (const std::exception &e) {
-        return { QString(e.what()) };
+        QImage img(data.viewSize, data.viewSize, QImage::Format_ARGB32);
+        img.fill(Qt::white);
+
+        QPainter p(&img);
+        auto f = p.font();
+        f.setPointSize(26);
+        p.setFont(f);
+        p.drawText(QRect(0, 0, data.viewSize, data.viewSize),
+                   Qt::AlignLeft | Qt::AlignTop | Qt::TextWordWrap,
+                   s);
+        p.end();
+
+        return { data.type, img };
     } catch (...) {
         Q_UNREACHABLE();
     }
@@ -380,14 +390,8 @@ DiffOutput Render::diffImage(const DiffData &data)
 void Render::onImageRendered(const int idx)
 {
     const auto res = m_watcher1.resultAt(idx);
-    if (res.is1st()) {
-        const auto v = res.as1st();
-        m_imgs.insert(v.type, v.img);
-        emit imageReady(v.type, v.img);
-    } else {
-        const auto v = res.as2nd();
-        emit warning(v);
-    }
+    m_imgs.insert(res.type, res.img);
+    emit imageReady(res.type, res.img);
 }
 
 void Render::onImagesRendered()

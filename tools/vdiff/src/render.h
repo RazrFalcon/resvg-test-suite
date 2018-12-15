@@ -17,7 +17,7 @@ struct RenderData
     TestSuite testSuite;
 };
 
-struct RenderOutput
+struct RenderResult
 {
     Backend type;
     QImage img;
@@ -38,9 +38,7 @@ struct DiffOutput
     QImage img;
 };
 
-using RenderResult = Either<RenderOutput, QString>;
-
-Q_DECLARE_METATYPE(RenderOutput)
+Q_DECLARE_METATYPE(RenderResult)
 Q_DECLARE_METATYPE(DiffOutput)
 
 class Render : public QObject
@@ -62,8 +60,6 @@ signals:
     void imageReady(Backend, QImage);
     void diffReady(Backend, QImage);
     void diffStats(Backend, uint, float);
-    void warning(QString);
-    void error(QString);
     void finished();
 
 private:

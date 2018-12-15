@@ -39,13 +39,10 @@ private slots:
     void onImageReady(const Backend type, const QImage &img);
     void onDiffReady(const Backend type, const QImage &img);
     void onDiffStats(const Backend type, const uint value, const float percent);
-    void onRenderWarning(const QString &msg);
-    void onRenderError(const QString &msg);
     void onRenderFinished();
     void updatePassFlags();
     void on_btnSync_clicked();
     void on_btnSettings_clicked();
-
     void on_btnPrint_clicked();
 
 private:
