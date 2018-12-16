@@ -3,7 +3,7 @@
     <title>SVG</title>
 
     <filter id="filter1">
-        <feImage xlink:href="../images/image-003.svg"/>
+        <feImage xlink:href="../images/image.svg"/>
     </filter>
     <rect id="rect1" x="40" y="40" width="120" height="120" fill="red" filter="url(#filter1)"/>
 

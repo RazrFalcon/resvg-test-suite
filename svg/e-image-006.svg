@@ -2,7 +2,7 @@
      xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>External SVGZ</title>
 
-    <image id="image1" x="8" y="8" width="64" height="64" xlink:href="../images/image-004.svgz"/>
+    <image id="image1" x="8" y="8" width="64" height="64" xlink:href="../images/image.svgz"/>
 
     <rect id="frame" x="1" y="1" width="78" height="78" fill="none" stroke="black"/>
 </svg>
