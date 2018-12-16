@@ -735,6 +735,7 @@ e-svg-027.svg
 e-svg-028.svg
 e-svg-029.svg
 e-svg-030.svg
+e-svg-033.svg
 e-switch-001.svg
 e-switch-002.svg
 e-switch-003.svg

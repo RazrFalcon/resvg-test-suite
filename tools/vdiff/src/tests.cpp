@@ -189,10 +189,17 @@ void Tests::resync(const Settings &settings)
         throw QString("Failed to open %1.").arg(orderPath);
     }
 
+    const QString pngDir = QFileInfo(settings.testsPath() + "/../png").absoluteFilePath();
+
     const QString text = orderFile.readAll();
     for (const QStringRef &line : text.splitRef('\n')) {
         if (line.isEmpty()) {
             break;
+        }
+
+        const auto pngPath = pngDir + "/" + QFileInfo(line.toString()).completeBaseName() + ".png";
+        if (!QFile::exists(pngPath)) {
+            throw QString("'%1' not found.").arg(pngPath);
         }
 
         for (const TestItem &test : oldTests) {

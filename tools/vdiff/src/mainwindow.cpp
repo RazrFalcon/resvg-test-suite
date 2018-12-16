@@ -296,8 +296,7 @@ void MainWindow::on_btnSync_clicked()
 
         QMessageBox::information(this, "Info", "Tests was successfully synced.");
     } catch (const QString &msg) {
-        QMessageBox::critical(this, "Error", msg + "\n\nApplication will close now.");
-        qApp->quit();
+        QMessageBox::critical(this, "Error", msg);
     }
 }
 
