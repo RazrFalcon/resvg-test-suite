@@ -812,6 +812,7 @@ e-tspan-011.svg
 e-tspan-012.svg
 e-tspan-013.svg
 e-tspan-016.svg
+e-tspan-017.svg
 e-use-001.svg
 e-use-002.svg
 e-use-003.svg
