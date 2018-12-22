@@ -133,6 +133,12 @@ a-font-weight-009.svg
 a-font-weight-010.svg
 a-font-weight-011.svg
 a-font-weight-012.svg
+a-letter-spacing-001.svg
+a-letter-spacing-002.svg
+a-letter-spacing-003.svg
+a-letter-spacing-004.svg
+a-letter-spacing-005.svg
+a-letter-spacing-006.svg
 a-mask-001.svg
 a-opacity-001.svg
 a-opacity-002.svg
@@ -258,6 +264,12 @@ a-visibility-004.svg
 a-visibility-005.svg
 a-visibility-006.svg
 a-visibility-007.svg
+a-word-spacing-001.svg
+a-word-spacing-002.svg
+a-word-spacing-003.svg
+a-word-spacing-004.svg
+a-word-spacing-005.svg
+a-word-spacing-006.svg
 e-a-001.svg
 e-a-002.svg
 e-a-003.svg
