@@ -12,7 +12,6 @@ BackendWidget::BackendWidget(const Backend backend, QWidget *parent)
     , m_lblTitle(new QLabel)
     , m_imageView(new ImageView)
     , m_diffView(new ImageView)
-    , m_lblStats(new QLabel)
     , m_cmbBoxState(new QComboBox)
 {
     auto lay = new QVBoxLayout(this);
@@ -20,12 +19,10 @@ BackendWidget::BackendWidget(const Backend backend, QWidget *parent)
     lay->addWidget(m_lblTitle);
     lay->addWidget(m_imageView);
     lay->addWidget(m_diffView);
-    lay->addWidget(m_lblStats);
     lay->addStretch();
     lay->addWidget(m_cmbBoxState, 0, Qt::AlignHCenter);
 
     m_lblTitle->setAlignment(Qt::AlignCenter);
-    m_lblStats->setAlignment(Qt::AlignCenter);
 
     m_imageView->setFixedSize(300, 300);
     m_diffView->setFixedSize(300, 300);
@@ -69,12 +66,6 @@ void BackendWidget::setDiffImage(const QImage &img)
 void BackendWidget::setDiffVisible(bool flag)
 {
     m_diffView->setVisible(flag);
-    m_lblStats->setVisible(flag);
-}
-
-void BackendWidget::setDiffStats(uint diff, float percent)
-{
-    m_lblStats->setText(QString::number(diff) + "/" + QString::number(percent, 'f', 2) + "%");
 }
 
 void BackendWidget::setAnimationEnabled(bool flag)

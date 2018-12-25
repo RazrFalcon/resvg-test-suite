@@ -33,8 +33,6 @@ struct DiffData
 struct DiffOutput
 {
     Backend type;
-    uint value;
-    float percent;
     QImage img;
 };
 
@@ -59,7 +57,6 @@ public:
 signals:
     void imageReady(Backend, QImage);
     void diffReady(Backend, QImage);
-    void diffStats(Backend, uint, float);
     void finished();
 
 private:

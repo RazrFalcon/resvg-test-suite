@@ -38,7 +38,6 @@ private slots:
     void on_cmbBoxFiles_currentIndexChanged(int idx);
     void onImageReady(const Backend type, const QImage &img);
     void onDiffReady(const Backend type, const QImage &img);
-    void onDiffStats(const Backend type, const uint value, const float percent);
     void onRenderFinished();
     void updatePassFlags();
     void on_btnSync_clicked();

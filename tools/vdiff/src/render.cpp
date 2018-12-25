@@ -345,8 +345,6 @@ DiffOutput Render::diffImage(const DiffData &data)
 
     Q_ASSERT(data.img1.format() == data.img2.format());
 
-    uint diffValue = 0;
-
     const int w = qMin(data.img1.width(), data.img2.width());
     const int h = qMin(data.img1.height(), data.img2.height());
 
@@ -370,7 +368,6 @@ DiffOutput Render::diffImage(const DiffData &data)
             QRgb c2 = *s2;
 
             if (colorDistance(c1, c2) > 5) {
-                diffValue++;
                 *s3 = qRgb(255, 0, 0);
             } else {
                 *s3 = qRgb(255, 255, 255);
@@ -382,9 +379,7 @@ DiffOutput Render::diffImage(const DiffData &data)
         }
     }
 
-    const float percent = (double)diffValue / (w * h) * 100.0;
-
-    return { data.type, diffValue, percent, diffImg };
+    return { data.type, diffImg };
 }
 
 void Render::onImageRendered(const int idx)
@@ -437,7 +432,6 @@ void Render::onDiffResult(const int idx)
 {
     const auto v = m_watcher2.resultAt(idx);
     emit diffReady(v.type, v.img);
-    emit diffStats(v.type, v.value, v.percent);
 }
 
 void Render::onDiffFinished()

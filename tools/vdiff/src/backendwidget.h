@@ -22,7 +22,6 @@ public:
     void setImage(const QImage &img);
     void setDiffImage(const QImage &img);
     void setDiffVisible(bool flag);
-    void setDiffStats(uint diff, float percent);
     void setAnimationEnabled(bool flag);
     void setViewSize(const QSize &size);
 
@@ -42,6 +41,5 @@ private:
     QLabel * const m_lblTitle;
     ImageView * const m_imageView;
     ImageView * const m_diffView;
-    QLabel * const m_lblStats;
     QComboBox * const m_cmbBoxState;
 };

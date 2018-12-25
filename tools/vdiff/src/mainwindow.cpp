@@ -31,7 +31,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(&m_render, &Render::imageReady, this, &MainWindow::onImageReady);
     connect(&m_render, &Render::diffReady, this, &MainWindow::onDiffReady);
-    connect(&m_render, &Render::diffStats, this, &MainWindow::onDiffStats);
     connect(&m_render, &Render::finished, this, &MainWindow::onRenderFinished);
 
     connect(m_autosaveTimer, &QTimer::timeout, this, &MainWindow::save);
@@ -260,12 +259,6 @@ void MainWindow::onDiffReady(const Backend type, const QImage &img)
 {
     const auto view = m_backendWidges.value(type);
     view->setDiffImage(img);
-}
-
-void MainWindow::onDiffStats(const Backend type, const uint value, const float percent)
-{
-    const auto view = m_backendWidges.value(type);
-    view->setDiffStats(value, percent);
 }
 
 void MainWindow::onRenderFinished()
