@@ -8,6 +8,7 @@
 #include <cmath>
 
 #include "process.h"
+#include "imagecache.h"
 
 #include "render.h"
 
@@ -51,23 +52,6 @@ void Render::render(const QString &path)
     renderImages();
 }
 
-QString Render::backendName(const Backend t)
-{
-    switch (t) {
-        case Backend::Reference :   return "Reference";
-        case Backend::Chrome :      return "Chrome";
-        case Backend::Firefox :     return "Firefox";
-        case Backend::ResvgCairo :  return "resvg (cairo)";
-        case Backend::ResvgQt :     return "resvg (Qt)";
-        case Backend::Batik :       return "Batik";
-        case Backend::Inkscape :    return "Inkscape";
-        case Backend::Librsvg :     return "librsvg";
-        case Backend::QtSvg :       return "QtSvg";
-    }
-
-    Q_UNREACHABLE();
-}
-
 QImage Render::renderReference(const RenderData &data)
 {
     const QFileInfo fi(data.imgPath);
@@ -103,6 +87,8 @@ QImage Render::renderViaChrome(const RenderData &data)
 
 QImage Render::renderViaFirefox(const RenderData &data)
 {
+
+
     int w = data.viewSize;
     int h = data.viewSize;
 
@@ -238,20 +224,34 @@ void Render::renderImages()
     list.append({ Backend::ResvgCairo, m_viewSize, m_imgPath, m_settings->resvgPath(), ts });
     list.append({ Backend::ResvgQt, m_viewSize, m_imgPath, m_settings->resvgPath(), ts });
 
+    auto renderCached = [&](const Backend backend, const QString &renderPath) {
+        if (ts != TestSuite::Custom) {
+            const auto cachedImage = m_imgCache.getImage(backend, m_imgPath);
+            if (!cachedImage.isNull()) {
+                m_imgs.insert(backend, cachedImage);
+                emit imageReady(backend, cachedImage);
+            } else {
+                list.append({ backend, m_viewSize, m_imgPath, renderPath, ts });
+            }
+        } else {
+            list.append({ backend, m_viewSize, m_imgPath, renderPath, ts });
+        }
+    };
+
     if (m_settings->useChrome) {
-        list.append({ Backend::Chrome, m_viewSize, m_imgPath, QString(), ts });
+        renderCached(Backend::Chrome, QString());
     }
 
     if (m_settings->useFirefox) {
-        list.append({ Backend::Firefox, m_viewSize, m_imgPath, m_settings->firefoxPath, ts });
+        renderCached(Backend::Firefox, m_settings->firefoxPath);
     }
 
     if (m_settings->useBatik) {
-        list.append({ Backend::Batik, m_viewSize, m_imgPath, m_settings->batikPath, ts });
+        renderCached(Backend::Batik, m_settings->batikPath);
     }
 
     if (m_settings->useInkscape) {
-        list.append({ Backend::Inkscape, m_viewSize, m_imgPath, m_settings->inkscapePath, ts });
+        renderCached(Backend::Inkscape, m_settings->inkscapePath);
     }
 
     if (m_settings->useLibrsvg) {
@@ -338,7 +338,7 @@ DiffOutput Render::diffImage(const DiffData &data)
         QString msg = QString("Images size mismatch: %1x%2 != %3x%4 Chrome vs %5")
             .arg(data.img1.width()).arg(data.img1.height())
             .arg(data.img2.width()).arg(data.img2.height())
-            .arg(backendName(data.type));
+            .arg(backendToString(data.type));
 
         qWarning() << msg;
     }
@@ -387,6 +387,14 @@ void Render::onImageRendered(const int idx)
     const auto res = m_watcher1.resultAt(idx);
     m_imgs.insert(res.type, res.img);
     emit imageReady(res.type, res.img);
+
+    switch (res.type) {
+        case Backend::Chrome :
+        case Backend::Firefox :
+        case Backend::Batik :
+        case Backend::Inkscape : m_imgCache.setImage(res.type, m_imgPath, res.img); break;
+        default : break;
+    }
 }
 
 void Render::onImagesRendered()
@@ -437,9 +445,4 @@ void Render::onDiffResult(const int idx)
 void Render::onDiffFinished()
 {
     emit finished();
-}
-
-QDebug operator<<(QDebug dbg, const Backend &t)
-{
-    return dbg << QString("ImageType(%1)").arg(Render::backendName(t));
 }

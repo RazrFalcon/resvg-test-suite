@@ -1,4 +1,4 @@
-QT      += core gui widgets concurrent
+QT      += core gui widgets concurrent sql
 
 TARGET   = vdiff
 TEMPLATE = app
@@ -15,7 +15,8 @@ SOURCES  += \
     src/tests.cpp \
     src/paths.cpp \
     src/settings.cpp \
-    src/backendwidget.cpp
+    src/backendwidget.cpp \
+    src/imagecache.cpp
 
 HEADERS  += \
     src/imageview.h \
@@ -23,11 +24,11 @@ HEADERS  += \
     src/process.h \
     src/render.h \
     src/settingsdialog.h \
-    src/either.h \
     src/tests.h \
     src/paths.h \
     src/settings.h \
-    src/backendwidget.h
+    src/backendwidget.h \
+    src/imagecache.h
 
 FORMS    += \
     src/mainwindow.ui \

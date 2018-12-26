@@ -102,7 +102,7 @@ void MainWindow::prepareBackends()
 
     for (const Backend backend : backends) {
         auto w = new BackendWidget(backend);
-        w->setTitle(Render::backendName(backend));
+        w->setTitle(backendToString(backend));
         w->setViewSize(QSize(m_settings.viewSize, m_settings.viewSize));
         connect(w, &BackendWidget::testStateChanged, this, &MainWindow::updatePassFlags);
         m_backendWidges.insert(backend, w);

@@ -4,8 +4,7 @@
 #include <QFutureWatcher>
 #include <QImage>
 
-#include "tests.h"
-#include "either.h"
+#include "imagecache.h"
 #include "settings.h"
 
 struct RenderData
@@ -52,8 +51,6 @@ public:
 
     void setSettings(Settings *settings) { m_settings = settings; }
 
-    static QString backendName(const Backend t);
-
 signals:
     void imageReady(Backend, QImage);
     void diffReady(Backend, QImage);
@@ -82,11 +79,10 @@ private slots:
 
 private:
     Settings *m_settings = nullptr;
+    ImageCache m_imgCache;
     int m_viewSize = 300;
     QFutureWatcher<RenderResult> m_watcher1;
     QFutureWatcher<DiffOutput> m_watcher2;
     QString m_imgPath;
     QHash<Backend, QImage> m_imgs;
 };
-
-QDebug operator<<(QDebug dbg, const Backend &t);

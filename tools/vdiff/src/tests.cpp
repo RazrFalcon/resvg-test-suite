@@ -212,3 +212,25 @@ void Tests::resync(const Settings &settings)
 
     newTests.save(settings.resultsPath());
 }
+
+QString backendToString(const Backend &t)
+{
+    switch (t) {
+        case Backend::Reference :   return "Reference";
+        case Backend::Chrome :      return "Chrome";
+        case Backend::Firefox :     return "Firefox";
+        case Backend::ResvgCairo :  return "resvg (cairo)";
+        case Backend::ResvgQt :     return "resvg (Qt)";
+        case Backend::Batik :       return "Batik";
+        case Backend::Inkscape :    return "Inkscape";
+        case Backend::Librsvg :     return "librsvg";
+        case Backend::QtSvg :       return "QtSvg";
+    }
+
+    Q_UNREACHABLE();
+}
+
+QDebug operator<<(QDebug dbg, const Backend &t)
+{
+    return dbg << QString("Backend(%1)").arg(backendToString(t));
+}
