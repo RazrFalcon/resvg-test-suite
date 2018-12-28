@@ -42,11 +42,11 @@ which is specifically designed for the https://github.com/RazrFalcon/resvg[resvg
 
 We are testing/comparing _resvg_ with Chrome, Inkscape, librsvg and QtSvg for a reason.
 
-* Chrome has the best SVG support so far.
+* Chrome and Firefox have the best SVG support.
 * Batik is the most popular Java library for SVG rendering.
-* Inkscape is an obvious choice on Linux.
-* librsvg is the main _resvg_ rival. Used in GNOME, XFCE for SVG rendering.
-* QtSvg is used by all the Qt applications and KDE.
+* Inkscape is a popular choice on Linux.
+* librsvg is the main _resvg_ rival, used in GNOME and XFCE for SVG rendering.
+* QtSvg is used by all Qt applications and KDE.
 
 === Tests summary
 
