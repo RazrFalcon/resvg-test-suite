@@ -169,6 +169,8 @@ a-stroke-012.svg
 a-stroke-013.svg
 a-stroke-014.svg
 a-stroke-015.svg
+a-stroke-016.svg
+a-stroke-017.svg
 a-stroke-dasharray-001.svg
 a-stroke-dasharray-002.svg
 a-stroke-dasharray-003.svg
@@ -661,7 +663,6 @@ e-path-040.svg
 e-path-041.svg
 e-path-042.svg
 e-path-043.svg
-e-path-044.svg
 e-pattern-001.svg
 e-pattern-002.svg
 e-pattern-003.svg
@@ -790,6 +791,7 @@ e-stop-024.svg
 e-stop-025.svg
 e-stop-026.svg
 e-stop-027.svg
+e-stop-028.svg
 e-style-001.svg
 e-style-002.svg
 e-style-003.svg

@@ -1,5 +1,5 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <title>Control points validation with stroke</title>
+    <title>Control points clamping (1)</title>
 
     <g id="g1" fill="none" stroke="green" stroke-linejoin="bevel">
         <path id="path1" d="M 175 15 C 175 30 175.1 175 175 175 H 15" stroke-width="20"/>
