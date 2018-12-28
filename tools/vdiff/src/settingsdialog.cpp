@@ -62,8 +62,14 @@ void SettingsDialog::loadSettings()
 
 void SettingsDialog::prepareTestsPathWidgets()
 {
-    ui->lineEditTestsPath->setVisible(ui->rBtnSuiteCustom->isChecked());
-    ui->btnSelectTest->setVisible(ui->rBtnSuiteCustom->isChecked());
+    const auto isCustom = ui->rBtnSuiteCustom->isChecked();
+    ui->lineEditTestsPath->setVisible(isCustom);
+    ui->btnSelectTest->setVisible(isCustom);
+    ui->chBoxUseChrome->setEnabled(!isCustom);
+
+    if (isCustom) {
+        ui->chBoxUseChrome->setChecked(true);
+    }
 }
 
 void SettingsDialog::on_buttonBox_accepted()
