@@ -406,6 +406,7 @@ e-feTile-006.svg
 e-filter-001.svg
 e-filter-002.svg
 e-filter-003.svg
+e-filter-057.svg
 e-filter-004.svg
 e-filter-005.svg
 e-filter-006.svg
@@ -511,6 +512,7 @@ e-linearGradient-005.svg
 e-linearGradient-006.svg
 e-linearGradient-029.svg
 e-linearGradient-030.svg
+e-linearGradient-031.svg
 e-linearGradient-007.svg
 e-linearGradient-008.svg
 e-linearGradient-009.svg
@@ -671,6 +673,7 @@ e-pattern-025.svg
 e-pattern-026.svg
 e-pattern-008.svg
 e-pattern-009.svg
+e-pattern-027.svg
 e-pattern-010.svg
 e-pattern-011.svg
 e-pattern-012.svg
@@ -704,6 +707,7 @@ e-radialGradient-005.svg
 e-radialGradient-006.svg
 e-radialGradient-035.svg
 e-radialGradient-034.svg
+e-radialGradient-039.svg
 e-radialGradient-007.svg
 e-radialGradient-008.svg
 e-radialGradient-009.svg
