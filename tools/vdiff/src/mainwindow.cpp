@@ -130,7 +130,7 @@ void MainWindow::prepareBackends()
         ui->scrollAreaWidgetContents->adjustSize();
 
         const auto w = (m_settings.viewSize + ui->layBackends->spacing())
-                       * qMin(6, m_backendWidges.size());
+                       * qMin(6.5, (double)m_backendWidges.size());
         ui->scrollArea->setMinimumWidth(w);
         ui->scrollArea->setMinimumHeight(  ui->scrollAreaWidgetContents->height()
                                          + ui->scrollArea->horizontalScrollBar()->height() + 5);

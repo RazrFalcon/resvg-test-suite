@@ -792,6 +792,8 @@ e-stop-025.svg
 e-stop-026.svg
 e-stop-027.svg
 e-stop-028.svg
+e-stop-029.svg
+e-stop-030.svg
 e-style-001.svg
 e-style-002.svg
 e-style-003.svg
