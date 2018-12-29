@@ -171,6 +171,8 @@ a-stroke-014.svg
 a-stroke-015.svg
 a-stroke-016.svg
 a-stroke-017.svg
+a-stroke-018.svg
+a-stroke-019.svg
 a-stroke-dasharray-001.svg
 a-stroke-dasharray-002.svg
 a-stroke-dasharray-003.svg
