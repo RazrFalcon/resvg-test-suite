@@ -1,11 +1,12 @@
-#include <QPainter>
 #include <QDir>
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QMessageBox>
+#include <QPainter>
 #include <QScreen>
-#include <QTimer>
+#include <QScrollBar>
 #include <QShortcut>
+#include <QTimer>
 
 #include "backendwidget.h"
 #include "paths.h"
@@ -125,7 +126,20 @@ void MainWindow::prepareBackends()
 
     ui->btnSync->setVisible(m_settings.testSuite == TestSuite::Own);
 
-    QTimer::singleShot(50, this, [this](){ adjustSize(); });
+    QTimer::singleShot(50, this, [this](){
+        ui->scrollAreaWidgetContents->adjustSize();
+
+        const auto w = (m_settings.viewSize + ui->layBackends->spacing())
+                       * qMin(6, m_backendWidges.size());
+        ui->scrollArea->setMinimumWidth(w);
+        ui->scrollArea->setMinimumHeight(  ui->scrollAreaWidgetContents->height()
+                                         + ui->scrollArea->horizontalScrollBar()->height() + 5);
+
+        adjustSize();
+        QTimer::singleShot(50, this, [this](){
+            adjustSize();
+        });
+    });
 }
 
 void MainWindow::setGuiEnabled(bool flag)
@@ -328,7 +342,7 @@ void MainWindow::on_btnPrint_clicked()
     };
 
     const int backend = m_backendWidges.size() - 1; // -Reference
-    const int scale = qApp->screens().first()->devicePixelRatio();
+    const int scale = (int)qApp->screens().first()->devicePixelRatio();
     const int titleHeight = 20;
     const int spacing = 5;
     const int fullWidth = m_settings.viewSize * backend + spacing * (backend + 1);

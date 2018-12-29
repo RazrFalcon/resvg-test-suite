@@ -19,8 +19,8 @@ BackendWidget::BackendWidget(const Backend backend, QWidget *parent)
     lay->addWidget(m_lblTitle);
     lay->addWidget(m_imageView);
     lay->addWidget(m_diffView);
-    lay->addStretch();
     lay->addWidget(m_cmbBoxState, 0, Qt::AlignHCenter);
+    lay->addStretch();
 
     m_lblTitle->setAlignment(Qt::AlignCenter);
 
