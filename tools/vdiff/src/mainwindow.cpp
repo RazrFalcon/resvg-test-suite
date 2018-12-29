@@ -155,11 +155,16 @@ void MainWindow::setGuiEnabled(bool flag)
 
 void MainWindow::onStart()
 {
-    loadImageList();
+    loadImageList(m_settings.testSuite);
 }
 
-void MainWindow::loadImageList()
+void MainWindow::loadImageList(const TestSuite prevSuite)
 {
+    auto prevIdx = ui->cmbBoxFiles->currentIndex();
+    if (prevIdx == -1) {
+        prevIdx = 0;
+    }
+
     ui->cmbBoxFiles->blockSignals(true);
     ui->cmbBoxFiles->clear();
 
@@ -187,7 +192,12 @@ void MainWindow::loadImageList()
     }
 
     if (ui->cmbBoxFiles->count() != 0) {
-        loadTest(0);
+        if (m_settings.testSuite == prevSuite && prevIdx < ui->cmbBoxFiles->count()) {
+            loadTest(prevIdx);
+            ui->cmbBoxFiles->setCurrentIndex(prevIdx);
+        } else {
+            loadTest(0);
+        }
     }
 
     ui->cmbBoxFiles->blockSignals(false);
@@ -299,7 +309,7 @@ void MainWindow::on_btnSync_clicked()
 
     try {
         Tests::resync(m_settings);
-        loadImageList();
+        loadImageList(m_settings.testSuite);
 
         QMessageBox::information(this, "Info", "Tests was successfully synced.");
     } catch (const QString &msg) {
@@ -312,6 +322,8 @@ void MainWindow::on_btnSettings_clicked()
     // Save in case of any changes.
     save();
 
+    const auto prevSuite = m_settings.testSuite;
+
     SettingsDialog diag(&m_settings, this);
     if (diag.exec()) {
         m_autosaveTimer->stop();
@@ -323,7 +335,7 @@ void MainWindow::on_btnSettings_clicked()
         }
 
         prepareBackends();
-        loadImageList();
+        loadImageList(prevSuite);
         m_autosaveTimer->start();
     }
 }

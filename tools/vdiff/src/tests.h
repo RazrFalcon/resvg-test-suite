@@ -12,6 +12,8 @@ enum class TestSuite
     Custom,
 };
 
+QDebug operator<<(QDebug dbg, const TestSuite &t);
+
 enum class Backend
 {
     Reference,

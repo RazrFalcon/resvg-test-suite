@@ -26,7 +26,7 @@ public:
 private:
     void prepareBackends();
     void setGuiEnabled(bool flag);
-    void loadImageList();
+    void loadImageList(const TestSuite prevSuite);
     void resetImages();
     void loadTest(const int idx);
     void setAnimationEnabled(bool flag);

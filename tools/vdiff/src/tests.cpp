@@ -213,6 +213,22 @@ void Tests::resync(const Settings &settings)
     newTests.save(settings.resultsPath());
 }
 
+static QString testSuiteToString(const TestSuite &t)
+{
+    switch (t) {
+        case TestSuite::Own :       return "Own";
+        case TestSuite::Official :  return "Official";
+        case TestSuite::Custom :    return "Custom";
+    }
+
+    Q_UNREACHABLE();
+}
+
+QDebug operator<<(QDebug dbg, const TestSuite &t)
+{
+    return dbg << QString("TestSuite(%1)").arg(testSuiteToString(t));
+}
+
 QString backendToString(const Backend &t)
 {
     switch (t) {
