@@ -295,6 +295,8 @@ e-clipPath-001.svg
 e-clipPath-002.svg
 e-clipPath-003.svg
 e-clipPath-004.svg
+e-clipPath-039.svg
+e-clipPath-040.svg
 e-clipPath-005.svg
 e-clipPath-006.svg
 e-clipPath-007.svg
