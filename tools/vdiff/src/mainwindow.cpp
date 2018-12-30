@@ -193,8 +193,8 @@ void MainWindow::loadImageList(const TestSuite prevSuite)
 
     if (ui->cmbBoxFiles->count() != 0) {
         if (m_settings.testSuite == prevSuite && prevIdx < ui->cmbBoxFiles->count()) {
-            loadTest(prevIdx);
             ui->cmbBoxFiles->setCurrentIndex(prevIdx);
+            loadTest(prevIdx);
         } else {
             loadTest(0);
         }
