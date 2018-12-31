@@ -149,6 +149,7 @@ a-opacity-003.svg
 a-opacity-004.svg
 a-opacity-005.svg
 a-opacity-006.svg
+a-opacity-007.svg
 a-overflow-001.svg
 a-overflow-002.svg
 a-overflow-003.svg
@@ -331,6 +332,8 @@ e-clipPath-030.svg
 e-clipPath-035.svg
 e-clipPath-037.svg
 e-clipPath-038.svg
+e-clipPath-041.svg
+e-clipPath-042.svg
 e-defs-001.svg
 e-defs-002.svg
 e-defs-003.svg
@@ -468,6 +471,7 @@ e-filter-053.svg
 e-filter-054.svg
 e-filter-058.svg
 e-filter-059.svg
+e-filter-060.svg
 e-g-001.svg
 e-image-001.svg
 e-image-002.svg

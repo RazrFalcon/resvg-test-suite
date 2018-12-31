@@ -150,6 +150,7 @@ a-opacity-003.svg,1,1,1,1,1,1,1
 a-opacity-004.svg,1,1,1,1,1,1,1
 a-opacity-005.svg,1,1,1,1,2,1,1
 a-opacity-006.svg,1,1,1,1,2,1,1
+a-opacity-007.svg,1,1,1,1,1,1,1
 a-overflow-001.svg,1,1,1,1,1,1,2
 a-overflow-002.svg,1,1,1,1,2,1,2
 a-overflow-003.svg,1,2,1,1,1,1,2
@@ -332,6 +333,8 @@ e-clipPath-030.svg,1,2,1,3,1,1,2
 e-clipPath-035.svg,1,2,1,3,1,1,2
 e-clipPath-037.svg,1,2,1,3,2,2,2
 e-clipPath-038.svg,1,1,1,1,1,2,2
+e-clipPath-041.svg,1,2,1,2,1,1,2
+e-clipPath-042.svg,0,0,0,0,0,0,2
 e-defs-001.svg,1,1,1,1,1,1,1
 e-defs-002.svg,1,1,1,1,1,1,1
 e-defs-003.svg,1,1,1,1,1,1,1
@@ -469,6 +472,7 @@ e-filter-053.svg,1,1,1,3,1,1,2
 e-filter-054.svg,1,1,1,3,1,1,2
 e-filter-058.svg,1,1,1,3,1,2,2
 e-filter-059.svg,1,1,1,1,1,1,2
+e-filter-060.svg,0,0,0,0,0,0,2
 e-g-001.svg,1,1,1,1,1,1,1
 e-image-001.svg,1,1,1,1,1,2,2
 e-image-002.svg,1,1,1,1,1,2,2
