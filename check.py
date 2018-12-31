@@ -4,7 +4,14 @@ import re
 import os
 import subprocess
 import csv
-import xml.etree.ElementTree as ET
+from lxml import etree
+
+
+def split_qname(name):
+    if name[0] == '{':
+        return name[1:].split('}')
+    else:
+        return [None, name]
 
 
 def check_order():
@@ -85,7 +92,7 @@ def check_title():
         tag_name = file[2:]
         tag_name = re.sub('-[0-9]+\.svg', '', tag_name)
 
-        tree = ET.parse('svg/' + file)
+        tree = etree.parse('svg/' + file)
         title = list(tree.getroot())[0].text
 
         if len(title) > 60:
@@ -132,12 +139,15 @@ def check_node_ids():
         files.remove(file)
 
     for file in files:
-        tree = ET.parse('svg/' + file)
+        tree = etree.parse('svg/' + file)
         ids = set()
 
         for node in tree.getroot().iter():
+            if node.tag is etree.Comment:
+                continue
+
             # extract tag name without namespace
-            _, tag = node.tag[1:].split('}')  # WTF python?!
+            _, tag = split_qname(node.tag)
 
             if tag not in ignore_tags:
                 node_id = node.get('id')
@@ -177,6 +187,33 @@ def check_line_width():
                     raise ValueError('Line {} in {} is longer than 100 characters'.format(i, file))
 
 
+def check_for_unused_xlink_ns():
+    # In case when 'xlink:href' is present, but namespace is not set
+    # the 'lxml' will raise an error.
+
+    allow = [
+        'e-svg-003.svg',
+        'e-svg-032.svg',
+    ]
+
+    files = sorted(os.listdir('svg/'))
+
+    for file in allow:
+        files.remove(file)
+
+    for file in files:
+        tree = etree.parse('svg/' + file)
+
+        has_href = False
+        for node in tree.getroot().iter():
+            if '{http://www.w3.org/1999/xlink}href' in node.attrib:
+                has_href = True
+                break
+
+        if not has_href and 'xlink' in tree.getroot().nsmap:
+            raise ValueError('{} has an unneeded xlink namespace'.format(file))
+
+
 def main():
     check_order()
     check_results()
@@ -184,11 +221,15 @@ def main():
     check_node_ids()
     check_untracked_files()
     check_line_width()
+    check_for_unused_xlink_ns()
 
 
 if __name__ == '__main__':
     try:
         main()
+    except etree.ParseError as e:
+        print('Error: {}.'.format(e))
+        exit(1)
     except ValueError as e:
         print('Error: {}.'.format(e))
         exit(1)
