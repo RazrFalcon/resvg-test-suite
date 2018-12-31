@@ -108,6 +108,7 @@ def check_node_ids():
     ignore_files = [
         'e-svg-031.svg',  # because of ENTITY
         'e-svg-032.svg',  # because of ENTITY
+        'e-use-024.svg',  # intended duplicate
     ]
 
     ignore_tags = [

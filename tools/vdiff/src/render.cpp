@@ -87,8 +87,6 @@ QImage Render::renderViaChrome(const RenderData &data)
 
 QImage Render::renderViaFirefox(const RenderData &data)
 {
-
-
     int w = data.viewSize;
     int h = data.viewSize;
 
