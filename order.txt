@@ -472,6 +472,8 @@ e-filter-054.svg
 e-filter-058.svg
 e-filter-059.svg
 e-filter-060.svg
+e-filter-061.svg
+e-filter-062.svg
 e-g-001.svg
 e-image-001.svg
 e-image-002.svg
