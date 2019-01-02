@@ -386,12 +386,14 @@ void Render::onImageRendered(const int idx)
     m_imgs.insert(res.type, res.img);
     emit imageReady(res.type, res.img);
 
-    switch (res.type) {
-        case Backend::Chrome :
-        case Backend::Firefox :
-        case Backend::Batik :
-        case Backend::Inkscape : m_imgCache.setImage(res.type, m_imgPath, res.img); break;
-        default : break;
+    if (m_settings->testSuite != TestSuite::Custom) {
+        switch (res.type) {
+            case Backend::Chrome :
+            case Backend::Firefox :
+            case Backend::Batik :
+            case Backend::Inkscape : m_imgCache.setImage(res.type, m_imgPath, res.img); break;
+            default : break;
+        }
     }
 }
 
