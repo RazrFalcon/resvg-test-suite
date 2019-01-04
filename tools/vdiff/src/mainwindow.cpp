@@ -291,6 +291,11 @@ void MainWindow::onRenderFinished()
     ui->cmbBoxFiles->setFocus();
 
     setAnimationEnabled(false);
+
+//    const auto idx = ui->cmbBoxFiles->currentIndex() + 1;
+//    if (idx < ui->cmbBoxFiles->count()) {
+//        ui->cmbBoxFiles->setCurrentIndex(idx);
+//    }
 }
 
 void MainWindow::on_btnSync_clicked()

@@ -3,11 +3,11 @@
     "items": [
         {
             "value": 200,
-            "name": "resvg 0.4.0 (cairo)"
+            "name": "resvg 0.5.0 (cairo)"
         },
         {
             "value": 210,
-            "name": "resvg 0.4.0 (qt)"
+            "name": "resvg 0.5.0 (qt)"
         },
         {
             "value": 205,
@@ -15,7 +15,7 @@
         },
         {
             "value": 155,
-            "name": "librsvg 2.45.1"
+            "name": "librsvg 2.45.2"
         }
     ],
     "hor_axis": {
