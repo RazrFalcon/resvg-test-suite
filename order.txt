@@ -16,6 +16,9 @@ a-baseline-shift-015.svg
 a-baseline-shift-016.svg
 a-baseline-shift-017.svg
 a-baseline-shift-018.svg
+a-baseline-shift-019.svg
+a-baseline-shift-020.svg
+a-baseline-shift-021.svg
 a-clip-path-001.svg
 a-clip-rule-001.svg
 a-color-001.svg

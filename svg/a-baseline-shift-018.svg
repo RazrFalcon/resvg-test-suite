@@ -5,6 +5,7 @@
     <path id="crosshair" d="M 20 100 L 180 100 M 100 20 L 100 180"
           stroke="gray" stroke-width="0.5"/>
 
+    <!-- should be hovered -->
     <text id="text1" x="40" y="100" fill="red">
         Text
     </text>
