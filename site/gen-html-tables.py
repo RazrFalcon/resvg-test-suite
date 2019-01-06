@@ -239,8 +239,6 @@ def global_flags(rows, type, name):
 
 def get_item_row(rows, out_of_scope_list, type, name):
     if name in out_of_scope_list:
-        flags = [OUT_OF_SCOPE, OUT_OF_SCOPE, OUT_OF_SCOPE, OUT_OF_SCOPE,
-                 OUT_OF_SCOPE, OUT_OF_SCOPE, OUT_OF_SCOPE]
         total = 0
     else:
         flags, total = global_flags(rows, type, name)
@@ -260,13 +258,10 @@ def get_item_row(rows, out_of_scope_list, type, name):
             v = (float(count) / float(total)) * 100.0
             html += '<td class="td-align">{:.0f}%</td>\n'.format(v)
     else:
-        html += ('<td></td>\n'
-                 '<td></td>\n'
-                 '<td></td>\n'
-                 '<td></td>\n'
-                 '<td></td>\n'
-                 '<td></td>\n'
-                 '<td></td>\n')
+        if name in out_of_scope_list:
+            html += '<td colspan="7">Not planned</td>\n'
+        else:
+            html += '<td colspan="7">Not supported by <b>resvg<b></td>\n'
 
     html += '</tr>\n'
     return html
