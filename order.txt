@@ -898,6 +898,7 @@ e-text-032.svg
 e-text-033.svg
 e-text-034.svg
 e-text-036.svg
+e-text-038.svg
 e-text-015.svg
 e-text-016.svg
 e-text-017.svg
