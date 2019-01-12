@@ -142,6 +142,7 @@ a-letter-spacing-003.svg
 a-letter-spacing-004.svg
 a-letter-spacing-005.svg
 a-letter-spacing-006.svg
+a-letter-spacing-007.svg
 a-marker-end-001.svg
 a-marker-mid-001.svg
 a-marker-start-001.svg
