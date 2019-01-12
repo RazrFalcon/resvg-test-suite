@@ -914,6 +914,7 @@ e-text-028.svg
 e-text-029.svg
 e-text-031.svg
 e-text-035.svg
+e-text-037.svg
 e-tref-001.svg
 e-tref-002.svg
 e-tref-003.svg
@@ -940,6 +941,10 @@ e-tspan-013.svg
 e-tspan-016.svg
 e-tspan-017.svg
 e-tspan-018.svg
+e-tspan-019.svg
+e-tspan-020.svg
+e-tspan-021.svg
+e-tspan-022.svg
 e-use-001.svg
 e-use-002.svg
 e-use-003.svg
