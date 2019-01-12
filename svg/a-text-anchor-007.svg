@@ -2,7 +2,9 @@
      font-family="Arial" font-size="22">
     <title>Inheritance (1)</title>
 
-    <line id="line1" stroke="green" x1="100" y1="60" x2="100" y2="140"/>
+    <path id="crosshair" d="M 20 100 L 180 100 M 100 20 L 100 180"
+          stroke="gray" stroke-width="0.5"/>
+
     <text id="text1" x="100" y="100" text-anchor="middle">
         Some <tspan id="tspan1" fill="green">styled</tspan> text
     </text>

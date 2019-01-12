@@ -2,7 +2,9 @@
      font-family="Arial" font-size="32">
     <title>On `tspan` with arabic (UB)</title>
 
-    <line id="line1" stroke="green" x1="100" y1="20" x2="100" y2="180"/>
+    <path id="crosshair" d="M 20 100 L 180 100 M 100 20 L 100 180"
+          stroke="gray" stroke-width="0.5"/>
+
     <text id="text1" x="100" y="60" text-anchor="end">
         مفتاح<tspan id="tspan2" x="100" y="100" text-anchor="middle">معايير</tspan>
         <tspan id="tspan1" x="100" y="140" text-anchor="start">الويب</tspan>
