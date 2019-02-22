@@ -963,6 +963,7 @@ e-use-009.svg
 e-use-010.svg
 e-use-011.svg
 e-use-012.svg
+e-use-027.svg
 e-use-013.svg
 e-use-025.svg
 e-use-026.svg
