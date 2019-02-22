@@ -2,6 +2,11 @@
 
 import subprocess
 import base64
+import sys
+
+MIN_PYTHON = (3, 6)
+if sys.version_info < MIN_PYTHON:
+    sys.exit("Python %s.%s or later is required.\n" % MIN_PYTHON)
 
 subprocess.check_call(['python3', 'gen-html-tables.py'])
 

@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-set -x
+set -e
 
 cd site
 
-./gen-page.py
+python3.6 gen-page.py
 asciidoctor -o index.html index.adoc
 
 cp index.html ..
