@@ -9,7 +9,6 @@ asciidoctor -o index.html index.adoc
 
 cp index.html ..
 cp svg-support-table.html ..
-cp fontello-embedded.css ..
 cp -a images ..
 cd ..
 rm -rf site
