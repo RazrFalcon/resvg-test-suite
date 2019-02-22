@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import subprocess
+import base64
 
 subprocess.check_call(['python3', 'gen-html-tables.py'])
 
@@ -15,6 +16,12 @@ with open('layout.html', 'r') as f:
 
     with open('svg-support-table-raw.html', 'r') as f2:
         layout = layout.replace('{{page.data}}', f2.read())
+
+    with open('favicon.ico', 'rb') as f2:
+        layout = layout.replace('{{page.favicon}}', base64.b64encode(f2.read()).hex())
+
+    with open('images/chart.svg', 'r') as f2:
+        layout = layout.replace('<img src="images/chart.svg" alt="chart">', f2.read())
 
     with open('svg-support-table.html', 'w') as f2:
         f2.write(layout)
