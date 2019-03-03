@@ -587,6 +587,7 @@ e-marker-022.svg
 e-marker-023.svg
 e-marker-024.svg
 e-marker-025.svg
+e-marker-057.svg
 e-marker-026.svg
 e-marker-027.svg
 e-marker-028.svg
