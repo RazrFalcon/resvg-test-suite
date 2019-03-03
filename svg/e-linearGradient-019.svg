@@ -1,6 +1,6 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Recursive `xlink:href`</title>
+    <title>Recursive `xlink:href` (1)</title>
 
     <linearGradient id="lg1" xlink:href="#lg2">
         <stop offset="0" stop-color="white"/>
