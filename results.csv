@@ -145,6 +145,9 @@ a-letter-spacing-004.svg,1,2,1,1,1,1,2
 a-letter-spacing-005.svg,2,2,1,1,2,1,2
 a-letter-spacing-006.svg,1,2,1,1,1,1,2
 a-letter-spacing-007.svg,2,2,2,2,2,2,2
+a-letter-spacing-008.svg,1,2,2,1,1,2,2
+a-letter-spacing-009.svg,2,2,2,2,2,2,2
+a-letter-spacing-010.svg,0,0,0,0,0,0,0
 a-marker-end-001.svg,1,1,1,1,1,1,2
 a-marker-mid-001.svg,1,1,1,1,1,1,2
 a-marker-start-001.svg,1,1,1,1,1,1,2
@@ -245,10 +248,13 @@ a-text-anchor-002.svg,1,1,1,1,1,1,1
 a-text-anchor-003.svg,1,1,1,1,1,1,1
 a-text-anchor-004.svg,1,1,1,1,1,1,1
 a-text-anchor-005.svg,1,1,1,1,2,1,2
-a-text-anchor-006.svg,0,0,0,0,0,0,0
+a-text-anchor-006.svg,2,2,1,2,2,1,2
 a-text-anchor-007.svg,1,1,1,1,1,1,1
 a-text-anchor-008.svg,1,1,2,1,2,2,2
 a-text-anchor-009.svg,2,1,2,2,1,2,2
+a-text-anchor-010.svg,2,1,2,1,2,2,2
+a-text-anchor-011.svg,1,1,1,1,1,1,1
+a-text-anchor-012.svg,1,1,2,1,1,2,2
 a-text-decoration-001.svg,1,1,1,1,1,1,2
 a-text-decoration-002.svg,1,1,1,1,1,2,2
 a-text-decoration-003.svg,1,1,1,1,1,2,2
@@ -258,6 +264,11 @@ a-text-decoration-006.svg,1,2,1,2,2,2,2
 a-text-decoration-007.svg,1,1,1,1,1,2,2
 a-text-decoration-008.svg,1,2,1,1,1,2,2
 a-text-decoration-009.svg,1,1,1,2,1,2,2
+a-text-decoration-010.svg,1,1,1,2,1,2,2
+a-text-decoration-011.svg,1,1,2,2,1,2,2
+a-text-decoration-012.svg,1,1,1,2,2,2,2
+a-text-decoration-013.svg,1,1,2,2,2,2,2
+a-text-decoration-014.svg,1,2,1,2,2,2,2
 a-transform-001.svg,1,1,1,1,1,1,1
 a-transform-002.svg,1,1,1,1,1,1,1
 a-transform-003.svg,1,1,1,1,1,1,1
@@ -289,6 +300,7 @@ a-word-spacing-003.svg,1,2,2,1,1,2,2
 a-word-spacing-004.svg,1,2,2,1,1,2,2
 a-word-spacing-005.svg,2,2,2,1,2,2,2
 a-word-spacing-006.svg,1,2,2,1,1,2,2
+a-word-spacing-007.svg,0,0,0,0,0,0,0
 e-a-001.svg,1,1,1,1,1,1,1
 e-a-002.svg,1,1,1,1,1,1,1
 e-a-003.svg,1,1,1,1,1,2,1
@@ -904,7 +916,6 @@ e-text-011.svg,1,1,1,1,1,2,2
 e-text-012.svg,1,1,1,1,1,2,2
 e-text-013.svg,1,1,1,2,1,2,2
 e-text-014.svg,1,1,1,1,1,2,2
-e-text-032.svg,1,1,1,2,1,2,2
 e-text-033.svg,0,0,0,0,0,0,0
 e-text-034.svg,2,1,1,2,2,2,2
 e-text-036.svg,1,2,1,2,2,2,2
@@ -912,6 +923,7 @@ e-text-038.svg,2,1,1,3,2,2,2
 e-text-015.svg,1,1,1,1,1,1,2
 e-text-016.svg,1,1,1,1,1,1,2
 e-text-017.svg,1,1,1,1,1,1,2
+e-text-039.svg,1,1,1,1,1,1,1
 e-text-018.svg,1,1,1,1,1,1,1
 e-text-019.svg,1,1,1,1,1,1,1
 e-text-020.svg,1,1,1,1,1,1,1
@@ -938,6 +950,7 @@ e-tspan-001.svg,1,1,1,1,1,1,1
 e-tspan-002.svg,1,1,1,1,1,1,2
 e-tspan-014.svg,1,1,1,1,1,1,2
 e-tspan-015.svg,1,1,1,1,1,1,2
+e-tspan-027.svg,1,1,2,1,1,2,2
 e-tspan-003.svg,1,1,1,1,1,1,1
 e-tspan-004.svg,1,1,1,1,2,1,1
 e-tspan-005.svg,1,1,1,1,1,1,1
@@ -956,6 +969,11 @@ e-tspan-019.svg,1,1,1,1,1,1,1
 e-tspan-020.svg,2,1,1,1,1,1,1
 e-tspan-021.svg,2,1,1,1,1,1,1
 e-tspan-022.svg,2,1,1,1,2,1,1
+e-tspan-023.svg,2,1,2,2,2,2,2
+e-tspan-024.svg,2,2,2,2,2,2,2
+e-tspan-025.svg,1,1,2,1,1,2,2
+e-tspan-026.svg,2,1,2,1,2,2,2
+e-tspan-028.svg,1,1,1,1,1,1,2
 e-use-001.svg,1,1,1,1,1,1,1
 e-use-002.svg,1,1,1,1,1,1,1
 e-use-003.svg,1,1,1,1,1,1,1

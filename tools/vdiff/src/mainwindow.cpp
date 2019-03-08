@@ -358,11 +358,15 @@ void MainWindow::on_btnPrint_clicked()
         Backend::QtSvg,
     };
 
-    const int backend = m_backendWidges.size() - 1; // -Reference
+    int backends = m_backendWidges.size();
+    if (m_settings.testSuite != TestSuite::Custom) {
+        backends -= 1; // -Reference
+    }
+
     const int scale = (int)qApp->screens().first()->devicePixelRatio();
     const int titleHeight = 20;
     const int spacing = 5;
-    const int fullWidth = m_settings.viewSize * backend + spacing * (backend + 1);
+    const int fullWidth = m_settings.viewSize * backends + spacing * (backends + 1);
     const int fullHeight = titleHeight + m_settings.viewSize + spacing * 2;
 
     QImage image(fullWidth * scale, fullHeight * scale, QImage::Format_ARGB32);
@@ -392,8 +396,13 @@ void MainWindow::on_btnPrint_clicked()
 
     p.end();
 
+    const auto idx = ui->cmbBoxFiles->currentIndex();
+    const auto &item = m_tests.at(idx);
+    const QString fileName = QFileInfo(item.path).completeBaseName() + ".png";
+
     const auto path = QFileDialog::getSaveFileName(this, tr("Save As"),
-                                                   QDir::homePath(), tr("Images (*.png)"));
+                                                   QDir::homePath() + "/" + fileName,
+                                                   tr("Images (*.png)"));
     if (!path.isEmpty()) {
         image.save(path);
     }

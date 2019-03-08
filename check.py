@@ -100,7 +100,7 @@ def check_title():
 
         if title in titles:
             if titles[title][0] == tag_name:
-                raise ValueError('{} and {} has the same title'.format(titles[title][1], file))
+                raise ValueError('{} and {} have the same title'.format(titles[title][1], file))
 
         titles[title] = (tag_name, file)
 

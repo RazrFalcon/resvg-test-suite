@@ -144,6 +144,9 @@ a-letter-spacing-004.svg
 a-letter-spacing-005.svg
 a-letter-spacing-006.svg
 a-letter-spacing-007.svg
+a-letter-spacing-008.svg
+a-letter-spacing-009.svg
+a-letter-spacing-010.svg
 a-marker-end-001.svg
 a-marker-mid-001.svg
 a-marker-start-001.svg
@@ -248,6 +251,9 @@ a-text-anchor-006.svg
 a-text-anchor-007.svg
 a-text-anchor-008.svg
 a-text-anchor-009.svg
+a-text-anchor-010.svg
+a-text-anchor-011.svg
+a-text-anchor-012.svg
 a-text-decoration-001.svg
 a-text-decoration-002.svg
 a-text-decoration-003.svg
@@ -257,6 +263,11 @@ a-text-decoration-006.svg
 a-text-decoration-007.svg
 a-text-decoration-008.svg
 a-text-decoration-009.svg
+a-text-decoration-010.svg
+a-text-decoration-011.svg
+a-text-decoration-012.svg
+a-text-decoration-013.svg
+a-text-decoration-014.svg
 a-transform-001.svg
 a-transform-002.svg
 a-transform-003.svg
@@ -288,6 +299,7 @@ a-word-spacing-003.svg
 a-word-spacing-004.svg
 a-word-spacing-005.svg
 a-word-spacing-006.svg
+a-word-spacing-007.svg
 e-a-001.svg
 e-a-002.svg
 e-a-003.svg
@@ -903,7 +915,6 @@ e-text-011.svg
 e-text-012.svg
 e-text-013.svg
 e-text-014.svg
-e-text-032.svg
 e-text-033.svg
 e-text-034.svg
 e-text-036.svg
@@ -911,6 +922,7 @@ e-text-038.svg
 e-text-015.svg
 e-text-016.svg
 e-text-017.svg
+e-text-039.svg
 e-text-018.svg
 e-text-019.svg
 e-text-020.svg
@@ -937,6 +949,7 @@ e-tspan-001.svg
 e-tspan-002.svg
 e-tspan-014.svg
 e-tspan-015.svg
+e-tspan-027.svg
 e-tspan-003.svg
 e-tspan-004.svg
 e-tspan-005.svg
@@ -955,6 +968,11 @@ e-tspan-019.svg
 e-tspan-020.svg
 e-tspan-021.svg
 e-tspan-022.svg
+e-tspan-023.svg
+e-tspan-024.svg
+e-tspan-025.svg
+e-tspan-026.svg
+e-tspan-028.svg
 e-use-001.svg
 e-use-002.svg
 e-use-003.svg
