@@ -1,14 +1,6 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Recursive `xlink:href` (3)</title>
-    <desc>
-        Technically, the `rect` should be filled with a white to black gradient,
-        so `xlink:href="#lg3"` should be ignored, because it references
-        the initial gradient.
-        But since recursion resolving is undefined, we can do whatever we want.
-        `resvg` will remove `xlink:href="#lg2"`, because it's the first link
-        that causes a recusion.
-    </desc>
 
     <linearGradient id="lg1" xlink:href="#lg2"/>
     <linearGradient id="lg2" xlink:href="#lg3">
