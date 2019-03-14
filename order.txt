@@ -29,6 +29,7 @@ a-display-002.svg
 a-display-003.svg
 a-display-004.svg
 a-display-005.svg
+a-display-009.svg
 a-display-006.svg
 a-display-007.svg
 a-display-008.svg
@@ -321,6 +322,7 @@ e-clipPath-005.svg
 e-clipPath-006.svg
 e-clipPath-007.svg
 e-clipPath-008.svg
+e-clipPath-043.svg
 e-clipPath-009.svg
 e-clipPath-010.svg
 e-clipPath-011.svg
@@ -575,6 +577,7 @@ e-linearGradient-024.svg
 e-linearGradient-032.svg
 e-linearGradient-033.svg
 e-linearGradient-034.svg
+e-linearGradient-037.svg
 e-marker-001.svg
 e-marker-002.svg
 e-marker-003.svg
@@ -710,6 +713,7 @@ e-pattern-002.svg
 e-pattern-003.svg
 e-pattern-004.svg
 e-pattern-005.svg
+e-pattern-028.svg
 e-pattern-006.svg
 e-pattern-007.svg
 e-pattern-025.svg
@@ -767,6 +771,7 @@ e-radialGradient-018.svg
 e-radialGradient-019.svg
 e-radialGradient-020.svg
 e-radialGradient-021.svg
+e-radialGradient-040.svg
 e-radialGradient-022.svg
 e-radialGradient-023.svg
 e-radialGradient-024.svg
@@ -806,6 +811,8 @@ e-rect-022.svg
 e-rect-023.svg
 e-rect-024.svg
 e-rect-025.svg
+e-rect-026.svg
+e-rect-027.svg
 e-stop-001.svg
 e-stop-002.svg
 e-stop-003.svg
@@ -890,6 +897,10 @@ e-switch-006.svg
 e-switch-007.svg
 e-switch-008.svg
 e-switch-009.svg
+e-switch-010.svg
+e-switch-011.svg
+e-switch-012.svg
+e-switch-013.svg
 e-symbol-001.svg
 e-symbol-002.svg
 e-symbol-003.svg
@@ -973,6 +984,7 @@ e-tspan-024.svg
 e-tspan-025.svg
 e-tspan-026.svg
 e-tspan-028.svg
+e-tspan-029.svg
 e-use-001.svg
 e-use-002.svg
 e-use-003.svg
