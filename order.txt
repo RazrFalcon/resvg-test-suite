@@ -948,6 +948,7 @@ e-text-029.svg
 e-text-031.svg
 e-text-035.svg
 e-text-037.svg
+e-text-040.svg
 e-tref-001.svg
 e-tref-002.svg
 e-tref-003.svg
