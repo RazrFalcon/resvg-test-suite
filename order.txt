@@ -888,6 +888,9 @@ e-svg-028.svg
 e-svg-029.svg
 e-svg-030.svg
 e-svg-033.svg
+e-svg-034.svg
+e-svg-035.svg
+e-svg-036.svg
 e-switch-001.svg
 e-switch-002.svg
 e-switch-003.svg
@@ -1013,3 +1016,6 @@ e-use-021.svg
 e-use-022.svg
 e-use-023.svg
 e-use-024.svg
+e-use-028.svg
+e-use-029.svg
+e-use-030.svg
