@@ -280,6 +280,7 @@ a-transform-008.svg
 a-transform-009.svg
 a-transform-010.svg
 a-transform-011.svg
+a-transform-019.svg
 a-transform-012.svg
 a-transform-013.svg
 a-transform-014.svg

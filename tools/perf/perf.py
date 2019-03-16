@@ -47,12 +47,13 @@ if __name__ == '__main__':
                 svg_files.append((abs_path_in, abs_path_out))
 
     for idx, file in enumerate(svg_files):
-        print('{} out of {}'.format(idx + 1, len(svg_files)))
+        print('{} out of {}'.format(idx + 1, len(svg_files)), end='\r')
         in_svg, out_png = file
         if not render_file(args.render, args.exe):
             broken_files.append(in_svg)
 
     elapsed_time = time.time() - start_time
+    print()
     print('{:.2f}sec'.format(elapsed_time))
 
     if broken_files:

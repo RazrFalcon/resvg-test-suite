@@ -1,5 +1,5 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <title>Nested transforms</title>
+    <title>Nested transforms (1)</title>
 
     <!-- should be covered -->
     <path id="path1" d="M 60,20 L 140,100 V 180 L 60,100 Z" fill="red"/>

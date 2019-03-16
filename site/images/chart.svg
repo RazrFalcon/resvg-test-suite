@@ -31,7 +31,7 @@
     <rect fill="#3260cd" height="22" width="492" x="143" y="186"/>
     <text fill="#fff" font-family="Arial" font-size="16" x="605" y="203">739</text>
     <rect fill="#3260cd" height="22" width="275" x="143" y="219"/>
-    <text fill="#fff" font-family="Arial" font-size="16" x="388" y="234">414</text>
+    <text fill="#fff" font-family="Arial" font-size="16" x="388" y="236">414</text>
     <rect fill="#333" height="242" width="1" x="143" y="10"/>
     <text font-family="Arial" font-size="16" font-style="italic" x="443" y="288">Tests passed</text>
 </svg>
