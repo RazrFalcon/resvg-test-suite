@@ -10,7 +10,7 @@ script:
   - sudo add-apt-repository ppa:deadsnakes/ppa -y
   - sudo apt-get update -qq
   - sudo apt-get install python3.6
-  - gem install asciidoctor
+  - gem install asciidoctor -v 1.5.8
   - ./gh-pages.sh
 env:
   global:
