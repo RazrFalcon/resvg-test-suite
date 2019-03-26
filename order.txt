@@ -138,6 +138,9 @@ a-font-weight-009.svg
 a-font-weight-010.svg
 a-font-weight-011.svg
 a-font-weight-012.svg
+a-image-rendering-001.svg
+a-image-rendering-002.svg
+a-image-rendering-003.svg
 a-letter-spacing-001.svg
 a-letter-spacing-002.svg
 a-letter-spacing-003.svg
@@ -164,6 +167,14 @@ a-opacity-009.svg
 a-overflow-001.svg
 a-overflow-002.svg
 a-overflow-003.svg
+a-shape-rendering-001.svg
+a-shape-rendering-002.svg
+a-shape-rendering-003.svg
+a-shape-rendering-004.svg
+a-shape-rendering-005.svg
+a-shape-rendering-006.svg
+a-shape-rendering-007.svg
+a-shape-rendering-008.svg
 a-stop-color-001.svg
 a-stop-opacity-001.svg
 a-stroke-001.svg
@@ -269,6 +280,11 @@ a-text-decoration-011.svg
 a-text-decoration-012.svg
 a-text-decoration-013.svg
 a-text-decoration-014.svg
+a-text-rendering-001.svg
+a-text-rendering-002.svg
+a-text-rendering-003.svg
+a-text-rendering-004.svg
+a-text-rendering-005.svg
 a-transform-001.svg
 a-transform-002.svg
 a-transform-003.svg

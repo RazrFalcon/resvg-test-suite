@@ -139,6 +139,9 @@ a-font-weight-009.svg,1,1,1,1,1,1,1
 a-font-weight-010.svg,1,1,1,1,1,1,1
 a-font-weight-011.svg,1,1,1,1,1,1,1
 a-font-weight-012.svg,2,1,1,1,1,1,1
+a-image-rendering-001.svg,2,1,1,1,1,2,2
+a-image-rendering-002.svg,2,1,1,1,1,2,2
+a-image-rendering-003.svg,2,1,1,2,2,2,2
 a-letter-spacing-001.svg,1,2,1,1,1,1,2
 a-letter-spacing-002.svg,1,2,1,1,1,1,2
 a-letter-spacing-003.svg,1,2,1,1,1,1,2
@@ -165,6 +168,14 @@ a-opacity-009.svg,1,1,1,1,1,1,1
 a-overflow-001.svg,1,1,1,1,1,1,2
 a-overflow-002.svg,1,1,1,1,2,1,2
 a-overflow-003.svg,1,2,1,1,1,1,2
+a-shape-rendering-001.svg,1,1,1,1,2,1,2
+a-shape-rendering-002.svg,1,1,1,1,2,1,2
+a-shape-rendering-003.svg,1,1,1,1,2,1,2
+a-shape-rendering-004.svg,1,1,1,1,2,1,2
+a-shape-rendering-005.svg,1,1,1,1,2,1,2
+a-shape-rendering-006.svg,1,1,1,1,2,1,2
+a-shape-rendering-007.svg,1,1,1,1,2,1,2
+a-shape-rendering-008.svg,1,1,1,2,2,1,2
 a-stop-color-001.svg,1,1,1,1,1,1,1
 a-stop-opacity-001.svg,1,1,1,1,1,1,1
 a-stroke-001.svg,1,1,1,1,1,1,1
@@ -270,6 +281,11 @@ a-text-decoration-011.svg,1,1,1,2,1,2,2
 a-text-decoration-012.svg,1,1,1,2,2,2,2
 a-text-decoration-013.svg,1,1,1,2,2,2,2
 a-text-decoration-014.svg,1,2,1,2,2,2,2
+a-text-rendering-001.svg,2,2,1,1,2,2,2
+a-text-rendering-002.svg,2,1,1,1,2,2,2
+a-text-rendering-003.svg,2,1,2,2,2,2,2
+a-text-rendering-004.svg,2,1,1,1,2,2,2
+a-text-rendering-005.svg,2,2,1,1,2,2,2
 a-transform-001.svg,1,1,1,1,1,1,1
 a-transform-002.svg,1,1,1,1,1,1,1
 a-transform-003.svg,1,1,1,1,1,1,1
