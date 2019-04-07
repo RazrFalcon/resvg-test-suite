@@ -1,6 +1,6 @@
 <svg id="svg1" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>No `width`</title>
+    <title>No `width` (UB)</title>
 
     <image id="image1" x="8" y="8" height="64" xlink:href="../images/image.jpg"/>
 
