@@ -35,7 +35,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(&m_render, &Render::finished, this, &MainWindow::onRenderFinished);
 
     connect(m_autosaveTimer, &QTimer::timeout, this, &MainWindow::save);
-    m_autosaveTimer->setInterval(10000); // 10 sec
+    m_autosaveTimer->setInterval(30000); // 30 sec
     m_autosaveTimer->start();
 
     auto shortcut = new QShortcut(QKeySequence("Ctrl+R"), this);

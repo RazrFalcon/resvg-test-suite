@@ -1,7 +1,7 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <title>operator=arithmetic</title>
+    <title>operator=arithmetic on sRGB</title>
 
-    <filter id="filter1">
+    <filter id="filter1" color-interpolation-filters="sRGB">
         <feFlood flood-color="blue"/>
         <feComposite operator="arithmetic" in2="SourceGraphic" k1="0.1" k2="0.2" k3="0.3" k4="0.4"/>
     </filter>
