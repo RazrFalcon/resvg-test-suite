@@ -11,27 +11,27 @@
     <rect fill="#ccc" height="242" width="1" x="143" y="10"/>
     <text fill="#000" font-family="Arial" font-size="16" x="139" y="266">0</text>
     <rect fill="#ccc" height="242" width="1" x="312" y="10"/>
-    <text fill="#000" font-family="Arial" font-size="16" x="300" y="266">261</text>
+    <text fill="#000" font-family="Arial" font-size="16" x="299" y="266">268</text>
     <rect fill="#ccc" height="242" width="1" x="482" y="10"/>
-    <text fill="#000" font-family="Arial" font-size="16" x="470" y="266">521</text>
+    <text fill="#000" font-family="Arial" font-size="16" x="469" y="266">537</text>
     <rect fill="#ccc" height="242" width="1" x="652" y="10"/>
-    <text fill="#000" font-family="Arial" font-size="16" x="639" y="266">782</text>
+    <text fill="#000" font-family="Arial" font-size="16" x="639" y="266">805</text>
     <rect fill="#ccc" height="242" width="1" x="822" y="10"/>
-    <text fill="#000" font-family="Arial" font-size="16" x="805" y="266">1042</text>
-    <rect fill="#3260cd" height="22" width="643" x="143" y="21"/>
-    <text fill="#fff" font-family="Arial" font-size="16" x="756" y="38">987</text>
-    <rect fill="#3260cd" height="22" width="611" x="143" y="54"/>
-    <text fill="#fff" font-family="Arial" font-size="16" x="724" y="71">939</text>
-    <rect fill="#3260cd" height="22" width="607" x="143" y="87"/>
-    <text fill="#fff" font-family="Arial" font-size="16" x="720" y="104">932</text>
-    <rect fill="#3260cd" height="22" width="516" x="143" y="120"/>
-    <text fill="#fff" font-family="Arial" font-size="16" x="629" y="137">792</text>
-    <rect fill="#3260cd" height="22" width="520" x="143" y="153"/>
-    <text fill="#fff" font-family="Arial" font-size="16" x="633" y="170">799</text>
-    <rect fill="#3260cd" height="22" width="493" x="143" y="186"/>
-    <text fill="#fff" font-family="Arial" font-size="16" x="606" y="203">758</text>
-    <rect fill="#3260cd" height="22" width="274" x="143" y="219"/>
-    <text fill="#fff" font-family="Arial" font-size="16" x="389" y="234">421</text>
+    <text fill="#000" font-family="Arial" font-size="16" x="805" y="266">1073</text>
+    <rect fill="#3260cd" height="22" width="629" x="143" y="21"/>
+    <text fill="#fff" font-family="Arial" font-size="16" x="742" y="38">995</text>
+    <rect fill="#3260cd" height="22" width="609" x="143" y="54"/>
+    <text fill="#fff" font-family="Arial" font-size="16" x="722" y="71">963</text>
+    <rect fill="#3260cd" height="22" width="604" x="143" y="87"/>
+    <text fill="#fff" font-family="Arial" font-size="16" x="717" y="104">955</text>
+    <rect fill="#3260cd" height="22" width="515" x="143" y="120"/>
+    <text fill="#fff" font-family="Arial" font-size="16" x="628" y="137">815</text>
+    <rect fill="#3260cd" height="22" width="518" x="143" y="153"/>
+    <text fill="#fff" font-family="Arial" font-size="16" x="631" y="170">819</text>
+    <rect fill="#3260cd" height="22" width="494" x="143" y="186"/>
+    <text fill="#fff" font-family="Arial" font-size="16" x="607" y="203">782</text>
+    <rect fill="#3260cd" height="22" width="267" x="143" y="219"/>
+    <text fill="#fff" font-family="Arial" font-size="16" x="380" y="234">422</text>
     <rect fill="#333" height="242" width="1" x="143" y="10"/>
     <text font-family="Arial" font-size="16" font-style="italic" x="443" y="288">Tests passed</text>
 </svg>

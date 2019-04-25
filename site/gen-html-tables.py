@@ -79,10 +79,6 @@ elements_order = [
     'feSpecularLighting',
     'feTile',
     'feTurbulence',
-    'feFuncR',
-    'feFuncG',
-    'feFuncB',
-    'feFuncA',
     '<a id="section_interact" href="https://www.w3.org/TR/SVG11/interact">Interactivity</a>',
     'cursor',
     '<a id="section_linking" href="https://www.w3.org/TR/SVG11/linking">Linking</a>',
@@ -142,6 +138,7 @@ out_of_scope_elems = [
     'title',
     'view',
     'vkern',
+    'foreignObject',
 ]
 
 presentation_attrs = [

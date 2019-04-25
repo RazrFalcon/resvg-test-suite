@@ -1,3 +1,4 @@
+a-alignment-baseline-001.svg
 a-baseline-shift-001.svg
 a-baseline-shift-002.svg
 a-baseline-shift-003.svg
@@ -20,10 +21,13 @@ a-baseline-shift-019.svg
 a-baseline-shift-020.svg
 a-baseline-shift-021.svg
 a-baseline-shift-022.svg
+a-clip-001.svg
 a-clip-path-001.svg
 a-clip-rule-001.svg
 a-color-001.svg
 a-color-interpolation-filters-001.svg
+a-direction-001.svg
+a-direction-002.svg
 a-display-001.svg
 a-display-002.svg
 a-display-003.svg
@@ -33,6 +37,8 @@ a-display-009.svg
 a-display-006.svg
 a-display-007.svg
 a-display-008.svg
+a-dominant-baseline-001.svg
+a-enable-background-001.svg
 a-fill-001.svg
 a-fill-002.svg
 a-fill-003.svg
@@ -89,6 +95,7 @@ a-flood-color-004.svg
 a-flood-color-005.svg
 a-flood-color-006.svg
 a-flood-opacity-001.svg
+a-font-001.svg
 a-font-family-001.svg
 a-font-family-002.svg
 a-font-family-003.svg
@@ -119,6 +126,7 @@ a-font-size-010.svg
 a-font-size-011.svg
 a-font-size-012.svg
 a-font-size-013.svg
+a-font-size-adjust-001.svg
 a-font-stretch-001.svg
 a-font-stretch-002.svg
 a-font-style-001.svg
@@ -138,9 +146,12 @@ a-font-weight-009.svg
 a-font-weight-010.svg
 a-font-weight-011.svg
 a-font-weight-012.svg
+a-glyph-orientation-horizontal-001.svg
+a-glyph-orientation-vertical-001.svg
 a-image-rendering-001.svg
 a-image-rendering-002.svg
 a-image-rendering-003.svg
+a-kerning-001.svg
 a-letter-spacing-001.svg
 a-letter-spacing-002.svg
 a-letter-spacing-003.svg
@@ -304,6 +315,7 @@ a-transform-015.svg
 a-transform-016.svg
 a-transform-017.svg
 a-transform-018.svg
+a-unicode-bidi-001.svg
 a-visibility-001.svg
 a-visibility-002.svg
 a-visibility-003.svg
@@ -318,6 +330,18 @@ a-word-spacing-004.svg
 a-word-spacing-005.svg
 a-word-spacing-006.svg
 a-word-spacing-007.svg
+a-writing-mode-001.svg
+a-writing-mode-002.svg
+a-writing-mode-003.svg
+a-writing-mode-004.svg
+a-writing-mode-005.svg
+a-writing-mode-006.svg
+a-writing-mode-007.svg
+a-writing-mode-008.svg
+a-writing-mode-009.svg
+a-writing-mode-010.svg
+a-writing-mode-011.svg
+a-writing-mode-012.svg
 e-a-001.svg
 e-a-002.svg
 e-a-003.svg
@@ -979,6 +1003,7 @@ e-text-031.svg
 e-text-035.svg
 e-text-037.svg
 e-text-040.svg
+e-textPath-001.svg
 e-tref-001.svg
 e-tref-002.svg
 e-tref-003.svg
