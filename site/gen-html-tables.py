@@ -226,6 +226,9 @@ def global_flags(rows, type, name):
         if row.type != type or row.name != name:
             continue
 
+        if "(UB)" in row.title:
+            continue
+
         total += 1
         for idx, flag in enumerate(row.flags):
             if flag == PASSED or flag == UNKNOWN:

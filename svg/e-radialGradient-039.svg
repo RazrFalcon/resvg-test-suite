@@ -1,5 +1,5 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <title>Invalid `gradientUnits`</title>
+    <title>Invalid `gradientUnits` (UB)</title>
 
     <radialGradient id="rg1" gradientUnits="qwe">
         <stop offset="0" stop-color="white"/>

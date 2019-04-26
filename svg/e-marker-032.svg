@@ -1,5 +1,5 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <title>Target with subpaths (2)</title>
+    <title>Target with subpaths (2) (UB)</title>
 
     <marker id="marker1" refX="10" refY="10" markerWidth="20" markerHeight="20">
         <path id="path-marker1" d="M 10 0 16 20 H 4 Z" fill="blue" opacity="0.75"/>

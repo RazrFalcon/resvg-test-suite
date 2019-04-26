@@ -1,5 +1,5 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" filter="url(#filter1)">
-    <title>On the root `svg`</title>
+    <title>On the root `svg` (UB)</title>
 
     <filter id="filter1">
         <feGaussianBlur stdDeviation="4"/>
