@@ -2,8 +2,7 @@
 
 #include <QString>
 
-class Paths
-{
-public:
-    static QString order() noexcept;
+namespace Paths {
+    QString order() noexcept;
+    QString workDir() noexcept;
 };

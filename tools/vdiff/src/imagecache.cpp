@@ -1,5 +1,4 @@
 #include <QCryptographicHash>
-#include <QDebug>
 #include <QDir>
 #include <QFile>
 #include <QSqlDatabase>
@@ -7,6 +6,7 @@
 #include <QUuid>
 #include <QVariant>
 
+#include "paths.h"
 #include "imagecache.h"
 
 static const QString DbName = "cache_db";
@@ -23,8 +23,8 @@ enum class Column
 
 static void initCacheDb()
 {
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", DbName);
-    db.setDatabaseName(DbFileName);
+    auto db = QSqlDatabase::addDatabase("QSQLITE", DbName);
+    db.setDatabaseName(Paths::workDir() + '/' + DbFileName);
     db.open();
 
     QSqlQuery query(db);
@@ -42,7 +42,7 @@ static void openCacheDb()
     if (!QFile::exists(DbFileName)) {
         initCacheDb();
     } else {
-        QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", DbName);
+        auto db = QSqlDatabase::addDatabase("QSQLITE", DbName);
         db.setDatabaseName(DbFileName);
         db.open();
     }
@@ -65,7 +65,7 @@ ImageCache::ImageCache()
 
 ImageCache::~ImageCache()
 {
-    QSqlDatabase db = QSqlDatabase::database(DbName);
+    auto db = QSqlDatabase::database(DbName);
     db.close();
     db = QSqlDatabase();
     db.removeDatabase(DbName);
@@ -73,7 +73,7 @@ ImageCache::~ImageCache()
 
 QImage ImageCache::getImage(const Backend backend, const QString &svgPath)
 {
-    QSqlDatabase db = QSqlDatabase::database(DbName);
+    auto db = QSqlDatabase::database(DbName);
     QSqlQuery query(db);
     query.exec(QString("SELECT * FROM Cache WHERE SvgPath='%1' AND Backend='%2';")
                     .arg(svgPath).arg(backendToString(backend)));
@@ -103,15 +103,17 @@ QImage ImageCache::getImage(const Backend backend, const QString &svgPath)
 
 void ImageCache::setImage(const Backend backend, const QString &svgPath, const QImage &img)
 {
-    if (!QDir().exists("images")) {
-        QDir().mkdir("images");
+    const auto imagesDir = Paths::workDir() + "/images";
+
+    if (!QDir().exists(imagesDir)) {
+        QDir().mkdir(imagesDir);
     }
 
-    const auto pngPath = "images/" + QUuid::createUuid().toRfc4122().toHex() + ".png";
+    const auto pngPath = imagesDir + '/' + QUuid::createUuid().toRfc4122().toHex() + ".png";
 
     img.save(pngPath);
 
-    QSqlDatabase db = QSqlDatabase::database(DbName);
+    auto db = QSqlDatabase::database(DbName);
     QSqlQuery query(db);
     query.prepare("INSERT INTO Cache "
                   "       ( SvgPath,  PngPath,  Backend,  Hash) "

@@ -93,6 +93,7 @@ Tests Tests::load(const TestSuite testSuite, const QString &path, const QString 
         item.state.insert(Backend::Chrome,      stateFormStr(items.at(1)));
         item.state.insert(Backend::Firefox,     stateFormStr(items.at(2)));
         item.state.insert(Backend::ResvgCairo,  stateFormStr(items.at(3)));
+        item.state.insert(Backend::ResvgQt,     stateFormStr(items.at(3))); // The same as Cairo.
         item.state.insert(Backend::Batik,       stateFormStr(items.at(4)));
         item.state.insert(Backend::Inkscape,    stateFormStr(items.at(5)));
         item.state.insert(Backend::Librsvg,     stateFormStr(items.at(6)));

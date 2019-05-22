@@ -11,6 +11,7 @@ struct RenderData
 {
     Backend type;
     int viewSize;
+    qreal dpiScale;
     QString imgPath;
     QString convPath;
     TestSuite testSuite;
@@ -81,6 +82,7 @@ private:
     Settings *m_settings = nullptr;
     ImageCache m_imgCache;
     int m_viewSize = 300;
+    qreal m_dpiScale = 1.0;
     QFutureWatcher<RenderResult> m_watcher1;
     QFutureWatcher<DiffOutput> m_watcher2;
     QString m_imgPath;

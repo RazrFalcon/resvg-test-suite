@@ -28,6 +28,8 @@ public:
     BuildType buildType = BuildType::Debug;
     QString customTestsPath;
     int viewSize = ViewSizeOwn / 2;
+    bool useResvgCairo = true;
+    bool useResvgQt = true;
     bool useChrome = true;
     bool useFirefox = true;
     bool useBatik = true;

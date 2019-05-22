@@ -67,13 +67,18 @@ void MainWindow::prepareBackends()
     }
     m_backendWidges.clear();
 
-    QVector<Backend> backends = {
-        Backend::ResvgCairo,
-        Backend::ResvgQt,
-    };
+    QVector<Backend> backends;
 
     if (m_settings.testSuite != TestSuite::Custom) {
-        backends.prepend(Backend::Reference);
+        backends << Backend::Reference;
+    }
+
+    if (m_settings.useResvgCairo) {
+        backends << Backend::ResvgCairo;
+    }
+
+    if (m_settings.useResvgQt) {
+        backends << Backend::ResvgQt;
     }
 
     if (m_settings.useChrome) {
@@ -116,7 +121,9 @@ void MainWindow::prepareBackends()
         m_backendWidges.value(Backend::Reference)->setTestStateVisible(false);
     }
 
-    m_backendWidges.value(Backend::ResvgQt)->setTestStateVisible(false);
+    if (m_settings.useResvgCairo && m_settings.useResvgQt) {
+        m_backendWidges.value(Backend::ResvgQt)->setTestStateVisible(false);
+    }
 
     if (m_settings.testSuite == TestSuite::Custom) {
         for (auto *w : m_backendWidges.values()) {
@@ -257,7 +264,12 @@ void MainWindow::updatePassFlags()
         auto &item = m_tests.at(idx);
 
         for (auto *w : m_backendWidges.values()) {
-            item.state.insert(w->backend(), w->testState());
+            auto backend = w->backend();
+            if (backend == Backend::ResvgQt) {
+                backend = Backend::ResvgCairo;
+            }
+
+            item.state.insert(backend, w->testState());
         }
     } catch (const QString &msg) {
         QMessageBox::critical(this, "Error", msg);

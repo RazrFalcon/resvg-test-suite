@@ -12,6 +12,8 @@ namespace Key {
     static const QString BatikPath          = "BatikPath";
     static const QString InkscapePath       = "InkscapePath";
     static const QString RsvgPath           = "RsvgPath";
+    static const QString UseCairoBackend    = "UseCairoBackend";
+    static const QString UseQtBackend       = "UseQtBackend";
     static const QString UseChrome          = "UseChrome";
     static const QString UseFirefox         = "UseFirefox";
     static const QString UseBatik           = "UseBatik";
@@ -67,6 +69,8 @@ void Settings::load() noexcept
 
     this->viewSize = appSettings.value(Key::ViewSize, ViewSizeOwn / 2).toUInt();
 
+    this->useResvgCairo = appSettings.value(Key::UseCairoBackend).toBool();
+    this->useResvgQt = appSettings.value(Key::UseQtBackend).toBool();
     this->useChrome = appSettings.value(Key::UseChrome).toBool();
     this->useFirefox = appSettings.value(Key::UseFirefox).toBool();
     this->useBatik = appSettings.value(Key::UseBatik).toBool();
@@ -88,6 +92,8 @@ void Settings::save() const noexcept
     appSettings.setValue(Key::CustomTestsPath, this->customTestsPath);
     appSettings.setValue(Key::ResvgBuild, buildTypeToStr(this->buildType));
     appSettings.setValue(Key::ViewSize, this->viewSize);
+    appSettings.setValue(Key::UseCairoBackend, this->useResvgCairo);
+    appSettings.setValue(Key::UseQtBackend, this->useResvgQt);
     appSettings.setValue(Key::UseChrome, this->useChrome);
     appSettings.setValue(Key::UseFirefox, this->useFirefox);
     appSettings.setValue(Key::UseBatik, this->useBatik);
