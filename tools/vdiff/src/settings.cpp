@@ -69,9 +69,10 @@ void Settings::load() noexcept
 
     this->viewSize = appSettings.value(Key::ViewSize, ViewSizeOwn / 2).toUInt();
 
-    this->useResvgCairo = appSettings.value(Key::UseCairoBackend).toBool();
-    this->useResvgQt = appSettings.value(Key::UseQtBackend).toBool();
-    this->useChrome = appSettings.value(Key::UseChrome).toBool();
+    // TODO: check for available backends
+    this->useResvgCairo = appSettings.value(Key::UseCairoBackend, true).toBool();
+    this->useResvgQt = appSettings.value(Key::UseQtBackend, true).toBool();
+    this->useChrome = appSettings.value(Key::UseChrome, true).toBool();
     this->useFirefox = appSettings.value(Key::UseFirefox).toBool();
     this->useBatik = appSettings.value(Key::UseBatik).toBool();
     this->useInkscape = appSettings.value(Key::UseInkscape).toBool();
