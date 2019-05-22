@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Settings</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -393,6 +393,13 @@
         </spacer>
        </item>
       </layout>
+     </item>
+     <item row="13" column="2">
+      <widget class="QLabel" name="label_12">
+       <property name="text">
+        <string>../qtsvgrender</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>

@@ -198,9 +198,14 @@ QImage Render::renderViaRsvg(const RenderData &data)
 
 QImage Render::renderViaQtSvg(const RenderData &data)
 {
+#ifdef Q_OS_WIN
+    const auto exePath = QString(SRCDIR) + "../qtsvgrender/release/qtsvgrender";
+#else
+    const auto exePath = QString(SRCDIR) + "../qtsvgrender/qtsvgrender";
+#endif
     const auto outImg = Paths::workDir() + "/qtsvg.png";
 
-    const QString out = Process::run(QString(SRCDIR) + "../qtsvgrender/qtsvgrender", {
+    const QString out = Process::run(exePath, {
         data.imgPath,
         outImg,
         QString::number(data.viewSize)
