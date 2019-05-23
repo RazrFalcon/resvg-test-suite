@@ -1,12 +1,14 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Simple case</title>
+    <title>Path with subpaths</title>
 
-    <path id="pathForText1" d="M 20 100 C 35 135 85 135 100 100 C 115 65 165 65 180 100"
+    <path id="pathForText1" d="M 30 140 L 90 60 M 100 140 L 160 60"
           fill="none" stroke="gray"/>
 
     <text id="text1" font-family="Arial" font-size="24">
-        <textPath id="textPath1" xlink:href="#pathForText1">Some long text</textPath>
+        <textPath id="textPath1" xlink:href="#pathForText1">
+            Some <tspan id="tspan1" fill="green">long</tspan> text
+        </textPath>
     </text>
 
     <!-- image frame -->

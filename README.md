@@ -33,7 +33,7 @@ Apps and libraries:
 Fonts:
 - Arial
 - Times New Roman
-- Source Code Pro (all weights)
+- [Source Code Pro](https://fonts.google.com/specimen/Source+Code+Pro) (all weights)
 
 ## Tests order
 

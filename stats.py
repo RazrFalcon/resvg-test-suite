@@ -58,7 +58,7 @@ barh_data = json.dumps(
             "value": passed[2]
         },
         {
-            "name": "Firefox 65.0",
+            "name": "Firefox 60.7",
             "value": passed[1]
         },
         {
