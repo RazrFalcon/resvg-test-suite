@@ -8,6 +8,7 @@
 #include <QShortcut>
 #include <QTimer>
 
+#include "exportdialog.h"
 #include "backendwidget.h"
 #include "paths.h"
 #include "process.h"
@@ -359,49 +360,88 @@ void MainWindow::on_btnSettings_clicked()
 
 void MainWindow::on_btnPrint_clicked()
 {
-    const auto order = {
-        Backend::ResvgCairo,
-        Backend::ResvgQt,
-        Backend::Chrome,
-        Backend::Firefox,
-        Backend::Batik,
-        Backend::Inkscape,
-        Backend::Librsvg,
-        Backend::QtSvg,
-    };
-
-    int backends = m_backendWidges.size();
-    if (m_settings.testSuite != TestSuite::Custom) {
-        backends -= 1; // -Reference
+    ExportDialog diag(m_backendWidges.keys(), this);
+    if (!diag.exec()) {
+        return;
     }
 
+    const auto opt = diag.options();
+
+    if (opt.backends.isEmpty()) {
+        QMessageBox::warning(this, tr("Error"), tr("At least one backend should be selected."));
+        return;
+    }
+
+    const int backends = opt.backends.size();
     const int scale = (int)qApp->screens().first()->devicePixelRatio();
     const int titleHeight = 20;
     const int spacing = 5;
+    const int testTitleHeight = fontMetrics().height() * 2;
     const int fullWidth = m_settings.viewSize * backends + spacing * (backends + 1);
-    const int fullHeight = titleHeight + m_settings.viewSize + spacing * 2;
+    int fullHeight = titleHeight + m_settings.viewSize + spacing * 2;
+
+    if (opt.showTitle) {
+        fullHeight += testTitleHeight;
+    }
+
+    if (opt.showDiff) {
+        fullHeight += spacing + m_settings.viewSize;
+    }
 
     QImage image(fullWidth * scale, fullHeight * scale, QImage::Format_ARGB32);
     image.fill(Qt::white);
     image.setDevicePixelRatio(scale);
 
     QPainter p(&image);
+
+    if (opt.showTitle) {
+        const auto idx = ui->cmbBoxFiles->currentIndex();
+        const QRect textRect(0, 0, fullWidth, testTitleHeight);
+        p.setFont(QFont("Arial", 14));
+        p.drawText(textRect, Qt::AlignCenter, "Test file: " + m_tests.at(idx).baseName + ".svg");
+        p.translate(0, testTitleHeight);
+    }
+
     p.setFont(QFont("Arial", 12));
 
     int x = spacing;
     int y = spacing;
-    for (const auto backend : order) {
+    for (const auto backend : opt.backends) {
         if (!m_backendWidges.contains(backend)) {
             continue;
         }
 
         auto w = m_backendWidges.value(backend);
+        auto title = w->title();
+
+        if (backend == Backend::ResvgCairo && !opt.backends.contains(Backend::ResvgQt)) {
+            title = "resvg";
+        } else if (backend == Backend::ResvgQt && !opt.backends.contains(Backend::ResvgCairo)) {
+            title = "resvg";
+        }
 
         const auto textRect = QRect(x, y, m_settings.viewSize, titleHeight - 3);
-        p.drawText(textRect, Qt::AlignCenter, w->title());
+        p.setPen(Qt::black);
+        p.drawText(textRect, Qt::AlignCenter, title);
 
         auto img = w->image();
         p.drawImage(x, y + titleHeight, img);
+
+        if (opt.indicateStatus) {
+            switch (w->testState()) {
+                case TestState::Unknown : p.setPen(Qt::gray); break;
+                case TestState::Passed  : p.setPen(Qt::green); break;
+                case TestState::Failed  : p.setPen(Qt::red); break;
+                case TestState::Crashed : p.setPen(Qt::yellow); break;
+                default: break;
+            }
+
+            p.drawRect(x, y + titleHeight, img.width() / scale, img.height() / scale);
+        }
+
+        if (opt.showDiff) {
+            p.drawImage(x, y + titleHeight + m_settings.viewSize + spacing, w->diffImage());
+        }
 
         x += m_settings.viewSize + spacing;
     }

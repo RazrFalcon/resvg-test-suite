@@ -68,6 +68,11 @@ void BackendWidget::setDiffVisible(bool flag)
     m_diffView->setVisible(flag);
 }
 
+QImage BackendWidget::diffImage() const
+{
+    return m_diffView->image();
+}
+
 void BackendWidget::setAnimationEnabled(bool flag)
 {
     m_imageView->setAnimationEnabled(flag);

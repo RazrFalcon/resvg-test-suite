@@ -22,6 +22,7 @@ public:
     void setImage(const QImage &img);
     void setDiffImage(const QImage &img);
     void setDiffVisible(bool flag);
+    QImage diffImage() const;
     void setAnimationEnabled(bool flag);
     void setViewSize(const QSize &size);
 

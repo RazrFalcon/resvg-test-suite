@@ -6,6 +6,7 @@ TEMPLATE = app
 CONFIG += c++11
 
 SOURCES  += \
+    src/exportdialog.cpp \
     src/imageview.cpp \
     src/main.cpp \
     src/mainwindow.cpp \
@@ -19,6 +20,7 @@ SOURCES  += \
     src/imagecache.cpp
 
 HEADERS  += \
+    src/exportdialog.h \
     src/imageview.h \
     src/mainwindow.h \
     src/process.h \
@@ -31,6 +33,7 @@ HEADERS  += \
     src/imagecache.h
 
 FORMS    += \
+    src/exportdialog.ui \
     src/mainwindow.ui \
     src/settingsdialog.ui
 
