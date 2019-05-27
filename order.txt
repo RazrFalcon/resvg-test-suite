@@ -1039,6 +1039,8 @@ e-textPath-028.svg
 e-textPath-029.svg
 e-textPath-030.svg
 e-textPath-031.svg
+e-textPath-032.svg
+e-textPath-033.svg
 e-tref-001.svg
 e-tref-002.svg
 e-tref-003.svg
