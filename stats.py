@@ -62,11 +62,11 @@ barh_data = json.dumps(
             "value": passed[1]
         },
         {
-            "name": "Chromium r637110",
+            "name": "Chromium r662092",
             "value": passed[0]
         },
         {
-            "name": "Inkscape 0.92.3",
+            "name": "Inkscape 0.92.4",
             "value": passed[4]
         },
         {
@@ -78,7 +78,7 @@ barh_data = json.dumps(
             "value": passed[3]
         },
         {
-            "name": "QtSvg 5.12.1",
+            "name": "QtSvg 5.12.3",
             "value": passed[6]
         }
     ],
