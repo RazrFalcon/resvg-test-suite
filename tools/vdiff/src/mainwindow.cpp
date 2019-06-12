@@ -266,7 +266,7 @@ void MainWindow::updatePassFlags()
 
         for (auto *w : m_backendWidges.values()) {
             auto backend = w->backend();
-            if (backend == Backend::ResvgQt) {
+            if (backend == Backend::ResvgQt && !m_backendWidges.contains(Backend::ResvgCairo)) {
                 item.state.insert(Backend::ResvgCairo, w->testState());
             }
 
