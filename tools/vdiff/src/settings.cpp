@@ -14,6 +14,7 @@ namespace Key {
     static const QString RsvgPath           = "RsvgPath";
     static const QString UseCairoBackend    = "UseCairoBackend";
     static const QString UseQtBackend       = "UseQtBackend";
+    static const QString UseRaqoteBackend   = "UseRaqoteBackend";
     static const QString UseChrome          = "UseChrome";
     static const QString UseFirefox         = "UseFirefox";
     static const QString UseBatik           = "UseBatik";
@@ -72,6 +73,7 @@ void Settings::load() noexcept
     // TODO: check for available backends
     this->useResvgCairo = appSettings.value(Key::UseCairoBackend, true).toBool();
     this->useResvgQt = appSettings.value(Key::UseQtBackend, true).toBool();
+    this->useResvgRaqote = appSettings.value(Key::UseRaqoteBackend).toBool();
     this->useChrome = appSettings.value(Key::UseChrome, true).toBool();
     this->useFirefox = appSettings.value(Key::UseFirefox).toBool();
     this->useBatik = appSettings.value(Key::UseBatik).toBool();
@@ -95,6 +97,7 @@ void Settings::save() const noexcept
     appSettings.setValue(Key::ViewSize, this->viewSize);
     appSettings.setValue(Key::UseCairoBackend, this->useResvgCairo);
     appSettings.setValue(Key::UseQtBackend, this->useResvgQt);
+    appSettings.setValue(Key::UseRaqoteBackend, this->useResvgRaqote);
     appSettings.setValue(Key::UseChrome, this->useChrome);
     appSettings.setValue(Key::UseFirefox, this->useFirefox);
     appSettings.setValue(Key::UseBatik, this->useBatik);

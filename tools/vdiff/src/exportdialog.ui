@@ -47,6 +47,13 @@
         </widget>
        </item>
        <item>
+        <widget class="QCheckBox" name="chBoxBResvgRaqote">
+         <property name="text">
+          <string>Resvg Raqote</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QCheckBox" name="chBoxBChrome">
          <property name="text">
           <string>Chrome</string>

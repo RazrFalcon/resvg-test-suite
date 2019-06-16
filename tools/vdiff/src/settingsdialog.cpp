@@ -29,6 +29,8 @@ SettingsDialog::SettingsDialog(Settings *settings, QWidget *parent)
             this, &SettingsDialog::updateResvgBackendsChBoxes);
     connect(ui->chBoxBackendQt, &QCheckBox::toggled,
             this, &SettingsDialog::updateResvgBackendsChBoxes);
+    connect(ui->chBoxBackendRaqote, &QCheckBox::toggled,
+            this, &SettingsDialog::updateResvgBackendsChBoxes);
 
     ui->buttonBox->setFocus();
 }
@@ -48,6 +50,7 @@ void SettingsDialog::loadSettings()
 
     ui->chBoxBackendCairo->setChecked(m_settings->useResvgCairo);
     ui->chBoxBackendQt->setChecked(m_settings->useResvgQt);
+    ui->chBoxBackendRaqote->setChecked(m_settings->useResvgRaqote);
 
     ui->chBoxUseChrome->setChecked(m_settings->useChrome);
 
@@ -70,7 +73,12 @@ void SettingsDialog::loadSettings()
 
 void SettingsDialog::updateResvgBackendsChBoxes()
 {
-    if (!ui->chBoxBackendCairo->isChecked() && !ui->chBoxBackendQt->isChecked()) {
+    const bool isAny =
+           ui->chBoxBackendCairo->isChecked()
+        || ui->chBoxBackendQt->isChecked()
+        || ui->chBoxBackendRaqote->isChecked();
+
+    if (!isAny) {
         QMessageBox::warning(this, tr("Warning"), tr("At least one backend should be selected."));
         ui->chBoxBackendCairo->setChecked(true);
     }
@@ -111,6 +119,7 @@ void SettingsDialog::on_buttonBox_accepted()
 
     m_settings->useResvgCairo = ui->chBoxBackendCairo->isChecked();
     m_settings->useResvgQt = ui->chBoxBackendQt->isChecked();
+    m_settings->useResvgRaqote = ui->chBoxBackendRaqote->isChecked();
     m_settings->useChrome = ui->chBoxUseChrome->isChecked();
     m_settings->useFirefox = ui->chBoxUseFirefox->isChecked();
     m_settings->useBatik = ui->chBoxUseBatik->isChecked();

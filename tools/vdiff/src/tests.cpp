@@ -94,6 +94,7 @@ Tests Tests::load(const TestSuite testSuite, const QString &path, const QString 
         item.state.insert(Backend::Firefox,     stateFormStr(items.at(2)));
         item.state.insert(Backend::ResvgCairo,  stateFormStr(items.at(3)));
         item.state.insert(Backend::ResvgQt,     stateFormStr(items.at(3))); // The same as Cairo.
+        item.state.insert(Backend::ResvgRaqote, stateFormStr(items.at(3))); // The same as Cairo.
         item.state.insert(Backend::Batik,       stateFormStr(items.at(4)));
         item.state.insert(Backend::Inkscape,    stateFormStr(items.at(5)));
         item.state.insert(Backend::Librsvg,     stateFormStr(items.at(6)));
@@ -238,6 +239,7 @@ QString backendToString(const Backend &t)
         case Backend::Firefox :     return "Firefox";
         case Backend::ResvgCairo :  return "resvg (cairo)";
         case Backend::ResvgQt :     return "resvg (Qt)";
+        case Backend::ResvgRaqote : return "resvg (raqote)";
         case Backend::Batik :       return "Batik";
         case Backend::Inkscape :    return "Inkscape";
         case Backend::Librsvg :     return "librsvg";

@@ -12,6 +12,7 @@ ExportDialog::ExportDialog(const QList<Backend> &backends, QWidget *parent)
     ui->chBoxBReference->setEnabled(backends.contains(Backend::Reference));
     ui->chBoxBResvgCairo->setEnabled(backends.contains(Backend::ResvgCairo));
     ui->chBoxBResvgQt->setEnabled(backends.contains(Backend::ResvgQt));
+    ui->chBoxBResvgQt->setEnabled(backends.contains(Backend::ResvgRaqote));
     ui->chBoxBChrome->setEnabled(backends.contains(Backend::Chrome));
     ui->chBoxBFirefox->setEnabled(backends.contains(Backend::Firefox));
     ui->chBoxBBatik->setEnabled(backends.contains(Backend::Batik));
@@ -21,6 +22,7 @@ ExportDialog::ExportDialog(const QList<Backend> &backends, QWidget *parent)
 
     ui->chBoxBResvgCairo->setChecked(backends.contains(Backend::ResvgCairo));
     ui->chBoxBResvgQt->setChecked(backends.contains(Backend::ResvgQt));
+    ui->chBoxBResvgRaqote->setChecked(backends.contains(Backend::ResvgRaqote));
     ui->chBoxBChrome->setChecked(backends.contains(Backend::Chrome));
     ui->chBoxBFirefox->setChecked(backends.contains(Backend::Firefox));
     ui->chBoxBBatik->setChecked(backends.contains(Backend::Batik));
@@ -45,15 +47,16 @@ ExportDialog::Options ExportDialog::options() const
     opt.indicateStatus = ui->chBoxIndicateStatus->isChecked();
     opt.showDiff = ui->chBoxShowDiff->isChecked();
 
-    if (ui->chBoxBReference->isChecked())  { opt.backends << Backend::Reference; }
-    if (ui->chBoxBResvgCairo->isChecked()) { opt.backends << Backend::ResvgCairo; }
-    if (ui->chBoxBResvgQt->isChecked())    { opt.backends << Backend::ResvgQt; }
-    if (ui->chBoxBChrome->isChecked())     { opt.backends << Backend::Chrome; }
-    if (ui->chBoxBFirefox->isChecked())    { opt.backends << Backend::Firefox; }
-    if (ui->chBoxBBatik->isChecked())      { opt.backends << Backend::Batik; }
-    if (ui->chBoxBInkscape->isChecked())   { opt.backends << Backend::Inkscape; }
-    if (ui->chBoxBLibrsvg->isChecked())    { opt.backends << Backend::Librsvg; }
-    if (ui->chBoxBQtSvg->isChecked())      { opt.backends << Backend::QtSvg; }
+    if (ui->chBoxBReference->isChecked())   { opt.backends << Backend::Reference; }
+    if (ui->chBoxBResvgCairo->isChecked())  { opt.backends << Backend::ResvgCairo; }
+    if (ui->chBoxBResvgQt->isChecked())     { opt.backends << Backend::ResvgQt; }
+    if (ui->chBoxBResvgRaqote->isChecked()) { opt.backends << Backend::ResvgRaqote; }
+    if (ui->chBoxBChrome->isChecked())      { opt.backends << Backend::Chrome; }
+    if (ui->chBoxBFirefox->isChecked())     { opt.backends << Backend::Firefox; }
+    if (ui->chBoxBBatik->isChecked())       { opt.backends << Backend::Batik; }
+    if (ui->chBoxBInkscape->isChecked())    { opt.backends << Backend::Inkscape; }
+    if (ui->chBoxBLibrsvg->isChecked())     { opt.backends << Backend::Librsvg; }
+    if (ui->chBoxBQtSvg->isChecked())       { opt.backends << Backend::QtSvg; }
 
     return opt;
 }

@@ -82,6 +82,10 @@ void MainWindow::prepareBackends()
         backends << Backend::ResvgQt;
     }
 
+    if (m_settings.useResvgRaqote) {
+        backends << Backend::ResvgRaqote;
+    }
+
     if (m_settings.useChrome) {
         backends << Backend::Chrome;
     }
@@ -124,6 +128,14 @@ void MainWindow::prepareBackends()
 
     if (m_settings.useResvgCairo && m_settings.useResvgQt) {
         m_backendWidges.value(Backend::ResvgQt)->setTestStateVisible(false);
+    }
+
+    if (m_settings.useResvgCairo && m_settings.useResvgRaqote) {
+        m_backendWidges.value(Backend::ResvgRaqote)->setTestStateVisible(false);
+    }
+
+    if (m_settings.useResvgQt && m_settings.useResvgRaqote) {
+        m_backendWidges.value(Backend::ResvgRaqote)->setTestStateVisible(false);
     }
 
     if (m_settings.testSuite == TestSuite::Custom) {
@@ -267,6 +279,10 @@ void MainWindow::updatePassFlags()
         for (auto *w : m_backendWidges.values()) {
             auto backend = w->backend();
             if (backend == Backend::ResvgQt && !m_backendWidges.contains(Backend::ResvgCairo)) {
+                item.state.insert(Backend::ResvgCairo, w->testState());
+            }
+
+            if (backend == Backend::ResvgRaqote && !m_backendWidges.contains(Backend::ResvgCairo)) {
                 item.state.insert(Backend::ResvgCairo, w->testState());
             }
 

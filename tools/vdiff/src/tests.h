@@ -21,6 +21,7 @@ enum class Backend
     Firefox,
     ResvgCairo,
     ResvgQt,
+    ResvgRaqote,
     Batik,
     Inkscape,
     Librsvg,

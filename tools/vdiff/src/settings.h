@@ -30,6 +30,7 @@ public:
     int viewSize = ViewSizeOwn / 2;
     bool useResvgCairo = true;
     bool useResvgQt = true;
+    bool useResvgRaqote = true;
     bool useChrome = true;
     bool useFirefox = true;
     bool useBatik = true;
