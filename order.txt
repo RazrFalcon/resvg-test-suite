@@ -785,6 +785,7 @@ e-pattern-013.svg
 e-pattern-014.svg
 e-pattern-015.svg
 e-pattern-016.svg
+e-pattern-029.svg
 e-pattern-017.svg
 e-pattern-018.svg
 e-pattern-019.svg
