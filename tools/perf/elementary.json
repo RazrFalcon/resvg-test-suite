@@ -2,19 +2,23 @@
     "title": "Time to render Elementary OS Icon Theme 5.0",
     "items": [
         {
-            "value": 20,
-            "name": "resvg 0.6.0 (cairo)"
+            "value": 21,
+            "name": "resvg 0.7.0 (cairo)"
         },
         {
-            "value": 36,
-            "name": "resvg 0.6.0 (qt)"
+            "value": 38,
+            "name": "resvg 0.7.0 (qt)"
+        },
+        {
+            "value": 21,
+            "name": "resvg 0.7.0 (raqote)"
         },
         {
             "value": 30,
-            "name": "QtSvg 5.11.3"
+            "name": "QtSvg 5.12.3"
         },
         {
-            "value": 23,
+            "value": 24,
             "name": "librsvg 2.45.5"
         }
     ],

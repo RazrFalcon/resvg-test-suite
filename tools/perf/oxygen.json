@@ -2,16 +2,20 @@
     "title": "Time to render Oxygen Icon Theme 4.12",
     "items": [
         {
-            "value": 206,
-            "name": "resvg 0.6.0 (cairo)"
+            "value": 250,
+            "name": "resvg 0.7.0 (cairo)"
         },
         {
-            "value": 225,
-            "name": "resvg 0.6.0 (qt)"
+            "value": 237,
+            "name": "resvg 0.7.0 (qt)"
         },
         {
-            "value": 178,
-            "name": "QtSvg 5.11.3"
+            "value": 360,
+            "name": "resvg 0.7.0 (raqote)"
+        },
+        {
+            "value": 160,
+            "name": "QtSvg 5.12.3"
         },
         {
             "value": 163,
