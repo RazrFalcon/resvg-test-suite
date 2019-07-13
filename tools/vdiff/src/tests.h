@@ -22,6 +22,7 @@ enum class Backend
     ResvgCairo,
     ResvgQt,
     ResvgRaqote,
+    ResvgSkia,
     Batik,
     Inkscape,
     Librsvg,

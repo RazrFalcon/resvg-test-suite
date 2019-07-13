@@ -31,6 +31,7 @@ public:
     bool useResvgCairo = true;
     bool useResvgQt = true;
     bool useResvgRaqote = true;
+    bool useResvgSkia = true;
     bool useChrome = true;
     bool useFirefox = true;
     bool useBatik = true;

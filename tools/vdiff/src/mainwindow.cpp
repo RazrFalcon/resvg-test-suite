@@ -68,6 +68,7 @@ void MainWindow::prepareBackends()
     }
     m_backendWidges.clear();
 
+    QVector<Backend> resvgBackend;
     QVector<Backend> backends;
 
     if (m_settings.testSuite != TestSuite::Custom) {
@@ -75,15 +76,23 @@ void MainWindow::prepareBackends()
     }
 
     if (m_settings.useResvgCairo) {
+        resvgBackend << Backend::ResvgCairo;
         backends << Backend::ResvgCairo;
     }
 
     if (m_settings.useResvgQt) {
+        resvgBackend << Backend::ResvgQt;
         backends << Backend::ResvgQt;
     }
 
     if (m_settings.useResvgRaqote) {
+        resvgBackend << Backend::ResvgRaqote;
         backends << Backend::ResvgRaqote;
+    }
+
+    if (m_settings.useResvgSkia) {
+        resvgBackend << Backend::ResvgSkia;
+        backends << Backend::ResvgSkia;
     }
 
     if (m_settings.useChrome) {
@@ -126,16 +135,8 @@ void MainWindow::prepareBackends()
         m_backendWidges.value(Backend::Reference)->setTestStateVisible(false);
     }
 
-    if (m_settings.useResvgCairo && m_settings.useResvgQt) {
-        m_backendWidges.value(Backend::ResvgQt)->setTestStateVisible(false);
-    }
-
-    if (m_settings.useResvgCairo && m_settings.useResvgRaqote) {
-        m_backendWidges.value(Backend::ResvgRaqote)->setTestStateVisible(false);
-    }
-
-    if (m_settings.useResvgQt && m_settings.useResvgRaqote) {
-        m_backendWidges.value(Backend::ResvgRaqote)->setTestStateVisible(false);
+    for (int i = 1; i < resvgBackend.size(); ++i) {
+        m_backendWidges.value(resvgBackend.at(i))->setTestStateVisible(false);
     }
 
     if (m_settings.testSuite == TestSuite::Custom) {
@@ -278,11 +279,15 @@ void MainWindow::updatePassFlags()
 
         for (auto *w : m_backendWidges.values()) {
             auto backend = w->backend();
-            if (backend == Backend::ResvgQt && !m_backendWidges.contains(Backend::ResvgCairo)) {
-                item.state.insert(Backend::ResvgCairo, w->testState());
-            }
 
-            if (backend == Backend::ResvgRaqote && !m_backendWidges.contains(Backend::ResvgCairo)) {
+            // Must be in the same order as in MainWindow::prepareBackends().
+            if (m_backendWidges.contains(Backend::ResvgCairo)) {
+                item.state.insert(Backend::ResvgCairo, w->testState());
+            } else if (m_backendWidges.contains(Backend::ResvgQt)) {
+                item.state.insert(Backend::ResvgCairo, w->testState());
+            } else if (m_backendWidges.contains(Backend::ResvgRaqote)) {
+                item.state.insert(Backend::ResvgCairo, w->testState());
+            } else if (m_backendWidges.contains(Backend::ResvgSkia)) {
                 item.state.insert(Backend::ResvgCairo, w->testState());
             }
 
@@ -449,7 +454,6 @@ void MainWindow::on_btnPrint_clicked()
                 case TestState::Passed  : p.setPen(Qt::green); break;
                 case TestState::Failed  : p.setPen(Qt::red); break;
                 case TestState::Crashed : p.setPen(Qt::yellow); break;
-                default: break;
             }
 
             p.drawRect(x, y + titleHeight, img.width() / scale, img.height() / scale);

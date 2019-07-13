@@ -115,6 +115,7 @@ QImage Render::renderViaResvg(const RenderData &data)
         case Backend::ResvgCairo    : backendName = "cairo"; break;
         case Backend::ResvgQt       : backendName = "qt"; break;
         case Backend::ResvgRaqote   : backendName = "raqote"; break;
+        case Backend::ResvgSkia     : backendName = "skia"; break;
         default: Q_UNREACHABLE();
     }
 
@@ -124,7 +125,7 @@ QImage Render::renderViaResvg(const RenderData &data)
         data.imgPath,
         outPath,
         "-w", QString::number(data.viewSize),
-        QString("--backend=") + backendName
+        QString("--backend"), backendName
     }, true);
 
     if (!out.isEmpty()) {
@@ -246,6 +247,10 @@ void Render::renderImages()
         list.append({ Backend::ResvgRaqote, m_viewSize, m_dpiScale, m_imgPath, m_settings->resvgPath(), ts });
     }
 
+    if (m_settings->useResvgSkia) {
+        list.append({ Backend::ResvgSkia, m_viewSize, m_dpiScale, m_imgPath, m_settings->resvgPath(), ts });
+    }
+
     auto renderCached = [&](const Backend backend, const QString &renderPath) {
         if (ts != TestSuite::Custom) {
             const auto cachedImage = m_imgCache.getImage(backend, m_imgPath);
@@ -310,6 +315,7 @@ RenderResult Render::renderImage(const RenderData &data)
             case Backend::ResvgCairo  : img = renderViaResvg(data); break;
             case Backend::ResvgQt     : img = renderViaResvg(data); break;
             case Backend::ResvgRaqote : img = renderViaResvg(data); break;
+            case Backend::ResvgSkia   : img = renderViaResvg(data); break;
             case Backend::Batik       : img = renderViaBatik(data); break;
             case Backend::Inkscape    : img = renderViaInkscape(data); break;
             case Backend::Librsvg     : img = renderViaRsvg(data); break;
