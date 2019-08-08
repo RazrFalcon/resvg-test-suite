@@ -1122,3 +1122,5 @@ e-use-024.svg
 e-use-028.svg
 e-use-029.svg
 e-use-030.svg
+e-use-031.svg
+e-use-032.svg
