@@ -65,7 +65,10 @@ a-fill-018.svg
 a-fill-019.svg
 a-fill-020.svg
 a-fill-021.svg
+a-fill-029.svg
+a-fill-041.svg
 a-fill-022.svg
+a-fill-030.svg
 a-fill-023.svg
 a-fill-024.svg
 a-fill-025.svg
@@ -75,8 +78,6 @@ a-fill-035.svg
 a-fill-036.svg
 a-fill-037.svg
 a-fill-027.svg
-a-fill-029.svg
-a-fill-030.svg
 a-fill-031.svg
 a-fill-032.svg
 a-fill-033.svg
