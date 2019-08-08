@@ -1052,6 +1052,9 @@ e-tref-005.svg
 e-tref-006.svg
 e-tref-007.svg
 e-tref-008.svg
+e-tref-009.svg
+e-tref-010.svg
+e-tref-011.svg
 e-tspan-001.svg
 e-tspan-002.svg
 e-tspan-014.svg

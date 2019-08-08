@@ -278,20 +278,18 @@ void MainWindow::updatePassFlags()
         auto &item = m_tests.at(idx);
 
         for (auto *w : m_backendWidges.values()) {
-            auto backend = w->backend();
+            item.state.insert(w->backend(), w->testState());
+        }
 
-            // Must be in the same order as in MainWindow::prepareBackends().
-            if (m_backendWidges.contains(Backend::ResvgCairo)) {
-                item.state.insert(Backend::ResvgCairo, w->testState());
-            } else if (m_backendWidges.contains(Backend::ResvgQt)) {
-                item.state.insert(Backend::ResvgCairo, w->testState());
-            } else if (m_backendWidges.contains(Backend::ResvgRaqote)) {
-                item.state.insert(Backend::ResvgCairo, w->testState());
-            } else if (m_backendWidges.contains(Backend::ResvgSkia)) {
-                item.state.insert(Backend::ResvgCairo, w->testState());
-            }
-
-            item.state.insert(backend, w->testState());
+        // Must be in the same order as in MainWindow::prepareBackends().
+        if (m_backendWidges.contains(Backend::ResvgCairo)) {
+            item.state.insert(Backend::ResvgCairo, m_backendWidges.value(Backend::ResvgCairo)->testState());
+        } else if (m_backendWidges.contains(Backend::ResvgQt)) {
+            item.state.insert(Backend::ResvgCairo, m_backendWidges.value(Backend::ResvgQt)->testState());
+        } else if (m_backendWidges.contains(Backend::ResvgRaqote)) {
+            item.state.insert(Backend::ResvgCairo, m_backendWidges.value(Backend::ResvgRaqote)->testState());
+        } else if (m_backendWidges.contains(Backend::ResvgSkia)) {
+            item.state.insert(Backend::ResvgCairo, m_backendWidges.value(Backend::ResvgSkia)->testState());
         }
     } catch (const QString &msg) {
         QMessageBox::critical(this, "Error", msg);
