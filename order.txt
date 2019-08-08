@@ -196,6 +196,7 @@ a-stroke-003.svg
 a-stroke-004.svg
 a-stroke-005.svg
 a-stroke-006.svg
+a-stroke-020.svg
 a-stroke-007.svg
 a-stroke-008.svg
 a-stroke-009.svg
