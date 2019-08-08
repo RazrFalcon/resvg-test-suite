@@ -402,6 +402,7 @@ e-clipPath-038.svg
 e-clipPath-041.svg
 e-clipPath-042.svg
 e-clipPath-044.svg
+e-clipPath-045.svg
 e-defs-001.svg
 e-defs-002.svg
 e-defs-003.svg
