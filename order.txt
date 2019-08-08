@@ -25,6 +25,7 @@ a-clip-001.svg
 a-clip-path-001.svg
 a-clip-rule-001.svg
 a-color-001.svg
+a-color-002.svg
 a-color-interpolation-filters-001.svg
 a-direction-001.svg
 a-direction-002.svg
