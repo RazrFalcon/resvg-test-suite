@@ -69,8 +69,8 @@ def check_results():
         raise ValueError('results.csv is out of date')
 
 
-def check_untracked_files():
-    output = subprocess.check_output(['git', 'ls-files', '--others', '--exclude-standard', 'svg'])
+def check_untracked_files(dir):
+    output = subprocess.check_output(['git', 'ls-files', '--others', '--exclude-standard', dir])
     if not output:
         return
 
@@ -219,7 +219,8 @@ def main():
     check_results()
     check_title()
     check_node_ids()
-    check_untracked_files()
+    check_untracked_files('svg')
+    check_untracked_files('png')
     check_line_width()
     check_for_unused_xlink_ns()
 
