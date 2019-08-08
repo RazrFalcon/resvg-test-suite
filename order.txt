@@ -258,6 +258,8 @@ a-stroke-width-004.svg
 a-stroke-width-005.svg
 a-style-001.svg
 a-style-002.svg
+a-style-003.svg
+a-style-004.svg
 a-systemLanguage-001.svg
 a-systemLanguage-002.svg
 a-systemLanguage-003.svg
@@ -917,6 +919,8 @@ e-style-008.svg
 e-style-009.svg
 e-style-010.svg
 e-style-011.svg
+e-style-012.svg
+e-style-013.svg
 e-svg-001.svg
 e-svg-002.svg
 e-svg-003.svg

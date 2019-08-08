@@ -89,8 +89,7 @@ def check_title():
 
     titles = {}
     for file in files:
-        tag_name = file[2:]
-        tag_name = re.sub('-[0-9]+\.svg', '', tag_name)
+        tag_name = re.sub('-[0-9]+\.svg', '', file)
 
         tree = etree.parse('svg/' + file)
         title = list(tree.getroot())[0].text
