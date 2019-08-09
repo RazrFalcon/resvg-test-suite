@@ -4,7 +4,7 @@
     <desc>CSS should be applied before `use` resolving</desc>
 
     <style id="style1" type="text/css">
-        rect { fill:green; }
+        #rect1 { fill:green; }
     </style>
 
     <defs id="defs1">
