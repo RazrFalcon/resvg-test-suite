@@ -438,6 +438,7 @@ e-feComponentTransfer-002.svg
 e-feComponentTransfer-003.svg
 e-feComponentTransfer-004.svg
 e-feComponentTransfer-005.svg
+e-feComponentTransfer-022.svg
 e-feComponentTransfer-006.svg
 e-feComponentTransfer-007.svg
 e-feComponentTransfer-008.svg
