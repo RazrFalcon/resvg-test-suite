@@ -423,6 +423,20 @@ void MainWindow::on_btnPrint_clicked()
 
     p.setFont(QFont("Arial", 12));
 
+    int resvgBackends = 0;
+    if (opt.backends.contains(Backend::ResvgCairo)) {
+        resvgBackends += 1;
+    }
+    if (opt.backends.contains(Backend::ResvgQt)) {
+        resvgBackends += 1;
+    }
+    if (opt.backends.contains(Backend::ResvgRaqote)) {
+        resvgBackends += 1;
+    }
+    if (opt.backends.contains(Backend::ResvgSkia)) {
+        resvgBackends += 1;
+    }
+
     int x = spacing;
     int y = spacing;
     for (const auto backend : opt.backends) {
@@ -433,10 +447,14 @@ void MainWindow::on_btnPrint_clicked()
         auto w = m_backendWidges.value(backend);
         auto title = w->title();
 
-        if (backend == Backend::ResvgCairo && !opt.backends.contains(Backend::ResvgQt)) {
-            title = "resvg";
-        } else if (backend == Backend::ResvgQt && !opt.backends.contains(Backend::ResvgCairo)) {
-            title = "resvg";
+        if (   backend == Backend::ResvgCairo
+            || backend == Backend::ResvgQt
+            || backend == Backend::ResvgRaqote
+            || backend == Backend::ResvgSkia)
+        {
+            if (resvgBackends == 1) {
+                title = "resvg";
+            }
         }
 
         const auto textRect = QRect(x, y, m_settings.viewSize, titleHeight - 3);
