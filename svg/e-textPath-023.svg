@@ -7,7 +7,9 @@
 
     <text id="text1" font-family="Arial" font-size="24">
         <textPath id="textPath1" xlink:href="#pathForText1">
-            Some <tspan id="tspan1" fill="green" dx="10" dy="20">long</tspan> text
+            Some
+            <tspan id="tspan1" fill="green" dx="10" dy="20">long</tspan>
+            <tspan id="tspan2" fill="blue" dx="-5" dy="-20">text</tspan>
         </textPath>
     </text>
 
