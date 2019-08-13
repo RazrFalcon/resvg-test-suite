@@ -775,9 +775,14 @@ e-path-011.svg
 e-path-012.svg
 e-path-013.svg
 e-path-014.svg
+e-path-047.svg
+e-path-048.svg
 e-path-044.svg
 e-path-045.svg
 e-path-046.svg
+e-path-049.svg
+e-path-050.svg
+e-path-051.svg
 e-path-015.svg
 e-path-016.svg
 e-path-017.svg
