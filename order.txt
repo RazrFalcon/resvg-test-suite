@@ -969,6 +969,7 @@ e-style-012.svg
 e-style-013.svg
 e-style-014.svg
 e-style-015.svg
+e-style-016.svg
 e-svg-001.svg
 e-svg-002.svg
 e-svg-003.svg
