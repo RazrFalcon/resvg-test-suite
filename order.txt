@@ -764,6 +764,7 @@ e-mask-024.svg
 e-mask-025.svg
 e-mask-026.svg
 e-mask-027.svg
+e-mask-028.svg
 e-path-001.svg
 e-path-002.svg
 e-path-003.svg
