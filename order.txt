@@ -108,6 +108,7 @@ a-font-family-007.svg
 a-font-family-008.svg
 a-font-family-009.svg
 a-font-family-010.svg
+a-font-family-011.svg
 a-font-size-001.svg
 a-font-size-002.svg
 a-font-size-003.svg
