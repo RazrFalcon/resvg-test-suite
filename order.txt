@@ -498,6 +498,7 @@ e-feFlood-005.svg
 e-feFlood-006.svg
 e-feGaussianBlur-001.svg
 e-feGaussianBlur-002.svg
+e-feGaussianBlur-011.svg
 e-feGaussianBlur-003.svg
 e-feGaussianBlur-004.svg
 e-feGaussianBlur-005.svg
