@@ -334,7 +334,7 @@ def main():
          '<tr>\n'
          '<th></th>\n'
          '<th>#</th>\n'
-         '<th>Feature</th>\n'
+         '<th>Test</th>\n'
          '<th>resvg</th>\n'
          '<th>Chrome</th>\n'
          '<th>Firefox</th>\n'
