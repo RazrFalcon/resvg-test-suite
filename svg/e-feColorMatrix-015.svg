@@ -1,5 +1,5 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <title>Without a `type`</title>
+    <title>Without attributes</title>
 
     <linearGradient id="lg1">
         <stop offset="0" stop-color="#cc00cc"/>
@@ -8,7 +8,7 @@
         <stop offset="1" stop-color="#a0a0ff"/>
     </linearGradient>
     <filter id="filter1">
-        <feColorMatrix values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0"/>
+        <feColorMatrix/>
     </filter>
     <rect id="rect1" x="20" y="20" width="160" height="160"
           fill="url(#lg1)" filter="url(#filter1)"/>

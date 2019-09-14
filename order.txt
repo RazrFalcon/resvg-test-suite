@@ -451,6 +451,8 @@ e-feColorMatrix-011.svg
 e-feColorMatrix-012.svg
 e-feColorMatrix-013.svg
 e-feColorMatrix-014.svg
+e-feColorMatrix-015.svg
+e-feColorMatrix-016.svg
 e-feComponentTransfer-001.svg
 e-feComponentTransfer-002.svg
 e-feComponentTransfer-003.svg
