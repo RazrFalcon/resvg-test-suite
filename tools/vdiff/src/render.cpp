@@ -90,7 +90,7 @@ QImage Render::renderViaFirefox(const RenderData &data)
         h *= 0.75;
     }
 
-    const QString out = Process::run(data.convPath, {
+    QString out = Process::run(data.convPath, {
         "--headless",
         "--window-size",
         QString("%1,%2").arg(w).arg(h),
@@ -100,6 +100,14 @@ QImage Render::renderViaFirefox(const RenderData &data)
     }, true);
 
     if (!out.isEmpty()) {
+        // Strip GTK warnings.
+        auto lines = out.split("\n");
+        const auto warnings = lines.filter("Gtk-Message");
+        for (const auto &w : warnings) {
+            lines.removeOne(w);
+        }
+        out = lines.join("\n");
+
         if (out.simplified() != "*** You are running in headless mode.") {
             qDebug().noquote() << "firefox:" << out;
         }
@@ -203,6 +211,35 @@ QImage Render::renderViaRsvg(const RenderData &data)
     return loadImage(outImg).convertToFormat(QImage::Format_ARGB32);
 }
 
+QImage Render::renderViaWxSvg(const RenderData &data)
+{
+#ifdef Q_OS_WIN
+    const auto exePath = QString(SRCDIR) + "../wxsvgrender/release/wxsvgrender";
+#else
+    const auto exePath = QString(SRCDIR) + "../wxsvgrender/wxsvgrender";
+#endif
+    const auto outImg = Paths::workDir() + "/wxsvg.png";
+
+    // TODO: fix this temporary hack
+    int h = data.viewSize;
+    if (data.testSuite == TestSuite::Official) {
+        h *= 0.75;
+    }
+
+    const QString out = Process::run(exePath, {
+        data.imgPath,
+        outImg,
+        QString::number(data.viewSize),
+        QString::number(h)
+    }, true);
+
+    if (!out.isEmpty()) {
+        qDebug().noquote() << "wxsvg:" << out;
+    }
+
+    return loadImage(outImg);
+}
+
 QImage Render::renderViaQtSvg(const RenderData &data)
 {
 #ifdef Q_OS_WIN
@@ -285,6 +322,10 @@ void Render::renderImages()
         list.append({ Backend::Librsvg, m_viewSize, m_dpiScale, m_imgPath, m_settings->librsvgPath, ts });
     }
 
+    if (m_settings->useWxSvg) {
+        list.append({ Backend::WxSvg, m_viewSize, m_dpiScale, m_imgPath, QString(), ts });
+    }
+
     if (m_settings->useQtSvg) {
         list.append({ Backend::QtSvg, m_viewSize, m_dpiScale, m_imgPath, QString(), ts });
     }
@@ -319,6 +360,7 @@ RenderResult Render::renderImage(const RenderData &data)
             case Backend::Batik       : img = renderViaBatik(data); break;
             case Backend::Inkscape    : img = renderViaInkscape(data); break;
             case Backend::Librsvg     : img = renderViaRsvg(data); break;
+            case Backend::WxSvg       : img = renderViaWxSvg(data); break;
             case Backend::QtSvg       : img = renderViaQtSvg(data); break;
         }
 

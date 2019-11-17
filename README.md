@@ -27,6 +27,7 @@ Apps and libraries:
 - librsvg
 - Batik (Java)
 - Python 3
+- wxSVG
 - asciidoctor (for github pages)
 - ... and the [resvg](https://github.com/RazrFalcon/resvg) itself
 

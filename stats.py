@@ -36,11 +36,11 @@ with open(args.input, 'r') as f:
 
         file_name = row[0]
         flags = [int(row[1]), int(row[2]), int(row[3]), int(row[4]),
-                 int(row[5]), int(row[6]), int(row[7])]
+                 int(row[5]), int(row[6]), int(row[7]), int(row[8])]
 
         rows.append(RowData(file_name, flags))
 
-passed = [0, 0, 0, 0, 0, 0, 0]
+passed = [0, 0, 0, 0, 0, 0, 0, 0]
 for row in rows:
     for idx, flag in enumerate(row.flags):
         if flag == PASSED or flag == UNKNOWN:
@@ -79,6 +79,10 @@ barh_data = json.dumps(
         },
         {
             "name": "QtSvg 5.12.3",
+            "value": passed[7]
+        },
+        {
+            "name": "wxSvg 1.5.11",
             "value": passed[6]
         }
     ],

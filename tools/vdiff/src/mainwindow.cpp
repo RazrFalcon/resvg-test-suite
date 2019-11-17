@@ -115,6 +115,10 @@ void MainWindow::prepareBackends()
         backends << Backend::Librsvg;
     }
 
+    if (m_settings.useWxSvg) {
+        backends << Backend::WxSvg;
+    }
+
     if (m_settings.useQtSvg) {
         backends << Backend::QtSvg;
     }

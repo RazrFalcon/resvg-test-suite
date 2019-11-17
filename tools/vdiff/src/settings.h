@@ -37,6 +37,7 @@ public:
     bool useBatik = true;
     bool useInkscape = true;
     bool useLibrsvg = true;
+    bool useWxSvg = true;
     bool useQtSvg = true;
     QString resvgDir; // it's a dir, not a path
     QString firefoxPath;
