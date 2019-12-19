@@ -6,31 +6,17 @@ import subprocess
 import time
 
 
-def render_file(render, exe):
-    if render == 'resvg-qt':
-        args = [exe, in_svg, out_png, '--backend', 'qt']
-    elif render == 'resvg-cairo':
-        args = [exe, in_svg, out_png, '--backend', 'cairo']
-    elif render == 'resvg-raqote':
-        args = [exe, in_svg, out_png, '--backend', 'raqote']
-    elif render == 'resvg-skia':
-        args = [exe, in_svg, out_png, '--backend', 'skia']
-    elif render == 'batik':
-        args = [exe, '-scriptSecurityOff', in_svg, '-d', out_png]
-    elif render == 'librsvg':
-        args = [exe, '-f', 'png', in_svg, '-o', out_png]
-    elif render == 'qtsvg':
-        args = [exe, in_svg, out_png]
-
-    res = subprocess.run(args, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+def render_file(exe, backend, zoom):
+    res = subprocess.run([exe, in_svg, out_png, '--backend', backend, '-z', str(zoom)],
+                          stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     return res.returncode == 0
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('render', help='Render type',
-                        choices=['resvg-qt', 'resvg-cairo', 'resvg-raqote', 'resvg-skia',
-                                 'batik', 'librsvg', 'qtsvg'])
+    parser.add_argument('--zoom', help='Zoom', type=float, default=1)
+    parser.add_argument('backend', help='Backend',
+                        choices=['qt', 'cairo', 'raqote', 'skia'])
     parser.add_argument('exe', help='Render executable')
     parser.add_argument('in_dir', help='Input directory')
     parser.add_argument('out_dir', help='Output directory')
@@ -54,7 +40,7 @@ if __name__ == '__main__':
     for idx, file in enumerate(svg_files):
         print('{} out of {}'.format(idx + 1, len(svg_files)), end='\r')
         in_svg, out_png = file
-        if not render_file(args.render, args.exe):
+        if not render_file(args.exe, args.backend, args.zoom):
             broken_files.append(in_svg)
 
     elapsed_time = time.time() - start_time

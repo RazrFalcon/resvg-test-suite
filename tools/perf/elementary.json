@@ -1,29 +1,21 @@
 {
-    "title": "Time to render Elementary OS Icon Theme 5.0",
+    "title": "Time to render Elementary OS Icon Theme 5.0 (3417 files)",
     "items": [
         {
-            "value": 19,
-            "name": "resvg 0.8.0 (cairo)"
+            "value": 15,
+            "name": "cairo-backend"
         },
         {
-            "value": 35,
-            "name": "resvg 0.8.0 (qt)"
+            "value": 27,
+            "name": "qt-backend"
         },
         {
-            "value": 19,
-            "name": "resvg 0.8.0 (raqote)"
+            "value": 22,
+            "name": "raqote-backend"
         },
         {
-            "value": 19,
-            "name": "resvg 0.8.0 (skia)"
-        },
-        {
-            "value": 24,
-            "name": "librsvg 2.45.5"
-        },
-        {
-            "value": 30,
-            "name": "QtSvg 5.12.3"
+            "value": 16,
+            "name": "skia-backend"
         }
     ],
     "hor_axis": {

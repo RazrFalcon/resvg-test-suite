@@ -1,29 +1,21 @@
 {
-    "title": "Time to render Oxygen Icon Theme 4.12",
+    "title": "Time to render Oxygen Icon Theme 4.12 (4947 files)",
     "items": [
         {
-            "value": 195,
-            "name": "resvg 0.8.0 (cairo)"
+            "value": 125,
+            "name": "cairo-backend"
         },
         {
-            "value": 191,
-            "name": "resvg 0.8.0 (qt)"
+            "value": 126,
+            "name": "qt-backend"
         },
         {
-            "value": 205,
-            "name": "resvg 0.8.0 (raqote)"
+            "value": 144,
+            "name": "raqote-backend"
         },
         {
-            "value": 175,
-            "name": "resvg 0.8.0 (skia)"
-        },
-        {
-            "value": 163,
-            "name": "librsvg 2.45.5"
-        },
-        {
-            "value": 160,
-            "name": "QtSvg 5.12.3"
+            "value": 110,
+            "name": "skia-backend"
         }
     ],
     "hor_axis": {
