@@ -138,6 +138,7 @@ def check_node_ids():
         'feImage',
         'feMerge',
         'feMergeNode',
+        'feMorphology',
         'feOffset',
         'feTile',
     ]
