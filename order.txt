@@ -537,6 +537,7 @@ e-feConvolveMatrix-022.svg
 e-feConvolveMatrix-023.svg
 e-feConvolveMatrix-024.svg
 e-feConvolveMatrix-025.svg
+e-feDisplacementMap-001.svg
 e-feFlood-001.svg
 e-feFlood-002.svg
 e-feFlood-003.svg
