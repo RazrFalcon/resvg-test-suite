@@ -141,6 +141,7 @@ def check_node_ids():
         'feMorphology',
         'feOffset',
         'feTile',
+        'feTurbulence',
     ]
 
     for file in ignore_files:
