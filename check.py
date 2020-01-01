@@ -129,6 +129,8 @@ def check_node_ids():
         'feComponentTransfer',
         'feComposite',
         'feConvolveMatrix',
+        'feDiffuseLighting',
+        'feDistantLight',
         'feFlood',
         'feFuncA',
         'feFuncB',
@@ -140,6 +142,9 @@ def check_node_ids():
         'feMergeNode',
         'feMorphology',
         'feOffset',
+        'fePointLight',
+        'feSpecularLighting',
+        'feSpotLight',
         'feTile',
         'feTurbulence',
     ]
