@@ -586,6 +586,8 @@ e-feImage-004.svg
 e-feImage-005.svg
 e-feImage-006.svg
 e-feImage-019.svg
+e-feImage-020.svg
+e-feImage-021.svg
 e-feImage-012.svg
 e-feImage-017.svg
 e-feImage-013.svg
