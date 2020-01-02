@@ -12,7 +12,6 @@
 - `gh-pages.sh` - generates github pages
 - `official.csv` - results of manual testing via `tools/vdiff` of the official SVG test suite
 - `order.txt` - custom tests order for pretty-printing
-- `outline.py` - pretty-print tests
 - `results.csv` - results of manual testing via `tools/vdiff` of the `resvg` test suite
 - `stats.py` - generates `site/images/chart.svg`
 
