@@ -4,7 +4,7 @@
 
 - `svg/` - SVG images. Actual tests
 - `png/` - PNG images with expected rendering results
-- `images/` - images that will be included to the SVG via the `image` tag
+- `images/` - images that will be referenced by SVG files
 - `site/` - sources for github pages
 - `tools/` - various testing tools
 - `check.py` - pre-commit hook
@@ -16,25 +16,12 @@
 - `results.csv` - results of manual testing via `tools/vdiff` of the `resvg` test suite
 - `stats.py` - generates `site/images/chart.svg`
 
-## Requirements
+## Required fonts
 
-Linux. Other OS'es aren't supported, but should work.
-
-Apps and libraries:
-- node.js
-- Qt 5
-- Inkscape
-- librsvg
-- Batik (Java)
-- Python 3
-- wxSVG
-- asciidoctor (for github pages)
-- ... and the [resvg](https://github.com/RazrFalcon/resvg) itself
-
-Fonts:
 - Arial
 - Times New Roman
 - [Source Code Pro](https://fonts.google.com/specimen/Source+Code+Pro) (all weights)
+- Any font with emojis, like [Noto Color Emoji](https://www.google.com/get/noto/help/emoji/)
 
 ## Tests order
 
