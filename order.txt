@@ -557,6 +557,7 @@ e-feDiffuseLighting-017.svg
 e-feDiffuseLighting-018.svg
 e-feDiffuseLighting-019.svg
 e-feDiffuseLighting-020.svg
+e-feDiffuseLighting-021.svg
 e-feDisplacementMap-001.svg
 e-feDistantLight-001.svg
 e-feDistantLight-002.svg
@@ -603,6 +604,7 @@ e-feImage-010.svg
 e-feImage-011.svg
 e-feMerge-001.svg
 e-feMerge-002.svg
+e-feMerge-003.svg
 e-feMorphology-001.svg
 e-feMorphology-002.svg
 e-feMorphology-003.svg
@@ -624,9 +626,11 @@ e-feOffset-004.svg
 e-feOffset-005.svg
 e-feOffset-006.svg
 e-feOffset-007.svg
+e-feOffset-008.svg
 e-fePointLight-001.svg
 e-fePointLight-002.svg
 e-fePointLight-003.svg
+e-fePointLight-004.svg
 e-feSpecularLighting-001.svg
 e-feSpecularLighting-002.svg
 e-feSpecularLighting-003.svg
@@ -645,12 +649,14 @@ e-feSpotLight-008.svg
 e-feSpotLight-009.svg
 e-feSpotLight-010.svg
 e-feSpotLight-011.svg
+e-feSpotLight-012.svg
 e-feTile-001.svg
 e-feTile-002.svg
 e-feTile-003.svg
 e-feTile-004.svg
 e-feTile-005.svg
 e-feTile-006.svg
+e-feTile-007.svg
 e-feTurbulence-001.svg
 e-feTurbulence-002.svg
 e-feTurbulence-003.svg
