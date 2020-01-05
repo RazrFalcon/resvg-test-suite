@@ -14,7 +14,7 @@
     <clipPath id="clip1">
         <path id="path1" d="M 100 15 l 50 160 l -130 -100 l 160 0 l -130 100 z"/>
     </clipPath>
-    <rect id="rect2" x="40" y="40" width="120" height="120" fill="green"
+    <rect id="rect2" x="40" y="40" width="120" height="120" fill="seagreen"
           clip-path="url(#clip1)" mask="url(#mask1)" filter="url(#filter1)"/>
 
     <!-- image frame -->

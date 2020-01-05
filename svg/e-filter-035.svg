@@ -4,7 +4,7 @@
     <filter id="filter1">
         <feGaussianBlur stdDeviation="2" in="StrokePaint"/>
     </filter>
-    <circle id="circle1" cx="100" cy="100" r="60" fill="none" stroke="green"
+    <circle id="circle1" cx="100" cy="100" r="60" fill="none" stroke="seagreen"
             filter="url(#filter1)"/>
 
     <!-- image frame -->

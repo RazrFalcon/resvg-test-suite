@@ -2,7 +2,7 @@
     <title>Complex transform (UB)</title>
 
     <filter id="filter1">
-        <feFlood flood-color="green" x="28" y="28" width="10" height="10"/>
+        <feFlood flood-color="seagreen" x="28" y="28" width="10" height="10"/>
         <feOffset dx="5" dy="5"/>
         <feTile/>
     </filter>

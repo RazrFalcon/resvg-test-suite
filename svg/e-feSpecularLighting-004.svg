@@ -6,7 +6,7 @@
         <stop offset="1" stop-color="black" stop-opacity="0"/>
     </radialGradient>
     <filter id="filter1" color-interpolation-filters="sRGB">
-        <feSpecularLighting in="SourceAlpha" lighting-color="green" specularConstant="5">
+        <feSpecularLighting in="SourceAlpha" lighting-color="seagreen" specularConstant="5">
             <feSpotLight x="100" y="150" z="20"/>
         </feSpecularLighting>
     </filter>

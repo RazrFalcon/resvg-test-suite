@@ -7,7 +7,7 @@
     <filter id="filter1">
         <feGaussianBlur stdDeviation="1"/>
     </filter>
-    <line id="line1" x1="100" y1="20" x2="100" y2="180" stroke="green" stroke-width="20"
+    <line id="line1" x1="100" y1="20" x2="100" y2="180" stroke="seagreen" stroke-width="20"
           filter="url(#filter1)"/>
 
     <!-- image frame -->

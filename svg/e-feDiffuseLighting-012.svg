@@ -5,7 +5,7 @@
         <stop offset="0.5" stop-color="white"/>
         <stop offset="1" stop-color="black" stop-opacity="0"/>
     </radialGradient>
-    <filter id="filter1" color="green" color-interpolation-filters="sRGB">
+    <filter id="filter1" color="seagreen" color-interpolation-filters="sRGB">
         <feDiffuseLighting surfaceScale="10" lighting-color="currentColor">
             <feDistantLight azimuth="45" elevation="45"/>
         </feDiffuseLighting>

@@ -1,12 +1,12 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <title>lighting-color=green</title>
+    <title>lighting-color=seagreen</title>
 
     <radialGradient id="rg1" r="0.5">
         <stop offset="0.5" stop-color="white"/>
         <stop offset="1" stop-color="black" stop-opacity="0"/>
     </radialGradient>
     <filter id="filter1" color-interpolation-filters="sRGB">
-        <feDiffuseLighting surfaceScale="10" lighting-color="green">
+        <feDiffuseLighting surfaceScale="10" lighting-color="seagreen">
             <feDistantLight azimuth="45" elevation="45"/>
         </feDiffuseLighting>
     </filter>

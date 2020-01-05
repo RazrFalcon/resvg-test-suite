@@ -5,7 +5,7 @@
         <filter id="filter1">
             <feGaussianBlur stdDeviation="4"/>
         </filter>
-        <rect id="rect1" x="-110" y="-60" width="320" height="320" fill="green"
+        <rect id="rect1" x="-110" y="-60" width="320" height="320" fill="seagreen"
               filter="url(#filter1)"/>
     </g>
 

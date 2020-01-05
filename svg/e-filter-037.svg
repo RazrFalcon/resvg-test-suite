@@ -3,7 +3,7 @@
 
     <pattern id="patt1" patternUnits="userSpaceOnUse" width="20" height="20">
         <rect id="rect1" x="0" y="0" width="10" height="10" fill="grey"/>
-        <rect id="rect2" x="10" y="10" width="10" height="10" fill="green"/>
+        <rect id="rect2" x="10" y="10" width="10" height="10" fill="seagreen"/>
     </pattern>
     <filter id="filter1">
         <feGaussianBlur stdDeviation="1" in="FillPaint"/>
