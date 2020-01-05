@@ -582,6 +582,7 @@ e-feGaussianBlur-007.svg
 e-feGaussianBlur-008.svg
 e-feGaussianBlur-009.svg
 e-feGaussianBlur-010.svg
+e-feGaussianBlur-012.svg
 e-feImage-001.svg
 e-feImage-002.svg
 e-feImage-003.svg
