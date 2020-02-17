@@ -145,6 +145,22 @@ QImage Render::renderViaResvg(const RenderData &data)
     return loadImage(outPath).convertToFormat(QImage::Format_ARGB32);
 }
 
+QImage Render::renderViaSvgNet(const RenderData &data)
+{
+    const auto outImg = Paths::workDir() + "/" + QFileInfo(data.imgPath).completeBaseName() + ".png";
+
+    const QString out = Process::run(data.convPath, {
+        data.imgPath,
+        outImg
+    }, true);
+
+    if (!out.isEmpty()) {
+        qDebug().noquote() << "svgnet:" << out;
+    }
+
+    return loadImage(outImg);
+}
+
 QImage Render::renderViaBatik(const RenderData &data)
 {
     const auto outImg = Paths::workDir() + "/batik.png";
@@ -322,6 +338,10 @@ void Render::renderImages()
         list.append({ Backend::Librsvg, m_viewSize, m_dpiScale, m_imgPath, m_settings->librsvgPath, ts });
     }
 
+    if (m_settings->useSvgNet) {
+        renderCached(Backend::SvgNet, QString());
+    }
+
     if (m_settings->useWxSvg) {
         list.append({ Backend::WxSvg, m_viewSize, m_dpiScale, m_imgPath, QString(), ts });
     }
@@ -357,6 +377,7 @@ RenderResult Render::renderImage(const RenderData &data)
             case Backend::ResvgQt     : img = renderViaResvg(data); break;
             case Backend::ResvgRaqote : img = renderViaResvg(data); break;
             case Backend::ResvgSkia   : img = renderViaResvg(data); break;
+            case Backend::SvgNet      : img = renderViaSvgNet(data); break;
             case Backend::Batik       : img = renderViaBatik(data); break;
             case Backend::Inkscape    : img = renderViaInkscape(data); break;
             case Backend::Librsvg     : img = renderViaRsvg(data); break;

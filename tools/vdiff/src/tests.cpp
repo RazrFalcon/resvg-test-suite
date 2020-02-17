@@ -99,8 +99,9 @@ Tests Tests::load(const TestSuite testSuite, const QString &path, const QString 
         item.state.insert(Backend::Batik,       stateFormStr(items.at(4)));
         item.state.insert(Backend::Inkscape,    stateFormStr(items.at(5)));
         item.state.insert(Backend::Librsvg,     stateFormStr(items.at(6)));
-        item.state.insert(Backend::WxSvg,       stateFormStr(items.at(7)));
-        item.state.insert(Backend::QtSvg,       stateFormStr(items.at(8)));
+        item.state.insert(Backend::SvgNet,      stateFormStr(items.at(7)));
+        item.state.insert(Backend::WxSvg,       stateFormStr(items.at(8)));
+        item.state.insert(Backend::QtSvg,       stateFormStr(items.at(9)));
 
         if (testSuite == TestSuite::Own) {
             item.title = parseTitle(testPath);
@@ -141,7 +142,7 @@ Tests Tests::loadCustom(const QString &path)
 
 void Tests::save(const QString &path)
 {
-    QString text = "title,chrome,firefox,resvg,batik,inkscape,librsvg,wxsvg,qtsvg\n";
+    QString text = "title,chrome,firefox,resvg,batik,inkscape,librsvg,svgnet,wxsvg,qtsvg\n";
     for (const TestItem &item : m_data) {
         text += QFileInfo(item.path).fileName() + ',';
         text += QString::number((int)item.state.value(Backend::Chrome))     + ',';
@@ -150,6 +151,7 @@ void Tests::save(const QString &path)
         text += QString::number((int)item.state.value(Backend::Batik))      + ',';
         text += QString::number((int)item.state.value(Backend::Inkscape))   + ',';
         text += QString::number((int)item.state.value(Backend::Librsvg))    + ',';
+        text += QString::number((int)item.state.value(Backend::SvgNet))     + ',';
         text += QString::number((int)item.state.value(Backend::WxSvg))      + ',';
         text += QString::number((int)item.state.value(Backend::QtSvg))      + '\n';
     }
@@ -247,6 +249,7 @@ QString backendToString(const Backend &t)
         case Backend::Batik :       return "Batik";
         case Backend::Inkscape :    return "Inkscape";
         case Backend::Librsvg :     return "librsvg";
+        case Backend::SvgNet :      return "SVG.NET";
         case Backend::WxSvg :       return "wxSVG";
         case Backend::QtSvg :       return "QtSvg";
     }

@@ -27,9 +27,7 @@ which is specifically designed for the https://github.com/RazrFalcon/resvg[resvg
 * Features that isn't yet implemented in the _resvg_.
 * XML parsing. +
   Except some DTD and namespace resolving we assume that SVG library supports full XML 1.0 spec.
-* Extended CSS support. +
-  In the _resvg_ case CSS parsing is done on the https://github.com/RazrFalcon/libsvgdom[svgdom] side.
-  And we support only a minimal CSS subset.
+* Extended CSS support.
 * Extended raster image formats features. +
   We assume that underlying PNG and JPEG libraries are good.
 * `a` element. We treating it as `g`.

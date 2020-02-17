@@ -69,6 +69,8 @@ void SettingsDialog::loadSettings()
     ui->chBoxUseLibrsvg->setChecked(m_settings->useLibrsvg);
     ui->lineEditRsvg->setText(m_settings->librsvgPath);
 
+    ui->chBoxUseSvgNet->setChecked(m_settings->useSvgNet);
+
     ui->chBoxUseWxSvg->setChecked(m_settings->useWxSvg);
 
     ui->chBoxUseQtSvg->setChecked(m_settings->useQtSvg);
@@ -132,6 +134,7 @@ void SettingsDialog::on_buttonBox_accepted()
     m_settings->useBatik = ui->chBoxUseBatik->isChecked();
     m_settings->useInkscape = ui->chBoxUseInkscape->isChecked();
     m_settings->useLibrsvg = ui->chBoxUseLibrsvg->isChecked();
+    m_settings->useSvgNet = ui->chBoxUseSvgNet->isChecked();
     m_settings->useWxSvg = ui->chBoxUseWxSvg->isChecked();
     m_settings->useQtSvg = ui->chBoxUseQtSvg->isChecked();
 

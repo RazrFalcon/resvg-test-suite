@@ -115,6 +115,10 @@ void MainWindow::prepareBackends()
         backends << Backend::Librsvg;
     }
 
+    if (m_settings.useSvgNet) {
+        backends << Backend::SvgNet;
+    }
+
     if (m_settings.useWxSvg) {
         backends << Backend::WxSvg;
     }

@@ -36,11 +36,12 @@ with open(args.input, 'r') as f:
 
         file_name = row[0]
         flags = [int(row[1]), int(row[2]), int(row[3]), int(row[4]),
-                 int(row[5]), int(row[6]), int(row[7]), int(row[8])]
+                 int(row[5]), int(row[6]), int(row[7]), int(row[8]),
+                 int(row[9])]
 
         rows.append(RowData(file_name, flags))
 
-passed = [0, 0, 0, 0, 0, 0, 0, 0]
+passed = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 for row in rows:
     for idx, flag in enumerate(row.flags):
         if flag == PASSED or flag == UNKNOWN:
@@ -78,12 +79,16 @@ barh_data = json.dumps(
             "value": passed[3]
         },
         {
+            "name": "SVG.NET 3.0.102",
+            "value": passed[6]
+        },
+        {
             "name": "QtSvg 5.13.2",
-            "value": passed[7]
+            "value": passed[8]
         },
         {
             "name": "wxSvg 1.5.11",
-            "value": passed[6]
+            "value": passed[7]
         }
     ],
     "hor_axis": {

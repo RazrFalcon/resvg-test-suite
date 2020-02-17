@@ -65,6 +65,7 @@ private:
     static QImage renderViaChrome(const RenderData &data);
     static QImage renderViaFirefox(const RenderData &data);
     static QImage renderViaResvg(const RenderData &data);
+    static QImage renderViaSvgNet(const RenderData &data);
     static QImage renderViaBatik(const RenderData &data);
     static QImage renderViaInkscape(const RenderData &data);
     static QImage renderViaRsvg(const RenderData &data);
