@@ -1,1 +1,1 @@
-See https://github.com/vvvv/SVG/issues/614
+https://github.com/vvvv/SVG/tree/master/Samples/SvgConsole

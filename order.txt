@@ -59,6 +59,7 @@ a-enable-background-017.svg
 a-enable-background-018.svg
 a-enable-background-019.svg
 a-enable-background-020.svg
+a-enable-background-021.svg
 a-fill-001.svg
 a-fill-002.svg
 a-fill-003.svg
