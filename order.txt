@@ -885,6 +885,7 @@ e-marker-051.svg
 e-marker-052.svg
 e-marker-053.svg
 e-marker-054.svg
+e-marker-058.svg
 e-marker-055.svg
 e-marker-056.svg
 e-mask-001.svg
