@@ -755,9 +755,11 @@ e-image-017.svg
 e-image-006.svg
 e-image-004.svg
 e-image-009.svg
+e-image-038.svg
 e-image-005.svg
 e-image-007.svg
 e-image-008.svg
+e-image-039.svg
 e-image-010.svg
 e-image-011.svg
 e-image-012.svg
