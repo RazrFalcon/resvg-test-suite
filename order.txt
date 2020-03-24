@@ -243,6 +243,7 @@ a-stroke-dasharray-009.svg
 a-stroke-dasharray-010.svg
 a-stroke-dasharray-011.svg
 a-stroke-dasharray-012.svg
+a-stroke-dasharray-013.svg
 a-stroke-dashoffset-001.svg
 a-stroke-dashoffset-002.svg
 a-stroke-dashoffset-003.svg
