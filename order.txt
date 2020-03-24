@@ -303,6 +303,7 @@ a-text-anchor-009.svg
 a-text-anchor-010.svg
 a-text-anchor-011.svg
 a-text-anchor-012.svg
+a-text-anchor-013.svg
 a-text-decoration-001.svg
 a-text-decoration-002.svg
 a-text-decoration-003.svg
