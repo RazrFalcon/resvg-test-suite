@@ -195,7 +195,7 @@ QImage Render::renderViaInkscape(const RenderData &data)
     /*const QString out = */Process::run(data.convPath, {
         data.imgPath,
         "-w", QString::number(data.viewSize),
-        "--export-png=" + outImg
+        "--export-filename=" + outImg
     });
 
 //    if (!out.isEmpty()) {
