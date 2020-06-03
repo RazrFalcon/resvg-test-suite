@@ -55,27 +55,27 @@ barh_data = json.dumps(
     },
     "items": [
         {
-            "name": "resvg 0.9.0",
+            "name": "resvg 0.9.1",
             "value": passed[2]
         },
         {
-            "name": "Chromium r706915",
+            "name": "Chromium r756035",
             "value": passed[0]
         },
         {
-            "name": "Firefox 60.7",
+            "name": "Firefox 77",
             "value": passed[1]
         },
         {
-            "name": "Inkscape 0.92.4",
+            "name": "Inkscape 1.0",
             "value": passed[4]
         },
         {
-            "name": "librsvg 2.47.2",
+            "name": "librsvg 2.49.1",
             "value": passed[5]
         },
         {
-            "name": "Batik 1.12",
+            "name": "Batik 1.13",
             "value": passed[3]
         },
         {
@@ -83,7 +83,7 @@ barh_data = json.dumps(
             "value": passed[6]
         },
         {
-            "name": "QtSvg 5.13.2",
+            "name": "QtSvg 5.14.2",
             "value": passed[8]
         },
         {

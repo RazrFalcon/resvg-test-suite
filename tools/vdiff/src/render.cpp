@@ -2,6 +2,7 @@
 #include <QFileInfo>
 #include <QPainter>
 #include <QImageReader>
+#include <QUrl>
 #include <QtConcurrent/QtConcurrentMap>
 #include <QtConcurrent/QtConcurrentRun>
 
@@ -90,26 +91,35 @@ QImage Render::renderViaFirefox(const RenderData &data)
         h *= 0.75;
     }
 
+    // Firefox 77 converts SVG files only when they are right next to the firefox binary.
+    // Some kind of bug.
+    const auto workdir = QFileInfo(data.convPath).absolutePath();
+    const auto tmpSvgPath = workdir + "/test.svg";
+    QFile::remove(tmpSvgPath);
+    QFile::copy(data.imgPath, tmpSvgPath);
+
     QString out = Process::run(data.convPath, {
-        "--headless",
-        "--window-size",
-        QString("%1,%2").arg(w).arg(h),
-        "--screenshot",
-        QFileInfo(outImg).absoluteFilePath(),
-        data.imgPath,
+        QString("--window-size=%1,%2").arg(w).arg(h),
+        QString("--screenshot=%1").arg(QFileInfo(outImg).absoluteFilePath()),
+        // The SVG file path must be formed as file:/// URL.
+        QUrl::fromLocalFile(tmpSvgPath).toString(),
     }, true);
 
     if (!out.isEmpty()) {
         // Strip GTK warnings.
         auto lines = out.split("\n");
+        lines.removeAll("");
         const auto warnings = lines.filter("Gtk-Message");
         for (const auto &w : warnings) {
             lines.removeOne(w);
         }
-        out = lines.join("\n");
 
-        if (out.simplified() != "*** You are running in headless mode.") {
-            qDebug().noquote() << "firefox:" << out;
+        if (!lines.isEmpty()) {
+            out = lines.join("\n");
+
+            if (out.simplified() != "*** You are running in headless mode.") {
+                qDebug().noquote() << "firefox:" << out;
+            }
         }
     }
 
