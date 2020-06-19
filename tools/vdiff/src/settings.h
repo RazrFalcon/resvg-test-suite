@@ -16,7 +16,7 @@ public:
     void load() noexcept;
     void save() const noexcept;
 
-    QString resvgPath() const noexcept;
+    QString resvgPath(const Backend backend) const noexcept;
     QString resultsPath() const noexcept;
     QString testsPath() const noexcept;
 

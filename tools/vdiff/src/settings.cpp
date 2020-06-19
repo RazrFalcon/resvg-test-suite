@@ -120,9 +120,23 @@ void Settings::save() const noexcept
     appSettings.setValue(Key::RsvgPath, this->librsvgPath);
 }
 
-QString Settings::resvgPath() const noexcept
+QString Settings::resvgPath(const Backend backend) const noexcept
 {
-    return QString("%1/target/%2/rendersvg").arg(this->resvgDir, buildTypeToStr(this->buildType));
+    if (backend == Backend::ResvgCairo) {
+        return QString("%1/resvg-%2/target/%3/resvg-%2")
+            .arg(this->resvgDir, "cairo", buildTypeToStr(this->buildType));
+    } else if (backend == Backend::ResvgQt) {
+        return QString("%1/resvg-%2/target/%3/resvg-%2")
+            .arg(this->resvgDir, "qt", buildTypeToStr(this->buildType));
+    } else if (backend == Backend::ResvgSkia) {
+        return QString("%1/resvg-%2/target/%3/resvg-%2")
+            .arg(this->resvgDir, "skia", buildTypeToStr(this->buildType));
+    } else if (backend == Backend::ResvgRaqote) {
+        return QString("%1/resvg-%2/target/%3/resvg-%2")
+            .arg(this->resvgDir, "raqote", buildTypeToStr(this->buildType));
+    }
+
+    Q_UNREACHABLE();
 }
 
 QString Settings::resultsPath() const noexcept

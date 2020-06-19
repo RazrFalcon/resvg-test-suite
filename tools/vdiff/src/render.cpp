@@ -143,7 +143,6 @@ QImage Render::renderViaResvg(const RenderData &data)
         data.imgPath,
         outPath,
         "-w", QString::number(data.viewSize),
-        QString("--backend"), backendName
     }, true);
 
     if (!out.isEmpty()) {
@@ -299,19 +298,19 @@ void Render::renderImages()
     }
 
     if (m_settings->useResvgCairo) {
-        list.append({ Backend::ResvgCairo, m_viewSize, m_dpiScale, m_imgPath, m_settings->resvgPath(), ts });
+        list.append({ Backend::ResvgCairo, m_viewSize, m_dpiScale, m_imgPath, m_settings->resvgPath(Backend::ResvgCairo), ts });
     }
 
     if (m_settings->useResvgQt) {
-        list.append({ Backend::ResvgQt, m_viewSize, m_dpiScale, m_imgPath, m_settings->resvgPath(), ts });
+        list.append({ Backend::ResvgQt, m_viewSize, m_dpiScale, m_imgPath, m_settings->resvgPath(Backend::ResvgQt), ts });
     }
 
     if (m_settings->useResvgRaqote) {
-        list.append({ Backend::ResvgRaqote, m_viewSize, m_dpiScale, m_imgPath, m_settings->resvgPath(), ts });
+        list.append({ Backend::ResvgRaqote, m_viewSize, m_dpiScale, m_imgPath, m_settings->resvgPath(Backend::ResvgRaqote), ts });
     }
 
     if (m_settings->useResvgSkia) {
-        list.append({ Backend::ResvgSkia, m_viewSize, m_dpiScale, m_imgPath, m_settings->resvgPath(), ts });
+        list.append({ Backend::ResvgSkia, m_viewSize, m_dpiScale, m_imgPath, m_settings->resvgPath(Backend::ResvgSkia), ts });
     }
 
     auto renderCached = [&](const Backend backend, const QString &renderPath) {
