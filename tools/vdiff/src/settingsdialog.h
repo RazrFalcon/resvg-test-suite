@@ -18,7 +18,6 @@ public:
 
 private:
     void loadSettings();
-    void updateResvgBackendsChBoxes();
 
 private slots:
     void on_buttonBox_accepted();

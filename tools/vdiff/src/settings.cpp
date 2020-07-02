@@ -12,10 +12,6 @@ namespace Key {
     static const QString BatikPath          = "BatikPath";
     static const QString InkscapePath       = "InkscapePath";
     static const QString RsvgPath           = "RsvgPath";
-    static const QString UseCairoBackend    = "UseCairoBackend";
-    static const QString UseQtBackend       = "UseQtBackend";
-    static const QString UseRaqoteBackend   = "UseRaqoteBackend";
-    static const QString UseSkiaBackend     = "UseSkiaBackend";
     static const QString UseChrome          = "UseChrome";
     static const QString UseFirefox         = "UseFirefox";
     static const QString UseBatik           = "UseBatik";
@@ -73,11 +69,6 @@ void Settings::load() noexcept
 
     this->viewSize = appSettings.value(Key::ViewSize, ViewSizeOwn / 2).toUInt();
 
-    // TODO: check for available backends
-    this->useResvgCairo = appSettings.value(Key::UseCairoBackend, true).toBool();
-    this->useResvgQt = appSettings.value(Key::UseQtBackend, true).toBool();
-    this->useResvgRaqote = appSettings.value(Key::UseRaqoteBackend).toBool();
-    this->useResvgSkia = appSettings.value(Key::UseSkiaBackend).toBool();
     this->useChrome = appSettings.value(Key::UseChrome, true).toBool();
     this->useFirefox = appSettings.value(Key::UseFirefox).toBool();
     this->useBatik = appSettings.value(Key::UseBatik).toBool();
@@ -101,10 +92,6 @@ void Settings::save() const noexcept
     appSettings.setValue(Key::CustomTestsPath, this->customTestsPath);
     appSettings.setValue(Key::ResvgBuild, buildTypeToStr(this->buildType));
     appSettings.setValue(Key::ViewSize, this->viewSize);
-    appSettings.setValue(Key::UseCairoBackend, this->useResvgCairo);
-    appSettings.setValue(Key::UseQtBackend, this->useResvgQt);
-    appSettings.setValue(Key::UseRaqoteBackend, this->useResvgRaqote);
-    appSettings.setValue(Key::UseSkiaBackend, this->useResvgSkia);
     appSettings.setValue(Key::UseChrome, this->useChrome);
     appSettings.setValue(Key::UseFirefox, this->useFirefox);
     appSettings.setValue(Key::UseBatik, this->useBatik);
@@ -120,23 +107,9 @@ void Settings::save() const noexcept
     appSettings.setValue(Key::RsvgPath, this->librsvgPath);
 }
 
-QString Settings::resvgPath(const Backend backend) const noexcept
+QString Settings::resvgPath() const noexcept
 {
-    if (backend == Backend::ResvgCairo) {
-        return QString("%1/resvg-%2/target/%3/resvg-%2")
-            .arg(this->resvgDir, "cairo", buildTypeToStr(this->buildType));
-    } else if (backend == Backend::ResvgQt) {
-        return QString("%1/resvg-%2/target/%3/resvg-%2")
-            .arg(this->resvgDir, "qt", buildTypeToStr(this->buildType));
-    } else if (backend == Backend::ResvgSkia) {
-        return QString("%1/resvg-%2/target/%3/resvg-%2")
-            .arg(this->resvgDir, "skia", buildTypeToStr(this->buildType));
-    } else if (backend == Backend::ResvgRaqote) {
-        return QString("%1/resvg-%2/target/%3/resvg-%2")
-            .arg(this->resvgDir, "raqote", buildTypeToStr(this->buildType));
-    }
-
-    Q_UNREACHABLE();
+    return QString("%1/target/%2/resvg").arg(this->resvgDir, buildTypeToStr(this->buildType));
 }
 
 QString Settings::resultsPath() const noexcept

@@ -16,7 +16,7 @@ public:
     void load() noexcept;
     void save() const noexcept;
 
-    QString resvgPath(const Backend backend) const noexcept;
+    QString resvgPath() const noexcept;
     QString resultsPath() const noexcept;
     QString testsPath() const noexcept;
 
@@ -28,10 +28,6 @@ public:
     BuildType buildType = BuildType::Debug;
     QString customTestsPath;
     int viewSize = ViewSizeOwn / 2;
-    bool useResvgCairo = true;
-    bool useResvgQt = true;
-    bool useResvgRaqote = true;
-    bool useResvgSkia = true;
     bool useChrome = true;
     bool useFirefox = true;
     bool useBatik = true;

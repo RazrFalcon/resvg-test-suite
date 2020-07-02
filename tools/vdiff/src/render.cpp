@@ -128,21 +128,14 @@ QImage Render::renderViaFirefox(const RenderData &data)
 
 QImage Render::renderViaResvg(const RenderData &data)
 {
-    QString backendName;
-    switch (data.type) {
-        case Backend::ResvgCairo    : backendName = "cairo"; break;
-        case Backend::ResvgQt       : backendName = "qt"; break;
-        case Backend::ResvgRaqote   : backendName = "raqote"; break;
-        case Backend::ResvgSkia     : backendName = "skia"; break;
-        default: Q_UNREACHABLE();
-    }
-
-    const QString outPath = Paths::workDir() + QString("/resvg-%1.png").arg(backendName);
+    const QString outPath = Paths::workDir() + "/resvg.png";
 
     const QString out = Process::run(data.convPath, {
         data.imgPath,
         outPath,
         "-w", QString::number(data.viewSize),
+        "--skip-system-fonts",
+        "--use-fonts-dir", QFileInfo(QString(SRCDIR) + "../../fonts").absolutePath()
     }, true);
 
     if (!out.isEmpty()) {
@@ -297,21 +290,7 @@ void Render::renderImages()
         list.append({ Backend::Reference, m_viewSize, m_dpiScale, m_imgPath, QString(), ts });
     }
 
-    if (m_settings->useResvgCairo) {
-        list.append({ Backend::ResvgCairo, m_viewSize, m_dpiScale, m_imgPath, m_settings->resvgPath(Backend::ResvgCairo), ts });
-    }
-
-    if (m_settings->useResvgQt) {
-        list.append({ Backend::ResvgQt, m_viewSize, m_dpiScale, m_imgPath, m_settings->resvgPath(Backend::ResvgQt), ts });
-    }
-
-    if (m_settings->useResvgRaqote) {
-        list.append({ Backend::ResvgRaqote, m_viewSize, m_dpiScale, m_imgPath, m_settings->resvgPath(Backend::ResvgRaqote), ts });
-    }
-
-    if (m_settings->useResvgSkia) {
-        list.append({ Backend::ResvgSkia, m_viewSize, m_dpiScale, m_imgPath, m_settings->resvgPath(Backend::ResvgSkia), ts });
-    }
+    list.append({ Backend::Resvg, m_viewSize, m_dpiScale, m_imgPath, m_settings->resvgPath(), ts });
 
     auto renderCached = [&](const Backend backend, const QString &renderPath) {
         if (ts != TestSuite::Custom) {
@@ -382,10 +361,7 @@ RenderResult Render::renderImage(const RenderData &data)
             case Backend::Reference   : img = renderReference(data); break;
             case Backend::Chrome      : img = renderViaChrome(data); break;
             case Backend::Firefox     : img = renderViaFirefox(data); break;
-            case Backend::ResvgCairo  : img = renderViaResvg(data); break;
-            case Backend::ResvgQt     : img = renderViaResvg(data); break;
-            case Backend::ResvgRaqote : img = renderViaResvg(data); break;
-            case Backend::ResvgSkia   : img = renderViaResvg(data); break;
+            case Backend::Resvg       : img = renderViaResvg(data); break;
             case Backend::SvgNet      : img = renderViaSvgNet(data); break;
             case Backend::Batik       : img = renderViaBatik(data); break;
             case Backend::Inkscape    : img = renderViaInkscape(data); break;

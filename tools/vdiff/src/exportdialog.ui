@@ -33,30 +33,9 @@
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="chBoxBResvgCairo">
+        <widget class="QCheckBox" name="chBoxBResvg">
          <property name="text">
-          <string>Resvg Cairo</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="chBoxBResvgQt">
-         <property name="text">
-          <string>Resvg Qt</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="chBoxBResvgRaqote">
-         <property name="text">
-          <string>Resvg Raqote</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="chBoxBResvgSkia">
-         <property name="text">
-          <string>Resvg Skia</string>
+          <string>Resvg</string>
          </property>
         </widget>
        </item>

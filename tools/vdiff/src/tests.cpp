@@ -92,10 +92,7 @@ Tests Tests::load(const TestSuite testSuite, const QString &path, const QString 
 
         item.state.insert(Backend::Chrome,      stateFormStr(items.at(1)));
         item.state.insert(Backend::Firefox,     stateFormStr(items.at(2)));
-        item.state.insert(Backend::ResvgCairo,  stateFormStr(items.at(3)));
-        item.state.insert(Backend::ResvgQt,     stateFormStr(items.at(3))); // The same as Cairo.
-        item.state.insert(Backend::ResvgRaqote, stateFormStr(items.at(3))); // The same as Cairo.
-        item.state.insert(Backend::ResvgSkia,   stateFormStr(items.at(3))); // The same as Cairo.
+        item.state.insert(Backend::Resvg,       stateFormStr(items.at(3)));
         item.state.insert(Backend::Batik,       stateFormStr(items.at(4)));
         item.state.insert(Backend::Inkscape,    stateFormStr(items.at(5)));
         item.state.insert(Backend::Librsvg,     stateFormStr(items.at(6)));
@@ -147,7 +144,7 @@ void Tests::save(const QString &path)
         text += QFileInfo(item.path).fileName() + ',';
         text += QString::number((int)item.state.value(Backend::Chrome))     + ',';
         text += QString::number((int)item.state.value(Backend::Firefox))    + ',';
-        text += QString::number((int)item.state.value(Backend::ResvgCairo)) + ',';
+        text += QString::number((int)item.state.value(Backend::Resvg))      + ',';
         text += QString::number((int)item.state.value(Backend::Batik))      + ',';
         text += QString::number((int)item.state.value(Backend::Inkscape))   + ',';
         text += QString::number((int)item.state.value(Backend::Librsvg))    + ',';
@@ -242,10 +239,7 @@ QString backendToString(const Backend &t)
         case Backend::Reference :   return "Reference";
         case Backend::Chrome :      return "Chrome";
         case Backend::Firefox :     return "Firefox";
-        case Backend::ResvgCairo :  return "resvg (cairo)";
-        case Backend::ResvgQt :     return "resvg (Qt)";
-        case Backend::ResvgRaqote : return "resvg (raqote)";
-        case Backend::ResvgSkia :   return "resvg (skia)";
+        case Backend::Resvg :       return "resvg";
         case Backend::Batik :       return "Batik";
         case Backend::Inkscape :    return "Inkscape";
         case Backend::Librsvg :     return "librsvg";
