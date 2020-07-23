@@ -130,13 +130,22 @@ QImage Render::renderViaResvg(const RenderData &data)
 {
     const QString outPath = Paths::workDir() + "/resvg.png";
 
-    const QString out = Process::run(data.convPath, {
-        data.imgPath,
-        outPath,
-        "-w", QString::number(data.viewSize),
-        "--skip-system-fonts",
-        "--use-fonts-dir", QFileInfo(QString(SRCDIR) + "../../fonts").absolutePath()
-    }, true);
+    QString out;
+    if (data.testSuite == TestSuite::Own) {
+        out = Process::run(data.convPath, {
+            data.imgPath,
+            outPath,
+            "-w", QString::number(data.viewSize),
+            "--skip-system-fonts",
+            "--use-fonts-dir", QFileInfo(QString(SRCDIR) + "../../fonts").absolutePath()
+        }, true);
+    } else {
+        out = Process::run(data.convPath, {
+            data.imgPath,
+            outPath,
+            "-w", QString::number(data.viewSize)
+        }, true);
+    }
 
     if (!out.isEmpty()) {
         qDebug().noquote() << "resvg:" << out;
