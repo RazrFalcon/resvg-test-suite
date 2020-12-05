@@ -185,6 +185,7 @@ a-letter-spacing-007.svg
 a-letter-spacing-008.svg
 a-letter-spacing-009.svg
 a-letter-spacing-010.svg
+a-letter-spacing-011.svg
 a-marker-end-001.svg
 a-marker-mid-001.svg
 a-marker-start-001.svg
