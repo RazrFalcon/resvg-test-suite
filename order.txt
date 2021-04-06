@@ -202,6 +202,8 @@ a-opacity-009.svg
 a-overflow-001.svg
 a-overflow-002.svg
 a-overflow-003.svg
+a-overflow-004.svg
+a-overflow-005.svg
 a-shape-rendering-001.svg
 a-shape-rendering-002.svg
 a-shape-rendering-003.svg
