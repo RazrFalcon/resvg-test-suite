@@ -88,7 +88,7 @@ Tests Tests::load(const TestSuite testSuite, const QString &path, const QString 
 
         TestItem item;
         item.path     = QFileInfo(testPath).absoluteFilePath();
-        item.baseName = QFileInfo(testPath).completeBaseName();
+        item.baseName = QFileInfo(testPath).fileName();
 
         item.state.insert(Backend::Chrome,      stateFormStr(items.at(1)));
         item.state.insert(Backend::Firefox,     stateFormStr(items.at(2)));
@@ -167,7 +167,7 @@ void Tests::resync(const Settings &settings)
 
     const auto files = QDir(settings.testsPath()).entryInfoList({ "*.svg" });
     for (const QFileInfo &fi : files) {
-        const auto baseName = fi.completeBaseName();
+        const auto baseName = fi.fileName();
 
         bool isExists = false;
         for (const TestItem &test : oldTests) {

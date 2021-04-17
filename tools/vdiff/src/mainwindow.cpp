@@ -391,7 +391,7 @@ void MainWindow::on_btnPrint_clicked()
         const auto idx = ui->cmbBoxFiles->currentIndex();
         const QRect textRect(0, 0, fullWidth, testTitleHeight);
         p.setFont(QFont("Arial", 14));
-        p.drawText(textRect, Qt::AlignCenter, "Test file: " + m_tests.at(idx).baseName + ".svg");
+        p.drawText(textRect, Qt::AlignCenter, "Test file: " + m_tests.at(idx).baseName);
         p.translate(0, testTitleHeight);
     }
 
