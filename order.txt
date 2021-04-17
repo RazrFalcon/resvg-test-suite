@@ -615,6 +615,7 @@ e-feImage-008.svg
 e-feImage-009.svg
 e-feImage-010.svg
 e-feImage-011.svg
+e-feImage-024.svg
 e-feMerge-001.svg
 e-feMerge-002.svg
 e-feMerge-003.svg
