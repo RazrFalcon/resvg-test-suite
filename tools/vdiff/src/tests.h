@@ -8,7 +8,6 @@ class Settings;
 enum class TestSuite
 {
     Own,
-    Official,
     Custom,
 };
 

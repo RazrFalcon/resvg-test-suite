@@ -83,14 +83,6 @@ QImage Render::renderViaFirefox(const RenderData &data)
 {
     const auto outImg = Paths::workDir() + "/firefox.png";
 
-    int w = data.viewSize;
-    int h = data.viewSize;
-
-    // TODO: fix this temporary hack
-    if (data.testSuite == TestSuite::Official) {
-        h *= 0.75;
-    }
-
     // Firefox 77 converts SVG files only when they are right next to the firefox binary.
     // Some kind of bug.
     const auto workdir = QFileInfo(data.convPath).absolutePath();
@@ -99,7 +91,7 @@ QImage Render::renderViaFirefox(const RenderData &data)
     QFile::copy(data.imgPath, tmpSvgPath);
 
     QString out = Process::run(data.convPath, {
-        QString("--window-size=%1,%2").arg(w).arg(h),
+        QString("--window-size=%1,%2").arg(data.viewSize).arg(data.viewSize),
         QString("--screenshot=%1").arg(QFileInfo(outImg).absoluteFilePath()),
         // The SVG file path must be formed as file:/// URL.
         QUrl::fromLocalFile(tmpSvgPath).toString(),
@@ -176,20 +168,12 @@ QImage Render::renderViaBatik(const RenderData &data)
 {
     const auto outImg = Paths::workDir() + "/batik.png";
 
-    int w = data.viewSize;
-    int h = data.viewSize;
-
-    // TODO: fix this temporary hack
-    if (data.testSuite == TestSuite::Official) {
-        h *= 0.75;
-    }
-
     const QString out = Process::run(data.convPath, {
         "-scriptSecurityOff",
         data.imgPath,
         "-d", outImg,
-        "-w", QString::number(w),
-        "-h", QString::number(h),
+        "-w", QString::number(data.viewSize),
+        "-h", QString::number(data.viewSize),
     }, true);
 
     if (!out.contains("success")) {
@@ -247,17 +231,11 @@ QImage Render::renderViaWxSvg(const RenderData &data)
 #endif
     const auto outImg = Paths::workDir() + "/wxsvg.png";
 
-    // TODO: fix this temporary hack
-    int h = data.viewSize;
-    if (data.testSuite == TestSuite::Official) {
-        h *= 0.75;
-    }
-
     const QString out = Process::run(exePath, {
         data.imgPath,
         outImg,
         QString::number(data.viewSize),
-        QString::number(h)
+        QString::number(data.viewSize)
     }, true);
 
     if (!out.isEmpty()) {

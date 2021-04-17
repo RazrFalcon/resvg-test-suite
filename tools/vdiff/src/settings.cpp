@@ -27,7 +27,6 @@ static QString testSuiteToStr(TestSuite t) noexcept
 {
     switch (t) {
         case TestSuite::Own      : return "results";
-        case TestSuite::Official : return "official";
         case TestSuite::Custom   : return "custom";
     }
 
@@ -36,9 +35,7 @@ static QString testSuiteToStr(TestSuite t) noexcept
 
 static TestSuite testSuiteFromStr(const QString &str) noexcept
 {
-    if (str == "official") {
-        return TestSuite::Official;
-    } else if (str == "custom") {
+    if (str == "custom") {
         return TestSuite::Custom;
     } else {
         return TestSuite::Own;
@@ -66,8 +63,6 @@ void Settings::load() noexcept
     this->buildType = appSettings.value(Key::ResvgBuild).toString() == "release"
                         ? BuildType::Release
                         : BuildType::Debug;
-
-    this->viewSize = appSettings.value(Key::ViewSize, ViewSizeOwn / 2).toUInt();
 
     this->useChrome = appSettings.value(Key::UseChrome, true).toBool();
     this->useFirefox = appSettings.value(Key::UseFirefox).toBool();
@@ -129,7 +124,6 @@ QString Settings::testsPath() const noexcept
     QString path;
     switch (this->testSuite) {
         case TestSuite::Own      : path = QString("%1/../../svg").arg(SRCDIR); break;
-        case TestSuite::Official : path = QString("%1/../../official_test_suite/svg").arg(SRCDIR); break;
         case TestSuite::Custom   : Q_UNREACHABLE();
     }
 

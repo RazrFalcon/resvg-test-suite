@@ -221,7 +221,6 @@ static QString testSuiteToString(const TestSuite &t)
 {
     switch (t) {
         case TestSuite::Own :       return "Own";
-        case TestSuite::Official :  return "Official";
         case TestSuite::Custom :    return "Custom";
     }
 

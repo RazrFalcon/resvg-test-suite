@@ -360,19 +360,6 @@
          </widget>
         </item>
         <item>
-         <widget class="QRadioButton" name="rBtnSuiteOfficial">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="text">
-           <string>Official</string>
-          </property>
-         </widget>
-        </item>
-        <item>
          <widget class="QRadioButton" name="rBtnSuiteCustom">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">

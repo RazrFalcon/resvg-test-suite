@@ -20,7 +20,6 @@ SettingsDialog::SettingsDialog(Settings *settings, QWidget *parent)
 
     auto suiteGroup = new QButtonGroup(this);
     suiteGroup->addButton(ui->rBtnSuiteResvg);
-    suiteGroup->addButton(ui->rBtnSuiteOfficial);
     suiteGroup->addButton(ui->rBtnSuiteCustom);
     connect(suiteGroup, SIGNAL(buttonToggled(QAbstractButton*,bool)),
             this, SLOT(prepareTestsPathWidgets()));
@@ -35,7 +34,6 @@ SettingsDialog::~SettingsDialog()
 
 void SettingsDialog::loadSettings()
 {
-    ui->rBtnSuiteOfficial->setChecked(m_settings->testSuite == TestSuite::Official);
     ui->rBtnSuiteCustom->setChecked(m_settings->testSuite == TestSuite::Custom);
     ui->rBtnRelease->setChecked(m_settings->buildType == BuildType::Release);
     ui->lineEditTestsPath->setText(m_settings->customTestsPath);
@@ -79,19 +77,11 @@ void SettingsDialog::prepareTestsPathWidgets()
 void SettingsDialog::on_buttonBox_accepted()
 {
     auto suite = TestSuite::Own;
-    if (ui->rBtnSuiteOfficial->isChecked()) {
-        suite = TestSuite::Official;
-    } else if (ui->rBtnSuiteCustom->isChecked()) {
+    if (ui->rBtnSuiteCustom->isChecked()) {
         suite = TestSuite::Custom;
     }
     m_settings->testSuite = suite;
     m_settings->customTestsPath = ui->lineEditTestsPath->text();
-
-    int viewSize = Settings::ViewSizeOwn;
-    if (suite == TestSuite::Official) {
-        viewSize = Settings::ViewSizeOfficial;
-    }
-    m_settings->viewSize = viewSize / 2;
 
     m_settings->buildType = ui->rBtnRelease->isChecked()
                     ? BuildType::Release
