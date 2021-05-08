@@ -20,7 +20,6 @@ def check_order():
     """
 
     files = sorted(os.listdir('svg/'))
-    files.remove('.directory')
 
     with open('order.txt', 'r') as f:
         order = f.read().splitlines()
@@ -87,7 +86,6 @@ def check_title():
     """
 
     files = sorted(os.listdir('svg/'))
-    files.remove('.directory')
 
     titles = {}
     for file in files:
@@ -112,7 +110,6 @@ def check_node_ids():
     """
 
     files = sorted(os.listdir('svg/'))
-    files.remove('.directory')
 
     ignore_files = [
         'e-svg-031.svg',  # because of ENTITY
@@ -190,7 +187,6 @@ def check_line_width():
     ]
 
     files = sorted(os.listdir('svg/'))
-    files.remove('.directory')
 
     for file in allow:
         files.remove(file)
@@ -212,7 +208,6 @@ def check_for_unused_xlink_ns():
     ]
 
     files = sorted(os.listdir('svg/'))
-    files.remove('.directory')
 
     for file in allow:
         files.remove(file)
