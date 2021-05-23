@@ -1195,6 +1195,7 @@ e-symbol-009.svg
 e-symbol-011.svg
 e-symbol-012.svg
 e-symbol-013.svg
+e-symbol-014.svg
 e-text-001.svg
 e-text-002.svg
 e-text-003.svg
