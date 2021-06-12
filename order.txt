@@ -381,6 +381,9 @@ a-writing-mode-014.svg
 a-writing-mode-015.svg
 a-writing-mode-016.svg
 a-writing-mode-017.svg
+a-writing-mode-018.svg
+a-writing-mode-019.svg
+a-writing-mode-020.svg
 e-a-001.svg
 e-a-002.svg
 e-a-003.svg
