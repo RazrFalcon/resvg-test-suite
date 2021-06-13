@@ -1,14 +1,8 @@
 #!/usr/bin/env python3
 
-# Usage:
-# ./stats.py results.csv chart.svg
-# ./stats.py official.csv official_chart.svg
-
-import argparse
 import csv
 import json
 import subprocess
-
 
 UNKNOWN      = 0
 PASSED       = 1
@@ -23,13 +17,8 @@ class RowData:
         self.flags = flags
 
 
-parser = argparse.ArgumentParser()
-parser.add_argument('input', help='CSV file')
-parser.add_argument('output', help='SVG file')
-args = parser.parse_args()
-
 rows = []
-with open(args.input, 'r') as f:
+with open('results.csv', 'r') as f:
     for row in csv.reader(f):
         if row[0] == 'title':
             continue
@@ -55,23 +44,23 @@ barh_data = json.dumps(
     },
     "items": [
         {
-            "name": "resvg 0.14.1",
+            "name": "resvg 0.15.0",
             "value": passed[2]
         },
         {
-            "name": "Chromium r856583",
+            "name": "Chromium r883894",
             "value": passed[0]
         },
         {
-            "name": "Firefox 87",
+            "name": "Firefox 89",
             "value": passed[1]
         },
         {
-            "name": "Inkscape 1.0.2",
+            "name": "Inkscape 1.1",
             "value": passed[4]
         },
         {
-            "name": "librsvg 2.51.1",
+            "name": "librsvg 2.50.7",
             "value": passed[5]
         },
         {
@@ -83,7 +72,7 @@ barh_data = json.dumps(
             "value": passed[6]
         },
         {
-            "name": "QtSvg 5.15.2",
+            "name": "QtSvg 6.1.1",
             "value": passed[8]
         },
         {
@@ -103,7 +92,7 @@ with open('chart.json', 'w') as f:
     f.write(barh_data)
 
 try:
-    subprocess.check_call(['./barh', 'chart.json', 'site/images/' + args.output])
+    subprocess.check_call(['./barh', 'chart.json', 'site/images/chart.svg'])
 except FileNotFoundError:
     print('Error: \'barh\' executable is not found.\n'
           'You should build https://github.com/RazrFalcon/barh '

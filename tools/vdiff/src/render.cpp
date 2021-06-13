@@ -129,7 +129,13 @@ QImage Render::renderViaResvg(const RenderData &data)
             outPath,
             "-w", QString::number(data.viewSize),
             "--skip-system-fonts",
-            "--use-fonts-dir", QFileInfo(QString(SRCDIR) + "../../fonts").absolutePath()
+            "--use-fonts-dir", QString(SRCDIR) + "../../fonts",
+            "--font-family", "Noto Sans",
+            "--serif-family", "Noto Serif",
+            "--sans-serif-family", "Noto Sans",
+            "--cursive-family", "Yellowtail",
+            "--fantasy-family", "Sedgwick Ave Display",
+            "--monospace-family", "Noto Mono",
         }, true);
     } else {
         out = Process::run(data.convPath, {
