@@ -1238,6 +1238,7 @@ e-text-031.svg
 e-text-035.svg
 e-text-037.svg
 e-text-040.svg
+e-text-041.svg
 e-textPath-001.svg
 e-textPath-002.svg
 e-textPath-003.svg
@@ -1314,6 +1315,7 @@ e-tspan-022.svg
 e-tspan-023.svg
 e-tspan-024.svg
 e-tspan-025.svg
+e-tspan-030.svg
 e-tspan-026.svg
 e-tspan-028.svg
 e-tspan-029.svg
