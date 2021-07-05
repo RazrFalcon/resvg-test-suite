@@ -330,6 +330,15 @@ a-text-rendering-002.svg
 a-text-rendering-003.svg
 a-text-rendering-004.svg
 a-text-rendering-005.svg
+a-textLength-001.svg
+a-textLength-002.svg
+a-textLength-003.svg
+a-textLength-004.svg
+a-textLength-005.svg
+a-textLength-006.svg
+a-textLength-007.svg
+a-textLength-008.svg
+a-textLength-009.svg
 a-transform-001.svg
 a-transform-002.svg
 a-transform-003.svg

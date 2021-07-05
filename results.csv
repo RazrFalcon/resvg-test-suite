@@ -331,6 +331,15 @@ a-text-rendering-002.svg,2,1,1,1,2,2,1,2,2
 a-text-rendering-003.svg,2,1,2,2,2,2,1,2,2
 a-text-rendering-004.svg,2,1,1,1,2,2,1,2,2
 a-text-rendering-005.svg,2,2,1,1,2,2,2,2,2
+a-textLength-001.svg,1,1,2,1,1,2,0,0,2
+a-textLength-002.svg,1,1,2,1,1,2,0,0,2
+a-textLength-003.svg,1,1,2,1,2,2,0,0,2
+a-textLength-004.svg,2,1,2,1,1,2,0,0,2
+a-textLength-005.svg,1,1,2,3,2,2,0,0,2
+a-textLength-006.svg,1,1,2,1,1,2,0,0,2
+a-textLength-007.svg,1,2,2,1,2,2,0,0,2
+a-textLength-008.svg,1,2,2,1,2,2,0,0,2
+a-textLength-009.svg,1,1,2,3,1,2,0,0,1
 a-transform-001.svg,1,1,1,1,1,1,1,2,1
 a-transform-002.svg,1,1,1,1,1,1,1,2,1
 a-transform-003.svg,1,1,1,1,1,1,1,1,1
