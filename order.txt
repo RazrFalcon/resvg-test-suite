@@ -175,6 +175,7 @@ a-image-rendering-001.svg
 a-image-rendering-002.svg
 a-image-rendering-003.svg
 a-kerning-001.svg
+a-lengthAdjust-001.svg
 a-letter-spacing-001.svg
 a-letter-spacing-002.svg
 a-letter-spacing-003.svg
