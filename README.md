@@ -9,7 +9,6 @@
 - `site/` - sources for github pages
 - `tools/` - various testing tools
 - `check.py` - pre-commit hook
-- `gh-pages.sh` - generates github pages
 - `order.txt` - custom tests order for pretty-printing
 - `results.csv` - results of manual testing via `tools/vdiff` of the `resvg` test suite
 - `stats.py` - generates `site/images/chart.svg`

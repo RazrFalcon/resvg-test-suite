@@ -1,0 +1,40 @@
+name: resvg-test-suite
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.6
+    - run: gem install asciidoctor -v 1.5.8
+
+    - name: Generate pages
+      working-directory: site
+      run: python3 gen-page.py
+
+    - name: Convert pages
+      working-directory: site
+      run: asciidoctor -o index.html index.adoc
+
+    - name: Prepare dir
+      run: |
+        mkdir site-final
+        cp -a site/images site-final/
+        cp site/index.html site-final/
+        cp site/svg-support-table.html site-final/
+
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@4.1.4
+      with:
+        branch: gh-pages
+        folder: site-final
+        single-commit: true
