@@ -152,6 +152,7 @@ a-font-size-013.svg
 a-font-size-adjust-001.svg
 a-font-stretch-001.svg
 a-font-stretch-002.svg
+a-font-stretch-003.svg
 a-font-style-001.svg
 a-font-style-002.svg
 a-font-style-003.svg
