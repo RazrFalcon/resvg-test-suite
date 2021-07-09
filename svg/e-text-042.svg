@@ -6,8 +6,8 @@
     <path id="crosshair" d="M 20 100 L 180 100 M 100 20 L 100 180"
           stroke="gray" stroke-width="0.5"/>
 
-    <text id="text1" x="85" y="100">и<tspan fill="green">̆ </tspan></text>
-    <text id="text1" x="85" y="145">й</text>
+    <text id="text1" x="85" y="100">и<tspan id="tspan1" fill="green">̆ </tspan></text>
+    <text id="text2" x="85" y="145">й</text>
 
     <!-- image frame -->
     <rect id="frame" x="1" y="1" width="198" height="198" fill="none" stroke="black"/>
