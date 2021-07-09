@@ -259,9 +259,9 @@ def get_item_row(rows, out_of_scope_list, type, name):
             html += '<td class="td-align">{:.0f}%</td>\n'.format(v)
     else:
         if name in out_of_scope_list:
-            html += '<td colspan="8">Not planned</td>\n'
+            html += '<td colspan="10">Not planned</td>\n'
         else:
-            html += '<td colspan="8">Not supported by <b>resvg<b></td>\n'
+            html += '<td colspan="10">Not supported by <b>resvg<b></td>\n'
 
     html += '</tr>\n'
     return html
