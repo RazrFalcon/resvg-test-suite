@@ -320,6 +320,7 @@ a-text-decoration-017.svg
 a-text-decoration-005.svg
 a-text-decoration-006.svg
 a-text-decoration-007.svg
+a-text-decoration-018.svg
 a-text-decoration-008.svg
 a-text-decoration-009.svg
 a-text-decoration-010.svg
@@ -327,6 +328,7 @@ a-text-decoration-011.svg
 a-text-decoration-012.svg
 a-text-decoration-013.svg
 a-text-decoration-014.svg
+a-text-decoration-019.svg
 a-text-rendering-001.svg
 a-text-rendering-002.svg
 a-text-rendering-003.svg
