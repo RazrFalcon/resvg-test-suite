@@ -26,11 +26,11 @@ with open('results.csv', 'r') as f:
         file_name = row[0]
         flags = [int(row[1]), int(row[2]), int(row[3]), int(row[4]),
                  int(row[5]), int(row[6]), int(row[7]), int(row[8]),
-                 int(row[9])]
+                 int(row[9]), int(row[10])]
 
         rows.append(RowData(file_name, flags))
 
-passed = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+passed = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 for row in rows:
     for idx, flag in enumerate(row.flags):
         if flag == PASSED or flag == UNKNOWN:
@@ -45,7 +45,7 @@ barh_data = json.dumps(
     "items": [
         {
             "name": "resvg 0.15.0",
-            "value": passed[2]
+            "value": passed[3]
         },
         {
             "name": "Chromium r883894",
@@ -56,28 +56,32 @@ barh_data = json.dumps(
             "value": passed[1]
         },
         {
-            "name": "Inkscape 1.1",
-            "value": passed[4]
+            "name": "Safari 14.1.1",
+            "value": passed[2]
         },
         {
-            "name": "librsvg 2.50.7",
+            "name": "Inkscape 1.1",
             "value": passed[5]
         },
         {
-            "name": "Batik 1.14",
-            "value": passed[3]
-        },
-        {
-            "name": "SVG.NET 3.2.3",
+            "name": "librsvg 2.50.7",
             "value": passed[6]
         },
         {
+            "name": "Batik 1.14",
+            "value": passed[4]
+        },
+        {
+            "name": "SVG.NET 3.2.3",
+            "value": passed[7]
+        },
+        {
             "name": "QtSvg 6.1.1",
-            "value": passed[8]
+            "value": passed[9]
         },
         {
             "name": "wxSvg 1.5.11",
-            "value": passed[7]
+            "value": passed[8]
         }
     ],
     "hor_axis": {

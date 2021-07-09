@@ -84,6 +84,10 @@ void MainWindow::prepareBackends()
         backends << Backend::Firefox;
     }
 
+    if (m_settings.useSafari) {
+        backends << Backend::Safari;
+    }
+
     if (m_settings.useBatik) {
         backends << Backend::Batik;
     }

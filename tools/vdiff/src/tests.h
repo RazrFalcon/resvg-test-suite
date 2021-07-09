@@ -18,6 +18,7 @@ enum class Backend
     Reference,
     Chrome,
     Firefox,
+    Safari,
     Resvg,
     Batik,
     Inkscape,
@@ -30,7 +31,7 @@ enum class Backend
 QString backendToString(const Backend &t);
 QDebug operator<<(QDebug dbg, const Backend &t);
 
-constexpr int BackendsCount = 10;
+constexpr int BackendsCount = 11;
 
 Q_DECL_PURE_FUNCTION inline uint qHash(const Backend &key, uint seed = 0)
 { return qHash((uint)key, seed); }

@@ -44,6 +44,8 @@ void SettingsDialog::loadSettings()
     ui->chBoxUseFirefox->setChecked(m_settings->useFirefox);
     ui->lineEditFirefox->setText(m_settings->firefoxPath);
 
+    ui->chBoxUseSafari->setChecked(m_settings->useSafari);
+
     ui->chBoxUseBatik->setChecked(m_settings->useBatik);
     ui->lineEditBatik->setText(m_settings->batikPath);
 
@@ -89,6 +91,7 @@ void SettingsDialog::on_buttonBox_accepted()
 
     m_settings->useChrome = ui->chBoxUseChrome->isChecked();
     m_settings->useFirefox = ui->chBoxUseFirefox->isChecked();
+    m_settings->useSafari = ui->chBoxUseSafari->isChecked();
     m_settings->useBatik = ui->chBoxUseBatik->isChecked();
     m_settings->useInkscape = ui->chBoxUseInkscape->isChecked();
     m_settings->useLibrsvg = ui->chBoxUseLibrsvg->isChecked();

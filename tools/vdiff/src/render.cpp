@@ -118,6 +118,24 @@ QImage Render::renderViaFirefox(const RenderData &data)
     return loadImage(outImg);
 }
 
+QImage Render::renderViaSafari(const RenderData &data)
+{
+    const auto outImg = Paths::workDir() + "/" + QFileInfo(data.imgPath).fileName() + ".png";
+
+    const QString out = Process::run("qlmanage", {
+        "-t",
+        "-s", QString::number(data.viewSize),
+        "-o", Paths::workDir(),
+        data.imgPath,
+    }, true);
+
+//    if (!out.isEmpty()) {
+//        qDebug().noquote() << "safari:" << out;
+//    }
+
+    return loadImage(outImg);
+}
+
 QImage Render::renderViaResvg(const RenderData &data)
 {
     const QString outPath = Paths::workDir() + "/resvg.png";
@@ -307,6 +325,10 @@ void Render::renderImages()
         renderCached(Backend::Firefox, m_settings->firefoxPath);
     }
 
+    if (m_settings->useSafari) {
+        renderCached(Backend::Safari, QString());
+    }
+
     if (m_settings->useBatik) {
         renderCached(Backend::Batik, m_settings->batikPath);
     }
@@ -354,6 +376,7 @@ RenderResult Render::renderImage(const RenderData &data)
             case Backend::Reference   : img = renderReference(data); break;
             case Backend::Chrome      : img = renderViaChrome(data); break;
             case Backend::Firefox     : img = renderViaFirefox(data); break;
+            case Backend::Safari      : img = renderViaSafari(data); break;
             case Backend::Resvg       : img = renderViaResvg(data); break;
             case Backend::SvgNet      : img = renderViaSvgNet(data); break;
             case Backend::Batik       : img = renderViaBatik(data); break;
@@ -462,6 +485,7 @@ void Render::onImageRendered(const int idx)
         switch (res.type) {
             case Backend::Chrome :
             case Backend::Firefox :
+            case Backend::Safari :
             case Backend::Batik :
             case Backend::Inkscape : m_imgCache.setImage(res.type, m_imgPath, res.img); break;
             default : break;

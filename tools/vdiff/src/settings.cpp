@@ -14,6 +14,7 @@ namespace Key {
     static const QString RsvgPath           = "RsvgPath";
     static const QString UseChrome          = "UseChrome";
     static const QString UseFirefox         = "UseFirefox";
+    static const QString UseSafari          = "UseSafari";
     static const QString UseBatik           = "UseBatik";
     static const QString UseInkscape        = "UseInkscape";
     static const QString UseSvgNet          = "UseSvgNet";
@@ -66,6 +67,7 @@ void Settings::load() noexcept
 
     this->useChrome = appSettings.value(Key::UseChrome, true).toBool();
     this->useFirefox = appSettings.value(Key::UseFirefox).toBool();
+    this->useSafari = appSettings.value(Key::UseSafari).toBool();
     this->useBatik = appSettings.value(Key::UseBatik).toBool();
     this->useInkscape = appSettings.value(Key::UseInkscape).toBool();
     this->useLibrsvg = appSettings.value(Key::UseLibrsvg).toBool();
@@ -89,6 +91,7 @@ void Settings::save() const noexcept
     appSettings.setValue(Key::ViewSize, this->viewSize);
     appSettings.setValue(Key::UseChrome, this->useChrome);
     appSettings.setValue(Key::UseFirefox, this->useFirefox);
+    appSettings.setValue(Key::UseSafari, this->useSafari);
     appSettings.setValue(Key::UseBatik, this->useBatik);
     appSettings.setValue(Key::UseInkscape, this->useInkscape);
     appSettings.setValue(Key::UseLibrsvg, this->useLibrsvg);

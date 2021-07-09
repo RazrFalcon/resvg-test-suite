@@ -27,6 +27,7 @@ public:
     int viewSize = 250;
     bool useChrome = true;
     bool useFirefox = true;
+    bool useSafari = true;
     bool useBatik = true;
     bool useInkscape = true;
     bool useLibrsvg = true;
