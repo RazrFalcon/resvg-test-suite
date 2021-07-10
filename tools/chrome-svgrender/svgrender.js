@@ -66,10 +66,11 @@ try {
         var y = 0;
         var h = view_size[1];
         if (svg_width != undefined) {
-            const scale = view_size[0] / svg_view_box[2]
-
-            h = Math.round(svg_view_box[3] * scale)
-            y = Math.round((view_size[1] - h) / 2)
+            if (svg_view_box[2] >= svg_view_box[3]) {
+                const scale = view_size[0] / svg_view_box[2]
+                h = Math.round(svg_view_box[3] * scale)
+                y = Math.round((view_size[1] - h) / 2)
+            }
         }
 
         await page.screenshot({

@@ -8,8 +8,10 @@ Render SVG files using Headless Chrome.
 
 ## Build
 
+Run in the current directory:
+
 ```
-npm i puppeteer
+npm install puppeteer
 ```
 
 ## Usage
