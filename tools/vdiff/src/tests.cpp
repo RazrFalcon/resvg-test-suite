@@ -9,13 +9,13 @@
 
 #include "tests.h"
 
-static TestState stateFormStr(const QStringRef &str)
+static TestState stateFormStr(const QString &str)
 {
     bool ok = false;
     const int idx = str.toInt(&ok);
 
     if (!ok) {
-        throw QString("Invalid state ID: '%1'").arg(str.toString());
+        throw QString("Invalid state ID: '%1'").arg(str);
     }
 
     switch (idx) {
@@ -40,7 +40,7 @@ static QString parseTitle(const QString &path)
     QXmlStreamReader reader(&file);
     while (!reader.atEnd() && !reader.hasError()) {
         if (reader.readNextStartElement()) {
-            if (reader.name() == "title") {
+            if (reader.name() == QLatin1String("title")) {
                 reader.readNext();
                 title = reader.text().toString();
                 break;
@@ -67,7 +67,7 @@ Tests Tests::load(const TestSuite testSuite, const QString &path, const QString 
     Tests tests;
 
     int row = 1;
-    for (const QStringRef &line : text.splitRef('\n')) {
+    for (const auto &line : text.split('\n')) {
         // Skip title.
         if (row == 1) {
             row++;
@@ -84,7 +84,7 @@ Tests Tests::load(const TestSuite testSuite, const QString &path, const QString 
             throw QString("Invalid columns count at row %1.").arg(row);
         }
 
-        const auto testPath = testsPath + '/' + items.at(0).toString();
+        const auto testPath = testsPath + '/' + items.at(0);
 
         TestItem item;
         item.path     = QFileInfo(testPath).absoluteFilePath();
@@ -198,12 +198,12 @@ void Tests::resync(const Settings &settings)
     const QString pngDir = QFileInfo(settings.testsPath() + "/../png").absoluteFilePath();
 
     const QString text = orderFile.readAll();
-    for (const QStringRef &line : text.splitRef('\n')) {
+    for (const auto &line : text.split('\n')) {
         if (line.isEmpty()) {
             break;
         }
 
-        const auto pngPath = pngDir + "/" + QFileInfo(line.toString()).completeBaseName() + ".png";
+        const auto pngPath = pngDir + "/" + QFileInfo(line).completeBaseName() + ".png";
         if (!QFile::exists(pngPath)) {
             throw QString("'%1' not found.").arg(pngPath);
         }
