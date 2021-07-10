@@ -899,6 +899,7 @@ e-marker-036.svg
 e-marker-037.svg
 e-marker-038.svg
 e-marker-039.svg
+e-marker-059.svg
 e-marker-040.svg
 e-marker-041.svg
 e-marker-042.svg
@@ -1099,6 +1100,16 @@ e-rect-021.svg
 e-rect-022.svg
 e-rect-023.svg
 e-rect-024.svg
+e-rect-028.svg
+e-rect-029.svg
+e-rect-030.svg
+e-rect-031.svg
+e-rect-032.svg
+e-rect-033.svg
+e-rect-034.svg
+e-rect-035.svg
+e-rect-036.svg
+e-rect-037.svg
 e-rect-025.svg
 e-rect-026.svg
 e-rect-027.svg
