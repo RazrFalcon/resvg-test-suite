@@ -1306,6 +1306,7 @@ e-textPath-036.svg
 e-textPath-037.svg
 e-textPath-035.svg
 e-textPath-040.svg
+e-textPath-041.svg
 e-tref-001.svg
 e-tref-002.svg
 e-tref-003.svg
