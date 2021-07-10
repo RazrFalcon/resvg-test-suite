@@ -1,0 +1,9 @@
+<svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <title>`vi` and `vb` values</title>
+    <desc>SVG 2</desc>
+
+    <rect id="rect1" x="5vi" y="5vb" width="30vb" height="30vi" fill="green"/>
+
+    <!-- image frame -->
+    <rect id="frame" x="1" y="1" width="198" height="198" fill="none" stroke="black"/>
+</svg>
