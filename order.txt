@@ -813,6 +813,8 @@ e-image-031.svg
 e-image-032.svg
 e-image-033.svg
 e-image-034.svg
+e-image-040.svg
+e-image-041.svg
 e-line-001.svg
 e-line-002.svg
 e-line-003.svg

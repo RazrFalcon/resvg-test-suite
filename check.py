@@ -184,6 +184,7 @@ def check_line_width():
         'e-svg-032.svg',
         'a-fill-028.svg',
         'e-tspan-010.svg',
+        'e-image-040.svg',
     ]
 
     files = sorted(os.listdir('svg/'))
