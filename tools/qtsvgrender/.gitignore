@@ -1,0 +1,4 @@
+*.stash
+Makefile
+*.o
+qtsvgrender
