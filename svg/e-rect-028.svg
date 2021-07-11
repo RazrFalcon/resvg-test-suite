@@ -1,7 +1,6 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
      font-family="Noto Sans" font-size="64">
-    <title>`cap` values</title>
-    <desc>SVG 2</desc>
+    <title>`cap` values (SVG 2)</title>
 
     <rect id="rect1" x="5cap" y="5cap" width="20cap" height="20cap" fill="green"/>
 

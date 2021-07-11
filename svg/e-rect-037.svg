@@ -1,6 +1,5 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <title>`Q` values</title>
-    <desc>SVG 2</desc>
+    <title>`Q` values (SVG 2)</title>
 
     <rect id="rect1" x="30Q" y="30Q" width="150Q" height="150Q" fill="green"/>
 

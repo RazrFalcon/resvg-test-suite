@@ -1,7 +1,6 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>side=right</title>
-    <desc>SVG 2</desc>
+    <title>side=right (SVG 2)</title>
 
     <path id="pathForText1" d="M 20 100 C 35 135 85 135 100 100 C 115 65 165 65 180 100"
           fill="none" stroke="gray"/>

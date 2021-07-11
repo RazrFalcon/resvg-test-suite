@@ -1,11 +1,7 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>With `path` and `xlink:href`</title>
-    <desc>
-        `path` should be prefered to `xlink:href`.
-
-        SVG 2
-    </desc>
+    <title>With `path` and `xlink:href` (SVG 2)</title>
+    <desc>`path` should be prefered to `xlink:href`.</desc>
 
     <defs id="defs1">
         <path id="path2" d="M 20 100 L 50 100"/>

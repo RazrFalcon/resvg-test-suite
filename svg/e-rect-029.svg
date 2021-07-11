@@ -1,7 +1,6 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
      font-family="Noto Sans" font-size="32">
-    <title>`ch` values</title>
-    <desc>SVG 2</desc>
+    <title>`ch` values (SVG 2)</title>
 
     <rect id="rect1" x="1ch" y="1ch" width="9ch" height="9ch" fill="green"/>
 

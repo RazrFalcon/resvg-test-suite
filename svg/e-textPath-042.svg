@@ -1,6 +1,5 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <title>With `path`</title>
-    <desc>SVG 2</desc>
+    <title>With `path` (SVG 2)</title>
 
     <path id="path1" d="M 20 100 C 35 135 85 135 100 100 C 115 65 165 65 180 100"
           fill="none" stroke="gray"/>
