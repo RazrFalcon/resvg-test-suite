@@ -893,6 +893,7 @@ e-marker-013.svg
 e-marker-014.svg
 e-marker-015.svg
 e-marker-016.svg
+e-marker-060.svg
 e-marker-017.svg
 e-marker-018.svg
 e-marker-019.svg
