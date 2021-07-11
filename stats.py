@@ -3,19 +3,30 @@
 import csv
 import json
 import subprocess
+import sys
+import os
 
 UNKNOWN      = 0
 PASSED       = 1
 FAILED       = 2
 CRASHED      = 3
-PARTIAL      = 4
-OUT_OF_SCOPE = 5
 
 class RowData:
     def __init__(self, name, flags):
         self.name = name
         self.flags = flags
 
+
+is_svg2_only = "--svg2" in sys.argv
+
+svg2_files = []
+if is_svg2_only:
+    files = sorted(os.listdir('svg/'))
+    files.remove('e-svg-007.svg') # not UTF-8
+    for name in files:
+        with open('svg/' + name, 'r') as f:
+            if "(SVG 2)" in f.read():
+                svg2_files.append(name)
 
 rows = []
 with open('results.csv', 'r') as f:
@@ -24,6 +35,14 @@ with open('results.csv', 'r') as f:
             continue
 
         file_name = row[0]
+
+        if is_svg2_only and file_name not in svg2_files:
+            continue
+
+        # Skip UB
+        if int(row[1]) == UNKNOWN:
+            continue
+
         flags = [int(row[1]), int(row[2]), int(row[3]), int(row[4]),
                  int(row[5]), int(row[6]), int(row[7]), int(row[8]),
                  int(row[9]), int(row[10])]
@@ -33,7 +52,7 @@ with open('results.csv', 'r') as f:
 passed = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 for row in rows:
     for idx, flag in enumerate(row.flags):
-        if flag == PASSED or flag == UNKNOWN:
+        if flag == PASSED:
             passed[idx] = passed[idx] + 1
 
 barh_data = json.dumps(
@@ -95,8 +114,13 @@ barh_data = json.dumps(
 with open('chart.json', 'w') as f:
     f.write(barh_data)
 
+if is_svg2_only:
+    out_path = 'site/images/chart-svg2.svg'
+else:
+    out_path = 'site/images/chart.svg'
+
 try:
-    subprocess.check_call(['./barh', 'chart.json', 'site/images/chart.svg'])
+    subprocess.check_call(['./barh', 'chart.json', out_path])
 except FileNotFoundError:
     print('Error: \'barh\' executable is not found.\n'
           'You should build https://github.com/RazrFalcon/barh '
