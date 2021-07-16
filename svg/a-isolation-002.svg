@@ -8,7 +8,7 @@
     </linearGradient>
 
     <rect id="rect1" x="20" y="20" width="140" height="140" fill="green"/>
-    <g isolation="isolate">
+    <g id="g1" isolation="isolate">
         <rect id="rect2" x="40" y="40" width="140" height="140" fill="url(#lg1)"
               style="mix-blend-mode:overlay"/>
     </g>
