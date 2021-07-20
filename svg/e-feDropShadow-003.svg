@@ -1,10 +1,9 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <title>Huge `stdDeviation`</title>
-    <desc>Should not crash</desc>
+    <title>With `flood-opacity`</title>
 
-    <filter2 id="filter1">
-        <feGaussianBlur stdDeviation="1000"/>
-    </filter2>
+    <filter id="filter1">
+        <feDropShadow stdDeviation="6" flood-color="blue" flood-opacity="0.5"/>
+    </filter>
     <rect id="rect1" x="20" y="20" width="160" height="160" fill="seagreen" filter="url(#filter1)"/>
 
     <!-- image frame -->

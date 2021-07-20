@@ -628,6 +628,11 @@ e-feDistantLight-001.svg
 e-feDistantLight-002.svg
 e-feDistantLight-003.svg
 e-feDistantLight-004.svg
+e-feDropShadow-001.svg
+e-feDropShadow-002.svg
+e-feDropShadow-003.svg
+e-feDropShadow-004.svg
+e-feDropShadow-005.svg
 e-feFlood-001.svg
 e-feFlood-002.svg
 e-feFlood-003.svg
