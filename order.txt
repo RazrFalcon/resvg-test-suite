@@ -832,6 +832,12 @@ e-filter-077.svg
 e-filter-078.svg
 e-filter-079.svg
 e-filter-080.svg
+e-filter-081.svg
+e-filter-082.svg
+e-filter-083.svg
+e-filter-084.svg
+e-filter-085.svg
+e-filter-086.svg
 e-g-001.svg
 e-g-002.svg
 e-image-001.svg
