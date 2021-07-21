@@ -1,5 +1,5 @@
 <svg id="svg1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <title>With offset, clipped</title>
+    <title>With offset, clipped (SVG 2)</title>
 
     <filter id="filter1">
         <feDropShadow dx="20" dy="30" stdDeviation="6"/>
