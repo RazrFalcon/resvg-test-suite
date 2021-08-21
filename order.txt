@@ -110,6 +110,7 @@ a-fill-047.svg
 a-fill-048.svg
 a-fill-049.svg
 a-fill-050.svg
+a-fill-059.svg
 a-fill-051.svg
 a-fill-052.svg
 a-fill-053.svg
@@ -117,6 +118,7 @@ a-fill-054.svg
 a-fill-055.svg
 a-fill-056.svg
 a-fill-057.svg
+a-fill-058.svg
 a-fill-opacity-001.svg
 a-fill-opacity-002.svg
 a-fill-opacity-003.svg
@@ -132,6 +134,7 @@ a-flood-color-003.svg
 a-flood-color-004.svg
 a-flood-color-005.svg
 a-flood-color-006.svg
+a-flood-color-007.svg
 a-flood-opacity-001.svg
 a-font-001.svg
 a-font-family-001.svg
@@ -611,6 +614,7 @@ e-feDiffuseLighting-006.svg
 e-feDiffuseLighting-007.svg
 e-feDiffuseLighting-008.svg
 e-feDiffuseLighting-009.svg
+e-feDiffuseLighting-022.svg
 e-feDiffuseLighting-010.svg
 e-feDiffuseLighting-011.svg
 e-feDiffuseLighting-012.svg
@@ -714,6 +718,7 @@ e-feSpecularLighting-004.svg
 e-feSpecularLighting-005.svg
 e-feSpecularLighting-006.svg
 e-feSpecularLighting-007.svg
+e-feSpecularLighting-008.svg
 e-feSpotLight-001.svg
 e-feSpotLight-002.svg
 e-feSpotLight-003.svg
@@ -881,6 +886,7 @@ e-image-033.svg
 e-image-034.svg
 e-image-040.svg
 e-image-041.svg
+e-image-042.svg
 e-line-001.svg
 e-line-002.svg
 e-line-003.svg
@@ -927,6 +933,7 @@ e-linearGradient-032.svg
 e-linearGradient-033.svg
 e-linearGradient-034.svg
 e-linearGradient-037.svg
+e-linearGradient-038.svg
 e-marker-001.svg
 e-marker-002.svg
 e-marker-003.svg
@@ -1147,6 +1154,7 @@ e-radialGradient-032.svg
 e-radialGradient-033.svg
 e-radialGradient-036.svg
 e-radialGradient-037.svg
+e-radialGradient-041.svg
 e-rect-001.svg
 e-rect-002.svg
 e-rect-003.svg
@@ -1215,6 +1223,7 @@ e-stop-028.svg
 e-stop-029.svg
 e-stop-030.svg
 e-stop-031.svg
+e-stop-032.svg
 e-style-001.svg
 e-style-002.svg
 e-style-003.svg
