@@ -176,8 +176,8 @@ a-font-stretch-003.svg,2,1,1,2,1,1,2,0,0,2
 a-font-style-001.svg,1,1,1,1,1,1,1,1,1,1
 a-font-style-002.svg,1,1,1,1,1,1,1,1,1,1
 a-font-style-003.svg,1,1,1,1,1,1,1,1,1,1
-a-font-variant-001.svg,1,1,1,2,2,2,2,2,2,2
-a-font-variant-002.svg,1,1,1,2,2,2,2,2,2,2
+a-font-variant-001.svg,1,1,1,1,2,2,2,2,2,2
+a-font-variant-002.svg,1,1,1,1,2,2,2,2,2,2
 a-font-weight-001.svg,1,1,1,1,1,1,1,1,2,2
 a-font-weight-002.svg,1,1,1,1,1,1,1,1,2,2
 a-font-weight-003.svg,1,1,1,1,2,1,1,1,2,2
@@ -977,7 +977,7 @@ e-marker-036.svg,1,1,1,1,1,2,1,2,2,2
 e-marker-037.svg,1,1,1,1,1,1,1,2,2,2
 e-marker-038.svg,1,1,1,1,3,1,1,2,2,2
 e-marker-039.svg,1,1,1,1,3,1,1,2,2,2
-e-marker-059.svg,1,2,2,2,3,1,2,0,0,2
+e-marker-059.svg,1,2,2,1,3,1,2,0,0,2
 e-marker-040.svg,1,1,1,1,1,1,1,2,2,2
 e-marker-041.svg,1,1,1,1,1,1,1,2,2,2
 e-marker-042.svg,1,1,1,1,1,1,1,2,1,2
