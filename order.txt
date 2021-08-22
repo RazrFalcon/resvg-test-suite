@@ -1105,6 +1105,7 @@ e-pattern-021.svg
 e-pattern-022.svg
 e-pattern-023.svg
 e-pattern-024.svg
+e-pattern-030.svg
 e-polygon-001.svg
 e-polygon-002.svg
 e-polygon-003.svg
