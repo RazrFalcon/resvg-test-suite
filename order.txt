@@ -637,6 +637,8 @@ e-feDropShadow-002.svg
 e-feDropShadow-003.svg
 e-feDropShadow-004.svg
 e-feDropShadow-005.svg
+e-feDropShadow-006.svg
+e-feDropShadow-007.svg
 e-feFlood-001.svg
 e-feFlood-002.svg
 e-feFlood-003.svg
