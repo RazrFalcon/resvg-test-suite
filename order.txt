@@ -557,6 +557,8 @@ e-feBlend-002.svg
 e-feBlend-003.svg
 e-feBlend-004.svg
 e-feBlend-005.svg
+e-feBlend-009.svg
+e-feBlend-010.svg
 e-feBlend-006.svg
 e-feBlend-007.svg
 e-feBlend-008.svg
