@@ -164,6 +164,12 @@ a-filter-034.svg
 a-filter-035.svg
 a-filter-036.svg
 a-filter-037.svg
+a-filter-038.svg
+a-filter-039.svg
+a-filter-040.svg
+a-filter-041.svg
+a-filter-042.svg
+a-filter-043.svg
 a-flood-color-001.svg
 a-flood-color-002.svg
 a-flood-color-003.svg
