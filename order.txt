@@ -1377,6 +1377,7 @@ e-text-035.svg
 e-text-037.svg
 e-text-040.svg
 e-text-041.svg
+e-text-043.svg
 e-textPath-001.svg
 e-textPath-002.svg
 e-textPath-003.svg
