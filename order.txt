@@ -914,6 +914,7 @@ e-image-040.svg
 e-image-041.svg
 e-image-042.svg
 e-image-043.svg
+e-image-044.svg
 e-line-001.svg
 e-line-002.svg
 e-line-003.svg
