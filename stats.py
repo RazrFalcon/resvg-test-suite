@@ -63,19 +63,19 @@ barh_data = json.dumps(
     },
     "items": [
         {
-            "name": "resvg 0.16.0",
+            "name": "resvg 0.21.0",
             "value": passed[3]
         },
         {
-            "name": "Chromium r901419",
+            "name": "Chrome 93",
             "value": passed[0]
         },
         {
-            "name": "Firefox 91",
+            "name": "Firefox 97",
             "value": passed[1]
         },
         {
-            "name": "Safari 14.1.1",
+            "name": "Safari 15.3",
             "value": passed[2]
         },
         {
@@ -83,7 +83,7 @@ barh_data = json.dumps(
             "value": passed[5]
         },
         {
-            "name": "librsvg 2.50.7",
+            "name": "librsvg 2.53",
             "value": passed[6]
         },
         {
@@ -95,7 +95,7 @@ barh_data = json.dumps(
             "value": passed[7]
         },
         {
-            "name": "QtSvg 6.1.2",
+            "name": "QtSvg 6.2.2",
             "value": passed[8]
         }
     ],

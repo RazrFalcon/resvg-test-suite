@@ -39,11 +39,19 @@ MainWindow::MainWindow(QWidget *parent)
     m_autosaveTimer->setInterval(30000); // 30 sec
     m_autosaveTimer->start();
 
-    auto shortcut = new QShortcut(QKeySequence("Ctrl+R"), this);
-    connect(shortcut, &QShortcut::activated, [this]() {
+    auto shortcutReload = new QShortcut(QKeySequence("Ctrl+R"), this);
+    connect(shortcutReload, &QShortcut::activated, [this]() {
         const auto idx = ui->cmbBoxFiles->currentIndex();
         if (idx >= 0) {
             loadTest(idx);
+        }
+    });
+
+    auto shortcutNext = new QShortcut(QKeySequence("Ctrl+N"), this);
+    connect(shortcutNext, &QShortcut::activated, [this]() {
+        const auto idx = ui->cmbBoxFiles->currentIndex();
+        if (idx < ui->cmbBoxFiles->count()) {
+            ui->cmbBoxFiles->setCurrentIndex(idx + 1);
         }
     });
 
