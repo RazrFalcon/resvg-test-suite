@@ -246,29 +246,6 @@ QImage Render::renderViaRsvg(const RenderData &data)
     return loadImage(outImg).convertToFormat(QImage::Format_ARGB32);
 }
 
-QImage Render::renderViaWxSvg(const RenderData &data)
-{
-#ifdef Q_OS_WIN
-    const auto exePath = QString(SRCDIR) + "../wxsvgrender/release/wxsvgrender";
-#else
-    const auto exePath = QString(SRCDIR) + "../wxsvgrender/wxsvgrender";
-#endif
-    const auto outImg = Paths::workDir() + "/wxsvg.png";
-
-    const QString out = Process::run(exePath, {
-        data.imgPath,
-        outImg,
-        QString::number(data.viewSize),
-        QString::number(data.viewSize)
-    }, true);
-
-    if (!out.isEmpty()) {
-        qDebug().noquote() << "wxsvg:" << out;
-    }
-
-    return loadImage(outImg);
-}
-
 QImage Render::renderViaQtSvg(const RenderData &data)
 {
 #ifdef Q_OS_WIN
@@ -345,10 +322,6 @@ void Render::renderImages()
         renderCached(Backend::SvgNet, QString());
     }
 
-    if (m_settings->useWxSvg) {
-        list.append({ Backend::WxSvg, m_viewSize, m_dpiScale, m_imgPath, QString(), ts });
-    }
-
     if (m_settings->useQtSvg) {
         list.append({ Backend::QtSvg, m_viewSize, m_dpiScale, m_imgPath, QString(), ts });
     }
@@ -382,7 +355,6 @@ RenderResult Render::renderImage(const RenderData &data)
             case Backend::Batik       : img = renderViaBatik(data); break;
             case Backend::Inkscape    : img = renderViaInkscape(data); break;
             case Backend::Librsvg     : img = renderViaRsvg(data); break;
-            case Backend::WxSvg       : img = renderViaWxSvg(data); break;
             case Backend::QtSvg       : img = renderViaQtSvg(data); break;
         }
 

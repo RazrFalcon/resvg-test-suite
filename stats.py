@@ -45,11 +45,11 @@ with open('results.csv', 'r') as f:
 
         flags = [int(row[1]), int(row[2]), int(row[3]), int(row[4]),
                  int(row[5]), int(row[6]), int(row[7]), int(row[8]),
-                 int(row[9]), int(row[10])]
+                 int(row[9])]
 
         rows.append(RowData(file_name, flags))
 
-passed = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+passed = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 for row in rows:
     for idx, flag in enumerate(row.flags):
         if flag == PASSED:
@@ -96,10 +96,6 @@ barh_data = json.dumps(
         },
         {
             "name": "QtSvg 6.1.2",
-            "value": passed[9]
-        },
-        {
-            "name": "wxSvg 1.5.11",
             "value": passed[8]
         }
     ],

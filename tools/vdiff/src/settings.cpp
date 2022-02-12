@@ -19,7 +19,6 @@ namespace Key {
     static const QString UseInkscape        = "UseInkscape";
     static const QString UseSvgNet          = "UseSvgNet";
     static const QString UseLibrsvg         = "UseLibrsvg";
-    static const QString UseWxSvg           = "UseWxSvg";
     static const QString UseQtSvg           = "UseQtSvg";
     static const QString ViewSize           = "ViewSize";
 }
@@ -72,7 +71,6 @@ void Settings::load() noexcept
     this->useInkscape = appSettings.value(Key::UseInkscape).toBool();
     this->useLibrsvg = appSettings.value(Key::UseLibrsvg).toBool();
     this->useSvgNet = appSettings.value(Key::UseSvgNet).toBool();
-    this->useWxSvg = appSettings.value(Key::UseWxSvg).toBool();
     this->useQtSvg = appSettings.value(Key::UseQtSvg).toBool();
 
     this->resvgDir = appSettings.value(Key::ResvgDir).toString();
@@ -96,7 +94,6 @@ void Settings::save() const noexcept
     appSettings.setValue(Key::UseInkscape, this->useInkscape);
     appSettings.setValue(Key::UseLibrsvg, this->useLibrsvg);
     appSettings.setValue(Key::UseSvgNet, this->useSvgNet);
-    appSettings.setValue(Key::UseWxSvg, this->useWxSvg);
     appSettings.setValue(Key::UseQtSvg, this->useQtSvg);
     appSettings.setValue(Key::ResvgDir, this->resvgDir);
     appSettings.setValue(Key::FirefoxPath, this->firefoxPath);

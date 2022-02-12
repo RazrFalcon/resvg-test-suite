@@ -104,10 +104,6 @@ void MainWindow::prepareBackends()
         backends << Backend::SvgNet;
     }
 
-    if (m_settings.useWxSvg) {
-        backends << Backend::WxSvg;
-    }
-
     if (m_settings.useQtSvg) {
         backends << Backend::QtSvg;
     }

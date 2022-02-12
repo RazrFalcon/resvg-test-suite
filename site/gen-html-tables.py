@@ -220,7 +220,7 @@ class RowData:
 
 
 def global_flags(rows, type, name):
-    passed_list = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    passed_list = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     total = 0
     for row in rows:
         if row.type != type or row.name != name:
@@ -242,8 +242,8 @@ def get_item_row(rows, out_of_scope_list, type, name):
         total = 0
     else:
         flags, total = global_flags(rows, type, name)
-        if flags == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]:
-            flags = [FAILED, UNKNOWN, UNKNOWN, UNKNOWN, UNKNOWN, UNKNOWN, UNKNOWN, UNKNOWN, UNKNOWN, UNKNOWN]
+        if flags == [0, 0, 0, 0, 0, 0, 0, 0, 0]:
+            flags = [FAILED, UNKNOWN, UNKNOWN, UNKNOWN, UNKNOWN, UNKNOWN, UNKNOWN, UNKNOWN, UNKNOWN]
 
     if type == ELEMENT_TYPE:
         anchor = 'e-' + name
@@ -304,7 +304,7 @@ def main():
             # Note! We set resvg to the first place.
             flags = [int(row[4]), int(row[1]), int(row[2]), int(row[3]),
                      int(row[5]), int(row[6]), int(row[7]), int(row[8]),
-                     int(row[9]), int(row[10])]
+                     int(row[9])]
 
             tag_name = file_name
             tag_name = tag_name[2:]
@@ -317,7 +317,7 @@ def main():
 
             rows.append(RowData(type, tag_name, int(index), title, flags))
 
-    table_hline = '<tr>\n<td class="td-align" colspan="13"></td>\n<tr>\n'
+    table_hline = '<tr>\n<td class="td-align" colspan="12"></td>\n<tr>\n'
 
     table_header = \
         ('<table width="100%">\n'
@@ -325,7 +325,6 @@ def main():
          '<col width="5%">\n'
          '<col width="5%">\n'
          '<col width="60%">\n'
-         '<col width="5%">\n'
          '<col width="5%">\n'
          '<col width="5%">\n'
          '<col width="5%">\n'
@@ -347,7 +346,6 @@ def main():
          '<th>Inkscape</th>\n'
          '<th>librsvg</th>\n'
          '<th>SVG.NET</th>\n'
-         '<th>wxSVG</th>\n'
          '<th>QtSvg</th>\n'
          '</tr>\n'
          '</thead>\n')
@@ -356,7 +354,7 @@ def main():
 
     for elem in elements_order:
         if elem.startswith('<a '):
-            html += '<tr>\n<td class="td-align" colspan="13">{}</td>\n<tr>\n'.format(elem)
+            html += '<tr>\n<td class="td-align" colspan="12">{}</td>\n<tr>\n'.format(elem)
         else:
             html += get_item_row(rows, out_of_scope_elems, ELEMENT_TYPE, elem)
 

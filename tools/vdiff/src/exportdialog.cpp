@@ -16,7 +16,6 @@ ExportDialog::ExportDialog(const QList<Backend> &backends, QWidget *parent)
     ui->chBoxBBatik->setEnabled(backends.contains(Backend::Batik));
     ui->chBoxBInkscape->setEnabled(backends.contains(Backend::Inkscape));
     ui->chBoxBLibrsvg->setEnabled(backends.contains(Backend::Librsvg));
-    ui->chBoxBWxSvg->setEnabled(backends.contains(Backend::WxSvg));
     ui->chBoxBQtSvg->setEnabled(backends.contains(Backend::QtSvg));
 
     ui->chBoxBResvg->setChecked(backends.contains(Backend::Resvg));
@@ -25,7 +24,6 @@ ExportDialog::ExportDialog(const QList<Backend> &backends, QWidget *parent)
     ui->chBoxBBatik->setChecked(backends.contains(Backend::Batik));
     ui->chBoxBInkscape->setChecked(backends.contains(Backend::Inkscape));
     ui->chBoxBLibrsvg->setChecked(backends.contains(Backend::Librsvg));
-    ui->chBoxBWxSvg->setChecked(backends.contains(Backend::WxSvg));
     ui->chBoxBQtSvg->setChecked(backends.contains(Backend::QtSvg));
 
     ui->buttonBox->button(QDialogButtonBox::Ok)->setText("Export");
@@ -52,7 +50,6 @@ ExportDialog::Options ExportDialog::options() const
     if (ui->chBoxBBatik->isChecked())       { opt.backends << Backend::Batik; }
     if (ui->chBoxBInkscape->isChecked())    { opt.backends << Backend::Inkscape; }
     if (ui->chBoxBLibrsvg->isChecked())     { opt.backends << Backend::Librsvg; }
-    if (ui->chBoxBWxSvg->isChecked())       { opt.backends << Backend::WxSvg; }
     if (ui->chBoxBQtSvg->isChecked())       { opt.backends << Backend::QtSvg; }
 
     return opt;

@@ -75,13 +75,6 @@
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="chBoxBWxSvg">
-         <property name="text">
-          <string>wxSvg</string>
-         </property>
-        </widget>
-       </item>
-       <item>
         <widget class="QCheckBox" name="chBoxBQtSvg">
          <property name="text">
           <string>QtSvg</string>

@@ -57,8 +57,6 @@ void SettingsDialog::loadSettings()
 
     ui->chBoxUseSvgNet->setChecked(m_settings->useSvgNet);
 
-    ui->chBoxUseWxSvg->setChecked(m_settings->useWxSvg);
-
     ui->chBoxUseQtSvg->setChecked(m_settings->useQtSvg);
 
     prepareTestsPathWidgets();
@@ -96,7 +94,6 @@ void SettingsDialog::on_buttonBox_accepted()
     m_settings->useInkscape = ui->chBoxUseInkscape->isChecked();
     m_settings->useLibrsvg = ui->chBoxUseLibrsvg->isChecked();
     m_settings->useSvgNet = ui->chBoxUseSvgNet->isChecked();
-    m_settings->useWxSvg = ui->chBoxUseWxSvg->isChecked();
     m_settings->useQtSvg = ui->chBoxUseQtSvg->isChecked();
 
     m_settings->resvgDir = ui->lineEditResvg->text();
