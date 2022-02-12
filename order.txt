@@ -873,6 +873,7 @@ e-g-001.svg
 e-g-002.svg
 e-image-001.svg
 e-image-002.svg
+e-image-045.svg
 e-image-003.svg
 e-image-017.svg
 e-image-006.svg
@@ -880,6 +881,7 @@ e-image-004.svg
 e-image-009.svg
 e-image-038.svg
 e-image-005.svg
+e-image-046.svg
 e-image-007.svg
 e-image-008.svg
 e-image-039.svg
