@@ -1504,3 +1504,10 @@ e-use-031.svg
 e-use-032.svg
 e-use-033.svg
 e-use-034.svg
+e-use-035.svg
+e-use-036.svg
+e-use-037.svg
+e-use-038.svg
+e-use-039.svg
+e-use-040.svg
+e-use-041.svg

@@ -50,7 +50,7 @@ MainWindow::MainWindow(QWidget *parent)
     auto shortcutNext = new QShortcut(QKeySequence("Ctrl+N"), this);
     connect(shortcutNext, &QShortcut::activated, [this]() {
         const auto idx = ui->cmbBoxFiles->currentIndex();
-        if (idx < ui->cmbBoxFiles->count()) {
+        if (idx + 1 < ui->cmbBoxFiles->count()) {
             ui->cmbBoxFiles->setCurrentIndex(idx + 1);
         }
     });
