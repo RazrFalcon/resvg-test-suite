@@ -13,6 +13,7 @@ ExportDialog::ExportDialog(const QList<Backend> &backends, QWidget *parent)
     ui->chBoxBResvg->setEnabled(backends.contains(Backend::Resvg));
     ui->chBoxBChrome->setEnabled(backends.contains(Backend::Chrome));
     ui->chBoxBFirefox->setEnabled(backends.contains(Backend::Firefox));
+    ui->chBoxBSafari->setEnabled(backends.contains(Backend::Safari));
     ui->chBoxBBatik->setEnabled(backends.contains(Backend::Batik));
     ui->chBoxBInkscape->setEnabled(backends.contains(Backend::Inkscape));
     ui->chBoxBLibrsvg->setEnabled(backends.contains(Backend::Librsvg));
@@ -21,6 +22,7 @@ ExportDialog::ExportDialog(const QList<Backend> &backends, QWidget *parent)
     ui->chBoxBResvg->setChecked(backends.contains(Backend::Resvg));
     ui->chBoxBChrome->setChecked(backends.contains(Backend::Chrome));
     ui->chBoxBFirefox->setChecked(backends.contains(Backend::Firefox));
+    ui->chBoxBSafari->setChecked(backends.contains(Backend::Safari));
     ui->chBoxBBatik->setChecked(backends.contains(Backend::Batik));
     ui->chBoxBInkscape->setChecked(backends.contains(Backend::Inkscape));
     ui->chBoxBLibrsvg->setChecked(backends.contains(Backend::Librsvg));
@@ -47,6 +49,7 @@ ExportDialog::Options ExportDialog::options() const
     if (ui->chBoxBResvg->isChecked())       { opt.backends << Backend::Resvg; }
     if (ui->chBoxBChrome->isChecked())      { opt.backends << Backend::Chrome; }
     if (ui->chBoxBFirefox->isChecked())     { opt.backends << Backend::Firefox; }
+    if (ui->chBoxBSafari->isChecked())      { opt.backends << Backend::Safari; }
     if (ui->chBoxBBatik->isChecked())       { opt.backends << Backend::Batik; }
     if (ui->chBoxBInkscape->isChecked())    { opt.backends << Backend::Inkscape; }
     if (ui->chBoxBLibrsvg->isChecked())     { opt.backends << Backend::Librsvg; }

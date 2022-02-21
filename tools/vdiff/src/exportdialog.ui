@@ -54,6 +54,13 @@
         </widget>
        </item>
        <item>
+        <widget class="QCheckBox" name="chBoxBSafari">
+         <property name="text">
+          <string>Safari</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QCheckBox" name="chBoxBBatik">
          <property name="text">
           <string>Batik</string>
