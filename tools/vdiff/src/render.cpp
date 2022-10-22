@@ -98,10 +98,10 @@ QImage Render::renderViaFirefox(const RenderData &data)
     }, true);
 
     if (!out.isEmpty()) {
-        // Strip GTK warnings.
         auto lines = out.split("\n");
         lines.removeAll("");
-        const auto warnings = lines.filter("Gtk-Message");
+        auto warnings = lines.filter("Gtk-Message");
+        warnings << lines.filter("plugin-container");
         for (const auto &w : warnings) {
             lines.removeOne(w);
         }
