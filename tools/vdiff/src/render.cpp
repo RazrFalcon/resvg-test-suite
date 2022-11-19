@@ -83,18 +83,11 @@ QImage Render::renderViaFirefox(const RenderData &data)
 {
     const auto outImg = Paths::workDir() + "/firefox.png";
 
-    // Firefox 77 converts SVG files only when they are right next to the firefox binary.
-    // Some kind of bug.
-    const auto workdir = QFileInfo(data.convPath).absolutePath();
-    const auto tmpSvgPath = workdir + "/test.svg";
-    QFile::remove(tmpSvgPath);
-    QFile::copy(data.imgPath, tmpSvgPath);
-
     QString out = Process::run(data.convPath, {
         QString("--window-size=%1,%2").arg(data.viewSize).arg(data.viewSize),
         QString("--screenshot=%1").arg(QFileInfo(outImg).absoluteFilePath()),
         // The SVG file path must be formed as file:/// URL.
-        QUrl::fromLocalFile(tmpSvgPath).toString(),
+        QUrl::fromLocalFile(data.imgPath).toString(),
     }, true);
 
     if (!out.isEmpty()) {
