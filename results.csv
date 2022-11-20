@@ -164,6 +164,7 @@ a-fill-opacity-003.svg,1,1,1,1,1,1,1,1,1
 a-fill-opacity-004.svg,1,1,1,1,1,1,1,2,2
 a-fill-opacity-005.svg,1,1,1,1,1,1,1,1,1
 a-fill-opacity-006.svg,1,1,1,1,1,1,1,2,1
+a-fill-opacity-007.svg,1,1,1,1,2,2,1,0,2
 a-fill-rule-001.svg,1,1,1,1,1,1,1,1,1
 a-fill-rule-002.svg,1,1,1,1,1,1,1,1,1
 a-filter-001.svg,1,1,1,1,1,1,1,2,2
@@ -217,6 +218,7 @@ a-flood-color-005.svg,1,1,1,1,1,1,1,2,2
 a-flood-color-006.svg,1,1,1,1,1,2,1,2,2
 a-flood-color-007.svg,1,1,1,1,2,2,1,0,2
 a-flood-opacity-001.svg,1,1,1,1,1,2,1,2,2
+a-flood-opacity-002.svg,1,1,1,1,2,2,1,0,2
 a-font-001.svg,2,2,2,2,1,2,2,2,2
 a-font-family-001.svg,1,1,1,1,1,1,1,1,2
 a-font-family-002.svg,1,1,1,1,1,1,1,1,2
@@ -322,7 +324,7 @@ a-opacity-001.svg,1,1,1,1,1,1,1,1,2
 a-opacity-002.svg,1,1,1,1,1,2,1,1,2
 a-opacity-003.svg,1,1,1,1,1,1,1,1,1
 a-opacity-004.svg,1,1,1,1,1,1,1,1,1
-a-opacity-005.svg,1,1,1,2,2,2,1,1,2
+a-opacity-005.svg,1,1,1,1,2,2,1,1,2
 a-opacity-006.svg,1,1,1,1,1,2,1,1,1
 a-opacity-007.svg,1,1,1,1,1,1,1,2,1
 a-opacity-008.svg,1,1,1,1,1,1,1,1,2
@@ -355,6 +357,7 @@ a-shape-rendering-007.svg,1,1,1,1,1,2,1,1,2
 a-shape-rendering-008.svg,1,1,1,1,2,2,1,2,2
 a-stop-color-001.svg,1,1,1,1,1,1,1,1,1
 a-stop-opacity-001.svg,1,1,1,1,1,1,1,2,1
+a-stop-opacity-002.svg,1,1,1,1,2,2,1,0,2
 a-stroke-001.svg,1,1,1,1,1,1,1,1,1
 a-stroke-002.svg,1,1,1,1,1,1,1,1,1
 a-stroke-003.svg,1,1,1,1,1,1,1,1,1
@@ -419,6 +422,7 @@ a-stroke-opacity-003.svg,1,1,1,1,1,1,1,2,1
 a-stroke-opacity-004.svg,1,1,1,1,1,1,1,2,2
 a-stroke-opacity-005.svg,1,1,1,1,1,1,1,2,1
 a-stroke-opacity-006.svg,1,1,1,1,1,1,1,1,2
+a-stroke-opacity-007.svg,1,1,1,1,2,2,1,0,2
 a-stroke-width-001.svg,1,1,1,1,1,1,1,1,1
 a-stroke-width-002.svg,1,1,1,1,1,1,1,1,1
 a-stroke-width-003.svg,1,1,1,1,1,1,1,1,1
