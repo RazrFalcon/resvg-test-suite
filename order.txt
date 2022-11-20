@@ -228,6 +228,9 @@ a-font-family-008.svg
 a-font-family-009.svg
 a-font-family-010.svg
 a-font-family-011.svg
+a-font-kerning-001.svg
+a-font-kerning-002.svg
+a-font-kerning-003.svg
 a-font-size-001.svg
 a-font-size-002.svg
 a-font-size-003.svg
@@ -277,6 +280,7 @@ a-image-rendering-003.svg
 a-isolation-001.svg
 a-isolation-002.svg
 a-kerning-001.svg
+a-kerning-002.svg
 a-lengthAdjust-001.svg
 a-letter-spacing-001.svg
 a-letter-spacing-002.svg

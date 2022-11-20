@@ -229,6 +229,9 @@ a-font-family-008.svg,1,1,1,1,1,1,1,1,1
 a-font-family-009.svg,1,1,1,1,1,1,1,2,1
 a-font-family-010.svg,1,1,1,1,1,1,1,1,1
 a-font-family-011.svg,1,1,1,1,1,1,1,1,1
+a-font-kerning-001.svg,1,1,1,1,2,2,2,0,2
+a-font-kerning-002.svg,1,1,1,1,2,2,2,0,2
+a-font-kerning-003.svg,1,1,1,1,2,2,2,0,2
 a-font-size-001.svg,1,1,1,1,1,1,1,1,1
 a-font-size-002.svg,1,1,1,1,1,1,1,1,1
 a-font-size-003.svg,1,1,1,1,1,1,1,2,2
@@ -278,6 +281,7 @@ a-image-rendering-003.svg,2,1,2,1,2,2,2,2,2
 a-isolation-001.svg,1,1,1,1,2,1,1,0,2
 a-isolation-002.svg,1,1,2,1,2,2,1,0,2
 a-kerning-001.svg,2,2,2,2,1,2,2,2,2
+a-kerning-002.svg,2,2,2,1,2,2,2,0,2
 a-lengthAdjust-001.svg,1,1,1,2,1,1,2,0,2
 a-letter-spacing-001.svg,1,1,1,1,1,1,1,1,2
 a-letter-spacing-002.svg,1,1,1,1,1,1,1,1,2
