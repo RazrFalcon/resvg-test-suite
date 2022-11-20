@@ -537,6 +537,9 @@ a-writing-mode-017.svg
 a-writing-mode-018.svg
 a-writing-mode-019.svg
 a-writing-mode-020.svg
+a-writing-mode-021.svg
+a-writing-mode-022.svg
+a-writing-mode-023.svg
 e-a-001.svg
 e-a-002.svg
 e-a-003.svg
@@ -1191,6 +1194,7 @@ e-pattern-022.svg
 e-pattern-023.svg
 e-pattern-024.svg
 e-pattern-030.svg
+e-pattern-031.svg
 e-polygon-001.svg
 e-polygon-002.svg
 e-polygon-003.svg

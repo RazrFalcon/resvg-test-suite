@@ -538,6 +538,9 @@ a-writing-mode-017.svg,0,0,0,0,0,0,0,0,0
 a-writing-mode-018.svg,1,1,1,1,1,1,2,2,2
 a-writing-mode-019.svg,1,1,1,1,1,1,2,2,2
 a-writing-mode-020.svg,1,1,1,1,1,2,2,2,2
+a-writing-mode-021.svg,1,1,1,1,1,1,1,0,2
+a-writing-mode-022.svg,1,1,1,1,2,1,2,0,1
+a-writing-mode-023.svg,1,1,1,1,2,1,2,0,2
 e-a-001.svg,1,1,1,1,1,1,1,1,1
 e-a-002.svg,1,1,1,1,1,1,1,1,1
 e-a-003.svg,1,1,1,1,1,1,1,1,1
@@ -1192,6 +1195,7 @@ e-pattern-022.svg,1,1,2,1,3,1,1,3,2
 e-pattern-023.svg,1,1,2,1,3,1,1,3,2
 e-pattern-024.svg,1,1,1,1,2,2,1,2,2
 e-pattern-030.svg,1,1,1,1,1,1,1,0,2
+e-pattern-031.svg,1,1,2,1,3,1,1,0,2
 e-polygon-001.svg,1,1,1,1,1,1,1,1,1
 e-polygon-002.svg,1,1,1,1,3,1,1,1,1
 e-polygon-003.svg,1,1,1,1,3,1,2,1,1
@@ -1237,7 +1241,7 @@ e-radialGradient-027.svg,1,1,1,1,1,2,1,2,2
 e-radialGradient-028.svg,1,1,1,1,1,1,1,1,2
 e-radialGradient-029.svg,1,1,1,1,1,2,1,2,2
 e-radialGradient-030.svg,1,1,1,1,1,2,1,2,2
-e-radialGradient-031.svg,1,1,1,2,2,2,1,2,1
+e-radialGradient-031.svg,1,1,1,1,2,2,1,2,1
 e-radialGradient-032.svg,0,0,0,0,3,0,0,0,0
 e-radialGradient-033.svg,1,1,1,1,1,2,2,3,2
 e-radialGradient-036.svg,1,1,1,1,1,2,2,3,2
