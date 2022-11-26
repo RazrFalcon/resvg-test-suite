@@ -627,6 +627,8 @@ e-ellipse-007.svg
 e-ellipse-008.svg
 e-ellipse-009.svg
 e-ellipse-010.svg
+e-ellipse-011.svg
+e-ellipse-012.svg
 e-feBlend-001.svg
 e-feBlend-002.svg
 e-feBlend-003.svg
@@ -752,6 +754,7 @@ e-feDropShadow-004.svg
 e-feDropShadow-005.svg
 e-feDropShadow-006.svg
 e-feDropShadow-007.svg
+e-feDropShadow-008.svg
 e-feFlood-001.svg
 e-feFlood-002.svg
 e-feFlood-003.svg
@@ -822,6 +825,7 @@ e-feOffset-005.svg
 e-feOffset-006.svg
 e-feOffset-007.svg
 e-feOffset-008.svg
+e-feOffset-009.svg
 e-fePointLight-001.svg
 e-fePointLight-002.svg
 e-fePointLight-003.svg
@@ -994,6 +998,7 @@ e-line-006.svg
 e-line-007.svg
 e-line-008.svg
 e-line-009.svg
+e-line-010.svg
 e-linearGradient-001.svg
 e-linearGradient-002.svg
 e-linearGradient-003.svg
@@ -1092,6 +1097,7 @@ e-marker-054.svg
 e-marker-058.svg
 e-marker-055.svg
 e-marker-056.svg
+e-marker-061.svg
 e-mask-001.svg
 e-mask-002.svg
 e-mask-003.svg
@@ -1281,6 +1287,7 @@ e-rect-018.svg
 e-rect-019.svg
 e-rect-020.svg
 e-rect-021.svg
+e-rect-038.svg
 e-rect-022.svg
 e-rect-023.svg
 e-rect-024.svg
@@ -1433,6 +1440,7 @@ e-text-034.svg
 e-text-036.svg
 e-text-038.svg
 e-text-015.svg
+e-text-044.svg
 e-text-016.svg
 e-text-017.svg
 e-text-039.svg
