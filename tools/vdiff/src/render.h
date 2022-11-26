@@ -11,7 +11,7 @@ struct RenderData
 {
     Backend type;
     int viewSize;
-    qreal dpiScale;
+    QSize imageSize;
     QString imgPath;
     QString convPath;
     TestSuite testSuite;

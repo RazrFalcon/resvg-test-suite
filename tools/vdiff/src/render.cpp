@@ -108,7 +108,15 @@ QImage Render::renderViaFirefox(const RenderData &data)
         }
     }
 
-    return loadImage(outImg);
+    auto image = loadImage(outImg);
+
+    // Crop image. Firefox always produces a rectangular image.
+    if (!data.imageSize.isEmpty() && data.imageSize != image.size()) {
+        const auto y = (image.height() - data.imageSize.height()) / 2;
+        image = image.copy(0, y, data.imageSize.width(), data.imageSize.height());
+    }
+
+    return image;
 }
 
 QImage Render::renderViaSafari(const RenderData &data)
@@ -122,11 +130,15 @@ QImage Render::renderViaSafari(const RenderData &data)
         data.imgPath,
     }, true);
 
-//    if (!out.isEmpty()) {
-//        qDebug().noquote() << "safari:" << out;
-//    }
+    auto image = loadImage(outImg);
 
-    return loadImage(outImg);
+    // Crop image. `qlmanage` always produces a rectangular image.
+    if (!data.imageSize.isEmpty() && data.imageSize != image.size()) {
+        const auto y = (image.height() - data.imageSize.height()) / 2;
+        image = image.copy(0, y, data.imageSize.width(), data.imageSize.height());
+    }
+
+    return image;
 }
 
 QImage Render::renderViaResvg(const RenderData &data)
@@ -197,7 +209,15 @@ QImage Render::renderViaBatik(const RenderData &data)
         qDebug().noquote() << "batik:" << out;
     }
 
-    return loadImage(outImg);
+    auto image = loadImage(outImg);
+
+    // Crop image. Batik always produces a rectangular image.
+    if (!data.imageSize.isEmpty() && data.imageSize != image.size()) {
+        const auto y = (image.height() - data.imageSize.height()) / 2;
+        image = image.copy(0, y, data.imageSize.width(), data.imageSize.height());
+    }
+
+    return image;
 }
 
 QImage Render::renderViaInkscape(const RenderData &data)
@@ -209,19 +229,12 @@ QImage Render::renderViaInkscape(const RenderData &data)
         "-w", QString::number(data.viewSize),
         "--export-filename=" + outImg
     });
-
-//    if (!out.isEmpty()) {
-//        qDebug().noquote() << "inkscape:" << out;
-//    }
-
     return loadImage(outImg);
 }
 
 QImage Render::renderViaRsvg(const RenderData &data)
 {
     const auto outImg = Paths::workDir() + "/rsvg.png";
-
-//    qDebug() << Process::run(data.convPath, { "-v" });
 
     const QString out = Process::run(data.convPath, {
         "-f", "png",
@@ -267,11 +280,15 @@ void Render::renderImages()
 
     QVector<RenderData> list;
 
+    QImageReader reader(m_imgPath);
+    auto imageSize = reader.size();
+    imageSize = imageSize * (float(m_viewSize) / imageSize.width());
+
     if (ts != TestSuite::Custom) {
-        list.append({ Backend::Reference, m_viewSize, m_dpiScale, m_imgPath, QString(), ts });
+        list.append({ Backend::Reference, m_viewSize, imageSize, m_imgPath, QString(), ts });
     }
 
-    list.append({ Backend::Resvg, m_viewSize, m_dpiScale, m_imgPath, m_settings->resvgPath(), ts });
+    list.append({ Backend::Resvg, m_viewSize, imageSize, m_imgPath, m_settings->resvgPath(), ts });
 
     auto renderCached = [&](const Backend backend, const QString &renderPath) {
         if (ts != TestSuite::Custom) {
@@ -280,10 +297,10 @@ void Render::renderImages()
                 m_imgs.insert(backend, cachedImage);
                 emit imageReady(backend, cachedImage);
             } else {
-                list.append({ backend, m_viewSize, m_dpiScale, m_imgPath, renderPath, ts });
+                list.append({ backend, m_viewSize, imageSize, m_imgPath, renderPath, ts });
             }
         } else {
-            list.append({ backend, m_viewSize, m_dpiScale, m_imgPath, renderPath, ts });
+            list.append({ backend, m_viewSize, imageSize, m_imgPath, renderPath, ts });
         }
     };
 
@@ -308,7 +325,7 @@ void Render::renderImages()
     }
 
     if (m_settings->useLibrsvg) {
-        list.append({ Backend::Librsvg, m_viewSize, m_dpiScale, m_imgPath, m_settings->librsvgPath, ts });
+        list.append({ Backend::Librsvg, m_viewSize, imageSize, m_imgPath, m_settings->librsvgPath, ts });
     }
 
     if (m_settings->useSvgNet) {
@@ -316,7 +333,7 @@ void Render::renderImages()
     }
 
     if (m_settings->useQtSvg) {
-        list.append({ Backend::QtSvg, m_viewSize, m_dpiScale, m_imgPath, QString(), ts });
+        list.append({ Backend::QtSvg, m_viewSize, imageSize, m_imgPath, QString(), ts });
     }
 
     const auto future = QtConcurrent::mapped(list, &Render::renderImage);
@@ -358,7 +375,7 @@ RenderResult Render::renderImage(const RenderData &data)
 
         QPainter p(&img);
         auto f = p.font();
-        f.setPointSize(12 * data.dpiScale);
+        f.setPointSize(12);
         p.setFont(f);
         p.drawText(QRect(0, 0, data.viewSize, data.viewSize),
                    Qt::AlignLeft | Qt::AlignTop | Qt::TextWordWrap,
