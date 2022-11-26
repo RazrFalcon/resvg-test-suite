@@ -3,6 +3,7 @@
 #include <QPainter>
 #include <QImageReader>
 #include <QUrl>
+#include <QXmlStreamReader>
 #include <QtConcurrent/QtConcurrentMap>
 #include <QtConcurrent/QtConcurrentRun>
 
@@ -13,6 +14,38 @@
 #include "imagecache.h"
 
 #include "render.h"
+
+static QSize guessSvgSize(const QString &path)
+{
+    QFile file(path);
+    if (!file.open(QFile::ReadOnly)) {
+        return QSize();
+    }
+
+    QXmlStreamReader reader(&file);
+    if (!reader.readNextStartElement()) {
+        return QSize();
+    }
+
+    if (reader.name() != QLatin1String("svg")) {
+        return QSize();
+    }
+
+    const auto attributes = reader.attributes();
+    const auto viewBoxStr = attributes.value("viewBox");
+    const auto widthStr = attributes.value("width");
+    const auto heightStr = attributes.value("height");
+
+    const auto vbValues = viewBoxStr.split(' ');
+    if (vbValues.size() != 4) {
+        return QSize();
+    }
+
+    auto width = widthStr.isEmpty() ? vbValues[2].toDouble() : widthStr.toDouble();
+    auto height = heightStr.isEmpty() ? vbValues[3].toDouble() : heightStr.toDouble();
+
+    return QSize(width, height);
+}
 
 Render::Render(QObject *parent)
     : QObject(parent)
@@ -280,8 +313,11 @@ void Render::renderImages()
 
     QVector<RenderData> list;
 
-    QImageReader reader(m_imgPath);
-    auto imageSize = reader.size();
+    // Parsing SVG using QtSvg directly is a bad idea, because it can crash.
+    auto imageSize = guessSvgSize(m_imgPath);
+    if (imageSize.isEmpty()) {
+        imageSize = QSize(m_viewSize, m_viewSize);
+    }
     imageSize = imageSize * (float(m_viewSize) / imageSize.width());
 
     if (ts != TestSuite::Custom) {
