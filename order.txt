@@ -284,6 +284,9 @@ a-isolation-002.svg
 a-kerning-001.svg
 a-kerning-002.svg
 a-lengthAdjust-001.svg
+a-lengthAdjust-002.svg
+a-lengthAdjust-003.svg
+a-lengthAdjust-004.svg
 a-letter-spacing-001.svg
 a-letter-spacing-002.svg
 a-letter-spacing-003.svg
@@ -487,6 +490,9 @@ a-textLength-006.svg
 a-textLength-007.svg
 a-textLength-008.svg
 a-textLength-009.svg
+a-textLength-010.svg
+a-textLength-011.svg
+a-textLength-012.svg
 a-transform-001.svg
 a-transform-002.svg
 a-transform-003.svg
