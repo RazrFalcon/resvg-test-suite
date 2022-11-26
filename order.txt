@@ -981,6 +981,7 @@ e-image-028.svg
 e-image-029.svg
 e-image-030.svg
 e-image-031.svg
+e-image-047.svg
 e-image-032.svg
 e-image-033.svg
 e-image-034.svg
