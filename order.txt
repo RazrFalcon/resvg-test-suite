@@ -1181,6 +1181,7 @@ e-path-040.svg
 e-path-041.svg
 e-path-042.svg
 e-path-043.svg
+e-path-052.svg
 e-pattern-001.svg
 e-pattern-002.svg
 e-pattern-003.svg
