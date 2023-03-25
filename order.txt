@@ -476,6 +476,7 @@ a-text-decoration-012.svg
 a-text-decoration-013.svg
 a-text-decoration-014.svg
 a-text-decoration-019.svg
+a-text-decoration-020.svg
 a-text-rendering-001.svg
 a-text-rendering-002.svg
 a-text-rendering-003.svg
