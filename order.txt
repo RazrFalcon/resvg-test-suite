@@ -1169,6 +1169,9 @@ e-path-027.svg
 e-path-028.svg
 e-path-029.svg
 e-path-030.svg
+e-path-053.svg
+e-path-054.svg
+e-path-055.svg
 e-path-031.svg
 e-path-032.svg
 e-path-033.svg
