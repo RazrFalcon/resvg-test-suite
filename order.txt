@@ -164,6 +164,7 @@ a-fill-opacity-004.svg
 a-fill-opacity-005.svg
 a-fill-opacity-006.svg
 a-fill-opacity-007.svg
+a-fill-opacity-008.svg
 a-fill-rule-001.svg
 a-fill-rule-002.svg
 a-filter-001.svg
@@ -425,6 +426,7 @@ a-stroke-opacity-004.svg
 a-stroke-opacity-005.svg
 a-stroke-opacity-006.svg
 a-stroke-opacity-007.svg
+a-stroke-opacity-008.svg
 a-stroke-width-001.svg
 a-stroke-width-002.svg
 a-stroke-width-003.svg
