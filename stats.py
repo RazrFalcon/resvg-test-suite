@@ -63,7 +63,7 @@ barh_data = json.dumps(
     },
     "items": [
         {
-            "name": "resvg 0.26.0",
+            "name": "resvg 0.31.0",
             "value": passed[3]
         },
         {
@@ -79,12 +79,12 @@ barh_data = json.dumps(
             "value": passed[2]
         },
         {
-            "name": "Inkscape 1.2.1",
-            "value": passed[5]
-        },
-        {
             "name": "librsvg 2.55.1",
             "value": passed[6]
+        },
+        {
+            "name": "Inkscape 1.2.1",
+            "value": passed[5]
         },
         {
             "name": "Batik 1.16",
