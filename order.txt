@@ -1134,6 +1134,11 @@ e-mask-028.svg
 e-mask-029.svg
 e-mask-030.svg
 e-mask-031.svg
+e-mask-032.svg
+e-mask-033.svg
+e-mask-034.svg
+e-mask-035.svg
+e-mask-036.svg
 e-path-001.svg
 e-path-002.svg
 e-path-003.svg
