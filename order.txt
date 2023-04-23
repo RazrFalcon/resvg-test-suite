@@ -914,6 +914,8 @@ e-filter-030.svg
 e-filter-031.svg
 e-filter-032.svg
 e-filter-033.svg
+e-filter-066.svg
+e-filter-067.svg
 e-filter-034.svg
 e-filter-035.svg
 e-filter-036.svg
