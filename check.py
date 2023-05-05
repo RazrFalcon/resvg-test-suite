@@ -5,6 +5,7 @@ import os
 import subprocess
 import csv
 from lxml import etree
+from pathlib import Path
 
 
 def split_qname(name):
@@ -14,84 +15,19 @@ def split_qname(name):
         return [None, name]
 
 
-def check_order():
-    """
-    Checks that order.txt and ./svg dir has the same files
-    """
-
-    files = sorted(os.listdir('svg/'))
-
-    with open('order.txt', 'r') as f:
-        order = f.read().splitlines()
-
-    added = True
-    diff = [x for x in files if x not in order]
-    if not diff:
-        added = False
-        diff = [x for x in order if x not in files]
-
-    if not diff:
-        # in sync - ok
-        return
-
-    if added:
-        print('Add those files to the order.txt:')
-    else:
-        print('Remove those files from the order.txt:')
-
-    diff.sort()
-
-    for file in diff:
-        print(file)
-
-    print()  # new line
-
-    raise ValueError('order.txt is out of date')
-
-
-def check_results():
-    """
-    Checks that results.csv has all tests from order.txt
-    """
-
-    with open('order.txt', 'r') as f:
-        order = f.read().splitlines()
-
-    results = []
-    with open('results.csv', 'r') as f:
-        reader = csv.reader(f)
-        next(reader, None)  # skip header
-        for row in reader:
-            results.append(row[0])
-
-    diff = [x for x in order if x not in results]
-    if diff:
-        raise ValueError('results.csv is out of date')
-
-
-def check_untracked_files(dir):
-    output = subprocess.check_output(['git', 'ls-files', '--others', '--exclude-standard', dir])
-    if not output:
-        return
-
-    output = output.decode('ascii')
-    print('Untracked files:')
-    print(output)
-    raise ValueError('not all tests are added to the git')
-
-
 def check_title():
     """
     Checks that element/attribute tests has unique titles and shorter than 60 symbols
     """
 
-    files = sorted(os.listdir('svg/'))
+    files = Path('tests').rglob('*.svg')
 
     titles = {}
     for file in files:
+        file = str(file)
         tag_name = re.sub('-[0-9]+\.svg', '', file)
 
-        tree = etree.parse('svg/' + file)
+        tree = etree.parse(file)
         title = list(tree.getroot())[0].text
 
         if len(title) > 60:
@@ -109,12 +45,12 @@ def check_node_ids():
     Checks that all elements has an unique ID attribute.
     """
 
-    files = sorted(os.listdir('svg/'))
+    files = sorted(list(Path('tests').rglob('*.svg')))
 
     ignore_files = [
-        'e-svg-031.svg',  # because of ENTITY
-        'e-svg-032.svg',  # because of ENTITY
-        'e-use-024.svg',  # intended duplicate
+        'tests/structure/svg/031.svg',  # because of ENTITY
+        'tests/structure/svg/032.svg',  # because of ENTITY
+        'tests/structure/use/024.svg',  # intended duplicate
     ]
 
     ignore_tags = [
@@ -148,10 +84,10 @@ def check_node_ids():
     ]
 
     for file in ignore_files:
-        files.remove(file)
+        files.remove(Path(file))
 
     for file in files:
-        tree = etree.parse('svg/' + file)
+        tree = etree.parse(file)
         ids = set()
 
         for node in tree.getroot().iter():
@@ -178,23 +114,23 @@ def check_node_ids():
 
 def check_line_width():
     allow = [
-        'e-svg-004.svg',
-        'e-svg-005.svg',
-        'e-svg-007.svg',
-        'e-svg-031.svg',
-        'e-svg-032.svg',
-        'a-fill-028.svg',
-        'e-tspan-010.svg',
-        'e-image-040.svg',
+        'tests/structure/svg/004.svg',
+        'tests/structure/svg/005.svg',
+        'tests/structure/svg/007.svg',
+        'tests/structure/svg/031.svg',
+        'tests/structure/svg/032.svg',
+        'tests/painting/fill/028.svg',
+        'tests/text/tspan/010.svg',
+        'tests/structure/image/040.svg',
     ]
 
-    files = sorted(os.listdir('svg/'))
+    files = sorted(list(Path('tests').rglob('*.svg')))
 
     for file in allow:
-        files.remove(file)
+        files.remove(Path(file))
 
     for file in files:
-        with open('svg/' + file, 'r') as f:
+        with open(file, 'r') as f:
             for i, line in enumerate(f.read().splitlines()):
                 if len(line) > 100:
                     raise ValueError('Line {} in {} is longer than 100 characters'.format(i, file))
@@ -205,17 +141,17 @@ def check_for_unused_xlink_ns():
     # the 'lxml' will raise an error.
 
     allow = [
-        'e-svg-003.svg',
-        'e-svg-032.svg',
+        'tests/structure/svg/003.svg',
+        'tests/structure/svg/032.svg',
     ]
 
-    files = sorted(os.listdir('svg/'))
+    files = sorted(list(Path('tests').rglob('*.svg')))
 
     for file in allow:
-        files.remove(file)
+        files.remove(Path(file))
 
     for file in files:
-        tree = etree.parse('svg/' + file)
+        tree = etree.parse(file)
 
         has_href = False
         for node in tree.getroot().iter():
@@ -227,23 +163,7 @@ def check_for_unused_xlink_ns():
             raise ValueError('{} has an unneeded xlink namespace'.format(file))
 
 
-def main():
-    check_order()
-    check_results()
-    check_title()
-    check_node_ids()
-    check_untracked_files('svg')
-    check_untracked_files('png')
-    check_line_width()
-    check_for_unused_xlink_ns()
-
-
-if __name__ == '__main__':
-    try:
-        main()
-    except etree.ParseError as e:
-        print('Error: {}.'.format(e))
-        exit(1)
-    except ValueError as e:
-        print('Error: {}.'.format(e))
-        exit(1)
+check_title()
+check_node_ids()
+check_line_width()
+check_for_unused_xlink_ns()

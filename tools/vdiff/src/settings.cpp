@@ -123,7 +123,7 @@ QString Settings::testsPath() const noexcept
 {
     QString path;
     switch (this->testSuite) {
-        case TestSuite::Own      : path = QString("%1/../../svg").arg(SRCDIR); break;
+        case TestSuite::Own      : path = QString("%1/../../tests").arg(SRCDIR); break;
         case TestSuite::Custom   : Q_UNREACHABLE();
     }
 

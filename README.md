@@ -2,14 +2,12 @@
 
 ## Structure
 
-- `svg/` - SVG images. Actual tests
-- `png/` - PNG images with expected rendering results
-- `images/` - images that will be referenced by SVG files
+- `tests/` - SVG images. Actual tests
+- `resources/` - files that will be referenced by SVG files
 - `fonts/` - fonts used by SVG files
 - `site/` - sources for github pages
 - `tools/` - various testing tools
 - `check.py` - pre-commit hook
-- `order.txt` - custom tests order for pretty-printing
 - `results.csv` - results of manual testing via `tools/vdiff` of the `resvg` test suite
 - `stats.py` - generates `site/images/chart.svg`
 

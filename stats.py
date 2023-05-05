@@ -5,6 +5,7 @@ import json
 import subprocess
 import sys
 import os
+from pathlib import Path
 
 UNKNOWN      = 0
 PASSED       = 1
@@ -21,12 +22,12 @@ is_svg2_only = "--svg2" in sys.argv
 
 svg2_files = []
 if is_svg2_only:
-    files = sorted(os.listdir('svg/'))
-    files.remove('e-svg-007.svg') # not UTF-8
-    for name in files:
-        with open('svg/' + name, 'r') as f:
+    files = list(Path('tests').rglob('*.svg'))
+    files.remove(Path('tests/structure/svg/007.svg')) # not UTF-8
+    for file in files:
+        with open(file, 'r') as f:
             if "(SVG 2)" in f.read():
-                svg2_files.append(name)
+                svg2_files.append(str(file).replace('tests/', ''))
 
 rows = []
 with open('results.csv', 'r') as f:
@@ -63,7 +64,7 @@ barh_data = json.dumps(
     },
     "items": [
         {
-            "name": "resvg 0.31.0",
+            "name": "resvg 0.32.0",
             "value": passed[3]
         },
         {

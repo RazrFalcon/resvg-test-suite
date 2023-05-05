@@ -4,7 +4,6 @@
 #include <QXmlStreamReader>
 #include <QDebug>
 
-#include "paths.h"
 #include "settings.h"
 
 #include "tests.h"
@@ -51,6 +50,18 @@ static QString parseTitle(const QString &path)
     return title;
 }
 
+static QString resolveBaseName(const QFileInfo &info)
+{
+    auto baseName = info.fileName();
+
+    auto dir = info.absoluteDir();
+    baseName.prepend(dir.dirName() + "/");
+    dir.cdUp();
+    baseName.prepend(dir.dirName() + "/");
+
+    return baseName;
+}
+
 Tests Tests::load(const TestSuite testSuite, const QString &path, const QString &testsPath)
 {
     QFile file(path);
@@ -87,8 +98,8 @@ Tests Tests::load(const TestSuite testSuite, const QString &path, const QString 
         const auto testPath = testsPath + '/' + items.at(0);
 
         TestItem item;
-        item.path     = QFileInfo(testPath).absoluteFilePath();
-        item.baseName = QFileInfo(testPath).fileName();
+        item.path = QFileInfo(testPath).absoluteFilePath();
+        item.baseName = resolveBaseName(QFileInfo(testPath));
 
         item.state.insert(Backend::Chrome,      stateFormStr(items.at(1)));
         item.state.insert(Backend::Firefox,     stateFormStr(items.at(2)));
@@ -141,7 +152,7 @@ void Tests::save(const QString &path)
 {
     QString text = "title,chrome,firefox,safari,resvg,batik,inkscape,librsvg,svgnet,qtsvg\n";
     for (const TestItem &item : m_data) {
-        text += QFileInfo(item.path).fileName() + ',';
+        text += item.baseName + ',';
         text += QString::number((int)item.state.value(Backend::Chrome))     + ',';
         text += QString::number((int)item.state.value(Backend::Firefox))    + ',';
         text += QString::number((int)item.state.value(Backend::Safari))     + ',';
@@ -161,18 +172,34 @@ void Tests::save(const QString &path)
     file.write(text.toUtf8());
 }
 
+static void collectFilesRecursive(const QString &dir, QVector<QFileInfo> &files)
+{
+    const auto infos = QDir(dir).entryInfoList(QDir::AllEntries | QDir::NoDotAndDotDot, QDir::Name);
+    for (const QFileInfo &fi : infos) {
+        if (fi.isDir()) {
+            collectFilesRecursive(fi.absoluteFilePath(), files);
+        } else if (fi.suffix() == "svg") {
+            files << fi;
+        }
+    }
+}
+
 void Tests::resync(const Settings &settings)
 {
-    auto oldTests = load(settings.testSuite, settings.resultsPath(), settings.testsPath());
+    QVector<QFileInfo> files;
+    collectFilesRecursive(settings.testsPath(), files);
 
-    const auto files = QDir(settings.testsPath()).entryInfoList({ "*.svg" });
+    auto oldTests = load(settings.testSuite, settings.resultsPath(), settings.testsPath());
+    Tests newTests;
+
     for (const QFileInfo &fi : files) {
-        const auto baseName = fi.fileName();
+        const auto baseName = resolveBaseName(fi);
 
         bool isExists = false;
         for (const TestItem &test : oldTests) {
             if (test.baseName == baseName) {
                 isExists = true;
+                newTests.m_data << test;
                 break;
             }
         }
@@ -180,37 +207,7 @@ void Tests::resync(const Settings &settings)
         if (!isExists) {
             TestItem item;
             item.path = fi.absoluteFilePath();
-
-            oldTests.m_data << item;
-        }
-    }
-
-    Tests newTests;
-
-    const auto orderPath = Paths::order();
-    QFile orderFile(orderPath);
-    if (!orderFile.open(QFile::ReadOnly)) {
-        throw QString("Failed to open %1.").arg(orderPath);
-    }
-
-    const QString pngDir = QFileInfo(settings.testsPath() + "/../png").absoluteFilePath();
-
-    const QString text = orderFile.readAll();
-    for (const auto &line : text.split('\n')) {
-        if (line.isEmpty()) {
-            break;
-        }
-
-        const auto pngPath = pngDir + "/" + QFileInfo(line).completeBaseName() + ".png";
-        if (!QFile::exists(pngPath)) {
-            throw QString("'%1' not found.").arg(pngPath);
-        }
-
-        for (const TestItem &test : oldTests) {
-            if (QFileInfo(test.path).fileName() == line) {
-                newTests.m_data << test;
-                break;
-            }
+            newTests.m_data << item;
         }
     }
 

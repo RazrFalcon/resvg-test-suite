@@ -3,3 +3,4 @@ e-polygon make think stroke
 e-style-001 should fail for QtSvg
 subpixel svg size
 ligature rotation? like fi in some fonts?
+ligature partial style? like fi in some fonts?

@@ -80,7 +80,7 @@ void Render::render(const QString &path)
 QImage Render::renderReference(const RenderData &data)
 {
     const QFileInfo fi(data.imgPath);
-    const QString path = fi.absolutePath() + "/../png/" + fi.completeBaseName() + ".png";
+    const QString path = fi.absolutePath() + "/" + fi.completeBaseName() + ".png";
 
     Q_ASSERT(QFile(path).exists());
 
