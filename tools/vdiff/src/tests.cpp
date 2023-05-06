@@ -207,6 +207,7 @@ void Tests::resync(const Settings &settings)
         if (!isExists) {
             TestItem item;
             item.path = fi.absoluteFilePath();
+            item.baseName = baseName;
             newTests.m_data << item;
         }
     }

@@ -23,7 +23,7 @@ is_svg2_only = "--svg2" in sys.argv
 svg2_files = []
 if is_svg2_only:
     files = list(Path('tests').rglob('*.svg'))
-    files.remove(Path('tests/structure/svg/007.svg')) # not UTF-8
+    files.remove(Path('tests/structure/svg/not-UTF-8-encoding.svg'))
     for file in files:
         with open(file, 'r') as f:
             if "(SVG 2)" in f.read():

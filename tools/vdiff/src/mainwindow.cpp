@@ -196,10 +196,18 @@ void MainWindow::loadImageList(const TestSuite prevSuite)
 
 
     for (const TestItem &item : m_tests) {
-        QString title = item.baseName;
+        QString title;
         if (m_settings.testSuite == TestSuite::Own) {
-            title += " - " + item.title;
-            title.replace('`', '\'');
+            auto dir = QDir(item.path);
+            dir.cdUp();
+            auto prefix = dir.dirName();
+            dir.cdUp();
+            prefix.prepend("/");
+            prefix.prepend(dir.dirName());
+
+            title = prefix + " - " + QString(item.title).replace('`', '\'');
+        } else {
+            title = item.baseName;
         }
 
         ui->cmbBoxFiles->addItem(title);
