@@ -1,5 +1,4 @@
 title,chrome,firefox,safari,resvg,batik,inkscape,librsvg,svgnet,qtsvg
-filters/color-interpolation-filters/default-color-interpolation-filters.svg,1,1,1,1,1,1,1,2,2
 filters/enable-background/accumulate-with-new.svg,2,2,2,2,1,1,1,2,2
 filters/enable-background/accumulate.svg,2,2,2,2,1,1,2,2,2
 filters/enable-background/filter-on-shape.svg,2,2,2,2,1,1,1,2,2
