@@ -269,6 +269,7 @@ filters/feTurbulence/type=fractalNoise.svg,1,1,1,1,1,2,1,2,2
 filters/feTurbulence/type=invalid.svg,1,1,1,1,3,2,2,2,2
 filters/filter/color-interpolation-filters=sRGB.svg,1,1,1,1,1,1,1,2,2
 filters/filter/complex-order-and-xlink-href.svg,2,1,2,1,1,3,2,2,2
+filters/filter/content-outside-the-canvas.svg,1,1,1,1,1,1,1,0,2
 filters/filter/default-color-interpolation-filters.svg,1,1,1,1,1,1,1,2,2
 filters/filter/everything-via-xlink-href.svg,2,1,1,1,1,3,2,2,2
 filters/filter/global-transform.svg,1,1,1,1,1,1,1,2,2
@@ -321,6 +322,7 @@ filters/filter/transform-on-shape.svg,1,1,1,1,1,1,1,2,2
 filters/filter/unresolved-xlink-href.svg,1,1,1,1,3,1,1,2,2
 filters/filter/with-clip-path-and-mask.svg,1,1,1,1,1,1,1,2,2
 filters/filter/with-clip-path.svg,1,1,1,1,1,1,1,2,2
+filters/filter/with-mask-on-parent.svg,1,1,1,1,1,2,1,0,2
 filters/filter/with-mask.svg,1,1,1,1,1,1,1,2,2
 filters/filter/with-multiple-transforms-1.svg,1,1,1,1,1,1,2,2,2
 filters/filter/with-multiple-transforms-2.svg,1,1,1,1,1,1,1,2,2
