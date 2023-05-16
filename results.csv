@@ -462,6 +462,7 @@ masking/mask/no-children.svg,1,1,1,1,2,1,1,2,2
 masking/mask/none.svg,1,1,1,1,1,1,1,1,2
 masking/mask/on-a-horizontal-line.svg,1,1,1,1,2,2,1,0,2
 masking/mask/on-a-small-object.svg,1,1,1,1,2,2,1,2,2
+masking/mask/on-group-with-transform.svg,1,1,1,1,1,1,1,0,2
 masking/mask/recursive-on-child.svg,0,0,0,0,3,0,0,2,0
 masking/mask/recursive-on-self.svg,1,1,1,1,2,1,2,2,2
 masking/mask/recursive.svg,1,1,1,1,2,1,1,2,2
