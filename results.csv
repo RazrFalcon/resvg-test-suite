@@ -269,6 +269,7 @@ filters/feTurbulence/type=fractalNoise.svg,1,1,1,1,1,2,1,2,2
 filters/feTurbulence/type=invalid.svg,1,1,1,1,3,2,2,2,2
 filters/filter/color-interpolation-filters=sRGB.svg,1,1,1,1,1,1,1,2,2
 filters/filter/complex-order-and-xlink-href.svg,2,1,2,1,1,3,2,2,2
+filters/filter/content-outside-the-canvas-2.svg,1,1,1,1,1,1,2,0,2
 filters/filter/content-outside-the-canvas.svg,1,1,1,1,1,1,1,0,2
 filters/filter/default-color-interpolation-filters.svg,1,1,1,1,1,1,1,2,2
 filters/filter/everything-via-xlink-href.svg,2,1,1,1,1,3,2,2,2
