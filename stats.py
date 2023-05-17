@@ -64,7 +64,7 @@ barh_data = json.dumps(
     },
     "items": [
         {
-            "name": "resvg 0.32.0",
+            "name": "resvg 0.33.0",
             "value": passed[3]
         },
         {
