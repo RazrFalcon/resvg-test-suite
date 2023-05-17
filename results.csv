@@ -1327,6 +1327,7 @@ text/dominant-baseline/use-script.svg,0,0,0,0,0,0,0,0,0
 text/font/simple-case.svg,2,2,2,2,1,2,2,2,2
 text/font-family/bold-sans-serif.svg,1,1,1,1,1,1,1,1,1
 text/font-family/cursive.svg,1,1,1,1,2,1,1,2,2
+text/font-family/double-quoted.svg,1,1,1,1,1,1,1,0,1
 text/font-family/fallback-1.svg,1,1,1,1,1,1,1,2,1
 text/font-family/fallback-2.svg,1,1,1,1,1,1,1,1,1
 text/font-family/fantasy.svg,1,1,1,1,2,1,1,2,2
