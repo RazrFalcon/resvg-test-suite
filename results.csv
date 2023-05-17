@@ -168,7 +168,7 @@ filters/feGaussianBlur/stdDeviation=0-5.svg,1,1,1,1,1,1,1,2,2
 filters/feGaussianBlur/stdDeviation=5-0.svg,1,1,1,1,1,1,1,2,2
 filters/feGaussianBlur/tiny-stdDeviation.svg,1,1,1,1,1,1,1,2,2
 filters/feImage/chained-feImage.svg,1,2,1,1,1,1,2,0,2
-filters/feImage/embedded-PNG.svg,1,1,1,1,1,2,1,2,2
+filters/feImage/embedded-png.svg,1,1,1,1,1,2,1,2,2
 filters/feImage/empty.svg,1,1,1,1,3,2,1,2,2
 filters/feImage/link-on-an-element-with-complex-transform.svg,1,2,2,2,1,2,2,2,2
 filters/feImage/link-on-an-element-with-transform.svg,1,2,1,1,1,1,2,2,2
@@ -183,9 +183,9 @@ filters/feImage/link-to-use.svg,1,2,1,1,1,2,2,2,2
 filters/feImage/preserveAspectRatio=none.svg,1,1,1,1,2,2,1,2,2
 filters/feImage/recursive-links-1.svg,1,1,1,1,3,3,1,2,2
 filters/feImage/recursive-links-2.svg,1,1,1,1,3,3,1,0,2
-filters/feImage/sVG.svg,2,2,1,1,1,2,2,2,2
 filters/feImage/self-recursive.svg,1,1,1,1,3,3,1,2,2
 filters/feImage/simple-case.svg,1,1,1,1,1,2,2,2,2
+filters/feImage/svg.svg,2,2,1,1,1,2,2,2,2
 filters/feImage/with-subregion-1.svg,1,1,1,1,2,2,1,2,2
 filters/feImage/with-subregion-2.svg,1,1,1,1,2,2,1,2,2
 filters/feImage/with-subregion-3.svg,1,1,1,1,1,2,1,2,2
@@ -901,9 +901,9 @@ painting/stroke-width/default.svg,1,1,1,1,1,1,1,1,1
 painting/stroke-width/negative.svg,0,0,0,0,3,0,0,0,0
 painting/stroke-width/percentage.svg,1,1,1,1,1,1,1,1,2
 painting/stroke-width/zero.svg,1,1,1,1,1,1,1,1,1
-painting/visibility/bBox-impact-1.svg,1,1,1,1,1,2,1,1,2
-painting/visibility/bBox-impact-2.svg,1,1,2,1,1,2,1,1,2
-painting/visibility/bBox-impact-3.svg,1,1,1,1,1,2,1,1,2
+painting/visibility/bbox-impact-1.svg,1,1,1,1,1,2,1,1,2
+painting/visibility/bbox-impact-2.svg,1,1,2,1,1,2,1,1,2
+painting/visibility/bbox-impact-3.svg,1,1,1,1,1,2,1,1,2
 painting/visibility/collapse-on-tspan.svg,1,1,1,1,1,2,1,2,2
 painting/visibility/hidden-on-group.svg,1,1,1,1,1,2,1,2,2
 painting/visibility/hidden-on-shape.svg,1,1,1,1,1,2,1,1,1
@@ -1333,10 +1333,10 @@ text/font-family/fallback-2.svg,1,1,1,1,1,1,1,1,1
 text/font-family/fantasy.svg,1,1,1,1,2,1,1,2,2
 text/font-family/font-list.svg,1,1,1,1,1,1,1,1,1
 text/font-family/monospace.svg,1,1,1,1,1,1,1,1,2
-text/font-family/noto-Sans.svg,1,1,1,1,1,1,1,1,1
+text/font-family/noto-sans.svg,1,1,1,1,1,1,1,1,1
 text/font-family/sans-serif.svg,1,1,1,1,1,1,1,1,2
 text/font-family/serif.svg,1,1,1,1,1,1,1,1,2
-text/font-family/source-Sans-Pro.svg,1,1,1,1,1,1,1,1,1
+text/font-family/source-sans-pro.svg,1,1,1,1,1,1,1,1,1
 text/font-kerning/arabic-script.svg,1,1,1,1,2,2,2,0,2
 text/font-kerning/as-property.svg,1,1,1,1,2,2,2,0,2
 text/font-kerning/none.svg,1,1,1,1,2,2,2,0,2
