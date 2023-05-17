@@ -310,6 +310,7 @@ filters/filter/on-the-root-svg.svg,0,0,0,0,0,0,0,0,0
 filters/filter/on-zero-sized-shape.svg,1,1,2,1,1,1,1,1,2
 filters/filter/primitiveUnits=objectBoundingBox.svg,1,1,1,1,2,1,1,2,2
 filters/filter/recursive-xlink-href.svg,1,1,1,1,3,3,1,2,2
+filters/filter/region-with-stroke.svg,1,1,1,1,1,2,1,0,2
 filters/filter/self-recursive-xlink-href.svg,1,1,1,1,3,1,1,2,2
 filters/filter/simple-case.svg,1,1,1,1,1,1,1,2,2
 filters/filter/some-attributes-via-xlink-href.svg,2,1,2,1,1,3,2,2,2
