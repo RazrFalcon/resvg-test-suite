@@ -1404,7 +1404,7 @@ text/letter-spacing/mixed-spacing.svg,1,1,1,1,1,1,2,2,2
 text/letter-spacing/non-ASCII-character.svg,2,2,1,1,2,1,1,1,1
 text/letter-spacing/normal.svg,1,1,1,1,1,1,1,1,2
 text/letter-spacing/on-Arabic.svg,2,2,2,1,2,2,2,2,2
-text/text/bIDI-reordering.svg,1,1,1,1,2,1,1,1,2
+text/text/bidi-reordering.svg,1,1,1,1,2,1,1,1,2
 text/text/complex-grapheme-split-by-tspan.svg,0,0,0,0,0,0,0,0,0
 text/text/complex-graphemes-and-coordinates-list.svg,2,1,2,2,2,2,1,2,1
 text/text/complex-graphemes.svg,1,1,1,1,2,1,1,1,1
@@ -1573,7 +1573,7 @@ text/tspan/text-shaping-across-multiple-tspan-2.svg,2,2,2,1,2,2,2,2,2
 text/tspan/transform.svg,1,1,1,1,1,1,1,2,1
 text/tspan/tspan-bbox-1.svg,1,1,1,1,1,1,1,2,2
 text/tspan/tspan-bbox-2.svg,1,1,1,1,2,1,2,0,2
-text/tspan/tspan-span-and-BIDI-reordering.svg,1,2,2,1,1,1,2,2,2
+text/tspan/bidi-reordering.svg,1,2,2,1,1,1,2,2,2
 text/tspan/with-clip-path.svg,1,2,1,2,2,2,2,2,2
 text/tspan/with-dy.svg,1,1,1,1,1,2,1,2,2
 text/tspan/with-filter.svg,1,2,1,2,2,1,2,2,2
