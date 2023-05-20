@@ -392,6 +392,9 @@ filters/flood-opacity/50percent.svg,1,1,1,1,2,2,1,0,2
 filters/flood-opacity/simple-case.svg,1,1,1,1,1,2,1,2,2
 masking/clip/simple-case.svg,2,2,2,2,1,2,2,1,2
 masking/clip-rule/clip-rule=evenodd.svg,1,1,1,1,1,1,1,1,2
+masking/clipPath/circle-shorthand-with-stroke-box.svg,2,1,1,2,2,2,2,0,2
+masking/clipPath/circle-shorthand-with-view-box.svg,2,1,1,2,2,2,2,0,2
+masking/clipPath/circle-shorthand.svg,1,1,1,2,2,2,2,0,2
 masking/clipPath/clip-path-on-child-with-transform.svg,1,2,1,1,2,2,2,2,2
 masking/clipPath/clip-path-on-child.svg,1,1,1,1,2,1,2,2,2
 masking/clipPath/clip-path-on-children.svg,1,2,1,1,2,1,2,2,2
@@ -1552,6 +1555,7 @@ text/tref/style-attributes.svg,2,2,1,1,1,1,1,1,2
 text/tref/with-a-title-child.svg,2,2,1,1,1,1,1,2,2
 text/tref/with-text.svg,2,2,1,1,1,2,1,2,2
 text/tref/xml-space.svg,2,2,1,1,2,1,1,1,2
+text/tspan/bidi-reordering.svg,1,2,2,1,1,1,2,2,2
 text/tspan/mixed-font-size.svg,1,1,1,1,1,1,1,1,2
 text/tspan/mixed-xml-space-1.svg,1,2,2,1,1,2,2,2,2
 text/tspan/mixed-xml-space-2.svg,1,2,2,1,1,2,2,2,2
@@ -1573,7 +1577,6 @@ text/tspan/text-shaping-across-multiple-tspan-2.svg,2,2,2,1,2,2,2,2,2
 text/tspan/transform.svg,1,1,1,1,1,1,1,2,1
 text/tspan/tspan-bbox-1.svg,1,1,1,1,1,1,1,2,2
 text/tspan/tspan-bbox-2.svg,1,1,1,1,2,1,2,0,2
-text/tspan/bidi-reordering.svg,1,2,2,1,1,1,2,2,2
 text/tspan/with-clip-path.svg,1,2,1,2,2,2,2,2,2
 text/tspan/with-dy.svg,1,1,1,1,1,2,1,2,2
 text/tspan/with-filter.svg,1,2,1,2,2,1,2,2,2
