@@ -868,11 +868,11 @@ painting/stroke-dasharray/percent-units.svg,1,1,1,1,1,1,1,2,2
 painting/stroke-dasharray/ws-separator.svg,1,1,1,1,1,1,1,1,1
 painting/stroke-dasharray/zero-sum.svg,1,1,1,1,1,2,1,2,2
 painting/stroke-dashoffset/default.svg,1,1,1,1,1,1,1,1,1
-painting/stroke-dashoffset/em-value.svg,1,2,1,1,1,1,1,1,2
-painting/stroke-dashoffset/mm-value.svg,1,1,1,1,1,1,1,1,2
+painting/stroke-dashoffset/em-units.svg,1,2,1,1,1,1,1,0,1
+painting/stroke-dashoffset/mm-units.svg,1,1,1,1,1,1,1,0,2
 painting/stroke-dashoffset/negative-value.svg,1,1,1,1,1,1,1,2,1
-painting/stroke-dashoffset/percent-value.svg,1,1,1,1,1,1,1,1,2
-painting/stroke-dashoffset/px-value.svg,1,1,1,1,1,1,1,1,1
+painting/stroke-dashoffset/percent-units.svg,1,1,1,1,1,1,1,0,2
+painting/stroke-dashoffset/px-units.svg,1,1,1,1,1,1,1,0,1
 painting/stroke-linecap/butt.svg,1,1,1,1,1,1,1,1,1
 painting/stroke-linecap/open-path-with-butt.svg,1,1,1,1,1,1,1,1,2
 painting/stroke-linecap/open-path-with-round.svg,1,1,1,1,1,1,1,1,2
