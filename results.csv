@@ -1401,6 +1401,7 @@ text/letter-spacing/0.svg,1,1,1,1,1,1,1,1,2
 text/letter-spacing/1mm.svg,1,1,1,1,1,1,1,1,2
 text/letter-spacing/3.svg,1,1,1,1,1,1,1,1,2
 text/letter-spacing/5percent.svg,2,2,1,1,1,2,1,2,2
+text/letter-spacing/filter-bbox.svg,2,2,1,1,2,2,2,0,2
 text/letter-spacing/large-negative.svg,0,0,0,0,0,0,0,0,0
 text/letter-spacing/mixed-scripts.svg,2,2,2,1,2,2,2,2,2
 text/letter-spacing/mixed-spacing.svg,1,1,1,1,1,1,2,2,2
