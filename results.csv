@@ -887,7 +887,7 @@ painting/stroke-linecap/zero-length-path-with-round.svg,1,1,1,1,1,1,1,2,2
 painting/stroke-linecap/zero-length-path-with-square.svg,1,1,2,1,1,2,1,2,2
 painting/stroke-linejoin/arcs.svg,0,0,0,0,0,0,0,0,0
 painting/stroke-linejoin/bevel.svg,1,1,1,1,1,1,1,1,1
-painting/stroke-linejoin/miter-clip.svg,0,0,0,0,0,0,0,0,0
+painting/stroke-linejoin/miter-clip.svg,2,2,2,1,2,2,2,0,2
 painting/stroke-linejoin/miter.svg,1,1,1,1,1,1,1,1,1
 painting/stroke-linejoin/round.svg,1,1,1,1,1,1,1,1,1
 painting/stroke-miterlimit/default.svg,1,1,1,1,1,1,1,2,1
