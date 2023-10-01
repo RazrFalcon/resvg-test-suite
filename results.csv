@@ -686,6 +686,7 @@ painting/fill/rgb-0-127-0-0.5.svg,1,1,1,1,2,2,1,0,2
 painting/fill/rgb-color-with-a-big-fraction-part.svg,1,1,1,1,1,1,1,1,1
 painting/fill/rgb-color-with-extra-spaces.svg,1,1,1,1,1,1,1,1,1
 painting/fill/rgb-color-with-float-percentage-values.svg,1,1,1,1,1,1,1,1,1
+painting/fill/rgb-color-with-floats.svg,1,1,1,1,2,1,1,0,1
 painting/fill/rgb-color-with-percentage-overflow.svg,1,1,1,1,1,1,1,2,2
 painting/fill/rgb-color-with-percentage-values.svg,1,1,1,1,1,1,1,1,1
 painting/fill/rgb-color.svg,1,1,1,1,1,1,1,1,1
