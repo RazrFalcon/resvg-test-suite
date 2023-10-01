@@ -1137,6 +1137,7 @@ structure/svg/elements-via-ENTITY-reference-3.svg,1,1,1,1,1,2,1,1,3
 structure/svg/explicit-svg-namespace.svg,1,1,1,1,1,1,1,1,1
 structure/svg/funcIRI-parsing.svg,0,0,0,0,0,0,0,0,0
 structure/svg/funcIRI-with-invalid-characters.svg,1,1,1,1,1,1,1,1,1
+structure/svg/funcIRI-with-quotes.svg,1,1,1,1,1,1,1,0,2
 structure/svg/invalid-id-attribute-1.svg,0,0,0,0,0,0,0,0,0
 structure/svg/invalid-id-attribute-2.svg,0,0,0,0,0,0,0,0,0
 structure/svg/mixed-namespaces.svg,1,1,1,1,1,1,1,2,2
