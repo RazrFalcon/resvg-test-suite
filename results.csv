@@ -1480,6 +1480,8 @@ text/text/escaped-text-3.svg,1,1,1,1,1,1,1,1,1
 text/text/escaped-text-4.svg,1,1,1,1,1,1,1,1,1
 text/text/fill-rule=evenodd.svg,1,1,1,1,2,2,1,2,1
 text/text/filter-bbox.svg,1,1,1,1,2,2,2,0,1
+text/text/ligatures-handling-in-mixed-fonts-1.svg,1,1,1,1,2,1,2,0,1
+text/text/ligatures-handling-in-mixed-fonts-2.svg,1,1,1,1,2,1,2,0,1
 text/text/mm-coordinates.svg,1,1,1,1,1,1,1,1,2
 text/text/nested.svg,1,1,1,1,1,2,1,2,2
 text/text/no-coordinates.svg,1,1,1,1,1,1,1,1,1
