@@ -971,6 +971,8 @@ shapes/line/percent-units.svg,1,1,1,1,1,1,1,0,2
 shapes/line/simple-case.svg,1,1,1,1,1,1,1,1,1
 shapes/line/with-transform.svg,1,1,1,1,2,1,1,1,1
 shapes/path/A.svg,1,1,1,1,2,1,1,0,2
+shapes/path/M-A-s.svg,1,1,1,1,1,1,1,0,1
+shapes/path/M-A-t.svg,1,1,1,1,1,1,1,0,1
 shapes/path/M-A-trimmed.svg,1,1,1,1,1,1,1,0,1
 shapes/path/M-A.svg,1,1,1,1,1,1,1,0,1
 shapes/path/M-C-S.svg,1,1,1,1,1,1,1,0,1
