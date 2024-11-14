@@ -16,27 +16,37 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="0">
-      <widget class="QLabel" name="label_6">
+     <item row="12" column="0">
+      <widget class="QLabel" name="label_3">
        <property name="text">
-        <string>Test suite:</string>
+        <string>Inkscape:</string>
        </property>
       </widget>
      </item>
-     <item row="15" column="2">
-      <widget class="QLabel" name="label_12">
-       <property name="text">
-        <string>../qtsvgrender</string>
+     <item row="10" column="1" rowspan="2">
+      <widget class="QCheckBox" name="chBoxUseBatik">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
        </property>
       </widget>
      </item>
-     <item row="3" column="1" colspan="2">
-      <widget class="QLineEdit" name="lineEditResvg"/>
-     </item>
-     <item row="13" column="0">
-      <widget class="QLabel" name="label_4">
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_5">
        <property name="text">
-        <string>librsvg:</string>
+        <string>resvg dir:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="1">
+      <widget class="QCheckBox" name="chBoxUseSafari">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
        </property>
       </widget>
      </item>
@@ -47,8 +57,22 @@
        </property>
       </widget>
      </item>
-     <item row="12" column="1">
-      <widget class="QCheckBox" name="chBoxUseInkscape">
+     <item row="7" column="2">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>../chrome-svgrender</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="3">
+      <widget class="QToolButton" name="btnSelectFirefox">
+       <property name="text">
+        <string>...</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QCheckBox" name="chBoxUseFirefox">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -57,69 +81,42 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="1" colspan="3">
-      <widget class="QWidget" name="widget" native="true">
-       <layout class="QHBoxLayout" name="horizontalLayout_3">
-        <property name="leftMargin">
-         <number>0</number>
-        </property>
-        <property name="topMargin">
-         <number>0</number>
-        </property>
-        <property name="rightMargin">
-         <number>0</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QRadioButton" name="rBtnSuiteResvg">
-          <property name="text">
-           <string>resvg</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QRadioButton" name="rBtnSuiteCustom">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="text">
-           <string>Custom</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="horizontalSpacer">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
+     <item row="7" column="0">
+      <widget class="QLabel" name="label_10">
+       <property name="text">
+        <string>Chrome:</string>
+       </property>
       </widget>
      </item>
-     <item row="6" column="1">
-      <spacer name="verticalSpacer_5">
+     <item row="7" column="1">
+      <widget class="QCheckBox" name="chBoxUseChrome">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1" colspan="2">
+      <widget class="QLineEdit" name="lineEditResvg"/>
+     </item>
+     <item row="13" column="2">
+      <widget class="QLineEdit" name="lineEditRsvg">
+       <property name="placeholderText">
+        <string>Path to rsvg-convert</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <spacer name="verticalSpacer_3">
        <property name="orientation">
-        <enum>Qt::Vertical</enum>
+        <enum>Qt::Orientation::Vertical</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
          <width>20</width>
-         <height>10</height>
+         <height>20</height>
         </size>
        </property>
       </spacer>
@@ -134,36 +131,8 @@
        </property>
       </widget>
      </item>
-     <item row="4" column="0" rowspan="2">
-      <widget class="QLabel" name="label_7">
-       <property name="text">
-        <string>resvg build:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="15" column="0">
-      <widget class="QLabel" name="label_8">
-       <property name="text">
-        <string>QtSvg:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="13" column="3">
-      <widget class="QToolButton" name="btnSelectRsvg">
-       <property name="text">
-        <string>...</string>
-       </property>
-      </widget>
-     </item>
-     <item row="13" column="2">
-      <widget class="QLineEdit" name="lineEditRsvg">
-       <property name="placeholderText">
-        <string>Path to rsvg-convert</string>
-       </property>
-      </widget>
-     </item>
-     <item row="9" column="1">
-      <widget class="QCheckBox" name="chBoxUseSafari">
+     <item row="12" column="1">
+      <widget class="QCheckBox" name="chBoxUseInkscape">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -172,10 +141,61 @@
        </property>
       </widget>
      </item>
-     <item row="12" column="0">
-      <widget class="QLabel" name="label_3">
+     <item row="14" column="2">
+      <widget class="QLabel" name="label_16">
        <property name="text">
-        <string>Inkscape:</string>
+        <string>../svgnetrender</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0" rowspan="2">
+      <widget class="QLabel" name="label_7">
+       <property name="text">
+        <string>resvg build:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>librsvg:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <spacer name="verticalSpacer_5">
+       <property name="orientation">
+        <enum>Qt::Orientation::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>10</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="15" column="0">
+      <widget class="QLabel" name="label_8">
+       <property name="text">
+        <string>QtSvg:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="16" column="1">
+      <widget class="QCheckBox" name="chBoxUseLadybird">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="1">
+      <widget class="QCheckBox" name="chBoxUseLibrsvg">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
        </property>
       </widget>
      </item>
@@ -220,62 +240,10 @@
        </layout>
       </widget>
      </item>
-     <item row="10" column="2" rowspan="2">
-      <widget class="QLineEdit" name="lineEditBatik">
-       <property name="placeholderText">
-        <string>Path to batik-rasterizer</string>
-       </property>
-      </widget>
-     </item>
-     <item row="12" column="2">
-      <widget class="QLineEdit" name="lineEditInkscape">
-       <property name="placeholderText">
-        <string>Path to executable</string>
-       </property>
-      </widget>
-     </item>
-     <item row="10" column="3" rowspan="2">
-      <widget class="QToolButton" name="btnSelectBatik">
+     <item row="13" column="3">
+      <widget class="QToolButton" name="btnSelectRsvg">
        <property name="text">
         <string>...</string>
-       </property>
-      </widget>
-     </item>
-     <item row="7" column="0">
-      <widget class="QLabel" name="label_10">
-       <property name="text">
-        <string>Chrome:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="10" column="0" rowspan="2">
-      <widget class="QLabel" name="label_9">
-       <property name="text">
-        <string>Batik:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="8" column="0">
-      <widget class="QLabel" name="label_11">
-       <property name="text">
-        <string>Firefox:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="7" column="1">
-      <widget class="QCheckBox" name="chBoxUseChrome">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-      </widget>
-     </item>
-     <item row="9" column="0">
-      <widget class="QLabel" name="label_17">
-       <property name="text">
-        <string>Safari:</string>
        </property>
       </widget>
      </item>
@@ -286,91 +254,81 @@
        </property>
       </widget>
      </item>
-     <item row="14" column="2">
-      <widget class="QLabel" name="label_16">
-       <property name="text">
-        <string>../svgnetrender</string>
-       </property>
-      </widget>
-     </item>
-     <item row="10" column="1" rowspan="2">
-      <widget class="QCheckBox" name="chBoxUseBatik">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-      </widget>
-     </item>
-     <item row="12" column="3">
-      <widget class="QToolButton" name="btnSelectInkscape">
-       <property name="text">
-        <string>...</string>
-       </property>
-      </widget>
-     </item>
-     <item row="7" column="2">
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>../chrome-svgrender</string>
+     <item row="12" column="2">
+      <widget class="QLineEdit" name="lineEditInkscape">
+       <property name="placeholderText">
+        <string>Path to executable</string>
        </property>
       </widget>
      </item>
      <item row="1" column="1" colspan="2">
       <widget class="QLineEdit" name="lineEditTestsPath"/>
      </item>
-     <item row="13" column="1">
-      <widget class="QCheckBox" name="chBoxUseLibrsvg">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <spacer name="verticalSpacer_3">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item row="9" column="2">
-      <widget class="QLabel" name="label_2">
+     <item row="10" column="3" rowspan="2">
+      <widget class="QToolButton" name="btnSelectBatik">
        <property name="text">
-        <string>qlmanage</string>
+        <string>...</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="label_5">
+     <item row="0" column="1" colspan="3">
+      <widget class="QWidget" name="widget" native="true">
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QRadioButton" name="rBtnSuiteResvg">
+          <property name="text">
+           <string>resvg</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="rBtnSuiteCustom">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Custom</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="15" column="2">
+      <widget class="QLabel" name="label_12">
        <property name="text">
-        <string>resvg dir:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="8" column="1">
-      <widget class="QCheckBox" name="chBoxUseFirefox">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-      </widget>
-     </item>
-     <item row="14" column="0">
-      <widget class="QLabel" name="label_15">
-       <property name="text">
-        <string>SVG.NET:</string>
+        <string>../qtsvgrender</string>
        </property>
       </widget>
      </item>
@@ -384,6 +342,41 @@
        </property>
       </widget>
      </item>
+     <item row="16" column="0">
+      <widget class="QLabel" name="label_13">
+       <property name="text">
+        <string>Ladybird:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="12" column="3">
+      <widget class="QToolButton" name="btnSelectInkscape">
+       <property name="text">
+        <string>...</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="2" rowspan="2">
+      <widget class="QLineEdit" name="lineEditBatik">
+       <property name="placeholderText">
+        <string>Path to batik-rasterizer</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="0">
+      <widget class="QLabel" name="label_17">
+       <property name="text">
+        <string>Safari:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="0" rowspan="2">
+      <widget class="QLabel" name="label_9">
+       <property name="text">
+        <string>Batik:</string>
+       </property>
+      </widget>
+     </item>
      <item row="3" column="3">
       <widget class="QToolButton" name="btnSelectResvg">
        <property name="text">
@@ -391,8 +384,39 @@
        </property>
       </widget>
      </item>
-     <item row="8" column="3">
-      <widget class="QToolButton" name="btnSelectFirefox">
+     <item row="8" column="0">
+      <widget class="QLabel" name="label_11">
+       <property name="text">
+        <string>Firefox:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="2">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>qlmanage</string>
+       </property>
+      </widget>
+     </item>
+     <item row="14" column="0">
+      <widget class="QLabel" name="label_15">
+       <property name="text">
+        <string>SVG.NET:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string>Test suite:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="16" column="2">
+      <widget class="QLineEdit" name="lineEditLadybird"/>
+     </item>
+     <item row="16" column="3">
+      <widget class="QToolButton" name="btnSelectLadybird">
        <property name="text">
         <string>...</string>
        </property>
@@ -403,7 +427,7 @@
    <item>
     <spacer name="verticalSpacer">
      <property name="orientation">
-      <enum>Qt::Vertical</enum>
+      <enum>Qt::Orientation::Vertical</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
@@ -416,10 +440,10 @@
    <item>
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+      <enum>Qt::Orientation::Horizontal</enum>
      </property>
      <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
+      <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Save</set>
      </property>
     </widget>
    </item>

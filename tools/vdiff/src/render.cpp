@@ -6,6 +6,7 @@
 #include <QXmlStreamReader>
 #include <QtConcurrent/QtConcurrentMap>
 #include <QtConcurrent/QtConcurrentRun>
+#include <QDir>
 
 #include <cmath>
 
@@ -307,6 +308,34 @@ QImage Render::renderViaQtSvg(const RenderData &data)
     return loadImage(outImg);
 }
 
+QImage Render::renderViaLadybird(const RenderData& data)
+{
+    // Define the default output image path
+    const auto defaultOutImg = Paths::workDir() + "/output.png"; // Ladybird default output file
+
+    QStringList arguments = {
+        "--screenshot=1",         // Take screenshot after 1 second
+        "--width=500",            // Set viewport width to 500 pixels
+        "--height=500",           // Set viewport height to 500 pixels
+        data.imgPath              // Path to the SVG file to render
+    };
+
+    // Change working directory to ensure the output goes where expected
+    QDir::setCurrent(Paths::workDir());
+
+    // Execute the command
+    const QString out = Process::run(data.convPath, arguments, true);
+
+    // Check if the default output file was created
+    QFile file(defaultOutImg);
+    if (!file.exists()) {
+        throw QString("Failed to generate output image: %1").arg(defaultOutImg);
+    }
+
+    return loadImage(defaultOutImg);
+}
+
+
 void Render::renderImages()
 {
     const auto ts = m_settings->testSuite;
@@ -372,6 +401,10 @@ void Render::renderImages()
         list.append({ Backend::QtSvg, m_viewSize, imageSize, m_imgPath, QString(), ts });
     }
 
+    if (m_settings->useLadybird) {
+        renderCached(Backend::Ladybird, m_settings->ladybirdPath);
+    }
+
     const auto future = QtConcurrent::mapped(list, &Render::renderImage);
     m_watcher1.setFuture(future);
 }
@@ -402,6 +435,7 @@ RenderResult Render::renderImage(const RenderData &data)
             case Backend::Inkscape    : img = renderViaInkscape(data); break;
             case Backend::Librsvg     : img = renderViaRsvg(data); break;
             case Backend::QtSvg       : img = renderViaQtSvg(data); break;
+            case Backend::Ladybird    : img = renderViaLadybird(data); break;
         }
 
         return { data.type, img };
@@ -505,7 +539,8 @@ void Render::onImageRendered(const int idx)
             case Backend::Firefox :
             case Backend::Safari :
             case Backend::Batik :
-            case Backend::Inkscape : m_imgCache.setImage(res.type, m_imgPath, res.img); break;
+            case Backend::Inkscape :
+            case Backend::Ladybird : m_imgCache.setImage(res.type, m_imgPath, res.img); break;
             default : break;
         }
     }
@@ -525,7 +560,7 @@ void Render::onImagesRendered()
             }
         };
 
-        for (int t = (int)Backend::Firefox; t <= (int)Backend::QtSvg; ++t) {
+        for (int t = (int)Backend::Firefox; t <= (int)Backend::Ladybird; ++t) {
             append((Backend)t);
         }
 
@@ -541,7 +576,7 @@ void Render::onImagesRendered()
             }
         };
 
-        for (int t = (int)Backend::Chrome; t <= (int)Backend::QtSvg; ++t) {
+        for (int t = (int)Backend::Chrome; t <= (int)Backend::Ladybird; ++t) {
             append((Backend)t);
         }
 

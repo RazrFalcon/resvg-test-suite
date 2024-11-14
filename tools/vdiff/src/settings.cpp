@@ -12,6 +12,7 @@ namespace Key {
     static const QString BatikPath          = "BatikPath";
     static const QString InkscapePath       = "InkscapePath";
     static const QString RsvgPath           = "RsvgPath";
+    static const QString LadybirdPath       = "LadybirdPath";
     static const QString UseChrome          = "UseChrome";
     static const QString UseFirefox         = "UseFirefox";
     static const QString UseSafari          = "UseSafari";
@@ -20,6 +21,7 @@ namespace Key {
     static const QString UseSvgNet          = "UseSvgNet";
     static const QString UseLibrsvg         = "UseLibrsvg";
     static const QString UseQtSvg           = "UseQtSvg";
+    static const QString UseLadybird        = "UseLadybird";
     static const QString ViewSize           = "ViewSize";
 }
 
@@ -72,12 +74,14 @@ void Settings::load() noexcept
     this->useLibrsvg = appSettings.value(Key::UseLibrsvg).toBool();
     this->useSvgNet = appSettings.value(Key::UseSvgNet).toBool();
     this->useQtSvg = appSettings.value(Key::UseQtSvg).toBool();
+    this->useLadybird = appSettings.value(Key::UseLadybird).toBool();
 
     this->resvgDir = appSettings.value(Key::ResvgDir).toString();
     this->firefoxPath = appSettings.value(Key::FirefoxPath).toString();
     this->batikPath = appSettings.value(Key::BatikPath).toString();
     this->inkscapePath = appSettings.value(Key::InkscapePath).toString();
     this->librsvgPath = appSettings.value(Key::RsvgPath).toString();
+    this->ladybirdPath = appSettings.value(Key::LadybirdPath).toString();
 }
 
 void Settings::save() const noexcept
@@ -95,11 +99,13 @@ void Settings::save() const noexcept
     appSettings.setValue(Key::UseLibrsvg, this->useLibrsvg);
     appSettings.setValue(Key::UseSvgNet, this->useSvgNet);
     appSettings.setValue(Key::UseQtSvg, this->useQtSvg);
+    appSettings.setValue(Key::UseLadybird, this->useLadybird);
     appSettings.setValue(Key::ResvgDir, this->resvgDir);
     appSettings.setValue(Key::FirefoxPath, this->firefoxPath);
     appSettings.setValue(Key::BatikPath, this->batikPath);
     appSettings.setValue(Key::InkscapePath, this->inkscapePath);
     appSettings.setValue(Key::RsvgPath, this->librsvgPath);
+    appSettings.setValue(Key::LadybirdPath, this->ladybirdPath);
 }
 
 QString Settings::resvgPath() const noexcept

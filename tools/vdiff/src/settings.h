@@ -33,9 +33,11 @@ public:
     bool useLibrsvg = true;
     bool useSvgNet = true;
     bool useQtSvg = true;
+    bool useLadybird = true;
     QString resvgDir; // it's a dir, not a path
     QString firefoxPath;
     QString batikPath;
     QString inkscapePath;
     QString librsvgPath;
+    QString ladybirdPath;
 };

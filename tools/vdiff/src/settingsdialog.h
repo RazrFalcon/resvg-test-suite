@@ -27,6 +27,7 @@ private slots:
     void on_btnSelectFirefox_clicked();
     void on_btnSelectBatik_clicked();
     void on_btnSelectTest_clicked();
+    void on_btnSelectLadybird_clicked();
     void prepareTestsPathWidgets();
 
 private:

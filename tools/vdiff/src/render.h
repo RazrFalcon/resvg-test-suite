@@ -71,6 +71,7 @@ private:
     static QImage renderViaInkscape(const RenderData &data);
     static QImage renderViaRsvg(const RenderData &data);
     static QImage renderViaQtSvg(const RenderData &data);
+    static QImage renderViaLadybird(const RenderData &data);
     static RenderResult renderImage(const RenderData &data);
     static DiffOutput diffImage(const DiffData &data);
 

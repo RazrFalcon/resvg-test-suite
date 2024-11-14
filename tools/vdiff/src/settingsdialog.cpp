@@ -59,6 +59,9 @@ void SettingsDialog::loadSettings()
 
     ui->chBoxUseQtSvg->setChecked(m_settings->useQtSvg);
 
+    ui->chBoxUseLadybird->setChecked(m_settings->useLadybird);
+    ui->lineEditLadybird->setText(m_settings->ladybirdPath);
+
     prepareTestsPathWidgets();
 }
 
@@ -95,12 +98,14 @@ void SettingsDialog::on_buttonBox_accepted()
     m_settings->useLibrsvg = ui->chBoxUseLibrsvg->isChecked();
     m_settings->useSvgNet = ui->chBoxUseSvgNet->isChecked();
     m_settings->useQtSvg = ui->chBoxUseQtSvg->isChecked();
+    m_settings->useLadybird = ui->chBoxUseLadybird->isChecked();
 
     m_settings->resvgDir = ui->lineEditResvg->text();
     m_settings->firefoxPath = ui->lineEditFirefox->text();
     m_settings->batikPath = ui->lineEditBatik->text();
     m_settings->inkscapePath = ui->lineEditInkscape->text();
     m_settings->librsvgPath = ui->lineEditRsvg->text();
+    m_settings->ladybirdPath = ui->lineEditLadybird->text();
 
     m_settings->save();
 }
@@ -153,3 +158,12 @@ void SettingsDialog::on_btnSelectRsvg_clicked()
         ui->lineEditRsvg->setText(path);
     }
 }
+
+void SettingsDialog::on_btnSelectLadybird_clicked()
+{
+    const auto path = QFileDialog::getOpenFileName(this, "headless-browser exe path");
+    if (!path.isEmpty()) {
+        ui->lineEditLadybird->setText(path);
+    }
+}
+

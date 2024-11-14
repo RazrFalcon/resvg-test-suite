@@ -116,6 +116,10 @@ void MainWindow::prepareBackends()
         backends << Backend::QtSvg;
     }
 
+    if (m_settings.useLadybird) {
+        backends << Backend::Ladybird;
+    }
+
 
     for (const Backend backend : backends) {
         auto w = new BackendWidget(backend);

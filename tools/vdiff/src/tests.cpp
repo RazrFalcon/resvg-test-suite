@@ -110,6 +110,7 @@ Tests Tests::load(const TestSuite testSuite, const QString &path, const QString 
         item.state.insert(Backend::Librsvg,     stateFormStr(items.at(7)));
         item.state.insert(Backend::SvgNet,      stateFormStr(items.at(8)));
         item.state.insert(Backend::QtSvg,       stateFormStr(items.at(9)));
+        item.state.insert(Backend::Ladybird,    stateFormStr(items.at(10)));
 
         if (testSuite == TestSuite::Own) {
             item.title = parseTitle(testPath);
@@ -150,7 +151,7 @@ Tests Tests::loadCustom(const QString &path)
 
 void Tests::save(const QString &path)
 {
-    QString text = "title,chrome,firefox,safari,resvg,batik,inkscape,librsvg,svgnet,qtsvg\n";
+    QString text = "title,chrome,firefox,safari,resvg,batik,inkscape,librsvg,svgnet,qtsvg,ladybird\n";
     for (const TestItem &item : m_data) {
         text += item.baseName + ',';
         text += QString::number((int)item.state.value(Backend::Chrome))     + ',';
@@ -161,7 +162,8 @@ void Tests::save(const QString &path)
         text += QString::number((int)item.state.value(Backend::Inkscape))   + ',';
         text += QString::number((int)item.state.value(Backend::Librsvg))    + ',';
         text += QString::number((int)item.state.value(Backend::SvgNet))     + ',';
-        text += QString::number((int)item.state.value(Backend::QtSvg))      + '\n';
+        text += QString::number((int)item.state.value(Backend::QtSvg))      + ',';
+        text += QString::number((int)item.state.value(Backend::Ladybird))   + '\n';
     }
 
     QFile file(path);
@@ -243,6 +245,7 @@ QString backendToString(const Backend &t)
         case Backend::Librsvg :     return "librsvg";
         case Backend::SvgNet :      return "SVG.NET";
         case Backend::QtSvg :       return "QtSvg";
+        case Backend::Ladybird :    return "Ladybird";
     }
 
     Q_UNREACHABLE();
